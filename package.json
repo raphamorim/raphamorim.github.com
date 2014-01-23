@@ -1,0 +1,11 @@
+{
+  "name": "raphamorim.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raphamorim/raphamorim.com.git"
+  },
+  "devDependencies": {
+    "grunt": "0.4.1",
+    "grunt-lintspaces": "0.2.203"
+  }
+}

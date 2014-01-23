@@ -1,0 +1,42 @@
+{% include header.html %}
+
+  {% include nav.html %}
+
+	<div class='main'>
+		<div class="container">
+			<ul id="posts">
+      		{% for post in paginator.posts %}
+      			{% unless post.draft %}
+        			<li class="post">
+        			{% if post.link %}
+        				<h2>
+							<a href="{{ post.link }}">{{ post.title }}</a>
+						</h2>
+        			{% else %}
+        				<h2>
+							<a href="#">{{ post.title }}</a>
+						</h2>
+
+        			{% endif %}
+
+					{% if post.excerpt %}
+        				{{ post.excerpt | markdownify }}
+        					<a href="{{ post.url }}">
+          					<p class="post-more">
+									Continuar lendo...
+								</p>
+							</a>
+							<p class="post-date">
+								{{ post.date | date:"%d / %m / %Y" }}
+							</p>
+        			{% else %}
+        					{{ post.content }}
+        			{% endif %}
+
+		  			{% endunless %}
+      		{% endfor %}
+       <li class="load-more">
+				Ver mais postagens
+		 </li>
+
+{% include footer.html %}
