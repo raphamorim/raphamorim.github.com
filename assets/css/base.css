@@ -265,6 +265,25 @@ footer .container, nav .container { min-height: 100px; }
 .about .social-links a { color: #46483e; border-bottom: 1px dotted #46483e; margin-bottom: 13px; }
 .about .social-links { margin-top: 15px; margin-bottom: 40px;}
 
+
+/* Experiments */
+#exp h3 { margin-bottom: 15px; font-size: 23px; color: #679609; }
+#exp h3 a { color: #679609; }
+#exp p { font-size: 16px; margin-bottom: 10px; color: #555;}
+#exp a { color: #666; font-weight: bold; }
+
+#exp li {
+  margin-top: 40px;
+  border-bottom: 1px dotted #999;
+}
+
+::selection {
+  background-color: #41494f;
+  color: #fff;
+}
+
+
+/* Mobile and Tablets */
 #bar-mobile-menu {
   position: relative;
   z-index: 0;
@@ -322,4 +341,11 @@ footer .container, nav .container { min-height: 100px; }
 
   /*About fixes */
   .about { padding: 0px 10px 0px 10px; }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .dialog p { clear: both; margin: 0px; display: inline; text-align: center; }
+  #exp p { display: block; margin-bottom: 15px; }
+  #exp h3 { text-align: center; }
 }
