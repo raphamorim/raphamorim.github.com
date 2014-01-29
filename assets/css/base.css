@@ -348,4 +348,5 @@ footer .container, nav .container { min-height: 100px; }
   .dialog p { clear: both; margin: 0px; display: inline; text-align: center; }
   #exp p { display: block; margin-bottom: 15px; }
   #exp h3 { text-align: center; }
+  h2 { text-align: center; }
 }
