@@ -203,6 +203,10 @@ footer .container, nav .container { min-height: 100px; }
   color: #666;
 }
 
+.link {
+  border-bottom: 1px dotted #666;
+}
+
 .post-page p {padding: 25px 20px 0px 20px;}
 
 .post-more, .post-date {
