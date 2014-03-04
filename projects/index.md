@@ -6,16 +6,20 @@ description: Todos os meus projetos em status de andamento ou finalizado.
 ---
 
 ##Projetos
-<!--
-    <h3>Em andamento</h3>
-    <ul>
-        <li><a href='https://github.com/raphamorim/5-Reasons-You-Should-Use-Headphones/' target='_blank'>Why you should use Headphones?</a> (2014 - até agora)</li>
-        <li><a href='http://raphamorim.github.io/sound-hunter/' target='_blank'>Sound Hunter</a> (2014 - até agora)</li>
-        <li><a href='http://raphamorim.github.io/MapJs/' target='_blank'>MapJs</a> (2014 - até agora) </li>
-        <li><a href='http://raphamundi.com/' target='_blank'>Raphamundi.com</a> (2014 - até agora)</li>
-    </ul>
 
-    <h3>Finalizados</h3>
+<ul id="exp">
+    <li>
+       <h3><a href="http://www.windowsphone.com/pt-br/store/app/tabela-peri%C3%B3dica/c7774ed0-9460-4904-8bec-a71f5d76da40">Tabela Periódica para Windows Phone</a></h3>
+
+       <p>Aplicativo que permite que o usuário tenha em seu Windows Phone, a tabela periódica com todos os elementos e suas respectivas informações anualmente atualizadas.</p>
+
+        <p><a href="http://www.windowsphone.com/pt-br/store/app/tabela-peri%C3%B3dica/c7774ed0-9460-4904-8bec-a71f5d76da40" target="_blank">Download para Windows Phone</a></p>
+
+       <p>Tags: C#, Windows Phone, XAML</p>
+    </li>
+</ul>
+
+<!--
     <ul>
         <li><a href='https://github.com/raphamorim/hackathon-1746' target='_blank'>HackAthon 1746</a> (2013)</li>
         <li><a href='http://xgoservice.com.br/' target='_blank'>Xgoservice.com.br</a> (2013)</li>
@@ -32,9 +36,5 @@ description: Todos os meus projetos em status de andamento ou finalizado.
         <li><a href='http://stopcar.srv.br' target='_blank'>Stopcar.srv.br</a> (2013)</li>
         <li><a href='http://serralherianovainhauma.com.br/' target='_blank'>Serralherianovainhauma.com.br</a> (2013)</li>
         <li><a href='http://dancespace.com.br/' target='_blank'>Dancespace.com.br</a> (2013)</li>
-        <li><a href='http://www.windowsphone.com/pt-br/store/app/tabela-peri%C3%B3dica/c7774ed0-9460-4904-8bec-a71f5d76da40' target='_blank'>
-        Tabela Periódica para Windows Phone</a> (2013)</li>
     </ul>
-
-
  -->

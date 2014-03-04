@@ -19,7 +19,7 @@
 
         			{% endif %}
 
-					{% if post.excerpt %}
+					    {% if post.excerpt %}
         				{{ post.excerpt | markdownify }}
         					<a href="{{ post.url }}">
           					<p class="post-more">
@@ -38,5 +38,7 @@
        <li class="load-more">
 				Ver mais postagens
 		 </li>
+
+     <p class="pagination"></p>
 
 {% include footer.html %}

@@ -21,12 +21,14 @@ $(function() {
  	$('.bar-menu-optional')
  		.click(function(){
  			if($("#bar-mobile-menu").is(":visible")) {
- 				$("#bar-mobile-menu").slideUp(500);
- 				$(".main").css("padding-top", "30px");
+ 				$(".main").animate({"padding-top": "30px"}, 500, function() {
+             $("#bar-mobile-menu").slideUp(500);
+         });
  			}
  			else {
- 				$("#bar-mobile-menu").slideDown(500);
- 				$(".main").css("padding-top", "5px");
+ 				$(".main").animate({'padding-top': '5px'}, 1000, function() {
+             $("#bar-mobile-menu").slideDown(0);
+         });
  			}
  		});
 

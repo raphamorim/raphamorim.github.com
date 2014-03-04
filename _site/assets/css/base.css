@@ -295,6 +295,7 @@ footer .container, nav .container { min-height: 100px; }
   background: #41494f;
   padding: 30px 0px 35px 0px;
   display: none;
+  margin-top: -50px;
 }
 
 #bar-mobile-menu li {

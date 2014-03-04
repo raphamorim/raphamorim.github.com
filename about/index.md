@@ -10,7 +10,7 @@ description: HTML5, CSS3, JavaScript and other front-end stuff.
 Hugo **Raphael** Vianna **Amorim** ou apenas Raphael, é um desenvolvedor
 apaixonado pelo que faz. Tem 18 anos, vive e trabalha no Rio de Janeiro com um time incrível de desenvolvedores no **Videolog**.
 
-É o criador do MapJS. É viciado em café e JavaScript, mas adora mesmo é programar, seja em qualquer linguagem (back ou front-end). Entusiasta em aplicações REST e desenvolvimento com NodeJS.
+É o criador do MapJS. É viciado em café e JavaScript, mas adora mesmo é programar, seja em qualquer linguagem (back ou front-end). Entusiasta em aplicações REST e uso de ferramentas como o NodeJS e WebGL.
 
 Hoje em dia estuda análise e desenvolvimento de sistemas no instituto **Infnet**.
 
