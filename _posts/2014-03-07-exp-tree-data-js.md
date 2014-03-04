@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'TreeData.js - experimento #2'
-link: 'http://raphamorim.com/exp-tree-data/'
+link: 'http://raphamorim.com/exp-tree-data-js/'
 language: 'pt-br'
 ---
 
