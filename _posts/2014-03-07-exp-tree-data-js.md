@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 'TreeData.js - experimento #2'
+description: 'Segundo experimento, permite ao desenvolvedor criar estruturas de dados não lineares em específico: árvores, tudo isso
+apenas definindo um objeto e iniciando uma função de build passando esse objeto como parâmetro.'
 link: 'http://raphamorim.com/exp-tree-data-js/'
 language: 'pt-br'
 ---

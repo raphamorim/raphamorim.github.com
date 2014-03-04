@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'Sound Hunter, experimento #1'
+description: 'Meu primeiro experimento, serve para encontrar clipes musicais apenas usando sua voz como sistema de busca, utiliza a API do Youtube e filtra resultados. Nesse experimento pude brincar com o microfone do HTML5 e com o API do full screen.'
 link: 'http://raphamorim.com/exp-sound-hunter/'
 language: 'pt-br'
 ---

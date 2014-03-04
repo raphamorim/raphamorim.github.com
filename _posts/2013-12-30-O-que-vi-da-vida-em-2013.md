@@ -1,13 +1,14 @@
 ---
 layout: post
 title: 'O que vi da vida em 2013'
+description: 'Dois mil e treze foi realmente um ano que marcou minha vida, de uma forma especial na parte profissional...'
 link: 'http://raphamorim.github.io/O-que-vi-da-vida-em-2013/'
 language: 'pt-br'
 ---
 
 ###<img src="/assets/images/posts/ano-2013.jpg" alt="2013" style="padding: 0; border: none !important; background:none;">
 
-Dois mil e treze foi realmente um ano que marcou minha vida, de uma certa forma especial na parte profissional. Este foi o primeiro ano pós-escola e também o ano que comecei a caminhar sozinho.
+Dois mil e treze foi realmente um ano que marcou minha vida, de uma forma especial na parte profissional. Este foi o primeiro ano pós-escola e também o ano que comecei a caminhar sozinho.
 
 <!-- more -->
 
