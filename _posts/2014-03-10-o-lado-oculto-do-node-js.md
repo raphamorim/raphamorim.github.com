@@ -14,21 +14,23 @@ cada vez mais popular.
 
 <!-- more -->
 
-Antes de começar, entenda que aqui irá apenas ser mostrado os lados negativos do Node.js e de ferramentas ligadas a ele,
-logo se você não concorda com o que foi exposto aqui: comente e apresente a sua opinião :)
-
 Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos (ou possuía,
 dependendo da data que você está lendo esta postagem) assim como a maioria das ferramentas.
 <br><br>
 
 **Object-relational mapping VS SQL**
 
-Um dos fatos sobre o Node, é a sua naturalidade em lidar com bancos não relacionais (NoSQL), algo
-que não se encaixa em todo projeto. Para o Node trabalhar com bancos relacionais com facilidade é
-necessário um conjunto de bons módulos, tais como o Driver e o Query Generator.
+---*"É mais fácil usar NoSQL no Node"*
+
+É provável que você já deve ter escutado algo assim ou parecido. Mas
+isso é uma verdade em relação a ferramenta?
+
+Sim, isto é um fato sobre o Node, ele tem por natureza facilidade em lidar com bancos não relacionais (NoSQL), algo
+que não se encaixa em todo projeto. Para o Node trabalhar com bancos relacionais (MySql e compania) com facilidade é
+necessário um conjunto de bons módulos (tais como o Driver e o Query Generator) ou técnicas.
 
 Porém este incomodo não chega a ser uma completa dor de cabeça, é obstáculo razoavelmente fácil de
-superar, mas existem situações como migração de projetos com bancos relacionais para NodeJs, e isso
+superar, mas existem situações como migração de projetos que usam SQL para NodeJs, e isto
 pode gerar um desconforto dependendo das circunstâncias.
 <br><br>
 
@@ -38,7 +40,7 @@ Prepare-se para entrar em um mundo onde praticamente não há um bom debug, e is
 das vezes se torna algo extremamente cansativo, pois o desenvolvedor deve ir "desbravando" o código
 para caçar um ou mais problemas.
 
-Aprender a debuggar é algo muito importante, embora a isso perca um bocado de relevância com a adoção
+Aprender a debuggar é algo muito importante, embora perca bastante relevância com a adoção
 adequada de testes. Atualmente existe um módulo chamado
 <a href="https://github.com/node-inspector/node-inspector" class="link">Node Inspector</a>
 que permite um debug gráfico através de um navegador baseado em WebKit.
@@ -52,20 +54,15 @@ configurar ambiente de desenvolvimento em node leva mais processos que o normal 
 é sujeito a ocasionar mais conflitos e erros.
 <br><br>
 
-**Apenas 1GB de processamento no server**
-
-O node não deixa permite e nem consegue colocar um buffer maior que um gb por default,
-não chega a ser um problema, é uma limitação da própria linguagem. Por ser single thread e não ser bloqueante,
-ele pode acabar "estourando" tudo. Então o desenvolvedor se vê obrigado a optar por
-estruturas alternativas para o sistema, como processamento orientado de forma circular ou usar alguns
-módulos para tratar casos específicos.
-<br><br>
-
 **Mongoose, WHAT?**
 
 Quem usa o Mongoose conhece bem as suas deficiências, uma delas é o método Update, que não realiza as validações
 definidas no Schema e o desenvolvedor se vê obrigado a procurar outros meios para resolver isso, seja por meio de validações
 realizadas através de middleware ou usando o método Save para sobrescrever o objeto encontrado.
+
+Um dos mantenedores do Mongoose, Aaron Heckmann comenta sobre essa deficiência do módulo:
+<a href="https://github.com/LearnBoost/mongoose/issues/892" class="link">primeira referência</a>,
+<a href="https://groups.google.com/forum/?fromgroups=#!topic/mongoose-orm/8AV6aoJzdiQ" class="link">segunda referência</a>.
 <br><br>
 
 Não curtiu? Discorda? Acha que falta alguma coisa?

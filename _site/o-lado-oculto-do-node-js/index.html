@@ -94,37 +94,37 @@
                     <h2><a href="http://raphamorim.github.io/o-lado-oculto-do-node-js/">O lado oculto do Node.js</a></h2>
                 
 
-                <h3 id='id21'><img alt='NodeJs' src='/assets/images/posts/why-node-js.jpg' /></h3>
+                <h3 id='id230'><img alt='NodeJs' src='/assets/images/posts/why-node-js.jpg' /></h3>
 
 <p>O Node.js é realmente a sensação do momento, por n motivos ele acaba ficando em evidência, chamando a atenção de desenvolvedores, fatores tais como: facilidade e velocidade em desenvolvimento de aplicações REST ou até mesmo pelo próprio JavaScript &#8220;exercendo&#8221; o papel de back-end. Tornando o Node.js cada vez mais popular.</p>
 <!-- more -->
-<p>Antes de começar, entenda que aqui irá apenas ser mostrado os lados negativos do Node.js e de ferramentas ligadas a ele, logo se você não concorda com o que foi exposto aqui: comente e apresente a sua opinião :)</p>
-
 <p>Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos (ou possuía, dependendo da data que você está lendo esta postagem) assim como a maioria das ferramentas. <br /><br /></p>
 
 <p><strong>Object-relational mapping VS SQL</strong></p>
 
-<p>Um dos fatos sobre o Node, é a sua naturalidade em lidar com bancos não relacionais (NoSQL), algo que não se encaixa em todo projeto. Para o Node trabalhar com bancos relacionais com facilidade é necessário um conjunto de bons módulos, tais como o Driver e o Query Generator.</p>
+<p>&#8212;<em>&#8220;É mais fácil usar NoSQL no Node&#8221;</em></p>
 
-<p>Porém este incomodo não chega a ser uma completa dor de cabeça, é obstáculo razoavelmente fácil de superar, mas existem situações como migração de projetos com bancos relacionais para NodeJs, e isso pode gerar um desconforto dependendo das circunstâncias. <br /><br /></p>
+<p>É provável que você já deve ter escutado algo assim ou parecido. Mas isso é uma verdade em relação a ferramenta?</p>
+
+<p>Sim, isto é um fato sobre o Node, ele tem por natureza facilidade em lidar com bancos não relacionais (NoSQL), algo que não se encaixa em todo projeto. Para o Node trabalhar com bancos relacionais (MySql e compania) com facilidade é necessário um conjunto de bons módulos (tais como o Driver e o Query Generator) ou técnicas.</p>
+
+<p>Porém este incomodo não chega a ser uma completa dor de cabeça, é obstáculo razoavelmente fácil de superar, mas existem situações como migração de projetos que usam SQL para NodeJs, e isto pode gerar um desconforto dependendo das circunstâncias. <br /><br /></p>
 
 <p><strong>Debug</strong></p>
 
 <p>Prepare-se para entrar em um mundo onde praticamente não há um bom debug, e isso na maioria das vezes se torna algo extremamente cansativo, pois o desenvolvedor deve ir &#8220;desbravando&#8221; o código para caçar um ou mais problemas.</p>
 
-<p>Aprender a debuggar é algo muito importante, embora a isso perca um bocado de relevância com a adoção adequada de testes. Atualmente existe um módulo chamado <a class='link' href='https://github.com/node-inspector/node-inspector'>Node Inspector</a> que permite um debug gráfico através de um navegador baseado em WebKit. <br /><br /></p>
+<p>Aprender a debuggar é algo muito importante, embora perca bastante relevância com a adoção adequada de testes. Atualmente existe um módulo chamado <a class='link' href='https://github.com/node-inspector/node-inspector'>Node Inspector</a> que permite um debug gráfico através de um navegador baseado em WebKit. <br /><br /></p>
 
 <p><strong>Onde fica o Windows?</strong></p>
 
 <p>Se você usa Windows pode parar de ler este post e fazer o favor de comprar um Mac ou colocar Linux em sua maquina. Mas se você é &#8220;ousado&#8221; e quer continuar usando Windows, saiba que configurar ambiente de desenvolvimento em node leva mais processos que o normal e é sujeito a ocasionar mais conflitos e erros. <br /><br /></p>
 
-<p><strong>Apenas 1GB de processamento no server</strong></p>
-
-<p>O node não deixa permite e nem consegue colocar um buffer maior que um gb por default, não chega a ser um problema, é uma limitação da própria linguagem. Por ser single thread e não ser bloqueante, ele pode acabar &#8220;estourando&#8221; tudo. Então o desenvolvedor se vê obrigado a optar por estruturas alternativas para o sistema, como processamento orientado de forma circular ou usar alguns módulos para tratar casos específicos. <br /><br /></p>
-
 <p><strong>Mongoose, WHAT?</strong></p>
 
-<p>Quem usa o Mongoose conhece bem as suas deficiências, uma delas é o método Update, que não realiza as validações definidas no Schema e o desenvolvedor se vê obrigado a procurar outros meios para resolver isso, seja por meio de validações realizadas através de middleware ou usando o método Save para sobrescrever o objeto encontrado. <br /><br /></p>
+<p>Quem usa o Mongoose conhece bem as suas deficiências, uma delas é o método Update, que não realiza as validações definidas no Schema e o desenvolvedor se vê obrigado a procurar outros meios para resolver isso, seja por meio de validações realizadas através de middleware ou usando o método Save para sobrescrever o objeto encontrado.</p>
+
+<p>Um dos mantenedores do Mongoose, Aaron Heckmann comenta sobre essa deficiência do módulo: <a class='link' href='https://github.com/LearnBoost/mongoose/issues/892'>primeira referência</a>, <a class='link' href='https://groups.google.com/forum/?fromgroups=#!topic/mongoose-orm/8AV6aoJzdiQ'>segunda referência</a>. <br /><br /></p>
 
 <p>Não curtiu? Discorda? Acha que falta alguma coisa? Comente e exponha sua opinião, se puder ajude a compartilhar a palavra ;)</p>
 
