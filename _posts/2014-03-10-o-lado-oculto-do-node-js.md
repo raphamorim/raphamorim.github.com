@@ -18,27 +18,27 @@ Antes de começar, entenda que aqui irá apenas ser mostrado os lados negativos 
 logo se você não concorda com o que foi exposto aqui: comente e apresente a sua opinião :)
 
 Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos (ou possuía,
-depende da data que você está lendo esta postagem) assim como a maioria das ferramentas.
+dependendo da data que você está lendo esta postagem) assim como a maioria das ferramentas.
 <br><br>
 
 **Object-relational mapping VS SQL**
 
-Uma coisa é fato sobre o Node, ele naturalmente lida melhor com bancos não relacionais (NoSQL), algo
+Um dos fatos sobre o Node, é a sua naturalidade em lidar com bancos não relacionais (NoSQL), algo
 que não se encaixa em todo projeto. Para o Node trabalhar com bancos relacionais com facilidade é
 necessário um conjunto de bons módulos, tais como o Driver e o Query Generator.
 
 Porém este incomodo não chega a ser uma completa dor de cabeça, é obstáculo razoavelmente fácil de
 superar, mas existem situações como migração de projetos com bancos relacionais para NodeJs, e isso
-pode gerar um desconforto dependendo das circunstancias.
+pode gerar um desconforto dependendo das circunstâncias.
 <br><br>
 
 **Debug**
 
 Prepare-se para entrar em um mundo onde praticamente não há um bom debug, e isso na maioria
 das vezes se torna algo extremamente cansativo, pois o desenvolvedor deve ir "desbravando" o código
-para caçar o problema.
+para caçar um ou mais problemas.
 
-Ou seja aprenda a debuggar, embora a isso perca um bocado de importância com a adoção
+Aprender a debuggar é algo muito importante, embora a isso perca um bocado de relevância com a adoção
 adequada de testes. Atualmente existe um módulo chamado
 <a href="https://github.com/node-inspector/node-inspector" class="link">Node Inspector</a>
 que permite um debug gráfico através de um navegador baseado em WebKit.
@@ -55,8 +55,8 @@ configurar ambiente de desenvolvimento em node leva mais processos que o normal 
 **Apenas 1GB de processamento no server**
 
 O node não deixa permite e nem consegue colocar um buffer maior que um gb por default,
-não chega a ser um problema, é uma limitação da própria linguagem. Por ser single thread e não ser bloqueante
-, ele pode acabar "estourando" tudo. Então o desenvolvedor se vê obrigado a optar por
+não chega a ser um problema, é uma limitação da própria linguagem. Por ser single thread e não ser bloqueante,
+ele pode acabar "estourando" tudo. Então o desenvolvedor se vê obrigado a optar por
 estruturas alternativas para o sistema, como processamento orientado de forma circular ou usar alguns
 módulos para tratar casos específicos.
 <br><br>
@@ -65,7 +65,7 @@ módulos para tratar casos específicos.
 
 Quem usa o Mongoose conhece bem as suas deficiências, uma delas é o método Update, que não realiza as validações
 definidas no Schema e o desenvolvedor se vê obrigado a procurar outros meios para resolver isso, seja por meio de validações
-realizadas por meio de middleware ou usando o método Save para sobrescrever o objeto encontrado.
+realizadas através de middleware ou usando o método Save para sobrescrever o objeto encontrado.
 <br><br>
 
 Não curtiu? Discorda? Acha que falta alguma coisa?
