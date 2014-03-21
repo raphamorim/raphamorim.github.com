@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+
+  <title>O lado oculto do Node.js &mdash; Raphamorim</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos assim como a maioria das ferramentas." />
+
+  <!-- Facebook -->
+  <meta property="og:title" content="O lado oculto do Node.js &mdash; Raphamorim"/>
+  <meta property="og:site_name" content="Raphael Amorim"/>
+  <meta property="og:url" content="http://raphamorim.com//o-lado-oculto-do-node-js/"/>
+  <meta property="og:image" content="http://raphamorim.com//assets/images/fb-share.jpg"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos assim como a maioria das ferramentas."/>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/base.css" type="text/css" />
+
+  <!-- jQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  <!-- Main -->
+  <script src="/assets/js/main.js"></script>
+</head>
+<body>
+
+
+
+  <nav>
+    <div class='container'>
+      <a href="/" class="bar-link">
+        <div class="bar-logo">Rapha<span>morim</span></div>
+      </a>
+      <div class="bar-menu">
+        <ul id='pagenav'>
+          <a href="/blog">
+            <li>Blog</li>
+          </a>
+          <a href="/about">
+            <li>Sobre</li>
+          </a>
+          <a href="/projects">
+            <li>Projetos</li>
+          </a>
+          <a href="/experiments">
+            <li>Experimentos</li>
+          </a>
+          <a href="/talks">
+            <li>Palestras</li>
+          </a>
+       </ul>
+    </div>
+    <div class="bar-menu-optional">
+      <a href="#">
+        <img src="/assets/images/icon-menu-64.png" />
+      </a>
+    </div>
+  </div>
+  <div id="bar-mobile-menu">
+    <ul>
+    <a href="/blog">
+      <li>Blog</li>
+    </a>
+    <a href="/about">
+      <li>Sobre</li>
+    </a>
+    <a href="/projects">
+      <li>Projetos</li>
+    </a>
+    <a href="/experiments">
+      <li>Experimentos</li>
+    </a>
+    <a href="/talks">
+      <li>Palestras</li>
+    </a>
+  </ul>
+  </div>
+</nav>
+
+
+  <div class='main'>
+
+    <div class="container">
+        <ul id="posts">
+            <li class="post post-page">
+                
+                    <h2><a href="http://raphamorim.github.io/o-lado-oculto-do-node-js/">O lado oculto do Node.js</a></h2>
+                
+
+                <h3 id='id54'><img alt='NodeJs' src='/assets/images/posts/why-node-js.jpg' /></h3>
+
+<p>O Node.js é realmente a sensação do momento, por n motivos ele acaba ficando em evidência, chamando a atenção de desenvolvedores, fatores tais como: facilidade e velocidade em desenvolvimento de aplicações REST ou até mesmo pelo próprio JavaScript &#8220;exercendo&#8221; o papel de back-end. Tornando o Node.js cada vez mais popular.</p>
+<!-- more -->
+<p>Antes de começar, entenda que aqui irá apenas ser mostrado os lados negativos do Node.js e de ferramentas ligadas a ele, logo se você não concorda com o que foi exposto aqui: comente e apresente a sua opinião :)</p>
+
+<p>Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos (ou possuía, depende da data que você está lendo esta postagem) assim como a maioria das ferramentas. <br /><br /></p>
+
+<p><strong>Object-relational mapping VS SQL</strong></p>
+
+<p>Uma coisa é fato sobre o Node, ele naturalmente lida melhor com bancos não relacionais (NoSQL), algo que não se encaixa em todo projeto. Para o Node trabalhar com bancos relacionais com facilidade é necessário um conjunto de bons módulos, tais como o Driver e o Query Generator.</p>
+
+<p>Porém este incomodo não chega a ser uma completa dor de cabeça, é obstáculo razoavelmente fácil de superar, mas existem situações como migração de projetos com bancos relacionais para NodeJs, e isso pode gerar um desconforto dependendo das circunstancias. <br /><br /></p>
+
+<p><strong>Debug</strong></p>
+
+<p>Prepare-se para entrar em um mundo onde praticamente não há um bom debug, e isso na maioria das vezes se torna algo extremamente cansativo, pois o desenvolvedor deve ir &#8220;desbravando&#8221; o código para caçar o problema.</p>
+
+<p>Ou seja aprenda a debuggar, embora a isso perca um bocado de importância com a adoção adequada de testes. Atualmente existe um módulo chamado <a class='link' href='https://github.com/node-inspector/node-inspector'>Node Inspector</a> que permite um debug gráfico através de um navegador baseado em WebKit. <br /><br /></p>
+
+<p><strong>Onde fica o Windows?</strong></p>
+
+<p>Se você usa Windows pode parar de ler este post e fazer o favor de comprar um Mac ou colocar Linux em sua maquina. Mas se você é &#8220;ousado&#8221; e quer continuar usando Windows, saiba que configurar ambiente de desenvolvimento em node leva mais processos que o normal e é sujeito a ocasionar mais conflitos e erros. <br /><br /></p>
+
+<p><strong>Apenas 1GB de processamento no server</strong></p>
+
+<p>O node não deixa permite e nem consegue colocar um buffer maior que um gb por default, não chega a ser um problema, é uma limitação da própria linguagem. Por ser single thread e não ser bloqueante , ele pode acabar &#8220;estourando&#8221; tudo. Então o desenvolvedor se vê obrigado a optar por estruturas alternativas para o sistema, como processamento orientado de forma circular ou usar alguns módulos para tratar casos específicos. <br /><br /></p>
+
+<p><strong>Mongoose, WHAT?</strong></p>
+
+<p>Quem usa o Mongoose conhece bem as suas deficiências, uma delas é o método Update, que não realiza as validações definidas no Schema e o desenvolvedor se vê obrigado a procurar outros meios para resolver isso, seja por meio de validações realizadas por meio de middleware ou usando o método Save para sobrescrever o objeto encontrado. <br /><br /></p>
+
+<p>Não curtiu? Discorda? Acha que falta alguma coisa? Comente e exponha sua opinião, se puder ajude a compartilhar a palavra ;)</p>
+
+                <a rel="author" style="visibility: hidden;" href="https://profiles.google.com/116813648719577938564?rel=author">Raphael Amorim</a>
+
+                <div class="post-comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'raphamorim',
+      disqus_url = '';
+
+  
+  disqus_url = "http://raphamorim.github.io/o-lado-oculto-do-node-js/";
+  
+
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+                </div>
+            </li>
+        </ul>
+
+    </div> <!-- /content -->
+  </div> <!-- /container -->
+
+</body>
+</html>
