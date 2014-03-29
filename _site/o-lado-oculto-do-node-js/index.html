@@ -12,8 +12,7 @@
   <!-- Facebook -->
   <meta property="og:title" content="O lado oculto do Node.js &mdash; Raphamorim"/>
   <meta property="og:site_name" content="Raphael Amorim"/>
-  <meta property="og:url" content="http://raphamorim.com//o-lado-oculto-do-node-js/"/>
-  <meta property="og:image" content="http://raphamorim.com//assets/images/fb-share.jpg"/>
+  <meta property="og:image" content="http://raphamorim.com/assets/images/fb-share.jpg"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos assim como a maioria das ferramentas."/>
 
@@ -22,15 +21,8 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/base.css" type="text/css" />
-
-  <!-- jQuery -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-  <!-- Main -->
-  <script src="/assets/js/main.js"></script>
 </head>
 <body>
-
 
 
   <nav>
@@ -94,15 +86,15 @@
                     <h2><a href="http://raphamorim.github.io/o-lado-oculto-do-node-js/">O lado oculto do Node.js</a></h2>
                 
 
-                <h3 id='id230'><img alt='NodeJs' src='/assets/images/posts/why-node-js.jpg' /></h3>
+                <h3 id=""><img alt='NodeJs' src='/assets/images/posts/why-node-js.jpg' /></h3>
 
-<p>O Node.js é realmente a sensação do momento, por n motivos ele acaba ficando em evidência, chamando a atenção de desenvolvedores, fatores tais como: facilidade e velocidade em desenvolvimento de aplicações REST ou até mesmo pelo próprio JavaScript &#8220;exercendo&#8221; o papel de back-end. Tornando o Node.js cada vez mais popular.</p>
+<p>O Node.js é realmente a sensação do momento, por n motivos ele acaba ficando em evidência, chamando a atenção de desenvolvedores, fatores tais como: facilidade e velocidade em desenvolvimento de aplicações REST ou até mesmo pelo próprio JavaScript “exercendo” o papel de back-end. Tornando o Node.js cada vez mais popular.</p>
 <!-- more -->
 <p>Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos (ou possuía, dependendo da data que você está lendo esta postagem) assim como a maioria das ferramentas. <br /><br /></p>
 
 <p><strong>Object-relational mapping VS SQL</strong></p>
 
-<p>&#8212;<em>&#8220;É mais fácil usar NoSQL no Node&#8221;</em></p>
+<p><em>“É mais fácil usar NoSQL no Node”</em></p>
 
 <p>É provável que você já deve ter escutado algo assim ou parecido. Mas isso é uma verdade em relação a ferramenta?</p>
 
@@ -112,13 +104,13 @@
 
 <p><strong>Debug</strong></p>
 
-<p>Prepare-se para entrar em um mundo onde praticamente não há um bom debug, e isso na maioria das vezes se torna algo extremamente cansativo, pois o desenvolvedor deve ir &#8220;desbravando&#8221; o código para caçar um ou mais problemas.</p>
+<p>Prepare-se para entrar em um mundo onde praticamente não há um bom debug, e isso na maioria das vezes se torna algo extremamente cansativo, pois o desenvolvedor deve ir “desbravando” o código para caçar um ou mais problemas.</p>
 
 <p>Aprender a debuggar é algo muito importante, embora perca bastante relevância com a adoção adequada de testes. Atualmente existe um módulo chamado <a class='link' href='https://github.com/node-inspector/node-inspector'>Node Inspector</a> que permite um debug gráfico através de um navegador baseado em WebKit. <br /><br /></p>
 
 <p><strong>Onde fica o Windows?</strong></p>
 
-<p>Se você usa Windows pode parar de ler este post e fazer o favor de comprar um Mac ou colocar Linux em sua maquina. Mas se você é &#8220;ousado&#8221; e quer continuar usando Windows, saiba que configurar ambiente de desenvolvimento em node leva mais processos que o normal e é sujeito a ocasionar mais conflitos e erros. <br /><br /></p>
+<p>Se você usa Windows pode parar de ler este post e fazer o favor de comprar um Mac ou colocar Linux em sua maquina. Mas se você é “ousado” e quer continuar usando Windows, saiba que configurar ambiente de desenvolvimento em node leva mais processos que o normal e é sujeito a ocasionar mais conflitos e erros. <br /><br /></p>
 
 <p><strong>Mongoose, WHAT?</strong></p>
 
@@ -153,5 +145,27 @@
     </div> <!-- /content -->
   </div> <!-- /container -->
 
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Main -->
+<script src="/assets/js/main.js"></script>
+<!-- Scroll -->
+<script src="/assets/js/infinitescroll.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $('#posts').infinitescroll({
+      navSelector   : "p.pagination",
+          // selector for the paged navigation (it will be hidden)
+      nextSelector  : "p.pagination a.older",
+          // selector for the NEXT link (to page 2)
+      itemSelector  : ".container ul#posts li.post",
+          // selector for all items you'll retrieve
+      loading: {
+          finishedMsg: "<em>That's all folks!.</em>",
+          img : "/assets/images/load-icon.gif",
+          msgText: "<em>Carregando...</em>",
+          speed: 'slow'
+      }
+  });
+</script>
 </body>
 </html>

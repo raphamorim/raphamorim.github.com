@@ -12,8 +12,7 @@
   <!-- Facebook -->
   <meta property="og:title" content="Projetos &mdash; Raphamorim"/>
   <meta property="og:site_name" content="Raphael Amorim"/>
-  <meta property="og:url" content="http://raphamorim.com//projects/index.html"/>
-  <meta property="og:image" content="http://raphamorim.com//assets/images/fb-share.jpg"/>
+  <meta property="og:image" content="http://raphamorim.com/assets/images/fb-share.jpg"/>
   <meta property="og:type" content="blog"/>
   <meta property="og:description" content="Todos os meus projetos em status de andamento ou finalizado."/>
 
@@ -22,15 +21,8 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/base.css" type="text/css" />
-
-  <!-- jQuery -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-  <!-- Main -->
-  <script src="/assets/js/main.js"></script>
 </head>
 <body class="projects">
-
 
 
   <nav>
@@ -88,7 +80,7 @@
   <div class='main'>
     <div class="container">
       <div class="dialog">
-        <h2 id='projetos'>Projetos</h2>
+        <h2 id="projetos">Projetos</h2>
 <ul id='exp'>
     <li>
        <h3><a href='http://www.windowsphone.com/pt-br/store/app/tabela-peri%C3%B3dica/c7774ed0-9460-4904-8bec-a71f5d76da40'>Tabela Periódica para Windows Phone</a></h3>
@@ -122,5 +114,27 @@
     </div>
   </div>
 
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Main -->
+<script src="/assets/js/main.js"></script>
+<!-- Scroll -->
+<script src="/assets/js/infinitescroll.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $('#posts').infinitescroll({
+      navSelector   : "p.pagination",
+          // selector for the paged navigation (it will be hidden)
+      nextSelector  : "p.pagination a.older",
+          // selector for the NEXT link (to page 2)
+      itemSelector  : ".container ul#posts li.post",
+          // selector for all items you'll retrieve
+      loading: {
+          finishedMsg: "<em>That's all folks!.</em>",
+          img : "/assets/images/load-icon.gif",
+          msgText: "<em>Carregando...</em>",
+          speed: 'slow'
+      }
+  });
+</script>
 </body>
 </html>

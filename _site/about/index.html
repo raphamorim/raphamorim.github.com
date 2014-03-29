@@ -12,8 +12,7 @@
   <!-- Facebook -->
   <meta property="og:title" content="Sobre mim &mdash; Raphamorim"/>
   <meta property="og:site_name" content="Raphael Amorim"/>
-  <meta property="og:url" content="http://raphamorim.com//about/index.html"/>
-  <meta property="og:image" content="http://raphamorim.com//assets/images/fb-share.jpg"/>
+  <meta property="og:image" content="http://raphamorim.com/assets/images/fb-share.jpg"/>
   <meta property="og:type" content="blog"/>
   <meta property="og:description" content="HTML5, CSS3, JavaScript and other front-end stuff."/>
 
@@ -22,15 +21,8 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/base.css" type="text/css" />
-
-  <!-- jQuery -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-  <!-- Main -->
-  <script src="/assets/js/main.js"></script>
 </head>
 <body class="page">
-
 
 
   <nav>
@@ -88,7 +80,7 @@
 	<div class='main'>
 		<div class="container">
 			<div class="about">
-				<h3 id='id231'><img src='/assets/images/rapha.jpg' /></h3>
+				<h3 id=""><img src='/assets/images/rapha.jpg' /></h3>
 
 <p>Hugo <strong>Raphael</strong> Vianna <strong>Amorim</strong> ou apenas Raphael, é um desenvolvedor apaixonado pelo que faz. Tem 18 anos, vive e trabalha no Rio de Janeiro com um time incrível de desenvolvedores no <strong>Videolog</strong>.</p>
 
@@ -106,5 +98,27 @@
 		</div>
 	</div>
 
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Main -->
+<script src="/assets/js/main.js"></script>
+<!-- Scroll -->
+<script src="/assets/js/infinitescroll.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $('#posts').infinitescroll({
+      navSelector   : "p.pagination",
+          // selector for the paged navigation (it will be hidden)
+      nextSelector  : "p.pagination a.older",
+          // selector for the NEXT link (to page 2)
+      itemSelector  : ".container ul#posts li.post",
+          // selector for all items you'll retrieve
+      loading: {
+          finishedMsg: "<em>That's all folks!.</em>",
+          img : "/assets/images/load-icon.gif",
+          msgText: "<em>Carregando...</em>",
+          speed: 'slow'
+      }
+  });
+</script>
 </body>
 </html>

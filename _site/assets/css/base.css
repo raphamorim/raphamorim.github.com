@@ -233,23 +233,47 @@ footer .container, nav .container { min-height: 100px; }
   padding: 25px;
 }
 
-.load-more {
+#infscr-loading {
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+.pagination {
   width: 100%;
   height: 55px;
-  cursor: pointer;
   text-align: center;
   margin: -20px 0px 30px 0px;
-  background: #666;
-  color: #8CC84B;
-  font-weight: bold;
   padding: 18px;
+  color: #5a5a5a;
+}
+
+.pagination .newer, .pagination .older {
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 15px;
   transition: all 600ms ease;
 }
 
-.load-more:hover {
-  background: #333;
+.pagination a {cursor: pointer;}
+.pagination .older {
+  color: #FFF;
+  background: #8CC84B;
+  margin-left: 15px;
 }
 
+.pagination .newer {
+  color: #8CC84B;
+  background: #666;
+  margin-right: 10px;
+}
+
+.pagination a .newer:hover, .pagination a .older:hover {
+  border-radius: 2px;
+}
+
+.pagination span.newer, .pagination span.older {
+  opacity: .5;
+}
 
 /* About */
 .about {
@@ -295,6 +319,7 @@ footer .container, nav .container { min-height: 100px; }
   padding: 45px 0px 25px 0px;
   padding-left: 1000px;
   opacity: 0;
+  height: 0px;
   margin-top: -50px;
 }
 

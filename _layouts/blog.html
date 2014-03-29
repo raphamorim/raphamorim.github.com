@@ -32,13 +32,27 @@
         			{% else %}
         					{{ post.content }}
         			{% endif %}
-
+            </li>
 		  			{% endunless %}
       		{% endfor %}
-       <li class="load-more">
-				Ver mais postagens
-		 </li>
 
-     <p class="pagination"></p>
+     <p class="pagination">
+     {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+          <a class="newer" href="/blog">Anterior</a>
+        {% else %}
+          <a class="newer" href="/blog/page{{paginator.previous_page}}">Anterior</a>
+        {% endif %}
+     {% else %}
+        <span class="newer">Anterior</span>
+     {% endif %}
+
+     <span>Página <strong>{{paginator.page}}</strong> de <strong>{{paginator.total_pages}}</strong></span>
+     {% if paginator.next_page %}
+       <a class="older" href="/blog/page{{paginator.next_page}}">Próxima</a>
+     {% else %}
+       <span class="older">Próxima</span>
+     {% endif %}
+     </p>
 
 {% include footer.html %}

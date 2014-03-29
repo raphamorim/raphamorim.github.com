@@ -21,16 +21,18 @@ $(function() {
  	  $('.bar-menu-optional')
  		  .click(function(){
  			if($("#bar-mobile-menu").css("opacity") <= 0) {
+         $("#bar-mobile-menu").css('height', '415px');
  				$("#bar-mobile-menu").animate({
              opacity: 1,
              paddingLeft: '0px'
-         }, 800);
+         }, 600);
  			}
  			else {
  				$("#bar-mobile-menu").animate({
            opacity: 0,
            paddingLeft: '1000px'
-         }, 800);
+         }, 600);
+         $("#bar-mobile-menu").css('height', '0px');
  			}
  		});
 

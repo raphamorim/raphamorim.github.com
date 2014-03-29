@@ -1,2 +1,24 @@
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Main -->
+<script src="{{ site.baseurl }}assets/js/main.js"></script>
+<!-- Scroll -->
+<script src="{{ site.baseurl }}assets/js/infinitescroll.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $('#posts').infinitescroll({
+      navSelector   : "p.pagination",
+          // selector for the paged navigation (it will be hidden)
+      nextSelector  : "p.pagination a.older",
+          // selector for the NEXT link (to page 2)
+      itemSelector  : ".container ul#posts li.post",
+          // selector for all items you'll retrieve
+      loading: {
+          finishedMsg: "<em>That's all folks!.</em>",
+          img : "{{ site.baseurl }}assets/images/load-icon.gif",
+          msgText: "<em>Carregando...</em>",
+          speed: 'slow'
+      }
+  });
+</script>
 </body>
 </html>
