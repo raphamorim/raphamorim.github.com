@@ -22,7 +22,7 @@ dependendo da data que você está lendo esta postagem) assim como a maioria das
 
 ---*"É mais fácil usar NoSQL no Node"*
 
-É provável que você já deve ter escutado algo assim ou parecido. Mas
+É provável que você tenha escutado algo assim ou parecido. Mas
 isso é uma verdade em relação a ferramenta?
 
 Sim, isto é um fato sobre o Node, ele tem por natureza facilidade em lidar com bancos não relacionais (NoSQL), algo
@@ -30,7 +30,7 @@ que não se encaixa em todo projeto. Para o Node trabalhar com bancos relacionai
 necessário um conjunto de bons módulos (tais como o Driver e o Query Generator) ou técnicas.
 
 Porém este incomodo não chega a ser uma completa dor de cabeça, é obstáculo razoavelmente fácil de
-superar, mas existem situações como migração de projetos que usam SQL para NodeJs, e isto
+superar, mas existem situações como migração de projetos que usam SQL para Node, e isto
 pode gerar um desconforto dependendo das circunstâncias.
 <br><br>
 
