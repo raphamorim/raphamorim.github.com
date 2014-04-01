@@ -312,14 +312,15 @@ footer .container, nav .container { min-height: 100px; }
 
 /* Mobile and Tablets */
 #bar-mobile-menu {
-  position: relative;
+  position: absolute;
   z-index: 0;
   width: 100%;
   background: #41494f;
-  padding: 45px 0px 25px 0px;
+  padding: 45px 0px 5px 0px;
   opacity: 0;
   height: 0px;
   margin-top: -50px;
+  overflow: hidden;
 }
 
 #bar-mobile-menu li {
