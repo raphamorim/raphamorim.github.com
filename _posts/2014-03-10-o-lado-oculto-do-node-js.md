@@ -6,7 +6,7 @@ link: 'http://raphamorim.github.io/o-lado-oculto-do-node-js/'
 language: 'pt-br'
 ---
 
-###<img src="/assets/images/posts/why-node-js.jpg" alt="NodeJs">
+####<img src="/assets/images/posts/why-node-js.jpg" alt="NodeJs">
 O Node.js é realmente a sensação do momento, por n motivos ele acaba ficando em evidência,
 chamando a atenção de desenvolvedores, fatores tais como: facilidade e velocidade em desenvolvimento de aplicações
 REST ou até mesmo pelo próprio JavaScript exercendo o papel de back-end. Tornando o Node.js
@@ -16,9 +16,8 @@ cada vez mais popular.
 
 Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos (ou possuía,
 dependendo da data que você está lendo esta postagem) assim como a maioria das ferramentas.
-<br><br>
 
-**Object-relational mapping VS SQL**
+###Object-relational mapping VS SQL
 
 ---*"É mais fácil usar NoSQL no Node"*
 
@@ -32,9 +31,8 @@ necessário um conjunto de bons módulos (tais como o Driver e o Query Generator
 Porém este incomodo não chega a ser uma completa dor de cabeça, é obstáculo razoavelmente fácil de
 superar, mas existem situações como migração de projetos que usam SQL para Node, e isto
 pode gerar um desconforto dependendo das circunstâncias.
-<br><br>
 
-**Debug**
+###Debug
 
 Prepare-se para entrar em um mundo onde praticamente não há um bom debug, e isso na maioria
 das vezes se torna algo extremamente cansativo, pois o desenvolvedor deve ir "desbravando" o código
@@ -44,17 +42,15 @@ Aprender a debuggar é algo muito importante, embora perca bastante relevância 
 adequada de testes. Atualmente existe um módulo chamado
 <a href="https://github.com/node-inspector/node-inspector" class="link">Node Inspector</a>
 que permite um debug gráfico através de um navegador baseado em WebKit.
-<br><br>
 
-**Onde fica o Windows?**
+###Onde fica o Windows?
 
 Se você usa Windows pode parar de ler este post e fazer o favor de comprar um Mac ou
 colocar Linux em sua maquina. Mas se você é "ousado" e quer continuar usando Windows, saiba que
 configurar ambiente de desenvolvimento em node leva mais processos que o normal e
 é sujeito a ocasionar mais conflitos e erros.
-<br><br>
 
-**Mongoose, WHAT?**
+###Mongoose, WHAT
 
 Quem usa o Mongoose conhece bem as suas deficiências, uma delas é o método Update, que não realiza as validações
 definidas no Schema e o desenvolvedor se vê obrigado a procurar outros meios para resolver isso, seja por meio de validações

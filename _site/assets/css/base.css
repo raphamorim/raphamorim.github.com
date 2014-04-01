@@ -54,6 +54,15 @@ nav {
   z-index: 2;
 }
 
+h3 {
+  margin: 40px 20px 0px 20px;
+  font-size: 22px;
+}
+
+#exp h3 {
+  margin: 0px;
+}
+
 .main {
   position: relative;
   width: 100%;

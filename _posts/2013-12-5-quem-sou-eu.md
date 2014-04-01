@@ -6,7 +6,7 @@ link: 'http://raphamorim.github.io/quem-sou-eu/'
 language: 'pt-br'
 ---
 
-###<img src="/assets/images/posts/me.jpg" alt="Euzinho" />
+####<img src="/assets/images/posts/me.jpg" alt="Euzinho" />
 
 Meu nome é ***Raphael Amorim*** e eu sou o cara da imagem acima (gatão né). Sou desenvolvedor web há menos de um ano e do nada decidi criar um blog onde eu pudesse compartilhar um pouco do meu conhecimento (quase nada) e os meus estudos.
 
