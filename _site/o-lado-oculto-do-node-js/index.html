@@ -86,39 +86,64 @@
                     <h2><a href="http://raphamorim.github.io/o-lado-oculto-do-node-js/">O lado oculto do Node.js</a></h2>
                 
 
-                <h4 id=""><img alt='NodeJs' src='/assets/images/posts/why-node-js.jpg' /></h4>
+                <h4 id="img-srcassetsimagespostswhy-node-jsjpg-altnodejs"><img src="/assets/images/posts/why-node-js.jpg" alt="NodeJs" /></h4>
+<p>O Node.js é realmente a sensação do momento, por n motivos ele acaba ficando em evidência,
+chamando a atenção de desenvolvedores, fatores tais como: facilidade e velocidade em desenvolvimento de aplicações
+REST ou até mesmo pelo próprio JavaScript exercendo o papel de back-end. Tornando o Node.js
+cada vez mais popular.</p>
 
-<p>O Node.js é realmente a sensação do momento, por n motivos ele acaba ficando em evidência, chamando a atenção de desenvolvedores, fatores tais como: facilidade e velocidade em desenvolvimento de aplicações REST ou até mesmo pelo próprio JavaScript exercendo o papel de back-end. Tornando o Node.js cada vez mais popular.</p>
 <!-- more -->
-<p>Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos (ou possuía, dependendo da data que você está lendo esta postagem) assim como a maioria das ferramentas.</p>
 
-<h3 id="objectrelational_mapping_vs_sql">Object-relational mapping VS SQL</h3>
+<p>Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos (ou possuía,
+dependendo da data que você está lendo esta postagem) assim como a maioria das ferramentas.</p>
 
-<p><em>“É mais fácil usar NoSQL no Node”</em></p>
+<h3 id="object-relational-mapping-vs-sql">Object-relational mapping VS SQL</h3>
 
-<p>É provável que você tenha escutado algo assim ou parecido. Mas isso é uma verdade em relação a ferramenta?</p>
+<p>—<em>“É mais fácil usar NoSQL no Node”</em></p>
 
-<p>Sim, isto é um fato sobre o Node, ele tem por natureza facilidade em lidar com bancos não relacionais (NoSQL), algo que não se encaixa em todo projeto. Para o Node trabalhar com bancos relacionais (MySql e compania) com facilidade é necessário um conjunto de bons módulos (tais como o Driver e o Query Generator) ou técnicas.</p>
+<p>É provável que você tenha escutado algo assim ou parecido. Mas
+isso é uma verdade em relação a ferramenta?</p>
 
-<p>Porém este incomodo não chega a ser uma completa dor de cabeça, é obstáculo razoavelmente fácil de superar, mas existem situações como migração de projetos que usam SQL para Node, e isto pode gerar um desconforto dependendo das circunstâncias.</p>
+<p>Sim, isto é um fato sobre o Node, ele tem por natureza facilidade em lidar com bancos não relacionais (NoSQL), algo
+que não se encaixa em todo projeto. Para o Node trabalhar com bancos relacionais (MySql e compania) com facilidade é
+necessário um conjunto de bons módulos (tais como o Driver e o Query Generator) ou técnicas.</p>
+
+<p>Porém este incomodo não chega a ser uma completa dor de cabeça, é obstáculo razoavelmente fácil de
+superar, mas existem situações como migração de projetos que usam SQL para Node, e isto
+pode gerar um desconforto dependendo das circunstâncias.</p>
 
 <h3 id="debug">Debug</h3>
 
-<p>Prepare-se para entrar em um mundo onde praticamente não há um bom debug, e isso na maioria das vezes se torna algo extremamente cansativo, pois o desenvolvedor deve ir “desbravando” o código para caçar um ou mais problemas.</p>
+<p>Prepare-se para entrar em um mundo onde praticamente não há um bom debug, e isso na maioria
+das vezes se torna algo extremamente cansativo, pois o desenvolvedor deve ir “desbravando” o código
+para caçar um ou mais problemas.</p>
 
-<p>Aprender a debuggar é algo muito importante, embora perca bastante relevância com a adoção adequada de testes. Atualmente existe um módulo chamado <a class='link' href='https://github.com/node-inspector/node-inspector'>Node Inspector</a> que permite um debug gráfico através de um navegador baseado em WebKit.</p>
+<p>Aprender a debuggar é algo muito importante, embora perca bastante relevância com a adoção
+adequada de testes. Atualmente existe um módulo chamado
+<a href="https://github.com/node-inspector/node-inspector" class="link">Node Inspector</a>
+que permite um debug gráfico através de um navegador baseado em WebKit.</p>
 
-<h3 id="onde_fica_o_windows">Onde fica o Windows?</h3>
+<h3 id="onde-fica-o-windows">Onde fica o Windows?</h3>
 
-<p>Se você usa Windows pode parar de ler este post e fazer o favor de comprar um Mac ou colocar Linux em sua maquina. Mas se você é “ousado” e quer continuar usando Windows, saiba que configurar ambiente de desenvolvimento em node leva mais processos que o normal e é sujeito a ocasionar mais conflitos e erros.</p>
+<p>Se você usa Windows pode parar de ler este post e fazer o favor de comprar um Mac ou
+colocar Linux em sua maquina. Mas se você é “ousado” e quer continuar usando Windows, saiba que
+configurar ambiente de desenvolvimento em node leva mais processos que o normal e
+é sujeito a ocasionar mais conflitos e erros.</p>
 
-<h3 id="mongoose_what">Mongoose, WHAT</h3>
+<h3 id="mongoose-what">Mongoose, WHAT</h3>
 
-<p>Quem usa o Mongoose conhece bem as suas deficiências, uma delas é o método Update, que não realiza as validações definidas no Schema e o desenvolvedor se vê obrigado a procurar outros meios para resolver isso, seja por meio de validações realizadas através de middleware ou usando o método Save para sobrescrever o objeto encontrado.</p>
+<p>Quem usa o Mongoose conhece bem as suas deficiências, uma delas é o método Update, que não realiza as validações
+definidas no Schema e o desenvolvedor se vê obrigado a procurar outros meios para resolver isso, seja por meio de validações
+realizadas através de middleware ou usando o método Save para sobrescrever o objeto encontrado.</p>
 
-<p>Um dos mantenedores do Mongoose, Aaron Heckmann comenta sobre essa deficiência do módulo: <a class='link' href='https://github.com/LearnBoost/mongoose/issues/892'>primeira referência</a>, <a class='link' href='https://groups.google.com/forum/?fromgroups=#!topic/mongoose-orm/8AV6aoJzdiQ'>segunda referência</a>. <br /><br /></p>
+<p>Um dos mantenedores do Mongoose, Aaron Heckmann comenta sobre essa deficiência do módulo:
+<a href="https://github.com/LearnBoost/mongoose/issues/892" class="link">primeira referência</a>,
+<a href="https://groups.google.com/forum/?fromgroups=#!topic/mongoose-orm/8AV6aoJzdiQ" class="link">segunda referência</a>.
+<br /><br /></p>
 
-<p>Não curtiu? Discorda? Acha que falta alguma coisa? Comente e exponha sua opinião, se puder ajude a compartilhar a palavra ;)</p>
+<p>Não curtiu? Discorda? Acha que falta alguma coisa?
+Comente e exponha sua opinião, se puder ajude a compartilhar a palavra ;)</p>
+
 
                 <a rel="author" style="visibility: hidden;" href="https://profiles.google.com/116813648719577938564?rel=author">Raphael Amorim</a>
 
