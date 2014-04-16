@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Projetos
+title: Projects
 class: projects
-description: Todos os meus projetos em status de andamento ou finalizado.
+description: All my projects in progress or completed status.
 ---
 
-##Projetos
+##Projects
 
 <ul id="exp">
     <li>

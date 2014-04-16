@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Palestras
+title: Talks
 class: talks
-description: Palestras?? WTF??
+description: Upcoming lectures and previous talks.
 ---
 
-##Palestras
+##Talks
 
 <ul id="exp">
   <li>

@@ -4,16 +4,16 @@ class: home
 language: 'pt-br'
 ---
 
-#Olá!
+#Hi pal!
 
-Como vai? Meu nome é **Raphael Amorim**.
+How are you? My name is **Raphael Amorim**.
 
-Sou desenvolvedor web.
+I'm a web developer.
 
-Trabalho no **Videolog**, Rio de Janeiro (Brasil).
+Work at **Videolog**, Rio de Janeiro (Brazil).
 
-Fundador do **Raphamundi**.
+I am 18 and am addicted to coffee.
 
-Tenho 18 anos e sou viciado em café.
+Currently study System Analysis and Development.
 
-Atualmente estudo ADS no **Infnet**.
+Works on tools like MapJs.

@@ -32,6 +32,7 @@ dl:after {
 }
 hr {display: none;}
 p {line-height: 1.5em;}
+b, strong {font-weight: bold;}
 
 body {
   font: normal normal 20px/1.2em Helvetica, arial, sans-serif;

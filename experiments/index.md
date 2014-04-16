@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Experimentos
+title: Experiments
 class: experiments
-description: Aqui é onde coloco todos os meus devaneios e loucuras com código ou seja lá o que.
+description: Here is where I put all my madness in code or whatever thing.
 ---
 
-##Experimentos
+##Experiments
 
 <ul id="exp">
 	<li>
