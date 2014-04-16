@@ -2,7 +2,7 @@
 layout: post
 title: 'My "Sublime Text" Way of Life'
 description: ""
-link: 'http://raphamorim.com/sublime-text/'
+link: 'http://raphamorim.com/sublime-text-3/'
 language: 'en'
 ---
 
