@@ -1,18 +1,18 @@
 ---
 layout: page
-title: Sobre mim
+title: About me
 class: page
 description: HTML5, CSS3, JavaScript and other front-end stuff.
 ---
 
 ###<img src='/assets/images/rapha.jpg' />
 
-Hugo **Raphael** Vianna **Amorim** é um desenvolvedor
-apaixonado pelo que faz. Tem 18 anos, vive e trabalha no Rio de Janeiro com um time incrível de desenvolvedores no **Videolog**.
+**Raphael Amorim** is a developer who love what you do.
 
-Viciado em café e JavaScript, mas adora mesmo é programar, seja em qualquer linguagem. Entusiasta em aplicações REST e NodeJS. Busca um mundo mais Full-Stack.
+He has 18 years, lives and works in Rio de Janeiro with an incredible team of developers in **Videolog**. Addicted to coffee and JavaScript, loves to program in any language.
 
-Hoje em dia estuda análise e desenvolvimento de sistemas no instituto **Infnet**.
+Enthusiast in REST applications and NodeJS. Searches a world more Full-Stack.
+Currently studies System analysis and development at institute **Infnet**.
 
 <p class="social-links">
 	<a href="https://github.com/raphamorim" target="_blank">Github</a> •
