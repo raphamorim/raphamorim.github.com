@@ -3,13 +3,13 @@ baseurl:     /
 url: http://raphamorim.com/
 
 name: Raphamorim
-description: Apaixonado por desenvolvimento Mobile e Front-End. Adora brincar e aprender coisas novas. Chato por natureza. Crítico por gosto. Ama códigos e café.
+description: Raphael Amorim is a developer who love what you do.
 url: http://raphamorim.com/
 domain: raphamorim.com
 commentlinks: true
 twitter-username: _raphamorim
 feedburnerurl: http://feeds.feedburner.com/raphamorim
-google-analytics-tracking-id: UA-4114546-2
+google-analytics-tracking-id: UA-49746836-1
 
 source:      .
 destination: ./_site
