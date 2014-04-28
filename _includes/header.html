@@ -1,19 +1,12 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-
   <title>{% if page.title %}{{ page.title }} &mdash;{% endif %} {{ site.name }}</title>
 
   <!-- Meta -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
-
-  <!-- Facebook -->
-  <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}"/>
-  <meta property="og:site_name" content="Raphael Amorim"/>
-  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}blog{% endif %}"/>
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"/>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{ site.baseurl }}assets/images/favicon.ico" type="image/x-icon" />

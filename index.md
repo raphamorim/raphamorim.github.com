@@ -1,7 +1,7 @@
 ---
 layout: home
 class: home
-language: 'pt-br'
+language: 'en'
 ---
 
 #Hi pal!
