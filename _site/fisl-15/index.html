@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Python, Debian, Arduino e outras coisas • FISL 15 &mdash; Raphamorim</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="No dia 7 de maio de 2014, começou o FISL de edição número 15 dentro da PUCRS. E para ser sincero, começou também o meu primeiro FISL." />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/base.min.css" type="text/css" />
+</head>
+<body>
+
+
+  <nav>
+    <div class='container'>
+      <a href="/" class="bar-link">
+        <div class="bar-logo">Rapha<span>morim</span></div>
+      </a>
+      <div class="bar-menu">
+        <ul id='pagenav'>
+          <a href="/blog">
+            <li>Blog</li>
+          </a>
+          <a href="/about">
+            <li>About</li>
+          </a>
+          <a href="/projects">
+            <li>Projects</li>
+          </a>
+          <a href="/experiments">
+            <li>Experiments</li>
+          </a>
+          <a href="/talks">
+            <li>Talks</li>
+          </a>
+       </ul>
+    </div>
+    <div class="bar-menu-optional">
+      <a href="#">
+        <img src="/assets/images/icon-menu-64.png" />
+      </a>
+    </div>
+  </div>
+  <div id="bar-mobile-menu">
+    <ul>
+    <a href="/blog">
+      <li>Blog</li>
+    </a>
+    <a href="/about">
+      <li>About</li>
+    </a>
+    <a href="/projects">
+      <li>Projects</li>
+    </a>
+    <a href="/experiments">
+      <li>Experiments</li>
+    </a>
+    <a href="/talks">
+      <li>Talks</li>
+    </a>
+  </ul>
+  </div>
+</nav>
+
+
+  <div class='main'>
+
+    <div class="container">
+        <ul id="posts">
+            <li class="post post-page">
+                
+                    <h2><a href="http://raphamorim.com/fisl-15/">Python, Debian, Arduino e outras coisas • FISL 15</a></h2>
+                
+
+                <h4 id="img-srcassetsimagespostsfisl-15jpg-altfisl-15-"><img src="/assets/images/posts/fisl-15.jpg" alt="Fisl 15" /></h4>
+
+<p>No dia 7 de maio de 2014, começou o FISL de edição número 15 dentro da PUCRS. E para ser sincero, começou também o meu primeiro FISL. Tive o prazer de poder compartilhar um pouco do que sei sobre <a href="http://hemingway.softwarelivre.org/fisl15/high/41d/sala41d-high-201405071300.ogv">APIs do HTML5</a> dentro de uma das palestras do evento.</p>
+
+<!-- more -->
+
+<p>Para ser sincero curti demais o evento em seu todo, de organização a estrutura. Tudo de primeira e tanto os palestrantes quanto participantes, era visível o interesse de ambos os lados. Claro que em todo evento tem pessoas desinteressadas, porém quanto a esta classificação vi poucos em comparação a outros eventos.</p>
+
+<p>Diferente de eventos como a Campus Party, quem faz o evento é a própria comunidade e o resultado disso é um evento com um escopo bem definido quanto ao objetivo.</p>
+
+<p>A única coisa que me deixou um pouco desanimado, foi ter escutado de todos esta edição foi a mais fraca, e realmente é verdade confimada pela analise de números e dados. Tivemos por volta de 3 mil participantes, quase 1/3 da décima edição.</p>
+
+<p>Então desde a décima edição, o FISL vem perdendo forças e diminuindo de pouco em pouco o número de participantes. O que gerou diversas discursões dentro da comunidade de software livre, seria este talvez um indice do fim do movimento de software livre no Brasil?</p>
+
+<p>A partir dessa pergunta, vários nomes famosos colocaram suas opiniões publicamente sobre o este tópico e o que teria ocasionado isso. Eu particularmente acredito que as pessoas que realmente se importam com o software livre acabaram se “contaminando” ou acabaram cedendo seu lugar dentro da comunidade para outros que não tem esta mesma paixão.</p>
+
+<p>Mas esta é apenas a minha opinião, que pode estar bem longe de ser a verdade sobre o assunto. E você pensa da mesma forma? diferente? deixe sua opinião :)</p>
+
+
+
+                <a rel="author" style="opacity: 0;" href="https://profiles.google.com/116813648719577938564?rel=author">Raphael Amorim</a>
+
+                <div class="post-comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'raphamorim',
+      disqus_url = '';
+
+  
+  disqus_url = "http://raphamorim.com/fisl-15/";
+  
+
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+                </div>
+            </li>
+        </ul>
+
+    </div> <!-- /content -->
+  </div> <!-- /container -->
+
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Main -->
+<script src="/assets/js/main.min.js"></script>
+<!-- Scroll -->
+<script src="/assets/js/infinitescroll.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $('#posts').infinitescroll({
+      navSelector   : "p.pagination",
+          // selector for the paged navigation (it will be hidden)
+      nextSelector  : "p.pagination a.older",
+          // selector for the NEXT link (to page 2)
+      itemSelector  : ".container ul#posts li.post",
+          // selector for all items you'll retrieve
+      loading: {
+          finishedMsg: "<em>That's all folks!</em>",
+          img : "/assets/images/load-icon.gif",
+          msgText: "<em>Loading...</em>",
+          speed: 'slow'
+      }
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49746836-1', 'raphamorim.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
