@@ -4,6 +4,7 @@ title: 'O lado oculto do Node.js'
 description: 'Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos assim como a maioria das ferramentas.'
 link: 'http://raphamorim.github.io/o-lado-oculto-do-node-js/'
 language: 'pt-br'
+image: 'assets/images/posts/why-node-js.jpg'
 ---
 
 ####<img src="/assets/images/posts/why-node-js.jpg" alt="NodeJs">

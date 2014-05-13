@@ -4,6 +4,7 @@ title: 'O que vi da vida em 2013'
 description: 'Dois mil e treze foi realmente um ano que marcou minha vida, de uma forma especial na parte profissional...'
 link: 'http://raphamorim.github.io/O-que-vi-da-vida-em-2013/'
 language: 'pt-br'
+image: 'assets/images/posts/ano-2013.jpg'
 ---
 
 ####<img src="/assets/images/posts/ano-2013.jpg" alt="2013" style="padding: 0; border: none !important; background:none;">

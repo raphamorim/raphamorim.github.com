@@ -4,6 +4,7 @@ title: 'Quem sou eu?'
 description: 'Meu nome é Raphael Amorim, sou desenvolvedor web há menos de um ano e decidi compartilhar um pouco do meu conhecimento e os meus estudos.'
 link: 'http://raphamorim.github.io/quem-sou-eu/'
 language: 'pt-br'
+image: 'assets/images/posts/me.jpg'
 ---
 
 ####<img src="/assets/images/posts/me.jpg" alt="Euzinho" />

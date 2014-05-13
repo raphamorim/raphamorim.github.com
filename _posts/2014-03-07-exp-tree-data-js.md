@@ -5,6 +5,7 @@ description: 'Segundo experimento, permite ao desenvolvedor criar estruturas de 
 apenas definindo um objeto e iniciando uma função de build passando esse objeto como parâmetro.'
 link: 'http://raphamorim.com/exp-tree-data-js/'
 language: 'pt-br'
+image: 'assets/images/posts/treeData.jpg'
 ---
 
 ####<img src="/assets/images/posts/treeData.jpg" alt="treeData.js" style="padding: 0; border: none !important; background:none;">

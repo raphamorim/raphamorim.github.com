@@ -4,6 +4,7 @@ title: 'Challenge Accepted: Write code every single day'
 description: "Like say master Barney Stinson: Challenge Accepted! Yeah, from now i'll write code every single day...."
 link: 'http://raphamorim.com/code-every-day/'
 language: 'en'
+image: 'assets/images/posts/code-every-single-day.jpg'
 ---
 
 ####<img src="/assets/images/posts/code-every-single-day.jpg" alt="code every day" />
