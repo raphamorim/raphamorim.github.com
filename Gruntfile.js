@@ -16,5 +16,5 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-lintspaces');
+  [ 'grunt-lintspaces' ].forEach(grunt.loadNpmTasks);
 };
