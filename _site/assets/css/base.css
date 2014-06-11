@@ -122,6 +122,7 @@ footer .container, nav .container { min-height: 100px; }
 
 .bar-menu ul {
   margin-top: 18px;
+  min-width: 500px;
 }
 
 .bar-menu ul a li {
