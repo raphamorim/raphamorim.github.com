@@ -3,8 +3,7 @@ module.exports = function(grunt) {
     lintspaces: {
       all: {
         src: [
-          '*', '_includes/*', '_layouts/*', '_plugins/*', '_posts/*', 'blog/*',
-          'feed/*', 'projects/*', 'about/*'
+          '*', '_includes/*', '_layouts/*', '_plugins/*', '_posts/*'
         ],
         options: {
           newline: false,
