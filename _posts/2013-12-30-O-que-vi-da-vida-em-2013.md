@@ -17,7 +17,7 @@ Além de ter sido o ano que o grande herói Mandela faleceu, o Brasil iniciou ma
 
 Sim, eu entrei no Infnet como bolsista e meses depois consegui um emprego em uma agência, logo após isso parei na Petrobras e agora estou no Videolog, trabalhando com pessoas incríveis. Sei que tenho muito a percorrer, mas fico muito feliz em encerrar o ano com essa equipe super talentosa e motivada.
 
-Neste ano vi muitas coisas que não gostaria de ter visto, como pessoas entrando no mundo da "codação" buscando apenas dinheiro, descaso de alunos quanto professores em relação a faculdade e outras merdas.
+Neste ano vi muitas coisas que não gostaria de ter visto, como pessoas entrando no mundo da "codação" buscando apenas dinheiro, descaso de alunos quanto professores em relação a faculdade e outras coisas.
 
 Porém vi também coisas positivas e maneiras, como a comunidade de desenvolvimento se tornando mais madura, mais eventos para desenvolvedores, mais palestras e torneios... e isso tudo me deixa muito contente e esperançoso de um 2014 que meta bronca.
 
