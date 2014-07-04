@@ -22,6 +22,6 @@ deveria ser a última bala do revólver.
 
 Este post é resultado de uma experiência recente, onde eu estava desenvolvendo um módulo global do node que era inicializado em CLI e devido a sua arquitetura precisava várias vezes ser executado como administrador. Resultado: Acabei limpando a pasta de módulos globais sem querer.
 
-Lembre-se bem antes de executar qualquer comando como administrador: "Com grandes poderes, vem grandes responsabilidades."
+Antes de executar qualquer comando como administrador, lembre-se sempre: "Com grandes poderes, vem grandes responsabilidades."
 
 
