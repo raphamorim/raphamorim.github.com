@@ -22,12 +22,12 @@
 					    {% if post.excerpt %}
         				{{ post.excerpt | markdownify }}
         					<a href="{{ post.url }}">
-          					<p class="post-more">
+          					    <p class="post-more">
 									Keep reading...
 								</p>
 							</a>
 							<p class="post-date">
-								{{ post.date | date:"%d %B %y" }}
+								{{ post.date | date:"%d %B • %Y" }}
 							</p>
         			{% else %}
         					{{ post.content }}

@@ -390,4 +390,5 @@ footer .container, nav .container { min-height: 100px; }
   .about img { display: none; }
   .post-more { width: 100%; height: 100%; }
   .post-date { display: none; }
+  .post h4 { width: 50px; }
 }

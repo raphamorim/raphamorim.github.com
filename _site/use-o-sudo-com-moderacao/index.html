@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Pense bem antes de usar o sudo &mdash; Raphamorim</title>
+  <title>Use o sudo com moderação &mdash; Raphamorim</title>
 
   <!-- Meta -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="" />
+  <meta name="description" content="Você com certeza já se encontrou numa situação de acabar usando o sudo na execução de algum comando para realizar alguma tarefa ou iniciar/fechar uma aplicação por meio do bash." />
 
   <!-- Facebook -->
-  <meta property="og:title" content="Pense bem antes de usar o sudo - Raphamorim"/>
+  <meta property="og:title" content="Use o sudo com moderação - Raphamorim"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:url" content="http://raphamorim.com/pense-bem-antes-de-usar-o-sudo/"/>
-  <meta property="og:image" content="http://raphamorim.com/assets/images/posts/pensar-e-sudo.png"/>
+  <meta property="og:url" content="http://raphamorim.com/use-o-sudo-com-moderacao/"/>
+  <meta property="og:image" content="http://raphamorim.com//assets/images/posts/sudo.jpg"/>
   <meta property="og:site_name" content="Raphamorim"/>
-  <meta property="og:description" content=""/>
+  <meta property="og:description" content="Você com certeza já se encontrou numa situação de acabar usando o sudo na execução de algum comando para realizar alguma tarefa ou iniciar/fechar uma aplicação por meio do bash."/>
   <meta property="fb:admins" content="100001780434348" />
 
   <!-- Favicon -->
@@ -84,13 +84,26 @@
         <ul id="posts">
             <li class="post post-page">
                 
-                    <h2><a href="http://raphamorim.com/pense-bem-antes-de-usar-o-sudo/">Pense bem antes de usar o sudo</a></h2>
+                    <h2><a href="http://raphamorim.com/use-o-sudo-com-moderacao/">Use o sudo com moderação</a></h2>
                 
 
-                <h4 id="img-srcassetsimagespostslucario-themepng-altlucario-theme-"><img src="/assets/images/posts/lucario-theme.png" alt="Lucario Theme" /></h4>
+                <h4 id="img-srcassetsimagespostssudojpg-altsudo-"><img src="/assets/images/posts/sudo.jpg" alt="Sudo" /></h4>
 
-<p>Você com certeza já se encontrou numa situação de forçar a execução de algum comando
-para realizar alguma tarefa ou uma aplicação dentro de seu bash.</p>
+<p>Você com certeza já se encontrou numa situação de acabar usando o sudo na execução de algum comando para realizar alguma tarefa ou iniciar/fechar uma aplicação por meio do bash.</p>
+
+<!-- more -->
+
+<p>Rodar um comando como administrador não é nenhum pecado, desde que não seja do nível de um “rm -rf / “.
+O problema em si está em rodar comandos com tamanha permissão como se fosse printar algo no console, sem no mínimo pensar mais de uma vez no que você vai estar executando.</p>
+
+<p>Frequentemente desenvolvedores utilizam o sudo como ferramenta para rodar o comando
+quando há qualquer tipo de erro ou falha dentro de sua execução, quando na verdade
+deveria ser a última bala do revólver.</p>
+
+<p>Este post é resultado de uma experiência recente, onde eu estava desenvolvendo um módulo global do node que era inicializado em CLI e devido a sua arquitetura precisava várias vezes ser executado como administrador. Resultado: Acabei limpando a pasta de módulos globais sem querer.</p>
+
+<p>Lembre-se bem antes de executar qualquer comando como administrador: “Com grandes poderes, vem grandes responsabilidades.”</p>
+
 
 
                 <div class="post-comments">
@@ -100,7 +113,7 @@ para realizar alguma tarefa ou uma aplicação dentro de seu bash.</p>
       disqus_url = '';
 
   
-  disqus_url = "http://raphamorim.com/pense-bem-antes-de-usar-o-sudo/";
+  disqus_url = "http://raphamorim.com/use-o-sudo-com-moderacao/";
   
 
   (function() {
