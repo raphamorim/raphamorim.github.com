@@ -16,4 +16,4 @@ I am 18 and am addicted to coffee.
 
 Currently study System Analysis and Development.
 
-Works actually on tools like Toothless and Lucario.
+Works actually on tools/things like Lucario.
