@@ -7,6 +7,8 @@ description: All my projects in progress or completed status.
 
 ##Projects
 
+[I really need to update this]
+
 <ul id="exp">
     <li>
        <h3><a href="http://www.windowsphone.com/pt-br/store/app/tabela-peri%C3%B3dica/c7774ed0-9460-4904-8bec-a71f5d76da40">Tabela Periódica para Windows Phone</a></h3>
@@ -43,6 +45,5 @@ description: All my projects in progress or completed status.
         <p>Tags: HTML, JavaScript</p>
     </li>
 </ul>
-
 
 <br><br>
