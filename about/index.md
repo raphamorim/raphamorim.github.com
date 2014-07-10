@@ -7,7 +7,7 @@ description: 'He has 18 years, lives and works in Rio de Janeiro with an incredi
 
 ###<img src='/assets/images/rapha.jpg' />
 
-**Raphael Amorim** is a developer who love what you do.
+**Raphael Amorim** is a developer who loves what he does.
 
 He has 18 years, lives and works in Rio de Janeiro with an incredible team of developers in **Videolog**. Addicted to coffee and JavaScript, loves to program in any language.
 
