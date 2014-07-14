@@ -16,7 +16,7 @@ Currently studies System analysis and development at institute **Infnet**.
 
 <p class="social-links">
 	<a href="https://github.com/raphamorim" target="_blank">Github</a> •
-	<a href="https://twitter.com/rapha2morim" target="_blank">Twitter</a> •
+	<a href="https://twitter.com/oitoqueijos" target="_blank">Twitter</a> •
 	<a href="https://www.facebook.com/hugoraphael" target="_blank">Facebook</a> •
 	<a href="http://www.linkedin.com/in/hugoraphael" target="_blank">Linkedin</a> •
 	<a href="http://instagram.com/rapha2morim" target="_blank">Instagram</a>
