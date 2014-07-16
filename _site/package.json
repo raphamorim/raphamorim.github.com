@@ -4,9 +4,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/raphamorim/raphamorim.github.com"
-  },
-  "devDependencies": {
-    "grunt": "0.4.1",
-    "grunt-lintspaces": "0.2.203"
   }
 }
