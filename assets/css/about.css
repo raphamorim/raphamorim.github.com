@@ -1,0 +1,66 @@
+/* reset */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  line-height: 1em;
+  list-style: none;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+main:after,
+nav:after,
+footer:after,
+header:after,
+section:after,
+form:after,
+div:after,
+ul:after,
+ol:after,
+li:after,
+dl:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+hr {display: none;}
+p {line-height: 1.5em;}
+b, strong {font-weight: bold;}
+
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Yanone Kaffeesatz Bold'), local('YanoneKaffeesatz-Bold'), url(http://themes.googleusercontent.com/static/fonts/yanonekaffeesatz/v5/We_iSDqttE3etzfdfhuPRbJjSLMfVFmTspsxH0yGxjj3rGVtsTkPsbDajuO5ueQw.woff) format('woff');
+}
+
+body {
+  font-size: 22px;
+  font-family: Helvetica;
+  background: #3598DC;
+  color: #f8f8f8;
+  font-weight: 700;
+}
+
+.welcome {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  font-size: 32px;
+  color: rgba(255,255,255,1);
+  text-decoration: none;
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: 700;
+  font-size: 3em;
+  background: #E57368;
+  padding: 20px;
+  margin-top: -106px;
+  margin-left: -290px;
+}
