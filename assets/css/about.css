@@ -49,6 +49,22 @@ body {
   font-weight: 700;
 }
 
+/* Illustration: http://psdblast.com/flat-color-abstract-city-background-psd  */
+.intro {
+  z-index: 1;
+  height: 700px;
+  width: 100%;
+  display:none;
+}
+
+.section-bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 710px;
+}
+
 .welcome {
   position: fixed;
   top: 50%;
@@ -61,6 +77,27 @@ body {
   font-size: 3em;
   background: #E57368;
   padding: 20px;
-  margin-top: -106px;
-  margin-left: -290px;
+  margin-top: -102px;
+  margin-left: -330px;
+  width: 650px;
+  height: 106px;
+  z-index: 2;
+  text-align:center;
+}
+
+.content {
+    position: relative;
+    width: 820px;
+    margin: 0px auto;
+    text-align: center;
+    font-size:30px;
+    z-index: 2;
+}
+.content .main {
+    position: relative;
+    margin-top: 130px;
+}
+.content>.main>.desc {
+    color: #084880;
+    font-size:23px;
 }
