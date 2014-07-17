@@ -290,25 +290,6 @@ footer p {
   opacity: .5;
 }
 
-/* About */
-.about {
-  text-align: center;
-  margin-top: 20px;
-  line-height: 1.5em;
-}
-
-.about p { padding-top: 20px; }
-
-.about img {
-  width: 35%;
-  border-radius: 50%;
-  margin: 5px 0px 5px 0px;
-}
-
-.about .social-links a { color: #46483e; border-bottom: 1px dotted #46483e; margin-bottom: 13px; }
-.about .social-links { margin-top: 15px; margin-bottom: 40px;}
-
-
 /* Experiments */
 #exp h3 { margin-bottom: 15px; font-size: 23px; color: #679609; }
 #exp h3 a { color: #679609; }
@@ -383,10 +364,6 @@ footer p {
   .me { display: none; }
   footer { display: none; }
   .bar-menu-optional { display: block; }
-
-  /*About fixes */
-  .about { padding: 0px 10px 0px 10px; }
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -394,7 +371,6 @@ footer p {
   #exp p { display: block; margin-bottom: 15px; }
   #exp h3 { text-align: center; }
   h2 { text-align: center; }
-  .about img { display: none; }
   .post-more { width: 100%; height: 100%; }
   .post-date { display: none; }
 }
