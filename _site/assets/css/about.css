@@ -44,7 +44,7 @@ b, strong {font-weight: bold;}
 body {
   font-size: 22px;
   font-family: Helvetica;
-  background: #3598DC;
+  background: #1CB67C;
   color: #f8f8f8;
   font-weight: 700;
 }
@@ -111,4 +111,26 @@ body {
 .content>.main>p:nth-child(odd) {
     color: #084880;
     background: #5DADE2;
+}
+
+.nav {
+    position: relative;
+    width: 820px;
+    margin: 0px auto;
+    z-index: 99;
+    visibility: hidden;
+    margin-bottom: -140px;
+}
+
+.nav>.social {
+    text-align: right;
+    color: #219B9C;
+    padding: 20px;
+}
+.social li {
+    display: inline-block;
+    margin-left: 20px;
+}
+.social a {
+    color: #219B9C;
 }

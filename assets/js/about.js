@@ -6,6 +6,7 @@ $(document).ready(function() {
                 $(this).animate({
                     marginTop: "60px",
                 }, 600);
+                $(".nav").css('visibility','visible');
             });
             clearInterval(loading);
         }
