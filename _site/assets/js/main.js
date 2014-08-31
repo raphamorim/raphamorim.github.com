@@ -19,7 +19,7 @@ $('#bar-mobile-menu a')
 $('.bar-menu-optional')
     .click(function() {
         if ($("#bar-mobile-menu").css("opacity") <= 0) {
-            $("#bar-mobile-menu").css('height', '415px');
+            $("#bar-mobile-menu").css('height', '330px');
             $("#bar-mobile-menu").animate({
                 opacity: 1
             }, 0);
