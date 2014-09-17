@@ -34,9 +34,17 @@ hr {display: none;}
 p {line-height: 1.5em;}
 b, strong {font-weight: bold;}
 
+/* Open Sans font */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3ZBw1xU1rKptJj_0jans920.woff2) format('woff2');
+}
+
 body {
-  font: normal normal 20px/1.2em Helvetica, arial, sans-serif;
-  background: #d2d8ba;
+  font: normal normal 20px/1.2em 'Open Sans', Helvetica, arial, sans-serif;
+  background: #E86F67;
   color: #777;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -48,7 +56,7 @@ nav {
   position: relative;
   top:0;
   left:0;
-  background: #41494f;
+  background: #36485C;
   width: 100%;
   height: 66px;
   border-bottom: 2px solid #555;
@@ -75,50 +83,33 @@ h3 {
 .container {
   position: relative;
   margin: 0px auto;
-  min-height: 540px;
   width: 920px;
   z-index: 1;
 }
-
-footer {
-  position: relative;
-  width: 100%;
-  background: #d2d8ba;
-  margin-top: -170px;
-  color: #33342d;
-  z-index: 0;
-  padding-top: 70px;
+.talks .container, .experiments .container {
+  min-height: 550px;
 }
-footer .container, nav .container { min-height: 100px; }
-footer p {
-  background: #b2bc89;
-  display: inline-block;
-  font-family: arial;
-  margin-bottom: 5px;
-  padding: 6px;
-  color: #464d2c;
- }
 
 .bar-logo {
   position: relative;
-  background: #8CC84B;
+  background: rgba(0,0,0,.3);
   width: 200px;
-  height: 80px;
+  height: 66px;
   float: left;
-  padding-top: 28px;
+  padding-top: 20px;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   color: #fff;
-  transition: all 600ms ease;
+  transition: all 200ms ease;
 }
 
 .bar-logo span {
-  color: #46483e;
+  color: #82B440;
 }
 
 .bar-logo:hover{
-  background: #999;
+  background: rgba(0,0,0,.5);
 }
 
 .bar-menu {
@@ -176,17 +167,30 @@ footer p {
 
 .dialog p {
   font-size: 25px;
-  line-height: 1.5em;
+  line-height: 1.8em;
+}
+
+.dialog strong {
+  padding: 5px 10px;
+  margin: 3px;
+  color: #FFF;
+}
+.dialog>p:nth-child(odd) strong{
+  background-color: #29B191;
+}
+.dialog>p:nth-child(even) strong {
+  background-color: #8A4876;
 }
 
 .me {
   float: right;
-  margin-top: -320px;
+  margin-top: -450px;
   margin-right: 60px;
+  margin-bottom: 20px;
 }
 
 .me img {
-  height: 550px;
+  height: 500px;
 }
 
 /* Posts */
@@ -199,10 +203,11 @@ footer p {
   position: relative;
   width: 100%;
   background: #fff;
-  margin: 30px 0px 55px 0px;
+  margin: 0px 0px 50px 0px;
 }
 
 .post h2 {
+  border-left: 20px solid #8CC84B;
   font-size: 35px;
   padding: 15px;
 }
@@ -227,21 +232,22 @@ footer p {
 .post-more, .post-date {
   font-weight: bold;
   float: left;
-  transition: all 300ms ease;
+  transition: all 200ms ease;
 }
 
 .post-more {
   width: 70%;
-  color: #777;
-  background: #d8d8d8;
+  color: #FFF;
+  background: #e9877e;
 }
 .post-more:hover { background: #E57368; color: #FFF; }
 
 .post-date {
   width: 30%;
-  color: #fff;
+  color: #FFF;
+  border-left: 15px solid rgba(0,0,0,.5);
   text-align: center;
-  background: #7fbf3a;
+  background: #3F98D9;
 }
 
 .post-comments {
@@ -311,19 +317,19 @@ footer p {
   position: absolute;
   z-index: 0;
   width: 100%;
-  background: #41494f;
+  background: #36485C;
   padding: 25px 0px 5px 0px;
   opacity: 0;
   height: 0px;
-  margin-top: -50px;
+  margin-top: -30px;
   overflow: hidden;
-  border-bottom: 5px #353c41 solid;
+  border-bottom: 5px solid rgba(0,0,0,.2);
 }
 
 #bar-mobile-menu li {
   padding: 15px 15px 15px 25px;
   font-size: 23px;
-  background: #353c41;
+  background: rgba(0,0,0,.2);
   margin: 5px 0px;
   transition: all 600ms ease;
 }
@@ -341,10 +347,30 @@ footer p {
 }
 
 ::selection {
-  background-color: #41494f;
+  background-color: #F27B73;
   color: #fff;
 }
 
+/* Btn */
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 2px;
+  cursor: pointer;
+  border-bottom: 4px solid rgba(0,0,0,.5);
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 600;
+  text-shadow: 0 0 4px rgba(0,0,0,.5);
+  text-decoration: none;
+  transition: background-color .2s ease;
+}
+
+.btn.red  { background-color: #E5473C; }
+.btn.blue { background-color: #48A7E9; }
+
+.btn.red:hover  { background-color: #e23226; }
+.btn.blue:hover { background-color: #1b91e3; }
 
 /* Medias */
 
@@ -360,27 +386,27 @@ footer p {
   }
 
   body { background: #f8f8f8; }
-  .main .container { min-height: 400px; }
   .bar-menu { display: none; }
   .me { display: none; }
-  footer { display: none; }
   .bar-menu-optional { display: block; }
   .post-more { transition: all 0ms ease; }
-  .post h2 { text-align: left; font-size: 25px; border-left: 20px solid #8CC84B;}
+  .post h2 { font-size: 25px; }
+  #posts { margin-top: 10px; }
 }
 
 @media only screen and (max-width: 600px) {
-  .dialog p { clear: both; margin: 0px; display: inline; text-align: center; }
+  .talks .container, .experiments .container { min-height: 0px;}
+  .main { margin-top: -50px; }
+  .dialog p { line-height: 1.5em; clear: both; margin: 0px; display: inline; text-align: center; }
+  .dialog strong { padding: 0px; margin: 0px; }
+  .dialog .btn { padding: 10px; }
   #exp p { display: block; margin-bottom: 15px; }
   #exp h3 { text-align: center; }
-  #posts { margin-top: 10px; }
   .post { margin: 0px 0px 30px 0px; }
-  .post h2 { text-align: left; font-size: 25px; border-left: 20px solid #8CC84B;}
   .post h4 { height: 200px; text-align:center; overflow: hidden; background: #E77E23; }
   .post h4 img { min-height:200px; width: 570px; max-height: 500px; }
   .post-more { width: 100%; height: 100%; }
   .post-date { display: none; }
   .post-more { transition: all 0ms ease; }
-  .bar-logo { width: 170px; height: 66px; padding-top: 22px; background-color: #E57368; }
-  .bar-logo span { color: #f4c4bf; }
+  .bar-logo { background-color: transparent; }
 }

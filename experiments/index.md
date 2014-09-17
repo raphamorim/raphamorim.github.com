@@ -10,4 +10,4 @@ description: Here is where I put all my madness in code or whatever thing.
 [ Coming Soon, new amazing page here ]
 <br><br>
 
--Me, crazy fella.
+-Me, cool fella.

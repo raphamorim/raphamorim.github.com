@@ -8,12 +8,17 @@ language: 'en'
 
 How are you? My name is **Raphael Amorim**.
 
-I'm a web developer.
+I'm a **developer**.
 
-Work at **Videolog**, Rio de Janeiro (Brazil).
+I am 18. Only works w/code and coffee.
 
-I am 18 and am addicted to coffee.
+Video game addicted. Love baths and longboards.
+
+Works actually on some **open source** projects.
 
 Currently study System Analysis and Development.
 
-Works actually on tools/things like Lucario.
+<br>
+
+<a href="http://twitter.com/oitoqueijos" class="btn blue">Twitter</a>
+<a href="{{ site.baseurl }}about" class="btn red">My Life Tour</a>
