@@ -40,4 +40,4 @@ You'll have access to the website at `http://0.0.0.0:4000/` :D
 
 Credits: Inspired by Andy Taylor and [Zeno Rocha](http://github.com/zenorocha).
 
-License: [MIT License] © Raphael Amorim
+License: **MIT** License © [Raphael Amorim](http://github.com/raphamorim).

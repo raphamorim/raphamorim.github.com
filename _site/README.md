@@ -38,6 +38,6 @@ You'll have access to the website at `http://0.0.0.0:4000/` :D
 
 ## About
 
-Credits: Inspired by Andy Taylor and Zeno Rocha
+Credits: Inspired by Andy Taylor and [Zeno Rocha](http://github.com/zenorocha).
 
 License: [MIT License] © Raphael Amorim
