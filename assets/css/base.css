@@ -86,7 +86,7 @@ h3 {
   width: 920px;
   z-index: 1;
 }
-.talks .container, .experiments .container {
+.experiments .container {
   min-height: 550px;
 }
 
