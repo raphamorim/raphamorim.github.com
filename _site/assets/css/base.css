@@ -351,6 +351,25 @@ h3 {
   color: #fff;
 }
 
+/* Code */
+
+code {
+  display: block;
+  padding: 5px;
+}
+
+.code {
+  margin: 20px 30px 0px 20px;
+  padding: 12px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  font-size: 17px;
+  color: #666666;
+  -webkit-font-smoothing: inherit;
+  overflow: auto;
+  background: #f8f8f8;
+}
+
 /* Btn */
 
 .btn {
