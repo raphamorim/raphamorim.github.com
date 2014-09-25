@@ -20,5 +20,5 @@ Currently study System Analysis and Development.
 
 <br>
 
-<a href="http://twitter.com/oitoqueijos" class="btn blue">Twitter</a>
+<a href="http://twitter.com/raphamundi" class="btn blue">Twitter</a>
 <a href="{{ site.baseurl }}about" class="btn red">My Life Tour</a>
