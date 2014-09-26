@@ -6,7 +6,7 @@
   <!-- Meta -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="" />
+  <meta name="description" content="Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. This means it can automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating system–level virtualization on Linux." />
 
   <!-- Facebook -->
   <meta property="og:title" content="Hello, my name is Docker - Raphamorim"/>
@@ -14,7 +14,7 @@
   <meta property="og:url" content="http://raphamorim.com/hello-my-name-is-docker/"/>
   <meta property="og:image" content="http://raphamorim.com/assets/images/posts/docker.jpg"/>
   <meta property="og:site_name" content="Raphamorim"/>
-  <meta property="og:description" content=""/>
+  <meta property="og:description" content="Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. This means it can automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating system–level virtualization on Linux."/>
   <meta property="fb:admins" content="100001780434348" />
 
   <!-- Favicon -->
@@ -108,9 +108,50 @@ Docker can be integrated into various infrastructure tools, including Ansible, C
 
 <p>Any aditional question about how docker works, you can find here: <a href="https://www.docker.com/whatisdocker/">what is docker?</a></p>
 
+<h3 id="docker-containers">Docker Containers</h3>
+
+<p>Docker containers are basically directories which can be packed like any other, then shared and run across various different machines and platforms.</p>
+
+<h3 id="docker-images">Docker Images</h3>
+
+<p>Snapshots of containers or base OS (example: Ubuntu) images. Similar to default operating-system disk images which are used to run applications on desktop computers.</p>
+
+<h3 id="dockerfiles">Dockerfiles</h3>
+
+<p>Dockerfiles are scripts containing a series of instructions and commands which are to be executed to form a new docker image. They basically replace the process of doing everything manually and repeatedly.
+When a Dockerfile is finished executing, you end up having formed an image, which then you use to create a new container.</p>
+
+<h3 id="installing-docker">Installing Docker</h3>
+
+<p>Before proceeding, you must have installed the docker. Follow the docs on <a href="http://docs.docker.com/installation/">installation guide</a></p>
+
 <h3 id="starting-with-docker">Starting with docker</h3>
 
-<p>For this guide I’ll use a simple application using nodejs, you can check the source code on <a href="http://github.com/raphamorim">github</a>.</p>
+<p>Once you have docker installed. You have to know the docker CLI consists of passing it a chain of params, you can get a help typing the following command:</p>
+
+<div class="code">
+
+<code>docker</code>
+
+</div>
+
+<p>Or check docker information and version:</p>
+
+<div class="code">
+
+<code># Check docker system-wide information</code>
+
+<code>sudo docker info</code>
+
+<br />
+
+<code># Check docker version</code>
+
+<code>sudo docker version</code>
+
+</div>
+
+<p>In this guide the used client version is 1.2.0 and used client API is version: 1.14.</p>
 
 
                 <div class="post-comments">
