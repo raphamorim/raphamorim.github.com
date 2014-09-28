@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Hello, my name is Docker &mdash; Raphamorim</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. This means it can automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating system–level virtualization on Linux." />
+
+  <!-- Facebook -->
+  <meta property="og:title" content="Hello, my name is Docker - Raphamorim"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="http://raphamorim.com/hello-my-name-is-docker/"/>
+  <meta property="og:image" content="http://raphamorim.com/assets/images/posts/docker.jpg"/>
+  <meta property="og:site_name" content="Raphamorim"/>
+  <meta property="og:description" content="Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. This means it can automates the deployment of applications inside software containers, by providing an additional layer of abstraction and automation of operating system–level virtualization on Linux."/>
+  <meta property="fb:admins" content="100001780434348" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+
+  <!-- CSS -->
+  
+      <link rel="stylesheet" href="/assets/css/base.css" type="text/css" />
+  
+</head>
+<body>
+
+
+  <nav>
+    <div class='container'>
+      <a href="/" class="bar-link">
+        <div class="bar-logo">Rapha<span>morim</span></div>
+      </a>
+      <div class="bar-menu">
+        <ul id='pagenav'>
+          <a href="/blog">
+            <li>Blog</li>
+          </a>
+          <a href="http://github.com/raphamorim" target="_blank">
+            <li>GitHub</li>
+          </a>
+          <a href="/projects">
+            <li>Projects</li>
+          </a>
+          <a href="/experiments">
+            <li>Experiments</li>
+          </a>
+          <a href="/talks">
+            <li>Talks</li>
+          </a>
+       </ul>
+    </div>
+    <div class="bar-menu-optional">
+      <a href="#">
+        <img src="/assets/images/icon-menu-64.png" />
+      </a>
+    </div>
+  </div>
+  <div id="bar-mobile-menu">
+    <ul>
+    <a href="/blog">
+      <li>Blog</li>
+    </a>
+    <a href="http://github.com/raphamorim">
+      <li>GitHub</li>
+    </a>
+    <a href="/projects">
+      <li>Projects</li>
+    </a>
+    <a href="/experiments">
+      <li>Experiments</li>
+    </a>
+    <a href="/talks">
+      <li>Talks</li>
+    </a>
+  </ul>
+  </div>
+</nav>
+
+
+  <div class='main'>
+
+    <div class="container">
+        <ul id="posts">
+            <li class="post post-page">
+                
+                    <h2><a href="http://raphamorim.github.io/hello-my-name-is-docker/">Hello, my name is Docker</a></h2>
+                
+
+                <h4 id="img-srcassetsimagespostsdockerjpg-altdocker-"><img src="/assets/images/posts/docker.jpg" alt="Docker" /></h4>
+
+<p>Let’s start to build together a simple application using <a href="http://docker.io">docker</a>. This posts is actually a short guide for beginners about how to use this technology.</p>
+
+<!-- more -->
+
+<h3 id="whats-docker">What’s Docker?</h3>
+
+<p>Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. This means
+it can automates the deployment of applications inside software containers, by providing an additional layer of
+abstraction and automation of operating system–level virtualization on Linux. Docker uses resource isolation
+features of the Linux kernel such as cgroups and kernel namespaces to allow independent “containers” to
+run within a single Linux instance, avoiding the overhead of starting virtual machines.</p>
+
+<p>With Docker, developers can build any app in any language using any toolchain and sysadmins use it to provide standardized environments for their development.
+Docker can be integrated into various infrastructure tools, including Ansible, CFEngine, Chef, Jenkins, OpenStack Nova, OpenSVC,Puppet, Salt and Vagrant.</p>
+
+<p>Any aditional question about how docker works, you can find here: <a href="https://www.docker.com/whatisdocker/">what is docker?</a></p>
+
+<h3 id="docker-containers">Docker Containers</h3>
+
+<p>Docker containers are basically directories which can be packed like any other, then shared and run across various different machines and platforms.</p>
+
+<h3 id="docker-images">Docker Images</h3>
+
+<p>Snapshots of containers or base OS (example: Ubuntu) images. Similar to default operating-system disk images which are used to run applications on desktop computers.</p>
+
+<h3 id="dockerfiles">Dockerfiles</h3>
+
+<p>Dockerfiles are scripts containing a series of instructions and commands which are to be executed to form a new docker image. They basically replace the process of doing everything manually and repeatedly.
+When a Dockerfile is finished executing, you end up having formed an image, which then you use to create a new container.</p>
+
+<p>Any aditional question about how dockerfiles works, you can find here: <a href="https://docs.docker.com/reference/builder/">Dockerfiles usage</a></p>
+
+<h3 id="installing-docker">Installing Docker</h3>
+
+<p>Before proceeding, you must have installed the docker. Follow the docs on <a href="http://docs.docker.com/installation/">installation guide</a></p>
+
+<h3 id="so-now-youve-got-docker">So now you’ve got docker!</h3>
+
+<p>Once you have docker installed. You have to know the docker CLI consists of passing it a chain of params, you can get a help typing the following command:</p>
+
+<div class="code">
+
+<code>docker</code>
+
+</div>
+
+<p>Or check docker information and version:</p>
+
+<div class="code">
+
+<code># Check docker system-wide information</code>
+
+<code>sudo docker info</code>
+
+<br />
+
+<code># Check docker version</code>
+
+<code>sudo docker version</code>
+
+</div>
+
+<p>In this guide the used client version is 1.2.0 and used client API version is 1.14.</p>
+
+<h3 id="os-x-cases">OS X cases</h3>
+
+<p>If you use OS X, read this first: For OS X cases, you need a helper application called Boot2Docker that installs a virtual machine (using VirtualBox) that’s all set up to run the Docker daemon. You initialize Boot2Docker from the following commands:</p>
+
+<div class="code">
+
+<code>$ boot2docker init</code>
+
+<code>$ boot2docker start</code>
+
+<code>$ export DOCKER_HOST=tcp://192.168.59.103:2375</code>
+
+</div>
+
+<h3 id="starting-with-docker">Starting with Docker</h3>
+
+<p>In this guide I’ve publish a project in <a href="https://github.com/raphamorim/docker-guide">github</a>, over there have a Dockerfile to build docker image, using nodejs.</p>
+
+<p>Hint: You can check other Dockerfiles examples <a href="http://dockerfile.github.io">here</a>.</p>
+
+<p>We’ll use this project as base to this guide. Clone or fork the project to continue. So open the project folder and run to build an image:</p>
+
+<div class="code">
+<code>$ docker build -t="docknode" .</code>
+</div>
+
+<p>Okay, so now you’ve got a docker imaged called “docknode” and you can run that image, using this:</p>
+
+<div class="code">
+<code>$ docker run -i -t docknode</code>
+</div>
+
+<p>Or to run it in the background</p>
+
+<div class="code">
+<code>$ docker run -d docknode</code>
+</div>
+
+<p>After this, you’ll should receive this:</p>
+
+<div class="code">
+<code>Server running at http://127.0.0.1:8080/</code>
+</div>
+
+<p>…And you’ve built your first application running with docker, fast and easy :)</p>
+
+<h3 id="understanding-how-code-works">Understanding how Code works</h3>
+
+<p>Dockerfile: This scripts builds a Docker image. It’s use ubuntu OS, install nodejs via apt-get and run app.js file using node.</p>
+
+<div class="code">
+<code>FROM ubuntu:13.10</code>
+<code>MAINTAINER Raphael Amorim</code>
+<br />
+<code>RUN apt-get update</code>
+<code>RUN apt-get install -y nodejs</code>
+<code>RUN mkdir /var/www</code>
+<br />
+<code>ADD app.js /var/www/app.js</code>
+<br />
+<code>CMD ["nodejs", "/var/www/app.js"]</code>
+</div>
+
+<p>App.js: Build a simple nodejs server.</p>
+
+<div class="code">
+<code>var http = require('http'),</code>
+<code>	port = process.env.PORT || 8080;</code>
+<br />
+<code>var server = http.createServer(function (request, response) {</code>
+<code>  response.writeHead(200, {"Content-Type": "text/plain"});</code>
+<code>  text = "Running Node.js:" + process.versions.node</code>
+<br />
+<code>  response.end(text);</code>
+<code>});</code>
+<br />
+<code>server.listen(port, function(){</code>
+<code>	console.log("Server running at http://127.0.0.1:" + port + "/");</code>
+<code>});</code>
+</div>
+
+<h3 id="this-is-docker">This is Docker!</h3>
+
+<p>Awesome! You’ve got this! Give me your feedback, I’ll be grateful. Questions or suggestions are always welcome.</p>
+
+
+                <div class="post-comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'raphamorim',
+      disqus_url = '';
+
+  
+  disqus_url = "http://raphamorim.com/hello-my-name-is-docker/";
+  
+
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+                </div>
+            </li>
+        </ul>
+
+    </div> <!-- /content -->
+  </div> <!-- /container -->
+
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+    <script src="/assets/js/main.min.js"></script>
+    <!-- Scroll -->
+    <script src="/assets/js/infinitescroll.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      $('#posts').infinitescroll({
+          navSelector   : "p.pagination",
+              // selector for the paged navigation (it will be hidden)
+          nextSelector  : "p.pagination a.older",
+              // selector for the NEXT link (to page 2)
+          itemSelector  : ".container ul#posts li.post",
+              // selector for all items you'll retrieve
+          loading: {
+              finishedMsg: "<em>That's all folks!</em>",
+              img : "/assets/images/load-icon.gif",
+              msgText: "<em>Loading...</em>",
+              speed: 'slow'
+          }
+      });
+    </script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49746836-1', 'raphamorim.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
