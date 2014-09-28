@@ -91,7 +91,7 @@ If you use OS X, read this first: For OS X cases, you need a helper application 
 
 ### Starting with Docker
 
-In this guide I've publish a project in [github](https://github.com/raphamorim/docker-guide), over there have a Dockerfile to build docker image, using nodejs.
+In this guide I've publish a project in [github](https://github.com/raphamorim/docker-guide). In this project have a Dockerfile to build docker image, using nodejs.
 
 Hint: You can check other Dockerfiles examples [here](http://dockerfile.github.io).
 
@@ -101,7 +101,7 @@ We'll use this project as base to this guide. Clone or fork the project to conti
 <code>$ docker build -t="docknode" .</code>
 </div>
 
-Okay, so now you've got a docker imaged called "docknode" and you can run that image, using this:
+Okay, so now you've got a docker image called "docknode" and you can run that image, using this:
 
 <div class="code">
 <code>$ docker run -i -t docknode</code>
