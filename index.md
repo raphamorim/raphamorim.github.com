@@ -6,7 +6,7 @@ language: 'en'
 
 #Hi pal!
 
-How are you? My name is **Raphael Amorim**.
+How you doin? My name is **Raphael Amorim**.
 
 I'm a **developer**.
 
