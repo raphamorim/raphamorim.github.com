@@ -13,7 +13,8 @@ description: Upcoming lectures and previous talks.
      <p>Theme: Exploring the HTML5 APIs</p>
      <p>May 7, 2014</p>
      <p>Local: PUC-RS • Porto Alegre, RS</p>
-     <p><a href="https://speakerdeck.com/raphamorim/explorando-as-apis-do-html5">See slides</a>
+     <p><a href="https://speakerdeck.com/raphamorim/explorando-as-apis-do-html5">See slides</a>, 
+        <a href="http://youtu.be/bSQoMs8AE5w">Watch talk video</a></p>
   </li>
   <li>
      <h3>Infnet - Talks Circuits</h3>
