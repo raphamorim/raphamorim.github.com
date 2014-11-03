@@ -7,7 +7,18 @@ description: All my projects in progress or completed status.
 
 ##Projects
 
-[I really need to update this]
+~ Check my github to see my full list of projects
+
+<ul id="exp">
+    <li>
+       <h3><a href="http://shothunt.herokuapp.com">Shot Hunt</a></h3>
+
+       <p>A gallery for the best screenshots of Product Hunt.</p>
+
+        <p><a href="http://shothunt.herokuapp.com" target="_blank">See project</a></p>
+
+    </li>
+</ul>
 
 <ul id="exp">
     <li>
@@ -17,7 +28,6 @@ description: All my projects in progress or completed status.
 
         <p><a href="http://www.windowsphone.com/pt-br/store/app/tabela-peri%C3%B3dica/c7774ed0-9460-4904-8bec-a71f5d76da40" target="_blank">Download for Windows Phone</a></p>
 
-       <p>Tags: C#, Windows Phone, XAML</p>
     </li>
 </ul>
 
@@ -30,7 +40,6 @@ description: All my projects in progress or completed status.
 
         <p><a href="http://raphamorim.com/sound-hunter/" target="_blank">See this</a> or <a href="https://github.com/raphamorim/sound-hunter" target="_blank">fork in GitHub</a></p>
 
-       <p>Tags: API, JavaScript, HTML5</p>
     </li>
 </ul>
 
@@ -42,7 +51,6 @@ description: All my projects in progress or completed status.
 
             <p><a href="http://raphamorim.com/treeData.js/" target="_blank">See this</a> or <a href="https://github.com/raphamorim/treeData.js" target="_blank">fork in GitHub</a></p>
 
-        <p>Tags: HTML, JavaScript</p>
     </li>
 </ul>
 
