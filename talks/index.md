@@ -11,9 +11,9 @@ description: Upcoming lectures and previous talks.
   <li>
      <h3>Infnet - Talks Circuits</h3>
      <p>Theme: Workshop - Git</p>
-     <p>Octuber 22, 2014</p>
+     <p>Octuber 22 and November 12 ~ 2014</p>
      <p>Local: Infnet • Rio de Janeiro, RJ</p>
-     <p><a href="https://speakerdeck.com/raphamorim/git-workshop-parte-1">See slides</a></p>
+     <p>See slides: <a href="https://speakerdeck.com/raphamorim/git-workshop-parte-1">first day</a>, second day</p>
   <li>
      <h3>Fórum Internacional do Software Livre (FISL) 15</h3>
      <p>Theme: Exploring the HTML5 APIs</p>
