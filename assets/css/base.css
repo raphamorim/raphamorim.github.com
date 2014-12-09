@@ -64,8 +64,8 @@ nav {
 }
 
 h3 {
-  margin: 40px 20px 0px 20px;
-  font-size: 22px;
+  margin: 40px 20px -15px 20px;
+  font-size: 20px;
 }
 
 #exp h3 {
@@ -211,6 +211,12 @@ h3 {
   font-size: 35px;
   padding: 15px;
 }
+
+.post h3 {
+  margin: 30px 20px -15px 20px;
+  font-size: 20px;
+}
+
 
 .post img {
   position: relative;
