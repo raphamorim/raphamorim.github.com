@@ -1,14 +1,13 @@
 ---
 layout: post
-title: 'Some Games You Should Play Before You Die'
+title: 'Yeah, these are my favorite games!'
 description: ''
 link: 'http://raphamorim.github.io/Some-Games-You-Should-Play-Before-You-Die '
 language: 'en'
 image: 'assets/images/posts/games/radiata-stories.jpg'
 ---
 
-####<img src="/assets/images/posts/games/radiata-stories.jpg" alt="Radiata
-Stories" />
+#### <img src="/assets/images/posts/games/radiata-stories.jpg" alt="Radiata Stories" />
 
 Here is my personal list of my favorite games, I think everyone should play
 these before die. With time I'll updating the list.
