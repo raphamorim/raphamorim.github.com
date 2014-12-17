@@ -4,5 +4,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/raphamorim/raphamorim.github.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raphamorim/angular-drag-n-drop/issues"
   }
 }

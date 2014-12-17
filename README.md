@@ -1,6 +1,6 @@
 # [raphamorim.com](http://raphamorim.com)
 
-My personal website where I talk about development. On issues related to JavaScript, NodeJS, Python, Front-End Development and other stuff.
+My personal website where I talk about development. On issues related to Development (e.g: JavaScript, NodeJS, Python, Front-End) and Otaku/Geek stuffs.
 
 ## How it works?
 
