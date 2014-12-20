@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 'Yeah, these are my favorite games!'
-description: ''
+description: "Here is my personal list of my favorite games, I think everyone should play
+these before die. With time I'll updating the list."
 link: 'http://raphamorim.github.io/Some-Games-You-Should-Play-Before-You-Die '
 language: 'en'
 image: 'assets/images/posts/games/radiata-stories.jpg'
