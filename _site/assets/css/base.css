@@ -86,9 +86,6 @@ h3 {
   width: 920px;
   z-index: 1;
 }
-.experiments .container {
-  min-height: 550px;
-}
 
 .bar-logo {
   position: relative;
