@@ -71,6 +71,11 @@ h3 {
 #exp h3 {
   margin: 0px;
 }
+#exp img {
+  width: 100%;
+  border-right: 15px solid #E9877E;
+}
+
 
 .main {
   position: relative;
