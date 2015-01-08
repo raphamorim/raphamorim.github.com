@@ -12,6 +12,21 @@ description: Here is where I put all my experiments in code or things I really t
 <ul id="exp">
     <li>
        <h3>
+       		<a
+       		href="http://raphamorim.com/canvas-experiments/particles">Particles</a>
+       </h3>
+
+       <p><img src="/assets/images/experiments/particles.jpg" alt="Particles"></p>
+
+       <p>Generates random particles</p>
+
+       <p><a href="http://raphamorim.com/canvas-experiments/particles" target="_blank">See experiment</a>, <a href="https://github.com/raphamorim/canvas-experiments" target="_blank">Fork this experiment</a></p>
+    </li>
+</ul>
+
+<ul id="exp">
+    <li>
+       <h3>
        		<a href="http://raphamorim.com/canvas-experiments/draw">Draw Table</a>
        </h3>
 
