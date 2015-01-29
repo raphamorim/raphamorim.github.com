@@ -74,28 +74,56 @@ But I would say that the idea to play with the villain of the game, is very good
 
 ### 6 - Radiata Stories (PS2)
 
-### 7 - Pokemon Fire (GameBoy)
+![Radiata Stories](/assets/images/posts/games/radiata-stories.jpg)
 
-### 8 - Pokemon Silver (GameBoy)
+Think of game with good plot, conversation (one of the best I've ever seen) and extremely free gameplay. Well, that's Radiata Stories
+
+With extremely well crafted and funny dialogues. Radiata is certainly one of the games that deserves a seal of one of the best RPGs.
+
+### 7 - Persona 4
+
+![Persona 4](/assets/images/posts/games/persona-4.jpg)
+
+Best **mystery** game I played. Best game of **social interaction** that played
+
+Good combat system and incredible dialogues. It's hard not to like Persona 4.
+
+### 8 - Pokemon Fire Red / Pokemon Silver (GameBoy)
+
+![Pokemon Silver](/assets/images/posts/games/pokemon-silver.jpg)
+
+Pokemon is Pokemon. Remarkable in my life. That young not played pokemon in school? or dreamed of being a pokemon trainer?
+
+Be able to mount your Pokemon team was amazing and still is.
 
 ### 9 - Pokemon Soul Silver (Nintendo DS)
 
-### 10 - Pokemon Y (3DS)
+![Pokemon Soul Silver](/assets/images/posts/games/pokemon-soul-silver.jpg)
 
-### 11 - Pokemon Omega Red (3DS)
+We can say that made that remarkable game of my childhood even better, with a sequence of new things added to the game.
 
-### 12 - Suikoden Tierkreis (Nintendo DS)
+One of the coolest things was the Pokéwalker, where you carrying your pokemon on the Nintendo DS to the Pokéwalker, and as you walked with him, would evolve your pokemon.
 
-### 13 - Fire Emblem: Awaking (3DS)
+### 10 - Pokemon Y / Pokemon Omega Red (3DS)
 
-### 14 - Kingdom Hearts: Chain of Memories (PS2)
+![Pokemon Omega Red](/assets/images/posts/games/pokemon-omega-ruby.jpg)
 
-### 15 - Harvest Moon: Hero of Leaf Valley (PSP)
+Bro, stop!
 
-### 16 - Metal Gear Solid 3 (PS2)
+Now your game of his childhood in 3D. With amazing features added. To fly to your pokemon by region, change the hairstyle and clothes, ride in pokemon, Walking slowly to catch Pokemon .......
 
-### 17 - Assassin's Creed 2 (PS3)
+### 11 - Suikoden Tierkreis (Nintendo DS)
 
-### 18 - Uncharted 3 (PS3)
+### 12 - Fire Emblem: Awaking (3DS)
+
+### 13 - Kingdom Hearts: Chain of Memories (PS2)
+
+### 14 - Harvest Moon: Hero of Leaf Valley (PSP)
+
+### 15 - Metal Gear Solid 3 (PS2)
+
+### 16 - Assassin's Creed 2 (PS3)
+
+### 17 - Uncharted 3 (PS3)
 
 
