@@ -112,7 +112,13 @@ Bro, stop!
 
 Now your game of his childhood in 3D. With amazing features added. To fly to your pokemon by region, change the hairstyle and clothes, ride in pokemon, Walking slowly to catch Pokemon .......
 
-### 11 - Suikoden Tierkreis (Nintendo DS)
+### 11 - Uncharted 3 (PS3)
+
+![Uncharted 3](/assets/images/posts/games/uncharted-3.jpg)
+
+I'm from Indiana Jones fan, so it's not hard to like a game where a guy like Drake who loves a bad joke mixed with the same perspective of "treasure hunt".
+
+PS: The scenarios are monstrously large.
 
 ### 12 - Fire Emblem: Awaking (3DS)
 
@@ -124,6 +130,6 @@ Now your game of his childhood in 3D. With amazing features added. To fly to you
 
 ### 16 - Assassin's Creed 2 (PS3)
 
-### 17 - Uncharted 3 (PS3)
+### 17 - Suikoden Tierkreis (Nintendo DS)
 
 
