@@ -104,9 +104,9 @@ We can say that made that remarkable game of my childhood even better, with a se
 
 One of the coolest things was the Pokéwalker, where you carrying your pokemon on the Nintendo DS to the Pokéwalker, and as you walked with him, would evolve your pokemon.
 
-### 10 - Pokemon Y / Pokemon Omega Red (3DS)
+### 10 - Pokemon Y / Pokemon Omega Ruby (3DS)
 
-![Pokemon Omega Red](/assets/images/posts/games/pokemon-omega-ruby.jpg)
+![Pokemon Omega Ruby](/assets/images/posts/games/pokemon-omega-ruby.jpg)
 
 Bro, stop!
 
