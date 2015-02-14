@@ -18,7 +18,7 @@ these before die. With time I'll updating the list.
 The order of listing does not matter at all. I put numbers for ease of viewing
 and reading.
 
-### 1 - Suikoden 2 (PS1)
+### • Suikoden 2 (PS1)
 
 ![Suikoden 2](/assets/images/posts/games/suikoden.jpg)
 
@@ -30,7 +30,7 @@ Another, the villain to me is cruel I've ever seen. Many speak in Sephiroth and 
 
 The fighting style, recruitment, improvements in the castle, dialogues, engaging characters, war battles, mini-games ... Suikoden 2 has many, many good points to highlight.
 
-### 2 - Harvest Moon: Back to Nature (PS1)
+### • Harvest Moon: Back to Nature (PS1)
 
 ![Harvest Moon: Back to Nature](/assets/images/posts/games/hm-back-to-nature.jpg)
 
@@ -40,7 +40,7 @@ A game that is based only on developing a farm, harvest and planting, creating a
 
 It's a really a lovely game, today I carry it with me both on PS3, PSP and PS Vita. It's great to spend time. I have started and finished this game by 10 times.
 
-### 3 - Metal Gear Solid (PS1)
+### •  Metal Gear Solid (PS1)
 
 ![Metal Gear Solid](/assets/images/posts/games/mgs.jpg)
 
@@ -52,7 +52,7 @@ Now insert the genius of Hideo Kojima, we had an amazing game, with absurdly goo
 
 Maybe this game was the most decent pioneer of stealth games.
 
-### 4 - Brave Fencer Musashi (PS1)
+### • Brave Fencer Musashi (PS1)
 
 ![Brave Fencer Musashi](/assets/images/posts/games/brave-fencer-musashi.jpg)
 
@@ -62,7 +62,7 @@ The game brought a new concept of hero, Musashi (name based on one of the greate
 
 Good dialogues and good gameplay.
 
-### 5 - Breath of Fire IV (PS1)
+### • Breath of Fire IV (PS1)
 
 ![Breath of Fire IV](/assets/images/posts/games/Breath-of-Fire-IV.jpg)
 
@@ -72,7 +72,7 @@ His fighting style is fluid. And makes life easier for the player. Who was accus
 
 But I would say that the idea to play with the villain of the game, is very good. Fou-lu (for me one of the best villains) has a visual and a very good story. The mini-games are also good points to highlight.
 
-### 6 - Radiata Stories (PS2)
+### • Radiata Stories (PS2)
 
 ![Radiata Stories](/assets/images/posts/games/radiata-stories.jpg)
 
@@ -80,7 +80,7 @@ Think of game with good plot, conversation (one of the best I've ever seen) and 
 
 With extremely well crafted and funny dialogues. Radiata is certainly one of the games that deserves a seal of one of the best RPGs.
 
-### 7 - Persona 4
+### • Persona 4
 
 ![Persona 4](/assets/images/posts/games/persona-4.jpg)
 
@@ -88,7 +88,7 @@ Best **mystery** game I played. Best game of **social interaction** that played
 
 Good combat system and incredible dialogues. It's hard not to like Persona 4.
 
-### 8 - Pokemon Fire Red / Pokemon Silver (GameBoy)
+### • Pokemon Fire Red / Pokemon Silver (GameBoy)
 
 ![Pokemon Silver](/assets/images/posts/games/pokemon-silver.jpg)
 
@@ -96,7 +96,7 @@ Pokemon is Pokemon. Remarkable in my life. That young not played pokemon in scho
 
 Be able to mount your Pokemon team was amazing and still is.
 
-### 9 - Pokemon Soul Silver (Nintendo DS)
+### • Pokemon Soul Silver (Nintendo DS)
 
 ![Pokemon Soul Silver](/assets/images/posts/games/pokemon-soul-silver.jpg)
 
@@ -104,7 +104,7 @@ We can say that made that remarkable game of my childhood even better, with a se
 
 One of the coolest things was the Pokéwalker, where you carrying your pokemon on the Nintendo DS to the Pokéwalker, and as you walked with him, would evolve your pokemon.
 
-### 10 - Pokemon Y / Pokemon Omega Ruby (3DS)
+### • Pokemon Y / Pokemon Omega Ruby (3DS)
 
 ![Pokemon Omega Ruby](/assets/images/posts/games/pokemon-omega-ruby.jpg)
 
@@ -112,7 +112,7 @@ Bro, stop!
 
 Now your game of his childhood in 3D. With amazing features added. To fly to your pokemon by region, change the hairstyle and clothes, ride in pokemon, Walking slowly to catch Pokemon .......
 
-### 11 - Uncharted 3 (PS3)
+### • Uncharted Series [1,2,3] (PS3)
 
 ![Uncharted 3](/assets/images/posts/games/uncharted-3.jpg)
 
@@ -120,16 +120,34 @@ I'm from Indiana Jones fan, so it's not hard to like a game where a guy like Dra
 
 PS: The scenarios are monstrously large.
 
-### 12 - Fire Emblem: Awaking (3DS)
+### • Fire Emblem: Awaking (3DS)
 
-### 13 - Kingdom Hearts: Chain of Memories (PS2)
+![Fire Emblem](/assets/images/posts/games/fire_emblem_awaking.jpg)
 
-### 14 - Harvest Moon: Hero of Leaf Valley (PSP)
+Excellent game, with excente gameplay and engaging characters. The game allows
+you to create links between these characters and see the result in the future.
 
-### 15 - Metal Gear Solid 3 (PS2)
+### • Kingdom Hearts: Chain of Memories (PS2)
 
-### 16 - Assassin's Creed 2 (PS3)
+![Kingdom Hearts: Chain of
+Memories](/assets/images/posts/games/kingdom_hearts_chains.jpg)
 
-### 17 - Suikoden Tierkreis (Nintendo DS)
+The best thing about this game is the mixture of the Disney universe. In an hour
+you are fighting along with Mickey, another time with Cloud Strife.
 
+### • Harvest Moon: Hero of Leaf Valley (PSP)
+
+![Harvest Moon: Hero of leaf
+valley](/assets/images/posts/games/harvest_moon_hero_of_leaf_valley.jpg)
+
+Same feeling of Harvest moon: back to nature, with some improvements in gameplay
+and better graphics. But it was still not enough to be better than the last.
+
+### • Metal Gear Solid 3 (PS2)
+
+### • Assassin's Creed 2 (PS3)
+
+### • Suikoden Tierkreis (Nintendo DS)
+
+### • Final Fantasy Tatics (PS1)
 
