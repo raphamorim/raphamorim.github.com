@@ -326,7 +326,7 @@ h3 {
   z-index: 0;
   width: 100%;
   background: #36485C;
-  padding: 25px 0px 5px 0px;
+  padding: 30px 0px 5px 0px;
   opacity: 0;
   height: 0px;
   margin-top: -30px;
@@ -435,4 +435,5 @@ code {
   .post-date { display: none; }
   .post-more { transition: all 0ms ease; }
   .bar-logo { background-color: transparent; }
+  .btn.red, .btn.blue { display: none;}
 }

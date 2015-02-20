@@ -21,9 +21,7 @@
   <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
 
   <!-- CSS -->
-  
-      <link rel="stylesheet" href="/assets/css/base.css" type="text/css" />
-  
+  <link rel="stylesheet" href="/assets/css/base.min.css" type="text/css" />
 </head>
 <body>
 
@@ -34,7 +32,7 @@
         <div class="bar-logo">Rapha<span>morim</span></div>
       </a>
       <div class="bar-menu">
-        <ul id='pagenav'>
+        <ul class='pagenav'>
           <a href="/blog">
             <li>Blog</li>
           </a>
@@ -59,7 +57,7 @@
     </div>
   </div>
   <div id="bar-mobile-menu">
-    <ul>
+    <ul class='pagenav'>
     <a href="/blog">
       <li>Blog</li>
     </a>
@@ -265,40 +263,9 @@ When a Dockerfile is finished executing, you end up having formed an image, whic
     </div> <!-- /content -->
   </div> <!-- /container -->
 
-<!-- jQuery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/assets/js/app.js"></script>
 
 
-    <script src="/assets/js/main.min.js"></script>
-    <!-- Scroll -->
-    <script src="/assets/js/infinitescroll.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-      $('#posts').infinitescroll({
-          navSelector   : "p.pagination",
-              // selector for the paged navigation (it will be hidden)
-          nextSelector  : "p.pagination a.older",
-              // selector for the NEXT link (to page 2)
-          itemSelector  : ".container ul#posts li.post",
-              // selector for all items you'll retrieve
-          loading: {
-              finishedMsg: "<em>That's all folks!</em>",
-              img : "/assets/images/load-icon.gif",
-              msgText: "<em>Loading...</em>",
-              speed: 'slow'
-          }
-      });
-    </script>
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-49746836-1', 'raphamorim.com');
-  ga('send', 'pageview');
-</script>
 </body>
 </html>
 
