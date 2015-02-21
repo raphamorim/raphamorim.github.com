@@ -36,6 +36,14 @@ I use [Jekyll](http://jekyllrb.com/), a static generator in Ruby, to create this
 
 You'll have access to the website at `http://0.0.0.0:4000/` :D
 
+## Tips
+
+Run `grunt` for every little or bigger change on css/js files:
+
+  ```sh
+  $ grunt
+  ```
+
 ## About
 
 Credits: Inspired by Andy Taylor and [Zeno Rocha](http://github.com/zenorocha).
