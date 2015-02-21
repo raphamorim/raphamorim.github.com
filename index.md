@@ -23,4 +23,4 @@ For while, I live in Brazil.
 <br>
 
 <a href="http://twitter.com/raphamundi" class="btn blue">Twitter</a>
-<a href="{{ site.baseurl }}about" class="btn red">My Life Teller</a>
+<a href="http://medium.com/@raphamorim" class="btn red">Read + in Medium</a>
