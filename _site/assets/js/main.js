@@ -13,10 +13,12 @@ var __defineActualNav = function(sel){
 
 // Events Mobile Button (generates menu)
 var __mobileBtn = function(){
-    var btn = document.querySelector('.bar-menu-optional'),
+    var navToggle = document.querySelector('.nav-toggle'),
         mobileMenu = document.querySelector('#bar-mobile-menu');
 
-    btn.addEventListener('click', function(e){
+    navToggle.addEventListener('click', function(e){
+        this.classList.toggle( "active" );
+
         if (mobileMenu.style.opacity <= 0) {
             mobileMenu.style.opacity = 1;
             mobileMenu.style.height = "330px";
