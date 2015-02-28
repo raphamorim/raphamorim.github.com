@@ -151,3 +151,5 @@ and better graphics. But it was still not enough to be better than the last.
 
 ### • Final Fantasy Tatics (PS1)
 
+### • Rune Factory 4 (Nintendo 3DS)
+
