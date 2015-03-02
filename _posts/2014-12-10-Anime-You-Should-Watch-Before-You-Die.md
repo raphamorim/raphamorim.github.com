@@ -47,5 +47,9 @@ and reading.
 
 ### 15 - Ore no Kanojo to Osananajimi ga Shuraba Sugiru (Oreshura)
 
-### 16 - Toradora
+### 16 - Chuunibyou Demo Koi ga Shitai!
+
+### 17 - Toradora
+
+### 18 - Amagi Brilliant Park
 
