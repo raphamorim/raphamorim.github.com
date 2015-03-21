@@ -22,10 +22,11 @@ description: Upcoming lectures and previous talks.
      <p>Local: Infnet • Centro, Rio de Janeiro - RJ</p>
   </li>
   <li>
-     <h3>CurtoJS (upcoming)</h3>
+     <h3>CurtoJS</h3>
      <p>Theme: Maintainable JavaScript</p>
      <p>March 20 ~ 2015</p>
      <p>Local: Curto Café • Centro, Rio de Janeiro - RJ</p>
+     <p><a href="https://speakerdeck.com/raphamorim/maintainable-javascript">See slides</a>
   </li>
   <li>
      <h3>RioJS</h3>
