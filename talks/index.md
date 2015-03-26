@@ -16,10 +16,11 @@ description: Upcoming lectures and previous talks.
      <p><a href="http://niteroijs.org/">Buy tickets</a>
   </li>
   <li>
-     <h3>Infnet - Talks Circuits 2015 (upcoming)</h3>
+     <h3>Infnet - Talks Circuits 2015</h3>
      <p>Theme: Hello, my name is React</p>
      <p>March 24 ~ 2015</p>
      <p>Local: Infnet • Centro, Rio de Janeiro - RJ</p>
+     <p><a href="https://speakerdeck.com/raphamorim/hello-my-name-is-react">See slides</a>
   </li>
   <li>
      <h3>CurtoJS</h3>
