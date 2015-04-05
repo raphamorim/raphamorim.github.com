@@ -7,7 +7,7 @@ description: Here is where I put all my experiments in code or things I really t
 
 ##Experiments
 
-[ For now there is only with canvas ]
+[ For now there's only canvas experiments ]
 
 <ul id="exp">
     <li>

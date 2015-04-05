@@ -10,15 +10,15 @@ How you doin? My name is **Raphael Amorim**.
 
 I'm a rurouni **Developer**.
 
-I am 19. Only works w/code and coffee.
+I'm 19 and feel AWESOME.
 
-Video game addicted. Love baths and longboards.
+I'm turn coffee into code.
 
-Works actually on some **open source** projects.
+Addicted to games, animes or any japanese culture.
 
-Currently study System Analysis and Development.
+Actually working on some **open source** projects.
 
-For while, I live in Brazil.
+I love create and **share** things.
 
 <br>
 
