@@ -7,7 +7,7 @@ language: 'en'
 image: 'assets/images/posts/trustless.jpg'
 ---
 
-####<img src="http://i3.kym-cdn.com/photos/images/newsfeed/000/537/507/906.gif" alt="Trustless" />
+####<img src="/assets/images/posts/trustless-flash.gif" alt="Trustless" />
 
 It's normal for performance testing. Many developers have chosen to use the console.time or in some cases attest to the process speed using setInterval.
 
