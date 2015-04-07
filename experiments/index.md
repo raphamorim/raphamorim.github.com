@@ -2,7 +2,7 @@
 layout: default
 title: Experiments
 class: experiments
-description: Here is where I put all my experiments in code or things I really think cool :).
+description: My experiments and some ideas :)
 ---
 
 ##Experiments
