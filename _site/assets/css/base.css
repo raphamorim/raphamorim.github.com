@@ -245,11 +245,17 @@ h3 {
   padding: 15px;
 }
 
+.post .post-content h2 {
+  border-left: none !important;
+  margin: 30px 20px -15px 5px;
+  color: #253240;
+  font-size: 30px;
+}
+
 .post h3 {
   margin: 30px 20px -15px 20px;
   font-size: 20px;
 }
-
 
 .post img {
   position: relative;

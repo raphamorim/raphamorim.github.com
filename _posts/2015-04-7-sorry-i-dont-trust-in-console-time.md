@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sorry bro, I simply don't trust in Console.Time"
+title: "Sorry bro, I simply don't trust in Console.Time or neither similar."
 description: "It's normal for performance testing. Many developers have chosen to use the console.time or in some cases attest to the process speed using setInterval"
 link: 'http://raphamorim.github.io/sorry-i-dont-trust-in-console-time'
 language: 'en'
@@ -9,8 +9,43 @@ image: 'assets/images/posts/trustless.jpg'
 
 ####<img src="/assets/images/posts/trustless-flash.gif" alt="Trustless" />
 
-It's normal for performance testing. Many developers have chosen to use the console.time or in some cases attest to the process speed using setInterval.
+It's normal for measure time. Many developers choose the console.time or in some cases use Date.getTime(). 
 
 <!-- more -->
 
-But I say, don't trust 100% in any of these
+I give you a simple example:
+
+## The Code
+
+<div class="code">
+<code>console.time('execution time: ');</code>
+<br>
+<code>var total = 0;</code>
+<br>
+<code>for (var i = 0; i <= 1e2; i++) {</code>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;total += i;</code>
+<code>}</code>
+<br>
+<code>console.log(total);</code>
+<br>
+<code>console.timeEnd('execution time: ');</code>
+</div>
+
+## Results
+
+**Chrome (version 41.0)**
+
+<img style="max-width: 500px; border: 2px solid #f8f8f8;" src="/assets/images/posts/accuracy-time/chrome.jpg"/>
+
+**Firefox (version 37.0.1)**
+
+<img style="max-width: 500px; border: 2px solid #f8f8f8;" src="/assets/images/posts/accuracy-time/firefox.jpg"/>
+
+## But I say: Bro don't trust 100% in any of these.
+
+### Why I'm saying that?
+
+If you need to measure time precisely, neither console.time() or using Date.getTime() will get you far. 
+
+You can check out John Resig's blog post about the [accuracy of JavaScript time](http://ejohn.org/blog/accuracy-of-javascript-time/) to learn more about that.
+

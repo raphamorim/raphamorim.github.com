@@ -12,9 +12,9 @@
                 {% else %}
                     <h2>{{ page.title }}</h2>
                 {% endif %}
-
-                {{ content }}
-
+                <div class="post post-content">
+                    {{ content }}
+                </div>
                 <div class="post-comments">
                     {% include disqus.html %}
                 </div>
