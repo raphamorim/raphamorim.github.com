@@ -41,9 +41,9 @@ I give you a simple example:
 
 <img style="max-width: 500px; border: 2px solid #f8f8f8;" src="/assets/images/posts/accuracy-time/firefox.jpg"/>
 
-## But I say: Bro don't trust 100% in any of these.
+## But, don't trust 100% in any of these.
 
-### Why I'm saying that?
+**Why I'm saying that?**
 
 If you need to measure time precisely, neither console.time() or using Date.getTime() will ,get you far. Using Date.getTime() you got something like this:
 
@@ -53,7 +53,7 @@ If you need to measure time precisely, neither console.time() or using Date.getT
 <code>var diff = (new Date).getTime() - start;</code>
 </div>
 
-But the truth is that even if you repeat the same code, same syntax and the same logic. It can get quite different results when run.
+Even if you repeat the same code, same syntax and the same logic. It can get quite different results when run.
 
 You can see what I say using the [Dromaeo](http://dromaeo.com/) (a Mozilla JavaScript performance test suite) or you browser console. So you realize the time in the implementation of JavaScript isn't something that you can be measuring with full certainty.
 
