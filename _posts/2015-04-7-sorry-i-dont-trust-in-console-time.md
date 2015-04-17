@@ -55,7 +55,9 @@ If you need to measure time precisely, neither console.time() or using Date.getT
 
 But the truth is that even if you repeat the same code, same syntax and the same logic. It can get quite different results when run.
 
-You can test the [Dromaeo](http://dromaeo.com/) (a Mozilla JavaScript performance test suite) to see what I mean. And realize that time in the implementation of JavaScript is not something that can be measuring with full certainty
+You can see what I say using the [Dromaeo](http://dromaeo.com/) (a Mozilla JavaScript performance test suite) or you browser console. So you realize the time in the implementation of JavaScript isn't something that you can be measuring with full certainty.
+
+**The truth is:** JavaScript execution time can be quite affected by so many things, like the engine used by the browser or the user machine.
 
 You can check out John Resig's blog post about the [accuracy of JavaScript time](http://ejohn.org/blog/accuracy-of-javascript-time/) to learn more about that.
 
