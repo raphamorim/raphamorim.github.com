@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Sorry bro, I simply don't trust in Console.Time &mdash; Raphamorim</title>
+  <title>Sorry bro, I simply don't trust in Console.Time or neither similar. &mdash; Raphamorim</title>
 
   <!-- Meta -->
   <meta charset="utf-8"/>
@@ -9,7 +9,7 @@
   <meta name="description" content="It's normal for performance testing. Many developers have chosen to use the console.time or in some cases attest to the process speed using setInterval" />
 
   <!-- Facebook -->
-  <meta property="og:title" content="Sorry bro, I simply don't trust in Console.Time - Raphamorim"/>
+  <meta property="og:title" content="Sorry bro, I simply don't trust in Console.Time or neither similar. - Raphamorim"/>
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="http://raphamorim.com/sorry-i-dont-trust-in-console-time/"/>
   <meta property="og:image" content="http://raphamorim.com/assets/images/posts/trustless.jpg"/>
@@ -21,7 +21,7 @@
   <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/base.css" type="text/css" />
+  <link rel="stylesheet" href="/assets/css/base.min.css" type="text/css" />
 </head>
 <body>
 
@@ -82,7 +82,7 @@
         <ul id="posts">
             <li class="post post-page">
                 
-                    <h2><a href="http://raphamorim.github.io/sorry-i-dont-trust-in-console-time">Sorry bro, I simply don't trust in Console.Time</a></h2>
+                    <h2><a href="http://raphamorim.github.io/sorry-i-dont-trust-in-console-time">Sorry bro, I simply don't trust in Console.Time or neither similar.</a></h2>
                 
                 <div class="post post-content">
                     <h4 id="img-srcassetsimagespoststrustless-flashgif-alttrustless-"><img src="/assets/images/posts/trustless-flash.gif" alt="Trustless" /></h4>
@@ -123,7 +123,17 @@
 
 <h3 id="why-im-saying-that">Why I’m saying that?</h3>
 
-<p>If you need to measure time precisely, neither console.time() or using Date.getTime() will get you far.</p>
+<p>If you need to measure time precisely, neither console.time() or using Date.getTime() will ,get you far. Using Date.getTime() you got something like this:</p>
+
+<div class="code">
+<code>var start = (new Date).getTime();</code>
+<code>/* Run a test. */</code>
+<code>var diff = (new Date).getTime() - start;</code>
+</div>
+
+<p>But the truth is that even if you repeat the same code, same syntax and the same logic. It can get quite different results when run.</p>
+
+<p>You can test the <a href="http://dromaeo.com/">Dromaeo</a> (a Mozilla JavaScript performance test suite) to see what I mean. And realize that time in the implementation of JavaScript is not something that can be measuring with full certainty</p>
 
 <p>You can check out John Resig’s blog post about the <a href="http://ejohn.org/blog/accuracy-of-javascript-time/">accuracy of JavaScript time</a> to learn more about that.</p>
 

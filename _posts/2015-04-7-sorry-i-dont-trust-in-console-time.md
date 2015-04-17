@@ -45,7 +45,17 @@ I give you a simple example:
 
 ### Why I'm saying that?
 
-If you need to measure time precisely, neither console.time() or using Date.getTime() will get you far. 
+If you need to measure time precisely, neither console.time() or using Date.getTime() will ,get you far. Using Date.getTime() you got something like this:
+
+<div class="code">
+<code>var start = (new Date).getTime();</code>
+<code>/* Run a test. */</code>
+<code>var diff = (new Date).getTime() - start;</code>
+</div>
+
+But the truth is that even if you repeat the same code, same syntax and the same logic. It can get quite different results when run.
+
+You can test the [Dromaeo](http://dromaeo.com/) (a Mozilla JavaScript performance test suite) to see what I mean. And realize that time in the implementation of JavaScript is not something that can be measuring with full certainty
 
 You can check out John Resig's blog post about the [accuracy of JavaScript time](http://ejohn.org/blog/accuracy-of-javascript-time/) to learn more about that.
 
