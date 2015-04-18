@@ -1,8 +1,6 @@
-/*globals module: true */
-module.exports = function(grunt) {
-	"use strict";
+'use strict';
 
-	// Project configuration.
+module.exports = function(grunt) {
 	grunt.initConfig({
 		uglify: {
 			main: {

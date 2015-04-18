@@ -9,11 +9,11 @@ description: Upcoming lectures and previous talks.
 
 <ul id="exp">
   <li>
-     <h3><a href="http://niteroijs.org/" target="_blank">NiteróiJS</a> (upcoming)</h3>
+     <h3><a href="http://niteroijs.org/" target="_blank">NiteróiJS</a></h3>
      <p>Theme: Playground with Canvas</p>
      <p>April 11 ~ 2015</p>
      <p>Local: Praia Vermelha Campus, UFF • Gragoatá, Niterói - RJ</p>
-     <p><a href="http://niteroijs.org/">Buy tickets</a>
+     <p><a href="https://speakerdeck.com/raphamorim/playground-with-canvas">See slides</a>
   </li>
   <li>
      <h3>Infnet - Talks Circuits 2015</h3>
