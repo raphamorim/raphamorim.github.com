@@ -2,7 +2,7 @@
 layout: post
 title: 'Do not be a front-end, much less back-end'
 description: "This article is the result of the experience I have gained performing consulting and observing the attitude of many developers."
-link: 'http://raphamorim.github.io/Do-not-be-a-front-end-much-less-back-end '
+link: 'http://raphamorim.github.io/Do-not-be-a-front-end-much-less-back-end'
 language: 'en'
 image: 'assets/images/posts/indiana-front-back-end.jpeg'
 ---
