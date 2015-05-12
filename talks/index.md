@@ -9,6 +9,13 @@ description: Upcoming lectures and previous talks.
 
 <ul id="exp">
   <li>
+     <h3><a href="http://niteroijs.org/" target="_blank">Academic Week - La Salle</a></h3>
+     <p>Theme: Playground with Canvas</p>
+     <p>May 6 ~ 2015</p>
+     <p>Local: Unilasalle • Icaraí, Niterói - RJ</p>
+     <p><a href="https://speakerdeck.com/raphamorim/playground-with-canvas">See slides</a>
+  </li>
+  <li>
      <h3><a href="http://niteroijs.org/" target="_blank">NiteróiJS</a></h3>
      <p>Theme: Playground with Canvas</p>
      <p>April 11 ~ 2015</p>
