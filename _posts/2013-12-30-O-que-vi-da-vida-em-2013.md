@@ -7,7 +7,7 @@ language: 'pt-br'
 image: 'assets/images/posts/ano-2013.jpg'
 ---
 
-####<img src="/assets/images/posts/ano-2013.jpg" alt="2013" style="padding: 0; border: none !important; background:none;">
+####<img src="/assets/images/posts/ano-2013.jpg" alt="2013">
 
 Dois mil e treze foi realmente um ano que marcou minha vida, de uma forma especial na parte profissional. Este foi o primeiro ano pós-escola e também o ano que comecei a caminhar sozinho.
 

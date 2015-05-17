@@ -19,37 +19,43 @@ and reading.
 
 ### 1 - Steins;Gate
 
-### 2 - Hyouka
+### 2 - Barakamon
 
-### 3 - Kokoro Connect
+### 3 - Hyouka
 
-### 4 - InuYasha
+### 4 - Kokoro Connect
 
-### 5 - Fullmetal Alquimist Brotherhood
+### 5 - Ore no Kanojo to Osananajimi ga Shuraba Sugiru (Oreshura)
 
-###6 - Itazura na Kiss
+### 6 - Gekkan Shoujo Nozaki-kun
 
-### 7 - Golden Time
+### 7 - Silver Spoon (Gin no Saji)
 
-### 8 - Silver Spoon (Gin no Saji)
+### 8 - Itazura na Kiss
 
-### 9 - Servant x Service
+### 9 - Golden Time
 
-### 10 - Sakurasou no Pet na Kanojo
+### 10 - Chuunibyou Demo Koi ga Shitai!
 
-### 11 - Summer Wars
+### 11 - Servant x Service
 
-### 12 - Yu Yu Hakusho
+### 12 - Sakurasou no Pet na Kanojo
 
-### 13 - Kaichou Wa Maid-Sama!
+### 13 - Summer Wars
 
-### 14 - Hataraku Maou-Sama
+### 14 - InuYasha
 
-### 15 - Ore no Kanojo to Osananajimi ga Shuraba Sugiru (Oreshura)
+### 15 - Fullmetal Alquimist Brotherhood
 
-### 16 - Chuunibyou Demo Koi ga Shitai!
+### 16 - Yu Yu Hakusho
 
-### 17 - Toradora
+### 17 - Kaichou Wa Maid-Sama!
 
-### 18 - Amagi Brilliant Park
+### 18 - Hataraku Maou-Sama
+
+### 19 - One Piece
+
+### 20 - Toradora
+
+### 21 - Amagi Brilliant Park
 

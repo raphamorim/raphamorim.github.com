@@ -1,8 +1,7 @@
 ---
 layout: post
 title: 'Yeah, these are my favorite games!'
-description: "Here is my personal list of my favorite games, I think everyone should play
-these before die. With time I'll updating the list."
+description: "Here's my list of my favorite games. I think everyone should play these games before die. With time I'll updating the list."
 link: 'http://raphamorim.github.io/Some-Games-You-Should-Play-Before-You-Die '
 language: 'en'
 image: 'assets/images/posts/games/radiata-stories.jpg'
@@ -76,7 +75,7 @@ But I would say that the idea to play with the villain of the game, is very good
 
 ![Radiata Stories](/assets/images/posts/games/radiata-stories.jpg)
 
-Think of game with good plot, conversation (one of the best I've ever seen) and extremely free gameplay. Well, that's Radiata Stories
+Think of game with good plot, conversation (one of the best I've ever seen) and extremely free gameplay. Well, that's Radiata Stories!
 
 With extremely well crafted and funny dialogues. Radiata is certainly one of the games that deserves a seal of one of the best RPGs.
 
@@ -84,7 +83,7 @@ With extremely well crafted and funny dialogues. Radiata is certainly one of the
 
 ![Persona 4](/assets/images/posts/games/persona-4.jpg)
 
-Best **mystery** game I played. Best game of **social interaction** that played
+Best **mystery** game and best game of **social interaction** I played.
 
 Good combat system and incredible dialogues. It's hard not to like Persona 4.
 
@@ -92,17 +91,17 @@ Good combat system and incredible dialogues. It's hard not to like Persona 4.
 
 ![Pokemon Silver](/assets/images/posts/games/pokemon-silver.jpg)
 
-Pokemon is Pokemon. Remarkable in my life. That young not played pokemon in school? or dreamed of being a pokemon trainer?
+Pokemon is Pokemon. Remarkable in my life. Who young never played pokemon on school? Or have a dream of being a pokemon trainer?
 
-Be able to mount your Pokemon team was amazing and still is.
+Be able to select and mount your Pokemon team was amazing idea. Still is.
 
 ### • Pokemon Soul Silver (Nintendo DS)
 
 ![Pokemon Soul Silver](/assets/images/posts/games/pokemon-soul-silver.jpg)
 
-We can say that made that remarkable game of my childhood even better, with a sequence of new things added to the game.
+We can say it made the game of my childhood even better, with a sequence of features and new things added to the game.
 
-One of the coolest things was the Pokéwalker, where you carrying your pokemon on the Nintendo DS to the Pokéwalker, and as you walked with him, would evolve your pokemon.
+One of the coolest things was the Pokéwalker, you can pass your pokemon on the Nintendo DS to the Pokéwalker, so as you walked with him, would gain more experiencie and evolve your pokemon.
 
 ### • Pokemon Y / Pokemon Omega Ruby (3DS)
 
@@ -110,15 +109,15 @@ One of the coolest things was the Pokéwalker, where you carrying your pokemon o
 
 Bro, stop!
 
-Now your game of his childhood in 3D. With amazing features added. To fly to your pokemon by region, change the hairstyle and clothes, ride in pokemon, Walking slowly to catch Pokemon .......
+The game of his childhood **in 3D**. Newest amazing features added. Now you can fly with your pokemon over region by region, change the character hairstyle and clothes, ride in some pokemons, walking slowly into the cave, water or grass to catch pokemons .......
 
 ### • Uncharted Series [1,2,3] (PS3)
 
 ![Uncharted 3](/assets/images/posts/games/uncharted-3.jpg)
 
-I'm from Indiana Jones fan, so it's not hard to like a game where a guy like Drake who loves a bad joke mixed with the same perspective of "treasure hunt".
+I'm Indiana Jones fan, so it's hard not like a game where a guy like Drake who loves a bad joke mixed with the same perspective of "treasure hunt".
 
-PS: The scenarios are monstrously large.
+Note: The scenarios are monstrously large.
 
 ### • Fire Emblem: Awaking (3DS)
 
