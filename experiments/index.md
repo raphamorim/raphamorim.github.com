@@ -7,7 +7,20 @@ description: My experiments and some ideas :)
 
 ##Experiments
 
-[ For now there's only canvas experiments ]
+<ul id="exp">
+    <li>
+       <h3>
+          <a
+          href="http://raphamorim.com/raining-day">Raining Day</a>
+       </h3>
+
+       <p><img src="/assets/images/experiments/raining-day.jpg" alt="Raining Day"></p>
+
+       <p>A raining day using sketch.js</p>
+
+       <p><a href="http://raphamorim.com/raining-day" target="_blank">See experiment</a>, <a href="https://github.com/raphamorim/raining-day" target="_blank">Fork this experiment</a></p>
+    </li>
+</ul>
 
 <ul id="exp">
     <li>
