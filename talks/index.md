@@ -9,32 +9,53 @@ description: Upcoming lectures and previous talks.
 
 <ul id="exp">
   <li>
+     <h3><a href="http://www.eventick.com.br/meetup-riojs-julho-2015" target="_blank">Front-End Carioca</a></h3>
+     <p>Theme: Como ser um desenvoledor transante?</p>
+     <p>Sep 26 ~ 2015</p>
+     <p>Local: Clube de Engenharia • Centro - Rio de Janeiro - RJ</p>
+     <p>UPCOMING</p>
+  </li>
+  <li>
+     <h3><a href="http://www.eventick.com.br/meetup-riojs-julho-2015" target="_blank">Riojs meetup</a></h3>
+     <p>Theme: Works like Riot.js</p>
+     <p>Jul 18 ~ 2015</p>
+     <p>Local: He:labs • Glória, Rio de Janeiro - RJ</p>
+     <p>UPCOMING</p>
+  </li>
+  <li>
+     <h3>Fórum Internacional do Software Livre (FISL) 16</h3>
+     <p>Theme: Creating web applications using React and Flux</p>
+     <p>Jul 11 ~ 2015</p>
+     <p>Local: PUC-RS • Porto Alegre - RS</p>
+     <p>UPCOMING</p>
+  </li>
+  <li>
      <h3><a href="http://niteroijs.org/" target="_blank">Academic Week - La Salle</a></h3>
      <p>Theme: Playground with Canvas</p>
      <p>May 6 ~ 2015</p>
      <p>Local: Unilasalle • Icaraí, Niterói - RJ</p>
-     <p><a href="https://speakerdeck.com/raphamorim/playground-with-canvas">See slides</a>
+     <p><a href="https://speakerdeck.com/raphamorim/playground-with-canvas">See slides</a></p>
   </li>
   <li>
      <h3><a href="http://niteroijs.org/" target="_blank">NiteróiJS</a></h3>
      <p>Theme: Playground with Canvas</p>
      <p>April 11 ~ 2015</p>
      <p>Local: Praia Vermelha Campus, UFF • Gragoatá, Niterói - RJ</p>
-     <p><a href="https://speakerdeck.com/raphamorim/playground-with-canvas">See slides</a>
+     <p><a href="https://speakerdeck.com/raphamorim/playground-with-canvas">See slides</a></p>
   </li>
   <li>
      <h3>Infnet - Talks Circuits 2015</h3>
      <p>Theme: Hello, my name is React</p>
      <p>March 24 ~ 2015</p>
      <p>Local: Infnet • Centro, Rio de Janeiro - RJ</p>
-     <p><a href="https://speakerdeck.com/raphamorim/hello-my-name-is-react">See slides</a>
+     <p><a href="https://speakerdeck.com/raphamorim/hello-my-name-is-react">See slides</a></p>
   </li>
   <li>
      <h3>CurtoJS</h3>
      <p>Theme: Maintainable JavaScript</p>
      <p>March 20 ~ 2015</p>
      <p>Local: Curto Café • Centro, Rio de Janeiro - RJ</p>
-     <p><a href="https://speakerdeck.com/raphamorim/maintainable-javascript">See slides</a>
+     <p><a href="https://speakerdeck.com/raphamorim/maintainable-javascript">See slides</a></p>
   </li>
   <li>
      <h3>RioJS</h3>
@@ -42,16 +63,14 @@ description: Upcoming lectures and previous talks.
      <p>December 20 ~ 2014</p>
      <p>Local: Hotel Urbano • Barra da Tijuca, Rio de Janeiro - RJ</p>
      <p>
-       <a href="https://speakerdeck.com/raphamorim/confissoes-de-um-contribuidor">See slides</a>
-    </p>
+       <a href="https://speakerdeck.com/raphamorim/confissoes-de-um-contribuidor">See slides</a></p>
   </li>
   <li>
      <h3>Learning Git Flow </h3>
      <p>December 3 ~ 2014</p>
      <p>Local: Infnet • Centro, Rio de Janeiro - RJ</p>
      <p>
-       <a href="https://speakerdeck.com/raphamorim/git-flow-workshop">See slides</a>
-    </p>
+       <a href="https://speakerdeck.com/raphamorim/git-flow-workshop">See slides</a></p>
   </li>
   <li>
      <h3>Infnet - Talks Circuits 2014</h3>
