@@ -14,9 +14,9 @@ I'm 19 and feel AWESOME.
 
 I'm turn coffee into code.
 
-Addicted to games, animes or any japanese culture.
+Trying discover the unknown.
 
-Actually working on some **open source** projects.
+Actually working with passion on **open source**.
 
 I love create and **share** things.
 
