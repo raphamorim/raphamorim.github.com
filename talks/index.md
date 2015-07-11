@@ -9,6 +9,13 @@ description: Upcoming lectures and previous talks.
 
 <ul id="exp">
   <li>
+     <h3><a href="http://www.brazil.com.js" target="_blank">Braziljs</a></h3>
+     <p>Theme: ?</p>
+     <p>Aug 21 & 22 ~ 2015</p>
+     <p>Local: Shopping Center BarraShoppingSul • Porto Alegre, RS</p>
+     <p>UPCOMING</p>
+  </li>
+  <li>
      <h3><a href="http://www.eventick.com.br/meetup-riojs-julho-2015" target="_blank">Front-End Carioca</a></h3>
      <p>Theme: Como ser um desenvoledor transante?</p>
      <p>Sep 26 ~ 2015</p>
@@ -24,10 +31,11 @@ description: Upcoming lectures and previous talks.
   </li>
   <li>
      <h3>Fórum Internacional do Software Livre (FISL) 16</h3>
-     <p>Theme: Creating web applications using React and Flux</p>
+     <p>Theme: Meet React (Creating web applications using React and Flux)</p>
      <p>Jul 11 ~ 2015</p>
      <p>Local: PUC-RS • Porto Alegre - RS</p>
-     <p>UPCOMING</p>
+     <p><a href="https://speakerdeck.com/raphamorim/meet-react">See slides</a>,
+        <a href="https://youtu.be/8DQngR34Q5s">Watch talk video</a></p>
   </li>
   <li>
      <h3><a href="http://niteroijs.org/" target="_blank">Academic Week - La Salle</a></h3>
