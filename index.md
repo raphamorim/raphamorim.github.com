@@ -16,7 +16,7 @@ I'm turn coffee into code.
 
 Trying discover the unknown.
 
-Actually working with passion on **open source**.
+Actually working on some **open source** projects.
 
 I love create and **share** things.
 

@@ -27,7 +27,7 @@ description: Upcoming lectures and previous talks.
      <p>Theme: Works like Riot.js</p>
      <p>Jul 18 ~ 2015</p>
      <p>Local: He:labs • Glória, Rio de Janeiro - RJ</p>
-     <p>UPCOMING</p>
+     <p><a href="https://speakerdeck.com/raphamorim/works-like-riot-dot-js">See slides</a>
   </li>
   <li>
      <h3>Fórum Internacional do Software Livre (FISL) 16</h3>

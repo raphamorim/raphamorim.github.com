@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>When AST has saved my Project &mdash; Raphamorim</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="" />
+
+  <!-- Facebook -->
+  <meta property="og:title" content="When AST has saved my Project - Raphamorim"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="http://raphamorim.com/when-AST-save-my-project/"/>
+  <meta property="og:image" content="http://raphamorim.com/assets/images/posts/code-ast.jpg"/>
+  <meta property="og:site_name" content="Raphamorim"/>
+  <meta property="og:description" content=""/>
+  <meta property="fb:admins" content="100001780434348" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/base.min.css" type="text/css" />
+</head>
+<body>
+
+
+  <nav>
+    <div class='container'>
+      <a href="/" class="bar-link">
+        <div class="bar-logo">RAPHA<span>MORIM</span></div>
+      </a>
+      <div class="bar-menu">
+        <ul class='pagenav'>
+          <a href="/blog">
+            <li>Blog</li>
+          </a>
+          <a href="http://github.com/raphamorim" target="_blank">
+            <li>GitHub</li>
+          </a>
+          <a href="/projects">
+            <li>Projects</li>
+          </a>
+          <a href="/experiments">
+            <li>Experiments</li>
+          </a>
+          <a href="/talks">
+            <li>Talks</li>
+          </a>
+       </ul>
+    </div>
+    <div class="nav-toggle">
+        <span></span>
+    </div>
+  </div>
+  <div id="bar-mobile-menu">
+    <ul class='pagenav'>
+    <a href="/blog">
+      <li>Blog</li>
+    </a>
+    <a href="http://github.com/raphamorim">
+      <li>GitHub</li>
+    </a>
+    <a href="/projects">
+      <li>Projects</li>
+    </a>
+    <a href="/experiments">
+      <li>Experiments</li>
+    </a>
+    <a href="/talks">
+      <li>Talks</li>
+    </a>
+  </ul>
+  </div>
+</nav>
+
+
+  <div class='main'>
+
+    <div class="container">
+        <ul id="posts">
+            <li class="post post-page">
+                
+                    <h2><a href="http://raphamorim.github.io/when-AST-save-my-project">When AST has saved my Project</a></h2>
+                
+                <div class="post post-content">
+                    <h4 id="img-srcassetsimagespostscode-astjpg-altast-"><img src="/assets/images/posts/code-ast.jpg" alt="AST" /></h4>
+
+<p>For people who don’t now. I’ve created <a href="http://github/raphamorim/ranza">ranza</a> for check unusable dependencies. Why? To avoid accumulation of dependencies that are not being used….</p>
+
+<!-- more -->
+
+<p>The Ranza initially was using <strong>fs</strong> module to read files and apply an regex in all data to catch all requires in that file. Working only for Nodejs projects.</p>
+
+<p>Well, in that time I don’t realized wich using that technique for get all requires in the file/project was a problem.</p>
+
+<h3 id="why">Why?</h3>
+
+<p>I’ve made a good regex. It’ve work for regular (most) cases. But regex  is dump. This technicle only will work for cases who I know. So with time I realized other cases, other ways to require a dependency. And  EVERY TIME I update and improve the regex (Dear Lord, it was so much boring).</p>
+
+<p><strong>I can’t trust in my own logic, even with tests</strong>, cause every week a discover new things, new ways to apply a require. This things made ranza unstable.</p>
+
+<p>The time has passed and I realized: “Well, this project will never work for ES6”. That’s sucks, cause my idea for futures releases is ranza work to client-side dependencies too (like an uncss for JS).</p>
+
+<p>So, a friend of mine tell me for use <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Three (AST)</a> to get the requires callers. The idea is amazing, it’s solve all my problems and I can remove the regex.</p>
+
+<p>So I use a Reflect node module to made the AST. But this module is current working only for ES3. What’s means? In cases which missing “;” and “{/}” in syntax, it’s not works (ES4/ES5). Awww man, and now?</p>
+
+<p>Besides this problems, I wanted Ranza working for ES6 too (using import instead require). So I’ve a another idea when I look the babel-core (a ES6 compiler). I’ll transform ES6 code into ES5, so later I fix problems with syntax for ES3 support.</p>
+
+<p>But I found a pot of gold.</p>
+
+<p>In babel-core exists a <strong>parser</strong> method. Which convert ES6, ES5 code syntax in AST. So I decided reuse this method in ranza and now my project is stable. I’ve no fear for using this module.</p>
+
+<p>From now, the changes in ranza is only for improvements and bugs fixes (I guess te-hehehe) &lt;3</p>
+
+
+                </div>
+                <div class="post-comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'raphamorim',
+      disqus_url = '';
+
+  
+  disqus_url = "http://raphamorim.com/when-AST-save-my-project/";
+  
+
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+                </div>
+            </li>
+        </ul>
+
+    </div> <!-- /content -->
+  </div> <!-- /container -->
+
+<script src="/assets/js/app.js" async></script>
+
+
+</body>
+</html>
+

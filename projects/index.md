@@ -35,7 +35,7 @@ description: All my projects in progress or completed status.
     <li>
        <h3><a href="https://www.npmjs.com/package/ranza">Ranza</a></h3>
 
-       <p>Syncronize and manage all project dependencies</p>
+       <p>The dependency checker</p>
 
        <p><a href="https://www.npmjs.com/package/ranza" target="_blank">See in npmjs</a> or <a href="https://github.com/raphamorim/ranza" target="_blank">fork in GitHub</a></p>
 
