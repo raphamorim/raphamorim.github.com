@@ -23,6 +23,13 @@ description: Upcoming lectures and previous talks.
      <p>UPCOMING</p>
   </li>
   <li>
+     <h3><a href="http://barrajs.com.br" target="_blank">BarraJs</a></h3>
+     <p>Theme: The Amazing ES6</p>
+     <p>Jul 25 ~ 2015</p>
+     <p>Local: Barra da Tijuca, Rio de Janeiro - RJ</p>
+     <p><a href="https://speakerdeck.com/raphamorim/the-amazing-es6">See slides</a>
+  </li>
+  <li>
      <h3><a href="http://www.eventick.com.br/meetup-riojs-julho-2015" target="_blank">Riojs meetup</a></h3>
      <p>Theme: Works like Riot.js</p>
      <p>Jul 18 ~ 2015</p>
