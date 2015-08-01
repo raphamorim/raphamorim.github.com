@@ -7,7 +7,6 @@ language: 'pt-br'
 image: 'assets/images/posts/why-node-js.jpg'
 ---
 
-####<img src="/assets/images/posts/why-node-js.jpg" alt="NodeJs">
 O Node.js é realmente a sensação do momento, por n motivos ele acaba ficando em evidência,
 chamando a atenção de desenvolvedores, fatores tais como: facilidade e velocidade em desenvolvimento de aplicações
 REST ou até mesmo pelo próprio JavaScript exercendo o papel de back-end. Tornando o Node.js

@@ -7,8 +7,6 @@ language: 'en'
 image: 'assets/images/posts/indiana-front-back-end.jpeg'
 ---
 
-####<img src="/assets/images/posts/indiana-front-back-end.jpeg" alt="Learn a little of everything, as the Indy or Macgyver" />
-
 You can read the original article in portuguese on [Medium](https://medium.com/@raphamorim/nao-seja-um-front-end-muito-menos-back-end-bd205299a994).
 
 <!-- more -->

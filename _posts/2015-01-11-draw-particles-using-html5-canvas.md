@@ -8,8 +8,6 @@ language: 'en'
 image: 'assets/images/experiments/particles.jpg'
 ---
 
-####<img src="/assets/images/experiments/particles.jpg" alt="Particles" />
-
 Originally published in the medium, [read
 here](https://medium.com/@raphamorim/draw-particles-using-html5-canvas-6151ab214f7a).
 You can read on portuguese too,

@@ -7,8 +7,6 @@ language: 'en'
 image: 'assets/images/posts/animes/steins-gate-1.jpg'
 ---
 
-####<img src="/assets/images/posts/animes/steins-gate-1.jpg" alt="Steins;Gate" />
-
 Here is my personal list of my favorite animes, I think everyone should see
 these before die. Has few classics, but with time I will updating the list.
 

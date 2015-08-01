@@ -7,8 +7,6 @@ language: 'en'
 image: 'assets/images/posts/code-ast.jpg'
 ---
 
-####<img src="/assets/images/posts/code-ast.jpg" alt="AST" />
-
 For people who don't now. I've created [ranza](http://github/raphamorim/ranza) for check unusable dependencies. Why? To avoid accumulation of dependencies that are not being used.... 
 
 <!-- more -->

@@ -7,8 +7,6 @@ language: 'en'
 image: 'assets/images/posts/vim.jpg'
 ---
 
-####<img src="/assets/images/posts/vim.jpg" alt="Vim Editor using Lucario Color Scheme" />
-
 I started using vim just occasionally and I recently found myself using it almost all the time — although there are some peculiarity of Sublime Text and Atom I still use.
 
 <!-- more -->

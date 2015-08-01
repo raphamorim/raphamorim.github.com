@@ -8,27 +8,20 @@
       		{% for post in paginator.posts %}
       			{% unless post.draft %}
         			<li class="post">
-        			{% if post.link %}
-        				<h2>
-							<a href="{{ post.link }}">{{ post.title }}</a>
-						</h2>
-        			{% else %}
-        				<h2>
-							<a href="#">{{ post.title }}</a>
-						</h2>
-
-        			{% endif %}
-
+              <img class="post-title-image" src="/{{ post.image }}">
+              {% if post.link %}
+                <h2 class="post-title"><a class="post-title-link" href="{{ post.link }}">{{ post.title }}</a></h2>
+              {% else %}
+                <h2 class="post-title">{{ post.title }}</h2>
+              {% endif %}
+              <div class="post-date">
+                {{ post.date | date:"%d %B • %Y" }}
+              </div>
 					    {% if post.excerpt %}
         				{{ post.excerpt | markdownify }}
-        					<a href="{{ post.url }}">
-          					    <p class="post-more">
-									Keep reading...
-								</p>
-							</a>
-							<p class="post-date">
-								{{ post.date | date:"%d %B • %Y" }}
-							</p>
+        				<p class="post-read-more"><a class="post-read-more--button" href="{{ post.url }}" >
+									Read more
+                </a></p>
         			{% else %}
         					{{ post.content }}
         			{% endif %}

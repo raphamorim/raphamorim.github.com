@@ -8,8 +8,6 @@ language: 'pt-br'
 image: 'assets/images/posts/treeData.jpg'
 ---
 
-####<img src="/assets/images/posts/treeData.jpg" alt="treeData.js">
-
 Meu segundo experimento pessoal, dessa vez
 decidi me aventurar por campos mais racionais e lógicos. No meio da aula de estrutura
 de dados e algoritmos

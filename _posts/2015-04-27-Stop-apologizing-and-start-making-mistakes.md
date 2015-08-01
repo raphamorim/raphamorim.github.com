@@ -7,8 +7,6 @@ language: 'en'
 image: 'assets/images/posts/kaka-player.jpeg'
 ---
 
-####<img src="/assets/images/posts/kaka-player.jpeg" alt="Stop apologizing and start making mistakes" />
-
 You can read the original article in portuguese on [Medium](https://medium.com/@raphamorim/pare-de-dar-desculpas-e-aprenda-a-errar-ad17bbebb8a2).
 
 <!-- more -->

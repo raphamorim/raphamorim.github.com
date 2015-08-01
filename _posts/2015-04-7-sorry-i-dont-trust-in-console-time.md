@@ -7,8 +7,6 @@ language: 'en'
 image: 'assets/images/posts/trustless.jpg'
 ---
 
-####<img src="/assets/images/posts/trustless-flash.gif" alt="Trustless" />
-
 It's normal for measure time. Many developers choose the console.time or in some cases use Date.getTime(). 
 
 <!-- more -->

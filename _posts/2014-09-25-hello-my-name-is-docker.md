@@ -9,8 +9,6 @@ language: 'en'
 image: 'assets/images/posts/docker.jpg'
 ---
 
-####<img src="/assets/images/posts/docker.jpg" alt="Docker" />
-
 Let's start to build together a simple application using [docker](http://docker.io). This posts is actually a short guide for beginners about how to use this technology.
 
 <!-- more -->

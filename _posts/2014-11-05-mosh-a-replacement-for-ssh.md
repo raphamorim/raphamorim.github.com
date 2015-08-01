@@ -7,8 +7,6 @@ language: 'en'
 image: 'assets/images/posts/mosh-and-lucario.jpg'
 ---
 
-####<img src="/assets/images/posts/mosh-and-lucario.jpg" alt="Mosh and Lucario <3" />
-
 Read in portuguese on [iMasters](http://imasters.com.br/desenvolvimento/mosh-um-substituto-para-o-ssh/).
 
 <!-- more -->

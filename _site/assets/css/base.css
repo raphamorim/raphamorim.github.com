@@ -44,7 +44,7 @@ b, strong {font-weight: bold;}
 
 body {
   font: normal normal 20px/1.2em 'Open Sans', Helvetica, arial, sans-serif;
-  background: #E86F67;
+  background: #f8f8f8;
   color: #777;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -56,11 +56,15 @@ nav {
   position: relative;
   top:0;
   left:0;
-  background: #36485C;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E9E9E9;
   width: 100%;
-  height: 66px;
-  border-bottom: 2px solid #555;
+  height: 144px;
   z-index: 2;
+}
+
+nav .container {
+  padding-top: 35px;
 }
 
 h3 {
@@ -94,7 +98,6 @@ h3 {
 
 .bar-logo {
   position: relative;
-  background: rgba(0,0,0,.3);
   width: 200px;
   height: 66px;
   float: left;
@@ -102,16 +105,11 @@ h3 {
   font-size: 25px;
   font-weight: 600;
   text-align: center;
-  color: #fff;
-  transition: all 200ms ease;
+  color: #666666;
 }
 
 .bar-logo span {
   color: #82B440;
-}
-
-.bar-logo:hover{
-  background: rgba(0,0,0,.5);
 }
 
 .bar-menu {
@@ -127,19 +125,18 @@ h3 {
 
 .bar-menu ul a li {
   float: left;
-  color: #fff;
+  text-transform: uppercase;
+  color: #c1c0c0;
   padding: 5px 10px 5px 10px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .bar-menu ul a.active li {
-  background: rgba(0,0,0, .1);
-  border-radius: 5px;
+  color: #777777;
 }
 
 .bar-menu ul a:hover li {
-  color: #8BC84B;
-  text-shadow: 0px 1px 10px #555;
+  color: #82B440;
 }
 
 
@@ -154,7 +151,7 @@ h3 {
   border-radius: 1px;
   height: 5px;
   width: 40px;
-  background: white;
+  background: #666;
   position: absolute;
   display: block;
   content: '';
@@ -239,17 +236,42 @@ h3 {
   margin: 0px 0px 50px 0px;
 }
 
-.post h2 {
-  border-left: 20px solid #8CC84B;
-  font-size: 35px;
+.post-title {
+  text-align: center;
+  font-size: 28px;
+  color: #3c3c3c;
+  font-weight: 700;
   padding: 15px;
+}
+
+.post-date {
+  color: #999;
+  text-align: center;
+  font-size: 14px;
+  font-size: 300;
+}
+
+.post-read-more {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.post-read-more--button {
+  padding: 10px 30px;
+  background: #38B49D;
+  color: #FFF !important;
+  border-bottom: none !important;
+  text-transform: uppercase;
+  transition: all 300ms ease;
+}
+.post-read-more--button:hover {
+  background: #DADADA;
 }
 
 .post .post-content h2 {
   border-left: none !important;
-  margin: 30px 20px -15px 5px;
+  margin: 25px 20px -0px 18px;
   color: #253240;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .post h3 {
@@ -262,7 +284,12 @@ h3 {
   width: 100%;
 }
 
-.post p {
+.post-title-image {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.post p, .post span {
   padding: 20px;
 }
 
@@ -273,27 +300,6 @@ h3 {
 .post>p>a {border-bottom: 1px dotted #666; color: #333;}
 
 .post-page p {padding: 25px 20px 0px 20px;}
-
-.post-more, .post-date {
-  font-weight: bold;
-  float: left;
-  transition: all 200ms ease;
-}
-
-.post-more {
-  width: 70%;
-  color: #FFF;
-  background: #e9877e;
-}
-.post-more:hover { background: #E57368; color: #FFF; }
-
-.post-date {
-  width: 30%;
-  color: #FFF;
-  border-left: 15px solid rgba(0,0,0,.5);
-  text-align: center;
-  background: #3F98D9;
-}
 
 .post-comments {
   padding: 25px;
@@ -362,29 +368,27 @@ h3 {
   position: absolute;
   z-index: 0;
   width: 100%;
-  background: #36485C;
+  background: #FFF;
   padding: 30px 0px 5px 0px;
   opacity: 0;
   height: 0px;
   margin-top: -30px;
   overflow: hidden;
-  border-bottom: 5px solid rgba(0,0,0,.2);
 }
 
 #bar-mobile-menu li {
   padding: 15px 15px 15px 25px;
   font-size: 23px;
-  background: rgba(0,0,0,.2);
   margin: 5px 0px;
   transition: all 600ms ease;
 }
 
 #bar-mobile-menu li:hover {
-  background: #2a2f33;
+  background: #d1d6d9;
 }
 
 #bar-mobile-menu a {
-  color: white;
+  color: #666;
 }
 
 #bar-mobile-menu a.active {
@@ -439,21 +443,13 @@ code {
 /* Medias */
 
 @media only screen and (max-width: 980px) {
-  nav {
-    height: 66px;
-   /* background: #8CC84B;*/
-    border: none;
-  }
-
   nav .container, .main .container {
     width: 95%;
   }
 
-  body { background: #f8f8f8; }
   .bar-menu { display: none; }
   .me { display: none; }
   .nav-toggle { display: block; }
-  .post-more { transition: all 0ms ease; }
   .post h2 { font-size: 25px; }
 }
 
@@ -468,9 +464,6 @@ code {
   .post { margin: 0px 0px 30px 0px; }
   .post h4 { height: 200px; text-align:center; overflow: hidden; background: #E77E23; }
   .post h4 img { min-height:200px; width: 570px; max-height: 500px; }
-  .post-more { width: 100%; height: 100%; }
-  .post-date { display: none; }
-  .post-more { transition: all 0ms ease; }
   .bar-logo { background-color: transparent; }
   .btn.red, .btn.blue { display: none;}
 }

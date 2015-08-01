@@ -7,8 +7,6 @@ language: 'en'
 image: 'assets/images/posts/sublime-text-3.jpg'
 ---
 
-####<img src="/assets/images/posts/sublime-text-3.jpg" alt="code every day" />
-
 Every person I know ever used or heard of [Sublime Text](http://www.sublimetext.com/) (my favorite text editor). Is very difficult not to love it. What tools and plugins i use in Sublime? What tools you should know (or be using)?
 
 <!-- more -->

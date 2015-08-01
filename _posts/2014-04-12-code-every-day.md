@@ -7,8 +7,6 @@ language: 'en'
 image: 'assets/images/posts/code-every-single-day.jpg'
 ---
 
-####<img src="/assets/images/posts/code-every-single-day.jpg" alt="code every day" />
-
 Yesterday i was reading some posts and saw something cool ([here](http://ejohn.org/blog/write-code-every-day/)). A challenge adopted by Jonh Resig [[@jeresig](https://twitter.com/jeresig)] (the creator of the jQuery JavaScript library). The goal was to code every single day.
 
 <!-- more -->

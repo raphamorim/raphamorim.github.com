@@ -7,11 +7,16 @@
     <div class="container">
         <ul id="posts">
             <li class="post post-page">
-                {% if page.link %}
-                    <h2><a href="{{ page.link }}">{{ page.title }}</a></h2>
-                {% else %}
-                    <h2>{{ page.title }}</h2>
-                {% endif %}
+            <img class="post-title-image" src="/{{ page.image }}">
+              {% if page.link %}
+                <h2 class="post-title"><a class="post-title-link" href="{{ page.link }}">{{ page.title }}</a></h2>
+              {% else %}
+                <h2 class="post-title">{{ page.title }}</h2>
+              {% endif %}
+              <div class="post-date">
+                {{ page.date | date:"%d %B • %Y" }}
+              </div>
+               
                 <div class="post post-content">
                     {{ content }}
                 </div>

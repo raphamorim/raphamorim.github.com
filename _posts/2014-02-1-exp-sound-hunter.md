@@ -7,8 +7,6 @@ language: 'pt-br'
 image: 'assets/images/posts/sound-hunter.jpg'
 ---
 
-####<img src="/assets/images/posts/sound-hunter.jpg">
-
 Eu sempre quis criar algo que fosse similar com o que foi desenvolvido, então essa motivação acabou me metendo em sábado qualquer desenvolvendo meu primeiro experimento, confesso que fiquei bastante satisfeito com o resultado de um dia de trabalho, apesar de saber que ele está rodando apenas para Chrome e que está utilizando apenas a lingua inglesa.
 
 <!-- more -->
