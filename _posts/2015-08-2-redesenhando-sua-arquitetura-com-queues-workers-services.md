@@ -9,6 +9,8 @@ image: 'assets/images/posts/filas.jpg'
 
 Boas arquiteturas possuem princípios sólidos para alcançar desempenho e escalabilidade em aplicações. Porém quando é demandado um fluxo bastante intenso de dados. É necessário então, voltar atrás e pensar em uma arquitetura que atenda essas demandas.
 
+<!-- more -->
+
 ## Princípios básicos a serem alcançados por uma boa arquitetura
 
 O **desempenho** está relacionado ao quão rápido uma tarefa computacional pode ser executada. E isso nem sempre está ligado a configurações da maquina, mas muitas vezes o custo de execução de determinado algoritmo.
