@@ -51,6 +51,6 @@ Quando ela é acionada pelo Serviço que assinou aquela fila, os dados transport
 
 **Uma vantagem que é notável com essa tipo de arquitetura** é quando o serviço é acionado e por algum motivo ele quebra no processamento da mensagem (por algum erro interno ou outro motivo). As informações sobre essa falha podem ser salvas naturalmente, e **todos** os dados que foram enviados para aquele serviço e a mensagem de erro são guardados em algum lugar. 
 
-Além disso é permissível configurar um tempo/límite para cada mensagem da fila ser processada por vez. O que é **extremamente** vantajoso para um sistema que quer limitar o número de processos que podem ser abertos.
+Além disso é permissível configurar um tempo e um limite para cada mensagem da fila ser processada por vez. O que é **extremamente** vantajoso para um sistema que quer limitar o número de processos que podem ser abertos.
 
 Você pode aprender mais sobre isso procurando por [Message Queuing Service](https://en.wikipedia.org/wiki/Message_queuing_service).
