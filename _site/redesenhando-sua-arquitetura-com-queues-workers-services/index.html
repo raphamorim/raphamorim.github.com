@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Blog &mdash; Raphamorim</title>
+  <title>Uma arquitetura orientada a serviços e filas de mensagens &mdash; Raphamorim</title>
 
   <!-- Meta -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="HTML5, CSS3, NodeJS, JavaScript and other stuffs." />
+  <meta name="description" content="Boas arquiteturas possuem princípios sólidos para alcançar desempenho e escalabilidade em aplicações. Porém quando é demandado um fluxo bastante intenso de dados. É necessário, voltar atrás e pensar em uma arquitetura que atenda essas demandas." />
 
   <!-- Facebook -->
-  <meta property="og:title" content="Blog - Raphamorim"/>
-  <meta property="og:type" content="blog"/>
-  <meta property="og:url" content="http://raphamorim.com/blog/index.html"/>
-  <meta property="og:image" content="http://raphamorim.com/assets/images/rapha.jpg"/>
+  <meta property="og:title" content="Uma arquitetura orientada a serviços e filas de mensagens - Raphamorim"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="http://raphamorim.com/redesenhando-sua-arquitetura-com-queues-workers-services/"/>
+  <meta property="og:image" content="http://raphamorim.com/assets/images/posts/filas.jpg"/>
   <meta property="og:site_name" content="Raphamorim"/>
-  <meta property="og:description" content="HTML5, CSS3, NodeJS, JavaScript and other stuffs."/>
+  <meta property="og:description" content="Boas arquiteturas possuem princípios sólidos para alcançar desempenho e escalabilidade em aplicações. Porém quando é demandado um fluxo bastante intenso de dados. É necessário, voltar atrás e pensar em uma arquitetura que atenda essas demandas."/>
   <meta property="fb:admins" content="100001780434348" />
 
   <!-- Favicon -->
@@ -23,7 +23,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/base.min.css" type="text/css" />
 </head>
-<body class="blog">
+<body>
 
 
   <nav>
@@ -76,21 +76,21 @@
 </nav>
 
 
-	<div class='main'>
-		<div class="container">
-			<ul id="posts">
-      		
-      			
-        			<li class="post">
-              <img class="post-title-image" src="/assets/images/posts/filas.jpg">
+  <div class='main'>
+
+    <div class="container">
+        <ul id="posts">
+            <li class="post post-page">
+            <img class="post-title-image" src="/assets/images/posts/filas.jpg">
               
                 <h2 class="post-title"><a class="post-title-link" href="http://raphamorim.github.io/redesenhando-sua-arquitetura-com-queues-workers-services">Uma arquitetura orientada a serviços e filas de mensagens</a></h2>
               
               <div class="post-date">
                 02 August • 2015
               </div>
-					    
-        				<p>Boas arquiteturas possuem princípios sólidos para alcançar desempenho e escalabilidade em aplicações. Porém quando é demandado um fluxo bastante intenso de dados. É necessário então, voltar atrás e pensar em uma arquitetura que atenda essas demandas.</p>
+               
+                <div class="post post-content">
+                    <p>Boas arquiteturas possuem princípios sólidos para alcançar desempenho e escalabilidade em aplicações. Porém quando é demandado um fluxo bastante intenso de dados. É necessário então, voltar atrás e pensar em uma arquitetura que atenda essas demandas.</p>
 
 <h2 id="princpios-bsicos-a-serem-alcanados-por-uma-boa-arquitetura">Princípios básicos a serem alcançados por uma boa arquitetura</h2>
 
@@ -136,128 +136,33 @@
 
 <p>Você pode aprender mais sobre isso procurando por <a href="https://en.wikipedia.org/wiki/Message_queuing_service">Message Queuing Service</a>.</p>
 
+                </div>
+                <div class="post-comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'raphamorim',
+      disqus_url = '';
 
-        				<p class="post-read-more"><a class="post-read-more--button" href="/redesenhando-sua-arquitetura-com-queues-workers-services/" >
-									Read more
-                </a></p>
-        			
+  
+  disqus_url = "http://raphamorim.com/redesenhando-sua-arquitetura-com-queues-workers-services/";
+  
+
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+                </div>
             </li>
-		  			
-      		
-      			
-        			<li class="post">
-              <img class="post-title-image" src="/assets/images/posts/code-ast.jpg">
-              
-                <h2 class="post-title"><a class="post-title-link" href="http://raphamorim.github.io/when-AST-save-my-project">When AST has saved my Project</a></h2>
-              
-              <div class="post-date">
-                17 July • 2015
-              </div>
-					    
-        				<p>For people who don’t now. I’ve created <a href="http://github/raphamorim/ranza">ranza</a> for check unusable dependencies. Why? To avoid accumulation of dependencies that are not being used….</p>
+        </ul>
 
-
-        				<p class="post-read-more"><a class="post-read-more--button" href="/when-AST-save-my-project/" >
-									Read more
-                </a></p>
-        			
-            </li>
-		  			
-      		
-      			
-        			<li class="post">
-              <img class="post-title-image" src="/assets/images/posts/kaka-player.jpeg">
-              
-                <h2 class="post-title"><a class="post-title-link" href="http://raphamorim.github.io/Stop-apologizing-and-start-making-mistakes">Stop apologizing and start making mistakes</a></h2>
-              
-              <div class="post-date">
-                27 April • 2015
-              </div>
-					    
-        				<p>You can read the original article in portuguese on <a href="https://medium.com/@raphamorim/pare-de-dar-desculpas-e-aprenda-a-errar-ad17bbebb8a2">Medium</a>.</p>
-
-
-        				<p class="post-read-more"><a class="post-read-more--button" href="/Stop-apologizing-and-start-making-mistakes/" >
-									Read more
-                </a></p>
-        			
-            </li>
-		  			
-      		
-      			
-        			<li class="post">
-              <img class="post-title-image" src="/assets/images/posts/indiana-front-back-end.jpeg">
-              
-                <h2 class="post-title"><a class="post-title-link" href="http://raphamorim.github.io/Do-not-be-a-front-end-much-less-back-end">Do not be a front-end, much less back-end</a></h2>
-              
-              <div class="post-date">
-                25 April • 2015
-              </div>
-					    
-        				<p>You can read the original article in portuguese on <a href="https://medium.com/@raphamorim/nao-seja-um-front-end-muito-menos-back-end-bd205299a994">Medium</a>.</p>
-
-
-        				<p class="post-read-more"><a class="post-read-more--button" href="/Do-not-be-a-front-end-much-less-back-end/" >
-									Read more
-                </a></p>
-        			
-            </li>
-		  			
-      		
-      			
-        			<li class="post">
-              <img class="post-title-image" src="/assets/images/posts/trustless.jpg">
-              
-                <h2 class="post-title"><a class="post-title-link" href="http://raphamorim.github.io/sorry-i-dont-trust-in-console-time">Sorry bro, I simply don't trust in Console.Time or neither similar</a></h2>
-              
-              <div class="post-date">
-                07 April • 2015
-              </div>
-					    
-        				<p>It’s normal for measure time. Many developers choose the console.time or in some cases use Date.getTime().</p>
-
-
-        				<p class="post-read-more"><a class="post-read-more--button" href="/sorry-i-dont-trust-in-console-time/" >
-									Read more
-                </a></p>
-        			
-            </li>
-		  			
-      		
-
-     <p class="pagination">
-     
-        <span class="newer">Previous</span>
-     
-
-     <span>Page <strong>1</strong> / <strong>5</strong></span>
-     
-       <a class="older" href="/blog/page2">Next</a>
-     
-     </p>
+    </div> <!-- /content -->
+  </div> <!-- /container -->
 
 <script src="/assets/js/app.js" async></script>
 
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Scroll -->
-    <script src="/assets/js/infinitescroll.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-      $('#posts').infinitescroll({
-          navSelector   : "p.pagination",
-              // selector for the paged navigation (it will be hidden)
-          nextSelector  : "p.pagination a.older",
-              // selector for the NEXT link (to page 2)
-          itemSelector  : ".container ul#posts li.post",
-              // selector for all items you'll retrieve
-          loading: {
-              finishedMsg: "<em>That's all folks!</em>",
-              img : "/assets/images/load-icon.gif",
-              msgText: "",
-              speed: 'slow'
-          }
-      });
-    </script>
 
 </body>
 </html>
