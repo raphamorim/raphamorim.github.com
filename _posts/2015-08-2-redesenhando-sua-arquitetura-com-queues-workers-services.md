@@ -45,12 +45,12 @@ Ou seja, uma arquitetura orientada a serviços é uma arquitetura que pode ser n
 
 ## O que acontece na prática?
 
-Cada serviço vira um assinante de uma queue ou tópico. Logo assim que uma fila for acionada para adição de mensagens. A mensagem que contém os dados entra em espera, e fica assim até chegar a sua vez.
+Cada serviço vira um assinante de uma queue ou tópico. Logo assim que uma fila for acionada para adição de mensagens. A mensagem entra na fila e fica em espera, até chegar a sua vez.
 
-Quando ela é acionada pelo Serviço que estava escutando aquela fila, os dados transportados são lidos pelo próprio serviço (ou worker) e o serviço entra em execução.
+Quando ela é acionada pelo Serviço que assinou aquela fila, os dados transportados são lidos pelo próprio serviço (ou worker) e o serviço processa aquela mensagem.
 
-**Uma vantagem que é notável com essa tipo de arquitetura** é quando o serviço é acionado e por algum motivo ele quebra (por algum erro ou outra coisa). Esse fail pode salvar naturalmente **todos** os dados que foram enviados para aquele serviço e a mensagem de erro. 
+**Uma vantagem que é notável com essa tipo de arquitetura** é quando o serviço é acionado e por algum motivo ele quebra no processamento da mensagem (por algum erro interno ou outro motivo). As informações sobre essa falha podem ser salvas naturalmente, e **todos** os dados que foram enviados para aquele serviço e a mensagem de erro são guardados em algum lugar. 
 
-Além disso é permissível configurar um tempo para cada mensagem da fila ser transportada. O que é **extremamente** vantajoso para um sistema que quer limitar o número de processos que podem ser abertos.
+Além disso é permissível configurar um tempo/límite para cada mensagem da fila ser processada por vez. O que é **extremamente** vantajoso para um sistema que quer limitar o número de processos que podem ser abertos.
 
 Você pode aprender mais sobre isso procurando por [Message Queuing Service](https://en.wikipedia.org/wiki/Message_queuing_service).
