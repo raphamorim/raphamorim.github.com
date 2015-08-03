@@ -90,29 +90,29 @@
               </div>
                
                 <div class="post post-content">
-                    <p>Boas arquiteturas possuem princípios sólidos para alcançar desempenho e escalabilidade em aplicações. Porém quando é demandado um fluxo bastante intenso de dados. É necessário então, voltar atrás e pensar em uma arquitetura que atenda essas demandas.</p>
+                    <p>Boas arquiteturas possuem princípios sólidos para alcançar desempenho e escalabilidade em aplicações. Porém quando é demandado um fluxo bastante intenso de dados, é necessário então, voltar atrás e pensar em uma arquitetura que atenda essas demandas.</p>
 
 <!-- more -->
 
 <h2 id="princpios-bsicos-a-serem-alcanados-por-uma-boa-arquitetura">Princípios básicos a serem alcançados por uma boa arquitetura</h2>
 
-<p>O <strong>desempenho</strong> está relacionado ao quão rápido uma tarefa computacional pode ser executada. E isso nem sempre está ligado a configurações da maquina, mas muitas vezes o custo de execução de determinado algoritmo.</p>
+<p>O <strong>desempenho</strong> está relacionado ao quão rápido uma tarefa computacional pode ser executada. E isso nem sempre está ligado às configurações da maquina, mas muitas vezes ao custo de execução de determinado algoritmo.</p>
 
-<p>A <strong>escalabilidade</strong> está sempre relacionada em aumentar a quantidade de processamento disponível. Mesmo quando é atingido os limites físicos da maquina.</p>
+<p>A <strong>escalabilidade</strong> está sempre relacionada ao aumento da quantidade de processamento disponível. Mesmo quando são atingidos os limites físicos da maquina.</p>
 
 <h2 id="blocking-io-vs-non-blocking-io">Blocking IO vs non-blocking IO</h2>
 
-<p>Boa parte das linguagens atualmente tem a caracteristica de bloqueio de I/O. Entretanto o Node.js (plataforma que utiliza o V8 e javascript com linguagem), usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.</p>
+<p>Boa parte das linguagens atualmente tem a caracteristica de bloqueio de I/O. Entretanto o Node.js (plataforma que utiliza o V8 e javascript com linguagem), usa um modelo de I/O direcionado a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.</p>
 
-<p>Porém é <strong>um mito dizer que o Nodejs provêm aplicações escaláveis naturalmente</strong> (<a href="https://speakerdeck.com/felixge/the-nodejs-scalability-myth">veja isso</a> e <a href="http://www.quora.com/Is-Node-js-scalable">mais isso</a>).</p>
+<p>Porém é <strong>um mito dizer que o Nodejs provê aplicações escaláveis naturalmente</strong> (<a href="https://speakerdeck.com/felixge/the-nodejs-scalability-myth">veja isso</a> e <a href="http://www.quora.com/Is-Node-js-scalable">mais isso</a>).</p>
 
-<p>Usar linguagens com característica bloqueante tem suas vantagens, uma delas é a programação-linear, que provê mais facilidade para codificar (já que segue um raciocínio linear). Já o nodejs se baseia em uma programação paralela, que é mais difícil para codificar.</p>
+<p>Usar linguagens com característica bloqueante tem suas vantagens, uma delas é a programação-linear, que provê mais facilidade para codificar (já que segue um raciocínio linear), já o nodejs se baseia em uma programação paralela, que é mais difícil para codificar.</p>
 
 <p>Agora que você conhece essa característica do <strong>nodejs</strong> podemos prosseguir para o que realmente interessa. Já que neste artigo usaremos uma arquitetura pensada para esta ferramenta tentando tomar vantagem em suas propriedades e características.</p>
 
 <h2 id="fila-de-mensagens-message-queue">Fila de Mensagens (Message Queue)</h2>
 
-<p>Fila de mensagens é um componente da engenharia de software usado para a comunicação entre processos ou threads de mesmo processo. Provêm um protocolo de comunicação assíncrona, de forma que o remetente e o destinatário da mensagem não precisam interagir ao mesmo tempo. As mensagens são enfileiradas e armazenadas até que o destinatário as processe.</p>
+<p>Fila de mensagens é um componente da engenharia de software usado para a comunicação entre processos ou threads de mesmo processo. Provê um protocolo de comunicação assíncrona, de forma que o remetente e o destinatário da mensagem não precisam interagir ao mesmo tempo. As mensagens são enfileiradas e armazenadas até que o destinatário as processe.</p>
 
 <p>Atualmente existem alguns <strong>Message Broker</strong> (programa intermediário que lê e traduz mensagens pelo protocolo de mensagens) que podem ser utilizados para a tarefa. No caso do Nodejs, você precisará de um cliente para integrar com este tipo de programa (no meu trabalho, nós desenvolvemos um próprio. Existem inúmeras opções para realizar tal tarefa).</p>
 
@@ -132,7 +132,7 @@
 
 <p>Quando ela é acionada pelo Serviço que assinou aquela fila, os dados transportados são lidos pelo próprio serviço (ou worker) e o serviço processa aquela mensagem.</p>
 
-<p><strong>Uma vantagem que é notável com essa tipo de arquitetura</strong> é quando o serviço é acionado e por algum motivo ele quebra no processamento da mensagem (por algum erro interno ou outro motivo). As informações sobre essa falha podem ser salvas naturalmente, e <strong>todos</strong> os dados que foram enviados para aquele serviço e a mensagem de erro são guardados em algum lugar.</p>
+<p><strong>Uma vantagem que é notável com esse tipo de arquitetura</strong> é quando o serviço é acionado e por algum motivo ele quebra no processamento da mensagem (por algum erro interno ou outro motivo). As informações sobre essa falha podem ser salvas naturalmente, e <strong>todos</strong> os dados que foram enviados para aquele serviço e a mensagem de erro são guardados em algum lugar.</p>
 
 <p>Além disso é permissível configurar um tempo e um limite para cada mensagem da fila ser processada por vez. O que é <strong>extremamente</strong> vantajoso para um sistema que quer limitar o número de processos que podem ser abertos.</p>
 
