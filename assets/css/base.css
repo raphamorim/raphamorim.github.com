@@ -72,15 +72,6 @@ h3 {
   font-size: 20px;
 }
 
-#exp h3 {
-  margin: 0px;
-}
-#exp img {
-  width: 100%;
-  border-right: 15px solid #E9877E;
-}
-
-
 .main {
   position: relative;
   width: 100%;
@@ -348,14 +339,16 @@ h3 {
 }
 
 /* Experiments */
-#exp h3 { margin-bottom: 15px; font-size: 23px; color: #679609; }
+
+#exp img { width: 100%; border-right: 15px solid #E9877E; }
+#exp h3 { margin: 10px 0px 15px 0px; font-size: 23px; color: #679609; }
 #exp h3 a { color: #679609; }
 #exp p { font-size: 16px; margin-bottom: 10px; color: #555;}
 #exp a { color: #666; font-weight: bold; }
-
 #exp li {
   margin-top: 40px;
-  border-bottom: 1px dotted #999;
+  background: #FFFFFF;
+  padding: 10px 15px;
 }
 
 ::selection {
@@ -440,8 +433,12 @@ code {
 .btn.red:hover  { background-color: #e23226; }
 .btn.blue:hover { background-color: #1b91e3; }
 
-/* Medias */
+.ph-loader, .ph-end {
+  padding: 5px;
+  text-align: center;
+}
 
+/* Medias */
 @media only screen and (max-width: 980px) {
   nav .container, .main .container {
     width: 95%;

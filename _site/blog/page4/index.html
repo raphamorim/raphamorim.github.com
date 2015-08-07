@@ -204,23 +204,14 @@ para JavaScript?</p>
 <script src="/assets/js/app.js" async></script>
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Scroll -->
-    <script src="/assets/js/infinitescroll.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-      $('#posts').infinitescroll({
-          navSelector   : "p.pagination",
-              // selector for the paged navigation (it will be hidden)
-          nextSelector  : "p.pagination a.older",
-              // selector for the NEXT link (to page 2)
-          itemSelector  : ".container ul#posts li.post",
-              // selector for all items you'll retrieve
-          loading: {
-              finishedMsg: "<em>That's all folks!</em>",
-              img : "/assets/images/load-icon.gif",
-              msgText: "",
-              speed: 'slow'
-          }
+    <script src="/assets/js/inphinity.min.js"></script>
+    <script type="text/javascript">
+      inphinity.on('#posts').set({
+        navSelector : "p.pagination",
+        nextSelector  : "p.pagination a.older",
+        itemSelector  : ".container ul#posts li.post",
+        finishedMsg : "<em>That's all folks!</em>",
+        loadingMsg: "<img src='/assets/images/load-icon.gif' />"
       });
     </script>
 

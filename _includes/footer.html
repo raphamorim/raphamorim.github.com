@@ -1,23 +1,14 @@
 <script src="{{ site.baseurl }}assets/js/app.js" async></script>
 
 {% if page.layout == 'blog' %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Scroll -->
-    <script src="{{ site.baseurl }}assets/js/infinitescroll.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-      $('#posts').infinitescroll({
-          navSelector   : "p.pagination",
-              // selector for the paged navigation (it will be hidden)
-          nextSelector  : "p.pagination a.older",
-              // selector for the NEXT link (to page 2)
-          itemSelector  : ".container ul#posts li.post",
-              // selector for all items you'll retrieve
-          loading: {
-              finishedMsg: "<em>That's all folks!</em>",
-              img : "{{ site.baseurl }}assets/images/load-icon.gif",
-              msgText: "",
-              speed: 'slow'
-          }
+    <script src="{{ site.baseurl }}assets/js/inphinity.min.js"></script>
+    <script type="text/javascript">
+      inphinity.on('#posts').set({
+        navSelector : "p.pagination",
+        nextSelector  : "p.pagination a.older",
+        itemSelector  : ".container ul#posts li.post",
+        finishedMsg : "<em>That's all folks!</em>",
+        loadingMsg: "<img src='{{ site.baseurl }}assets/images/load-icon.gif' />"
       });
     </script>
 {% endif %}
