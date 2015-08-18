@@ -12,13 +12,13 @@ I'm a rurouni **Developer**.
 
 I'm 19 and feel AWESOME.
 
-I'm turn coffee into code.
+I turn coffee into code.
 
-Trying discover the unknown.
+I'm trying to discover the unknown.
 
 Actually working on some **open source** projects.
 
-I love create and **share** things.
+I love to create and **share** things.
 
 <br>
 
