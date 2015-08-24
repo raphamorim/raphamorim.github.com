@@ -4,21 +4,19 @@ class: home
 language: 'en'
 ---
 
-#Hi fella!
+#Hi!
 
-How you doin? My name is **Raphael Amorim**.
+How you doin?
 
-I'm a rurouni **Developer**.
+My name is Raphael Amorim and I'm 19.
 
-I'm 19 and feel AWESOME.
+I'm a **Developer** by the day.
 
-I'm turn coffee into code.
+But, by the night I'm a **Open Source** Evangelist.
 
-Trying discover the unknown.
+Always trying turn coffee into code.
 
-Actually working on some **open source** projects.
-
-I love create and **share** things.
+I love create and share things.
 
 <br>
 
