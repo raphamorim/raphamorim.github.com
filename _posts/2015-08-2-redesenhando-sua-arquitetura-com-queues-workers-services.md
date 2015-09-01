@@ -3,7 +3,7 @@ layout: post
 title: "Uma arquitetura orientada a serviços e filas de mensagens"
 description: "Boas arquiteturas possuem princípios sólidos para alcançar desempenho e escalabilidade em aplicações. Porém quando é demandado um fluxo bastante intenso de dados. É necessário, voltar atrás e pensar em uma arquitetura que atenda essas demandas."
 link: 'http://raphamorim.github.io/redesenhando-sua-arquitetura-com-queues-workers-services'
-language: 'pt-br'
+language: 'en'
 image: 'assets/images/posts/filas.jpg'
 ---
 
