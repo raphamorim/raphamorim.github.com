@@ -69,7 +69,10 @@ Conheci também o [Felipe Ribeiro](https://twitter.com/felipernb) do Spotify que
 
 Fechando com chave de ouro as coisas boas do evento, consegui ser sem vergonha o suficiente para bater um selfie pré palestra.
 
-![selfie](/assets/images/posts/braziljs2015/selfie.jpg)
+<div style="width:100%; margin-top:30px;" align="center">
+<blockquote class="twitter-tweet" lang="en-gb"><p lang="pt" dir="ltr">Desafios p/ antes de morrer:&#10;Tirar um selfie pré palestra no <a href="https://twitter.com/hashtag/braziljs?src=hash">#braziljs</a>: Checked&#10;A galera foi um amor &lt;3 <a href="http://t.co/EerNDascHK">pic.twitter.com/EerNDascHK</a></p>&mdash; Raphael Amorim (@raphamundi) <a href="https://twitter.com/raphamundi/status/635157577777680384">August 22, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
 Se jogar numa balança: o BraziljJs foi incrível e é apenas isso.
 
