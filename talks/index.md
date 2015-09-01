@@ -21,7 +21,7 @@ description: Upcoming lectures and previous talks.
      target="_blank">WordCamp Rio 2015</a></h3>
      <p>Theme: 500 Days of Open Source</p>
      <p>Aug 29 ~ 2015</p>
-     <p>Local: SESC Botafogo - Rio de Janeiro - RJ</p>
+     <p>Local: SESC Flamengo - Rio de Janeiro - RJ</p>
      <p><a href="https://speakerdeck.com/raphamorim/500-days-of-open-source"
      target="_blank" />See slides</p>
   </li>
