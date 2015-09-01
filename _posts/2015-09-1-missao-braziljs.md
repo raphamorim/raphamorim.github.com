@@ -19,7 +19,7 @@ O engraçado da escolha da palestra foi a minha indecisão para submissão, quer
 
 Larguei de mão o computador naquela tarde, sem decidir qual palestra eu ia enviar. Eu não queria falar de contribuições todo dia. Sempre achei loucura o que estava fazendo e não queria que outros fizessem a mesma coisa. O problema é que **eu gosto de fazer loucuras**.
 
-Então surgiu a ideia mais louca possível a partir de uma brincadeira num bar aleatório: Pegar a minha história e misturar com a tematica do meu filme favorito de comédia romantica. Então na manhã do dia seguinte enviei a palestra (desacreditado) e ela passou semanas depois. 
+Então surgiu a ideia mais louca possível a partir de uma brincadeira num bar aleatório: Pegar a minha história e misturar com a temática do meu filme favorito de comédia romântica. Então na manhã do dia seguinte enviei a palestra (desacreditado) e ela passou semanas depois. 
 
 Não sabia o que fazer. Não havia contado para ninguém. Estava muito feliz porque tinha um feeling especial palestrar no BrazilJs. Eu decidi escolher JavaScript para trabalhar influenciado pelos vídeos das palestras do evento em 2014. Em especial ao trabalho que conheci da fundação jQuery por causa do [@leobalter](https://twitter.com/leobalter). Além dos artigos do [@jeresig](http://twitter.com/jeresig) e do [@millermedeiros](https://twitter.com/millermedeiros/) (que também conheci pelo vídeo do evento). 
 
@@ -61,7 +61,7 @@ Pude também gastar um tempo incrível conversando com o Sebastian sobre Babel, 
 
 ![Sebastian Babel](/assets/images/posts/braziljs2015/babel.jpg)
 
-Conversei com o [Julián](http://twiter.com/julian_duque)(Tony Stark do JavaScript) e com o [Damian](http://twiter.com/dschenkelman)(Auth0). Os cara são muito gente fina. Fiquei perplexo quando o Julian falou bem da minha palestra na própria palestra dele (lagrimas escorreram hehe).
+Conversei com o [Julián](http://twiter.com/julian_duque)(Tony Stark do JavaScript) e com o [Damian](http://twiter.com/dschenkelman)(Auth0). Os cara são muito gente fina. Fiquei perplexo quando o Julian falou bem da minha palestra na própria palestra dele (lágrimas escorreram hehe).
 
 ![Julian](/assets/images/posts/braziljs2015/julian.jpg)
 
