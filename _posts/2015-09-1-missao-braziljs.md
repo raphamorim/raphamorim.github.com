@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "A minha missão no Braziljs"
+description: "Há algumas semanas atrás eu palestrei no BrazilJs, evento que se auto intitula a maior conferência de JavaScript do Universo e nessa edição superou o recorde mundial com 1.300 participantes presentes. No meu primeiro Braziljs estava indo com a missão de palestrar, mas eu tinha uma missão muito maior que apenas palestrar na maior conferência do mundo."
 link: 'http://raphamorim.github.io/missao-braziljs'
 language: 'pt-br'
 image: 'assets/images/posts/braziljs2015/me.png'
@@ -10,7 +11,7 @@ Há algumas semanas atrás eu palestrei no BrazilJs, evento que se auto intitula
 
 <!-- more -->
 
-Entendenda como começou...
+Entenda como começou...
 
 ## 500 Days of Open Source
 
@@ -64,7 +65,7 @@ Conversei com o Júlian (Tony Stark do JavaScript) e com o Damian (Auth0). Os ca
 
 ![Julian](/assets/images/posts/braziljs2015/julian.jpg)
 
-Conheci também o [Felipe Ribeiro](https://twitter.com/felipernb) do Spotify que também é um cara super gente boa. Queria destacar uma das amizades em especial que fiz no evento foi o Fernando Miçalli (onde tive que fazer uma campanha apenas pra ele fazer uma conta no twitter). O cara manja dos paranauê. Conversamos sobre tanta coisa que é difícil listar aqui. Infelizmente não batemos uma foto, vai ficar pra quando eu for em Sampa.
+Conheci também o [Felipe Ribeiro](https://twitter.com/felipernb) do Spotify que é um cara super gente boa. Queria destacar uma das amizades em especial que fiz no evento: Fernando Miçalli (onde tive que fazer uma campanha apenas para que ele criasse uma conta no twitter). O cara manja dos paranauê. Conversamos sobre tanta coisa que é difícil listar aqui. Infelizmente não batemos uma foto, vai ficar pra quando eu for em Sampa.
 
 Fechando com chave de ouro as coisas boas do evento, consegui ser sem vergonha o suficiente para bater um selfie pré palestra.
 
