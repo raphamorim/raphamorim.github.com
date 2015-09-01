@@ -21,7 +21,7 @@ Larguei de mão o computador naquela tarde, sem decidir qual palestra eu ia envi
 
 Então surgiu a ideia mais louca possível a partir de uma brincadeira num bar aleatório: Pegar a minha história e misturar com a tematica do meu filme favorito de comédia romantica. Então na manhã do dia seguinte enviei a palestra (desacreditado) e ela passou semanas depois. 
 
-Não sabia o que fazer. Não havia contado para ninguém. Estava muito feliz porque tinha um feeling especial palestrar no BrazilJs. Eu decidi escolher JavaScript para trabalhar por causa dos vídeos das palestras que assisti de 2014. Mas em especial ao trabalho que conheci da galera da fundação jQuery por causa do [@leobalter](https://twitter.com/leobalter). Além dos artigos do [@jeresig](http://twitter.com/jeresig) e do [@millermedeiros](https://twitter.com/millermedeiros/) (que também conheci pelo vídeo do evento). 
+Não sabia o que fazer. Não havia contado para ninguém. Estava muito feliz porque tinha um feeling especial palestrar no BrazilJs. Eu decidi escolher JavaScript para trabalhar influenciado pelos vídeos das palestras do evento em 2014. Em especial ao trabalho que conheci da fundação jQuery por causa do [@leobalter](https://twitter.com/leobalter). Além dos artigos do [@jeresig](http://twitter.com/jeresig) e do [@millermedeiros](https://twitter.com/millermedeiros/) (que também conheci pelo vídeo do evento). 
 
 Tinha uma missão: Resumir 500 dias em 30min e **motivar o máximo de pessoas que eu pudesse**. Aqui no Rio de Janeiro sempre fui de incentivar ao máximo as pessoas da comunidade em almoços e workshops. Sou do pensamento que desenvolvedores são iguais. Então quando eu vejo alguém falando que não consegue fazer tal coisa porque não é como Paul Irish ou outro. Sempre falo que a única diferença entre Paul Irish e o meu amigo desenvolvedor é que Paul Irish corre(u) atrás para fazer e o meu amigo apenas não se sente bom o suficiente. 
 
@@ -33,7 +33,7 @@ De uma coisa eu sabia: **A minha palestra ia ser feitas para pessoas**.
 
 Terminei os slides e apresentei a palestra a minha mãe. Queria que até o maior leigo entendesse que com motivação você pode chegar em qualquer lugar. O problema é que no coração das pessoas ter 500 dias de contribuição é querer se exibir, como se fosse algum motivo para jogar na cara de outra pessoa. Na verdade como falei acima, penso que não existe motivo algum para um dev tentar se sobressair a outro. Se não deixa de ser comunidade. 
 
-(Na real eu acho burrice ter 500 de dias de contribuição hehe)
+(Na real eu acho burrice ter 500 dias de contribuição hehe)
 
 Subi no palco um dia antes de ser assaltado (o pior que me ajudou a não subir nervoso, estava achando que já não tinha mais nada a perder). Entreguei meu coração lá de verdade mesmo. Queria apenas contar minha história e o que aprendi, mas deixando claro para a galera que não repetissem o que eu havia feito. 
 
@@ -61,7 +61,7 @@ Pude também gastar um tempo incrível conversando com o Sebastian sobre Babel, 
 
 ![Sebastian Babel](/assets/images/posts/braziljs2015/babel.jpg)
 
-Conversei com o Júlian (Tony Stark do JavaScript) e com o Damian (Auth0). Os cara são muito gente fina. Fiquei perplexo quando o Julian falou bem da minha palestra na própria palestra dele (lagrimas escorreram hehe).
+Conversei com o [Julián](http://twiter.com/julian_duque)(Tony Stark do JavaScript) e com o [Damian](http://twiter.com/dschenkelman)(Auth0). Os cara são muito gente fina. Fiquei perplexo quando o Julian falou bem da minha palestra na própria palestra dele (lagrimas escorreram hehe).
 
 ![Julian](/assets/images/posts/braziljs2015/julian.jpg)
 
@@ -71,5 +71,5 @@ Fechando com chave de ouro as coisas boas do evento, consegui ser sem vergonha o
 
 ![selfie](/assets/images/posts/braziljs2015/selfie.jpg)
 
-Se jogar numa balança, o BraziljJs foi incrível e é apenas isso.
+Se jogar numa balança: o BraziljJs foi incrível e é apenas isso.
 
