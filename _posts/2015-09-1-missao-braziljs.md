@@ -65,7 +65,7 @@ Conversei com o [Julián](http://twiter.com/julian_duque) (Tony Stark do JavaScr
 
 ![Julian](/assets/images/posts/braziljs2015/julian.jpg)
 
-Conheci também o [Felipe Ribeiro](https://twitter.com/felipernb) do Spotify que é um cara super gente boa. Queria destacar uma das amizades em especial que fiz no evento: Fernando Miçalli (onde tive que fazer uma campanha apenas para que ele criasse uma conta no twitter). O cara manja dos paranauê. Conversamos sobre tanta coisa que é difícil listar aqui. Infelizmente não batemos uma foto, vai ficar pra quando eu for em Sampa.
+Conheci também o [Felipe Ribeiro](https://twitter.com/felipernb) do Spotify que é um cara super gente boa. Queria destacar uma das amizades em especial que fiz no evento: Fernando Miçalli (onde tive que fazer uma campanha para que ele criasse uma conta no twitter). O cara manja dos paranauê. Conversamos sobre tanta coisa que é difícil listar aqui e infelizmente não batemos uma foto, vai ficar pra quando eu visita-lo em Sampa.
 
 Fechando com chave de ouro as coisas boas do evento, consegui ser sem vergonha o suficiente para bater um selfie pré palestra.
 
