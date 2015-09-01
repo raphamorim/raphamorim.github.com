@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "A minha missão no Braziljs"
-description: "Há algumas semanas atrás eu palestrei no BrazilJs, evento que se auto intitula a maior conferência de JavaScript do Universo e nessa edição superou o recorde mundial com 1.300 participantes presentes. No meu primeiro Braziljs estava indo com a missão de palestrar, mas eu tinha uma missão muito maior que apenas palestrar na maior conferência do mundo."
+description: "Há algumas semanas atrás eu palestrei no BrazilJs, evento que se auto intitula a maior conferência de JavaScript do Universo e nessa edição superou o recorde mundial com 1.300 participantes presentes. Logo no meu primeiro Braziljs eu estava indo para palestrar na maior conferência de JavaScript do mundo, mas eu tinha uma missão pessoal muito maior."
 link: 'http://raphamorim.github.io/missao-braziljs'
 language: 'pt-br'
 image: 'assets/images/posts/braziljs2015/me.png'
 ---
 
-Há algumas semanas atrás eu palestrei no BrazilJs, evento que se auto intitula a maior conferência de JavaScript do Universo e nessa edição superou o recorde mundial com 1.300 participantes presentes. No meu primeiro Braziljs estava indo com a missão de palestrar, mas eu tinha uma missão muito maior que apenas palestrar na maior conf do mundo.
+Há algumas semanas atrás eu palestrei no BrazilJs, evento que se auto intitula a maior conferência de JavaScript do Universo e nessa edição superou o recorde mundial com 1.300 participantes presentes. Logo no meu primeiro Braziljs eu estava indo para palestrar na maior conferência de JavaScript do mundo, mas eu tinha uma missão pessoal muito maior.
 
 <!-- more -->
 
