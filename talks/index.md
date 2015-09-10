@@ -26,7 +26,7 @@ description: Upcoming lectures and previous talks.
      target="_blank" />See slides</p>
   </li>
   <li>
-     <h3><a href="http://www.brazil.com.br" target="_blank">Braziljs</a></h3>
+     <h3><a href="http://www.braziljs.com.br" target="_blank">Braziljs</a></h3>
      <p>Theme: 500 Days of Open Source</p>
      <p>Aug 21 & 22 ~ 2015</p>
      <p>Local: Shopping Center BarraShoppingSul • Porto Alegre, RS</p>
