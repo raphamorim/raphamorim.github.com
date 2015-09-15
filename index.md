@@ -12,7 +12,7 @@ My name is Raphael Amorim and I'm 19.
 
 I'm a **Developer** by the day.
 
-But, by the night I'm a **Open Source** Evangelist.
+But, by the night I'm an **Open Source** Evangelist.
 
 Always trying turn coffee into code.
 
