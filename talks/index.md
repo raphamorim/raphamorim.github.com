@@ -10,7 +10,7 @@ description: Upcoming lectures and previous talks.
 <ul id="exp">
   <li>
      <h3><a href="http://www.eventick.com.br/meetup-riojs-julho-2015" target="_blank">Front-End Carioca</a></h3>
-     <p>Theme: Como ser um desenvoledor transante?</p>
+     <p>Theme: Como ser um desenvoledor sagaz?</p>
      <p>Sep 26 ~ 2015</p>
      <p>Local: Hotel Transamerica Prime Barra - Barra da Tijuca - RJ</p>
      <p><a
@@ -25,8 +25,7 @@ description: Upcoming lectures and previous talks.
      <p>Aug 29 ~ 2015</p>
      <p>Local: SESC Flamengo - Rio de Janeiro - RJ</p>
      <p><a href="https://speakerdeck.com/raphamorim/500-days-of-open-source"
-     target="_blank" />See slides,
-        <a href="https://youtu.be/toCdZ2e9Dh4">Watch talk video</a></p>
+     target="_blank" />See slides</p>
   </li>
   <li>
      <h3><a href="http://www.braziljs.com.br" target="_blank">Braziljs</a></h3>
@@ -34,7 +33,8 @@ description: Upcoming lectures and previous talks.
      <p>Aug 21 & 22 ~ 2015</p>
      <p>Local: Shopping Center BarraShoppingSul • Porto Alegre, RS</p>
      <p><a href="https://speakerdeck.com/raphamorim/500-days-of-open-source"
-     target="_blank" />See slides</p>
+     target="_blank" />See slides</a>,
+        <a href="https://youtu.be/toCdZ2e9Dh4">Watch talk video</a></p>
   </li>
  <li>
      <h3><a href="http://barrajs.com.br" target="_blank">BarraJs</a></h3>
