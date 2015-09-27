@@ -13,7 +13,9 @@ description: Upcoming lectures and previous talks.
      <p>Theme: Como ser um desenvoledor transante?</p>
      <p>Sep 26 ~ 2015</p>
      <p>Local: Hotel Transamerica Prime Barra - Barra da Tijuca - RJ</p>
-     <p>UPCOMING</p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/como-ser-um-desenvolvedor-sagaz"
+     target="_blank">See slides</a></p>
   </li>
   <li>
      <h3><a
@@ -23,7 +25,8 @@ description: Upcoming lectures and previous talks.
      <p>Aug 29 ~ 2015</p>
      <p>Local: SESC Flamengo - Rio de Janeiro - RJ</p>
      <p><a href="https://speakerdeck.com/raphamorim/500-days-of-open-source"
-     target="_blank" />See slides</p>
+     target="_blank" />See slides,
+        <a href="https://youtu.be/toCdZ2e9Dh4">Watch talk video</a></p>
   </li>
   <li>
      <h3><a href="http://www.braziljs.com.br" target="_blank">Braziljs</a></h3>
@@ -38,7 +41,8 @@ description: Upcoming lectures and previous talks.
      <p>Theme: The Amazing ES6</p>
      <p>Jul 25 ~ 2015</p>
      <p>Local: Barra da Tijuca, Rio de Janeiro - RJ</p>
-     <p><a href="https://speakerdeck.com/raphamorim/the-amazing-es6">See slides</a>
+     <p><a href="https://speakerdeck.com/raphamorim/the-amazing-es6">See
+     slides</a></p>
   </li>
   <li>
      <h3><a href="http://www.eventick.com.br/meetup-riojs-julho-2015" target="_blank">Riojs meetup</a></h3>
