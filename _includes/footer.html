@@ -3,7 +3,7 @@
 {% if page.layout == 'blog' %}
     <script src="{{ site.baseurl }}assets/js/inphinity.min.js"></script>
     <script type="text/javascript">
-      inphinity.on('#posts').set({
+      inphinity('#posts').set({
         navSelector : "p.pagination",
         nextSelector  : "p.pagination a.older",
         itemSelector  : ".container ul#posts li.post",
