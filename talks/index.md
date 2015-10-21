@@ -9,6 +9,15 @@ description: Upcoming lectures and previous talks.
 
 <ul id="exp">
   <li>
+     <h3>Infnet Talks Circuit</h3>
+     <p>Theme: It's Not Just About Tests</p>
+     <p>Oct 21 ~ 2015</p>
+     <p>Local: Instituto Infnet - Centro, RJ</p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/its-not-just-about-tests"
+     target="_blank">See slides</a></p>
+  </li>
+  <li>
      <h3><a href="http://www.eventick.com.br/meetup-riojs-julho-2015" target="_blank">Front-End Carioca</a></h3>
      <p>Theme: Como ser um desenvoledor sagaz?</p>
      <p>Sep 26 ~ 2015</p>
