@@ -9,12 +9,29 @@ description: Upcoming lectures and previous talks.
 
 <ul id="exp">
   <li>
-     <h3>Infnet Talks Circuit</h3>
+     <h3>FEUCTEC</h3>
+     <p>Theme: Playground With Canvas</p>
+     <p>Oct 30 ~ 2015</p>
+     <p>Local: FEUC - Campo Grande, RJ</p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/playground-with-canvas"
+     target="_blank">See slides</a></p>
+  </li>
+  <li>
+     <h3>UFRRJ - Academic Week</h3>
+     <p>Theme: Playground With Canvas</p>
+     <p>Oct 23 ~ 2015</p>
+     <p>Local: UFRRJ - Nova Iguaçu, RJ</p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/playground-with-canvas"
+     target="_blank">See slides</a></p>
+  </li>
+  <li>
+    <h3>Infnet Talks Circuit</h3>
      <p>Theme: It's Not Just About Tests</p>
      <p>Oct 21 ~ 2015</p>
      <p>Local: Instituto Infnet - Centro, RJ</p>
-     <p><a
-     href="https://speakerdeck.com/raphamorim/its-not-just-about-tests"
+     <p><a href="https://speakerdeck.com/raphamorim/its-not-just-about-tests"
      target="_blank">See slides</a></p>
   </li>
   <li>
