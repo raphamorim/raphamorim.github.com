@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Framework || Library &mdash; Raphamorim</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Frequentemente vejo muitos outros desenvolvedores levantarem a mesma questão: "Quais seriam as definições técnicas que permitem distinguir o que é Framework e Library?". A primeira vez que alguém me perguntou isso foi meses atrás, eu havia palestrado sobre [React](https://facebook.github.io/react/) e uma das perguntas feitas foi: "por quais motivos React é uma library e não um framework?"" />
+
+  <!-- Facebook -->
+  <meta property="og:title" content="Framework || Library - Raphamorim"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="http://raphamorim.com/framework-ou-library/"/>
+  <meta property="og:image" content="http://raphamorim.com/assets/images/posts/question.jpg"/>
+  <meta property="og:site_name" content="Raphamorim"/>
+  <meta property="og:description" content="Frequentemente vejo muitos outros desenvolvedores levantarem a mesma questão: "Quais seriam as definições técnicas que permitem distinguir o que é Framework e Library?". A primeira vez que alguém me perguntou isso foi meses atrás, eu havia palestrado sobre [React](https://facebook.github.io/react/) e uma das perguntas feitas foi: "por quais motivos React é uma library e não um framework?""/>
+  <meta property="fb:admins" content="100001780434348" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Framework || Library - Raphamorim">
+  <meta name="twitter:description" content="Frequentemente vejo muitos outros desenvolvedores levantarem a mesma questão: "Quais seriam as definições técnicas que permitem distinguir o que é Framework e Library?". A primeira vez que alguém me perguntou isso foi meses atrás, eu havia palestrado sobre [React](https://facebook.github.io/react/) e uma das perguntas feitas foi: "por quais motivos React é uma library e não um framework?"">
+  <meta name="twitter:url" content="http://raphamorim.com/framework-ou-library/">
+  <meta name="twitter:image" content="http://raphamorim.com/assets/images/posts/question.jpg"/>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/base.min.css" type="text/css" />
+</head>
+<body>
+
+
+  <nav>
+    <div class='container'>
+      <a href="/" class="bar-link">
+        <div class="bar-logo">RAPHA<span>MORIM</span></div>
+      </a>
+      <div class="bar-menu">
+        <ul class='pagenav'>
+          <a href="/blog">
+            <li>Blog</li>
+          </a>
+          <a href="http://github.com/raphamorim" target="_blank">
+            <li>GitHub</li>
+          </a>
+          <a href="/projects">
+            <li>Projects</li>
+          </a>
+          <a href="/experiments">
+            <li>Experiments</li>
+          </a>
+          <a href="/talks">
+            <li>Talks</li>
+          </a>
+       </ul>
+    </div>
+    <div class="nav-toggle">
+        <span></span>
+    </div>
+  </div>
+  <div id="bar-mobile-menu">
+    <ul class='pagenav'>
+    <a href="/blog">
+      <li>Blog</li>
+    </a>
+    <a href="http://github.com/raphamorim">
+      <li>GitHub</li>
+    </a>
+    <a href="/projects">
+      <li>Projects</li>
+    </a>
+    <a href="/experiments">
+      <li>Experiments</li>
+    </a>
+    <a href="/talks">
+      <li>Talks</li>
+    </a>
+  </ul>
+  </div>
+</nav>
+
+
+  <div class='main'>
+
+    <div class="container">
+        <ul id="posts">
+            <li class="post post-page">
+            <img class="post-title-image" src="/assets/images/posts/question.jpg">
+              
+                <h2 class="post-title"><a class="post-title-link" href="http://raphamorim.github.io/framework-ou-library">Framework || Library</a></h2>
+              
+              <div class="post-date">
+                06 November • 2015
+              </div>
+               
+                <div class="post post-content">
+                    <p>Frequentemente vejo muitos outros desenvolvedores levantarem a mesma questão: “Quais seriam as definições técnicas que permitem distinguir o que é Framework e Library?”. A primeira vez que alguém me perguntou isso foi meses atrás, eu havia palestrado sobre <a href="https://facebook.github.io/react/">React</a> e uma das perguntas feitas foi: “por quais motivos React é uma library e não um framework?”…</p>
+
+<!-- more -->
+
+<h2 id="first-things-first">First Things First</h2>
+
+<p>1 - React é uma Library.</p>
+
+<p>2 - Este assunto não é recente. Na verdade, é um assunto polêmico para muitos desenvolvedores (<a href="https://www.youtube.com/watch?v=PORknrd-cv8">leia-se mamilos</a>). Um bom exemplo disso tudo é até algum tempo atrás, no próprio site oficial, o jQuery se definia como um framework, e atualmente deixam bastante explícito que é uma biblioteca.</p>
+
+<h2 id="vamos-definir-essa-parada">Vamos definir essa parada</h2>
+
+<p>Martin Fowler discute a diferença entre Library e Framework no artigo <a href="http://martinfowler.com/bliki/InversionOfControl.html">” Inversion of Control “</a>. No mesmo artigo ele define Library como conjunto de funções (que sim, podem estar organizadas em classes ou outro lugar) que podem ser chamadas e cada call dessas funções realiza alguma tarefa e <strong>devolve o controle ao cliente</strong>.</p>
+
+<p>Já um Framework incorpora um comportamento mais abstrato. Para usar um Framework você precisa inserir seu comportamento/lógica em vários lugares seja por subclasses ou conectando com suas próprias classes e ele é chamado por meios como estes. Logo o próprio Framework quem <strong>dita o fluxo de controle</strong> da aplicação, chamado de Inversion of Control.</p>
+
+<p>Em termos mais acadêmicos, as melhores definições seriam:</p>
+
+<p><strong>Library</strong></p>
+
+<p>Na ciência da computação, biblioteca é uma coleção de subprogramas utilizados no desenvolvimento de software. Bibliotecas contém código e dados auxiliares, que provém serviços a programas independentes, o que permite o compartilhamento e a alteração de código e dados de forma modular.</p>
+
+<p><strong>Framework</strong></p>
+
+<p>Um framework, em desenvolvimento de software, é uma abstração que une códigos comuns entre vários projetos de software provendo uma funcionalidade genérica. Um framework pode atingir uma funcionalidade específica, por configuração, durante a programação de uma aplicação. Ao contrário das bibliotecas, é o framework quem dita o fluxo de controle da aplicação, chamado de Inversão de Controle.</p>
+
+<h2 id="resumindo">Resumindo</h2>
+
+<p>” Your code calls a library but a framework calls your code. “</p>
+
+
+                </div>
+                <div class="post-comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'raphamorim',
+      disqus_url = '';
+
+  
+  disqus_url = "http://raphamorim.com/framework-ou-library/";
+  
+
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+                </div>
+            </li>
+        </ul>
+
+    </div> <!-- /content -->
+  </div> <!-- /container -->
+
+<script src="/assets/js/app.js" async></script>
+
+
+</body>
+</html>
+
