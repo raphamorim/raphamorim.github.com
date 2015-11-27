@@ -9,6 +9,49 @@ description: Upcoming lectures and previous talks.
 
 <ul id="exp">
   <li>
+     <h3>Front in Floripa</h3>
+     <p>Theme: The Power of WebGL - Hackeando sua GPU com JavaScript</p>
+     <p>Dec 5 ~ 2015</p>
+     <p>Local: SENAI - CTAI, Saco Grande - Florianópolis - SC</p>
+     <p>UPCOMING</p>
+  </li>
+  <li>
+     <h3>UFF Academic Week</h3>
+     <p>Theme: Intro to Clojure</p>
+     <p>Nov 26 ~ 2015</p>
+     <p>Local: UFF Praia Vermelha - Niterói, RJ</p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/intro-to-clojure"
+     target="_blank">See slides</a></p>
+  </li>
+  <li>
+     <h3>FrontEnd Meetup Group #2</h3>
+     <p>Theme: JS Quick Tips #1</p>
+     <p>Nov 14 ~ 2015</p>
+     <p>Local: Huge.Inc - Jardim Botânico, RJ</p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/js-quick-tips-number-1"
+     target="_blank">See slides</a></p>
+  </li>
+  <li>
+     <h3>Infnet Academic Week</h3>
+     <p>Theme: It's Not Just About Tests</p>
+     <p>Oct 19 ~ 2015</p>
+     <p>Local: Infnet - Centro, RJ</p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/its-not-just-about-tests"
+     target="_blank">See slides</a></p>
+  </li>
+  <li>
+     <h3>FEMUG</h3>
+     <p>Theme: Playground With Canvas</p>
+     <p>Oct 30 ~ 2015</p>
+     <p>Local: FEUC - Campo Grande, RJ</p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/playground-with-canvas"
+     target="_blank">See slides</a></p>
+  </li>
+  <li>
      <h3>FEUCTEC</h3>
      <p>Theme: Playground With Canvas</p>
      <p>Oct 30 ~ 2015</p>
