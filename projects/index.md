@@ -11,6 +11,43 @@ description: All my projects in progress or completed status.
 
 <ul id="exp">
     <li>
+       <h3><a href="https://www.npmjs.com/package/waterfall.js">Waterfall.js</a></h3>
+
+       <p>Currently the best option today to do the pinterest grid effect is Masonry, but it's
+       very heavy and have dependency of jQuery. Please understand: this isn't a
+       problem is most cases, but in cases when perfomance and page weight
+       matters, the best case is try other options: maybe pure CSS? It's
+       possible?</p>
+
+       <p>This question have a good point. Yes, exists CSS ways to solve, using
+       flexbox or columns technic, but doesn't work well when you don't know
+       about your data/structure. So we have to use JavaScript. The challenge is
+       create a decent algorithm where no matter the structure: Waterfall will
+       work.</p>
+
+       <p>However; Waterfall always will consider items with same width :)</p>
+
+       <p><a href="https://www.npmjs.com/package/waterfall.js"
+       target="_blank">See in npmjs</a> or <a
+       href="https://github.com/raphamorim/waterfall.js" target="_blank">fork in GitHub</a></p>
+
+    </li>
+</ul>
+
+<ul id="exp">
+    <li>
+       <h3><a href="https://www.npmjs.com/package/inphinity">Inphinity</a></h3>
+
+       <p>A infinity scroll without jQuery or other dependency</p>
+
+       <p><a href="https://www.npmjs.com/package/inphinity" target="_blank">See
+       in npmjs</a> or <a href="https://github.com/raphamorim/inphinity" target="_blank">fork in GitHub</a></p>
+
+    </li>
+</ul>
+
+<ul id="exp">
+    <li>
        <h3><a href="https://www.npmjs.com/package/calendario">Calendario</a></h3>
 
        <p>Node module to check if a day is a workday or holiday</p>

@@ -11,6 +11,22 @@ description: My experiments and some ideas :)
     <li>
        <h3>
           <a
+          href="http://raphamorim.com/skyrim-vr">Skyrim VR</a>
+       </h3>
+
+       <p><img src="/assets/images/experiments/skyrim.jpg" alt="Skyrim VR"></p>
+
+       <p>Skyrim scenarios virtual reality using #MozVR</p>
+
+       <p><a href="http://raphamorim.com/skyrim-vr" target="_blank">See
+       experiment</a>, <a href="https://github.com/raphamorim/skyrim-vr" target="_blank">Fork this experiment</a></p>
+    </li>
+</ul>
+
+<ul id="exp">
+    <li>
+       <h3>
+          <a
           href="http://raphamorim.com/raining-day">Raining Day</a>
        </h3>
 
