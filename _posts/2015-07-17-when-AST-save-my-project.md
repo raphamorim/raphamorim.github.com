@@ -25,9 +25,9 @@ The time has passed and I realized: "Well, this project will never work for ES6"
 
 So, a friend of mine tell me for use [Abstract Syntax Three (AST)](https://en.wikipedia.org/wiki/Abstract_syntax_tree) to get the requires callers. The idea is amazing, it's solve all my problems and I can remove the regex.
 
-So I use a Reflect node module to made the AST. But this module is current working only for ES3. What's means? In cases which missing ";" and "{/}" in syntax, it's not works (ES4/ES5). Awww man, and now?
+So, I made an AST file using Reflect node module, but this module only works for ES3. This could become a problem if the source file doesn't have colons or slashes for instance. And it won't work for newer versions like ES4 or ES5. Aww, man!
 
-Besides this problems, I wanted Ranza working for ES6 too (using import instead require). So I've a another idea when I look the babel-core (a ES6 compiler). I'll transform ES6 code into ES5, so later I fix problems with syntax for ES3 support.
+Also, I wanted Ranza to be able to work for ES6, which uses import instead of require. So, I took a look in the babel-core compiler (ES6 compiler), and I came up with a solution. I could transform ES6 in ES5, then later on, I would fix issues with ES3 syntax.
 
 But I found a pot of gold.
 
