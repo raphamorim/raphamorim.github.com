@@ -16,7 +16,7 @@ description: My experiments and some ideas :)
 
        <p><img src="/assets/images/experiments/skyrim.jpg" alt="Skyrim VR"></p>
 
-       <p>Skyrim scenarios virtual reality using #MozVR</p>
+       <p>Skyrim scenarios ported to virtual reality using #MozVR</p>
 
        <p><a href="http://raphamorim.com/skyrim-vr" target="_blank">See
        experiment</a>, <a href="https://github.com/raphamorim/skyrim-vr" target="_blank">Fork this experiment</a></p>
