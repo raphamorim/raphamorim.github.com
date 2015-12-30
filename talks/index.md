@@ -13,7 +13,9 @@ description: Upcoming lectures and previous talks.
      <p>Theme: The Power of WebGL - Hackeando sua GPU com JavaScript</p>
      <p>Dec 5 ~ 2015</p>
      <p>Local: SENAI - CTAI, Saco Grande - Florianópolis - SC</p>
-     <p>UPCOMING</p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/the-power-of-webgl-hackeando-sua-gpu-com-javascript">See
+     slides</a></p>
   </li>
   <li>
      <h3>UFF Academic Week</h3>
