@@ -77,7 +77,7 @@ Think of game with good plot, conversation (one of the best I've ever seen) and 
 
 With extremely well crafted and funny dialogues. Radiata is certainly one of the games that deserves a seal of one of the best RPGs.
 
-### • Persona 4
+### • Persona 4 Golden (PS Vita)
 
 ![Persona 4](/assets/images/posts/games/persona-4.jpg)
 
@@ -155,4 +155,7 @@ and better graphics. But it was still not enough to be better than the last.
 ### • Final Fantasy Tatics (PS1)
 
 ### • Rune Factory 4 (Nintendo 3DS)
+
+### • Rune Factory: Tides of Destiny (PS3)
+
 
