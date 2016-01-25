@@ -53,7 +53,7 @@ Next we create a boolean. Executing the method "isRunning()" will tell us whethe
     <code>int isRunning() {</code>
     <code>&nbsp;&nbsp;return !exitRequest;</code>
     <code>}</code>
-</div>code
+</div>
 
 Create a new thread, which will create an exit callback. The callback will then make "exitRequest" equal to true if the user presses the "home" or "exit" button on the PSP.
 
