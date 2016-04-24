@@ -9,6 +9,31 @@ description: Upcoming lectures and previous talks.
 
 <ul id="exp">
   <li>
+     <h3>Fórum Internacional do Software Livre (FISL) 17</h3>
+     <p>Theme: The Power of WebGL - Hackeando sua GPU com JavaScript</p>
+     <p>Jul 13-16 ~ 2016</p>
+     <p>Local: PUC-RS • Porto Alegre - RS</p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/the-power-of-webgl-hackeando-sua-gpu-com-javascript">See slides</a></p>
+  </li>
+  <li>
+     <h3>CEJS - Conferência de JavaScript do Ceará</h3>
+     <p>Theme: ???</p>
+     <p>Jun 4 ~ 2016</p>
+     <p>Local: Av. Alm. Maximiano da Fonseca, 1395 - Eng. Luciano Cavalcante - Fortaleza/CE</p>
+     <p><a
+     href="#">See slides</a></p>
+  </li>
+  <li>
+     <h3>3º Encontro Carioca de Testes</h3>
+     <p>Theme: It's Not Just About Tests</p>
+     <p>May 10 ~ 2016</p>
+     <p>Local: SENAC Santa Luiza, 735 - 7º andar - Centro, Rio de Janeiro </p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/its-not-just-about-tests">See
+     slides</a></p>
+  </li>
+  <li>
      <h3>Front in Floripa</h3>
      <p>Theme: The Power of WebGL - Hackeando sua GPU com JavaScript</p>
      <p>Dec 5 ~ 2015</p>
