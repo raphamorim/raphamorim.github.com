@@ -4,7 +4,7 @@ class: home
 language: 'en'
 ---
 
-#Hi!
+## Hi!
 
 How you doin?
 

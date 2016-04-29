@@ -5,7 +5,7 @@ class: talks
 description: Upcoming lectures and previous talks.
 ---
 
-##Talks
+## Talks
 
 <ul id="exp">
   <li>

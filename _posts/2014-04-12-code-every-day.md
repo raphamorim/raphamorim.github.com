@@ -13,7 +13,7 @@ Yesterday i was reading some posts and saw something cool ([here](http://ejohn.o
 
 After read this post, I chose try do this too. But  have some rules to be followed.
 
-###Rules
+### Rules
 
 • I must write code every day. I can write docs, or blog posts, or other things but it must be in addition to the code that I write.
 
