@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Blog &mdash; Raphamorim</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="HTML5, CSS3, NodeJS, WebGL, JavaScript and other stuffs." />
+  <meta name="keywords" content="raphael, amorim, developer, open, javascript, python, clojure, source">
+
+  <!-- Facebook -->
+  <meta property="og:title" content="Blog - Raphamorim"/>
+  <meta property="og:type" content="blog"/>
+  <meta property="og:url" content="http://raphamorim.com/blog/page6/"/>
+  <meta property="og:image" content="http://raphamorim.com/assets/images/rapha.jpg"/>
+  <meta property="og:site_name" content="Raphamorim"/>
+  <meta property="og:description" content="HTML5, CSS3, NodeJS, WebGL, JavaScript and other stuffs."/>
+  <meta property="fb:admins" content="100001780434348" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog - Raphamorim">
+  <meta name="twitter:description" content="HTML5, CSS3, NodeJS, WebGL, JavaScript and other stuffs.">
+  <meta name="twitter:url" content="http://raphamorim.com/blog/page6/">
+  <meta name="twitter:image" content="http://raphamorim.com/assets/images/rapha.jpg"/>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/base.min.css" type="text/css" />
+</head>
+<body class="blog">
+
+
+  <nav>
+    <div class='container'>
+      <a href="/" class="bar-link">
+        <div class="bar-logo">RAPHA<span>MORIM</span></div>
+      </a>
+      <div class="bar-menu">
+        <ul class='pagenav'>
+          <a href="/blog">
+            <li>Blog</li>
+          </a>
+          <a href="http://github.com/raphamorim" target="_blank">
+            <li>GitHub</li>
+          </a>
+          <a href="/experiments">
+            <li>Experiments</li>
+          </a>
+          <a href="/talks">
+            <li>Talks</li>
+          </a>
+       </ul>
+    </div>
+    <div class="nav-toggle">
+        <span></span>
+    </div>
+  </div>
+  <div id="bar-mobile-menu">
+    <ul class='pagenav'>
+    <a href="/blog">
+      <li>Blog</li>
+    </a>
+    <a href="http://github.com/raphamorim">
+      <li>GitHub</li>
+    </a>
+    <a href="/projects">
+      <li>Projects</li>
+    </a>
+    <a href="/experiments">
+      <li>Experiments</li>
+    </a>
+    <a href="/talks">
+      <li>Talks</li>
+    </a>
+  </ul>
+  </div>
+</nav>
+
+
+	<div class='main'>
+		<div class="container">
+			<ul id="posts">
+      		
+      			
+        			<li class="post">
+              <img class="post-title-image" src="/assets/images/posts/me.jpg">
+              
+                <h2 class="post-title"><a class="post-title-link" href="http://raphamorim.github.io/quem-sou-eu/">Quem sou eu?</a></h2>
+              
+              <div class="post-date">
+                05 December • 2013
+              </div>
+					    
+        				<p>Meu nome é <strong><em>Raphael Amorim</em></strong> e eu sou o cara da imagem acima (gatão né). Sou desenvolvedor web há menos de um ano e do nada decidi criar um blog onde eu pudesse compartilhar um pouco do meu conhecimento (quase nada) e os meus estudos.</p>
+
+
+        				<p class="post-read-more"><a class="post-read-more--button" href="/quem-sou-eu/" >
+									Read more
+                </a></p>
+        			
+            </li>
+		  			
+      		
+
+     <p class="pagination">
+     
+        
+          <a class="newer" href="/blog/page5">Previous</a>
+        
+     
+
+     <span>Page <strong>6</strong> / <strong>6</strong></span>
+     
+       <span class="older">Next</span>
+     
+     </p>
+
+<script src="/assets/js/app.js" async></script>
+
+
+    <script src="/assets/js/inphinity.min.js"></script>
+    <script type="text/javascript">
+      inphinity('#posts').set({
+        navSelector : "p.pagination",
+        nextSelector  : "p.pagination a.older",
+        itemSelector  : ".container ul#posts li.post",
+        finishedMsg : "<em>That's all folks!</em>",
+        loadingMsg: "<img src='/assets/images/load-icon.gif' />"
+      });
+    </script>
+
+</body>
+</html>
+

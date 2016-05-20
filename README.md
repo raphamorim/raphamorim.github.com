@@ -2,6 +2,33 @@
 
 My personal website where I talk about development. On issues related to Development (e.g: JavaScript, NodeJS, Python, Front-End) and Otaku/Geek stuffs.
 
+## Write in [raphamorim.com](http://raphamorim.com)
+
+Create a file in `_posts` with the article date + title (lowcase) as filename. Like:
+
+Filename: `2016-05-22-creating-with-webgl-part-1.md`
+
+```markdown
+
+---
+layout: post
+title: "Creating with WebGL • Parte 1"
+description: 'Some Amazing Descriptions'
+link: 'http://raphamorim.github.io/criando-com-webgl-parte-1'
+language: 'pt-br'
+image: 'assets/images/posts/webgl-1.jpg'
+
+author: ['Raphael Amorim', 'raphamundi']
+---
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt corporis amet cum quidem qui excepturi porro modi saepe animi, sequi dolores, quo beatae libero optio, illum dolorem, voluptatem reiciendis. Magni?
+
+<!-- more -->
+
+Continues here...
+
+```
+
 ## How it works?
 
 I use [Jekyll](http://jekyllrb.com/), a static generator in Ruby, to create this blog.
