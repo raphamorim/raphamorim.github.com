@@ -1,7 +1,3 @@
-# [raphamorim.com](http://raphamorim.com)
-
-My personal website where I talk about development. On issues related to Development (e.g: JavaScript, NodeJS, Python, Front-End) and Otaku/Geek stuffs.
-
 ## Write in [raphamorim.com](http://raphamorim.com)
 
 Create a file in `_posts` with the article date + title (lowcase) as filename. Like:
@@ -12,10 +8,10 @@ Filename: `2016-05-22-creating-with-webgl-part-1.md`
 
 ---
 layout: post
-title: "Creating with WebGL • Parte 1"
-description: 'Some Amazing Descriptions'
-link: 'http://raphamorim.github.io/criando-com-webgl-parte-1'
-language: 'pt-br'
+title: "Creating with WebGL • Part 1"
+description: 'Some Amazing Description'
+link: 'http://raphamorim.github.io/creating-with-webgl-part-1'
+language: 'en'
 image: 'assets/images/posts/webgl-1.jpg'
 
 author: ['Raphael Amorim', 'raphamundi']
