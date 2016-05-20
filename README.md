@@ -10,7 +10,6 @@ Filename: `2016-05-22-creating-with-webgl-part-1.md`
 layout: post
 title: "Creating with WebGL • Part 1"
 description: 'Some Amazing Description'
-link: 'http://raphamorim.github.io/creating-with-webgl-part-1'
 language: 'en'
 image: 'assets/images/posts/webgl-1.jpg'
 

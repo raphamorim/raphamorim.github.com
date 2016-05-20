@@ -7,17 +7,25 @@
     <div class="container">
         <ul id="posts">
             <li class="post post-page">
-            <img class="post-title-image" src="/{{ page.image }}">
-              {% if page.link %}
-                <h2 class="post-title"><a class="post-title-link" href="{{ page.link }}">{{ page.title }}</a></h2>
-              {% else %}
+                <div class="post-author">
+                    {% if post.author && post.author.length %}
+                        <a href="//twitter.com/@{{ post.author[1] }}" target="_blank">
+                            <img class="post-author--image" src="/assets/images/author/{{ post.author[1] }}.jpg"/>
+                            <div class="post-author--info">
+                                <h4 class="post-author--name">{{ post.author[0] }}</h4>
+                    {% else %}
+                        <a href="//twitter.com/@raphamundi" target="_blank">
+                            <img class="post-author--image" src="/assets/images/author/raphamorim.jpg"/>
+                            <div class="post-author--info">
+                                <h4 class="post-author--name">Raphael Amorim</h4>
+                    {% endif %}
+                    </a><p class="post-author--date">{{ page.date | date:"%d %B • %Y" }}</p>
+                </div>
+                </div>
+                <img class="post-title-image" src="/{{ page.image }}">
+                <a class="post-title-link" href="{{ post.url }}">
                 <h2 class="post-title">{{ page.title }}</h2>
-              {% endif %}
-              <div class="post-date">
-                {{ page.date | date:"%d %B • %Y" }}
-              </div>
-               
-                <div class="post post-content">
+                <div>
                     {{ content }}
                 </div>
                 <div class="post-comments">

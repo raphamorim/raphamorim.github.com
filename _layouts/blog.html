@@ -24,15 +24,14 @@
                 </div>
                 </div>
               <img class="post-title-image" src="/{{ post.image }}">
-              {% if post.link %}
-                <h2 class="post-title"><a class="post-title-link" href="{{ post.link }}">{{ post.title }}</a></h2>
-              {% else %}
-                <h2 class="post-title">{{ post.title }}</h2>
-              {% endif %}
+              <a class="post-title-link" href="{{ post.url }}">
+              <h2 class="post-title">{{ post.title }}</h2>
 				{% if post.excerpt %}
         			{{ post.excerpt | markdownify }}
+                    </a>
         			<a class="post-read-more" href="{{ post.url }}" >Read more...</a>
         		{% else %}
+                    </a>
         			{{ post.content }}
         		{% endif %}
             </li>

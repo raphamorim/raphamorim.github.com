@@ -2,7 +2,6 @@
 layout: post
 title: "Criando com WebGL • Parte 1"
 description: ''
-link: 'http://raphamorim.github.io/criando-com-webgl-parte-1'
 language: 'pt-br'
 image: 'assets/images/posts/webgl-1.jpg'
 

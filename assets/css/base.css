@@ -237,15 +237,11 @@ h3 {
   text-align: left;
   font-size: 28px;
   margin-top: 10px;
-  color: #FFF;
   font-weight: 550;
+  color: rgba(0,0,0,.8);
   font-style: normal;
   font-family: Helvetica;
   padding: 5px 0 15px 0;
-}
-
-.post-title a {
-  color: rgba(0,0,0,.8);
 }
 
 .post-date {
@@ -302,8 +298,6 @@ h3 {
   cursor: pointer;
 }
 .post>p>a {border-bottom: 1px dotted #666; color: #333;}
-
-.post-page p {padding: 25px 20px 0px 20px;}
 
 .post-comments {
   padding: 25px;
