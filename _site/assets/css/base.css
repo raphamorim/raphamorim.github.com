@@ -262,13 +262,6 @@ h3 {
     color: rgba(0,0,0,1);
 }
 
-.post .post-content h2 {
-  border-left: none !important;
-  margin: 25px 20px -0px 18px;
-  color: #253240;
-  font-size: 25px;
-}
-
 .post h3 {
   margin: 30px 20px -15px 20px;
   font-size: 20px;
@@ -278,6 +271,10 @@ h3 {
   position: relative;
   width: 100%;
   max-height: 220px;
+}
+
+.post-page .post-title-image {
+    max-height: 350px;
 }
 
 .post p {
@@ -297,7 +294,24 @@ h3 {
 .post a {
   cursor: pointer;
 }
-.post>p>a {border-bottom: 1px dotted #666; color: #333;}
+
+.post-page-content a {
+    cursor: pointer;
+    color: #333;
+    border-bottom: 1px dotted #666;
+    text-decoration: none;
+}
+
+.post-page-content img {
+    max-height: 600px;
+    padding: 10px 0;
+}
+
+.post-page-content h2 {
+  margin: 20px 0px 18px 0px;
+  color: rgba(0,0,0,0.5);
+  font-size: 25px;
+}
 
 .post-comments {
   padding: 25px;
