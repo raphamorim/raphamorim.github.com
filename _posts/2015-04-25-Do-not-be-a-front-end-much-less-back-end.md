@@ -2,16 +2,15 @@
 layout: post
 title: 'Do not be a front-end, much less back-end'
 description: "This article is the result of the experience I have gained performing consulting and observing the attitude of many developers."
-link: 'http://raphamorim.github.io/Do-not-be-a-front-end-much-less-back-end'
 language: 'en'
 image: 'assets/images/posts/indiana-front-back-end.jpeg'
 ---
 
-You can read the original article in portuguese on [Medium](https://medium.com/@raphamorim/nao-seja-um-front-end-muito-menos-back-end-bd205299a994).
+This article is the result of the experience I have gained performing consulting and observing the attitude of many developers.
 
 <!-- more -->
 
-This article is the result of the experience I have gained performing consulting and observing the attitude of many developers.
+You can read the original article in portuguese on [Medium](https://medium.com/@raphamorim/nao-seja-um-front-end-muito-menos-back-end-bd205299a994).
 
 Since the goal of the article is not to address any technical point, I chose to generalize the terms: front-end and back-end.
 

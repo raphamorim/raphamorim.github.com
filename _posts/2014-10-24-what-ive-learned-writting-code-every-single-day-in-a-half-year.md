@@ -7,9 +7,9 @@ language: 'en'
 image: 'assets/images/posts/rocky-balboa.jpg'
 ---
 
-I'd wanted put my medium article for this blog, you can see the original story [here](https://medium.com/@raphamundi/what-ive-learned-writting-code-every-single-day-in-a-half-year-a6c504e7300f). It has been 190 days since I challenged myself to write code every single day. Still steady, I intend to reach a whole year of contributions and you can [follow here](http://github.com/raphamorim).
-
 <!-- more -->
+
+I'd wanted put my medium article for this blog, you can see the original story [here](https://medium.com/@raphamundi/what-ive-learned-writting-code-every-single-day-in-a-half-year-a6c504e7300f). It has been 190 days since I challenged myself to write code every single day. Still steady, I intend to reach a whole year of contributions and you can [follow here](http://github.com/raphamorim).
 
 It all started with a post from @jeresig (the creator of jQuery). The challenge was simple: writing code everyday. It needed to be open, preferable not a review, and a few other rules. It was thrilling enought to make me want to try.
 

@@ -8,23 +8,32 @@
       		{% for post in paginator.posts %}
       			{% unless post.draft %}
         			<li class="post">
+                <div class="post-author">
+                    {% if post.author && post.author.length %}
+                        <a href="//twitter.com/@{{ post.author[1] }}" target="_blank">
+                            <img class="post-author--image" src="/assets/images/author/{{ post.author[1] }}.jpg"/>
+                            <div class="post-author--info">
+                                <h4 class="post-author--name">{{ post.author[0] }}</h4>
+                    {% else %}
+                        <a href="//twitter.com/@raphamundi" target="_blank">
+                            <img class="post-author--image" src="/assets/images/author/raphamorim.jpg"/>
+                            <div class="post-author--info">
+                                <h4 class="post-author--name">Raphael Amorim</h4>
+                    {% endif %}
+                    </a><p class="post-author--date">{{ post.date | date:"%d %B • %Y" }}</p>
+                </div>
+                </div>
               <img class="post-title-image" src="/{{ post.image }}">
-              {% if post.link %}
-                <h2 class="post-title"><a class="post-title-link" href="{{ post.link }}">{{ post.title }}</a></h2>
-              {% else %}
-                <h2 class="post-title">{{ post.title }}</h2>
-              {% endif %}
-              <div class="post-date">
-                {{ post.date | date:"%d %B • %Y" }}
-              </div>
-					    {% if post.excerpt %}
-        				{{ post.excerpt | markdownify }}
-        				<p class="post-read-more"><a class="post-read-more--button" href="{{ post.url }}" >
-									Read more
-                </a></p>
-        			{% else %}
-        					{{ post.content }}
-        			{% endif %}
+              <a class="post-title-link" href="{{ post.url }}">
+              <h2 class="post-title">{{ post.title }}</h2>
+				{% if post.excerpt %}
+        			{{ post.excerpt | markdownify }}
+                    </a>
+        			<a class="post-read-more" href="{{ post.url }}" >Read more...</a>
+        		{% else %}
+                    </a>
+        			{{ post.content }}
+        		{% endif %}
             </li>
 		  			{% endunless %}
       		{% endfor %}

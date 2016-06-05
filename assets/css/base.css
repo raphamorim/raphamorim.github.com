@@ -44,7 +44,7 @@ b, strong {font-weight: bold;}
 
 body {
   font: normal normal 20px/1.2em 'Open Sans', Helvetica, arial, sans-serif;
-  background: #f8f8f8;
+  background: #FAFAFA;
   color: #777;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -75,7 +75,7 @@ h3 {
 .main {
   position: relative;
   width: 100%;
-  background: #f8f8f8;
+  background-color: #FAFAFA;
   margin-top: -20px;
   padding-top: 30px;
 }
@@ -217,22 +217,31 @@ h3 {
 /* Posts */
 #posts {
   position: relative;
+  margin: 0 auto;
   margin-top: 40px;
+  width: 90%;
 }
 
 .post {
   position: relative;
   width: 100%;
-  background: #fff;
+  background-color: #FFF;
+  border-radius: 3px;
+  padding: 20px 30px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.09);
   margin: 0px 0px 50px 0px;
 }
 
 .post-title {
-  text-align: center;
+  text-align: left;
   font-size: 28px;
-  color: #3c3c3c;
-  font-weight: 700;
-  padding: 15px;
+  margin-top: 10px;
+  font-weight: 550;
+  color: rgba(0,0,0,.8);
+  font-style: normal;
+  font-family: Helvetica;
+  padding: 5px 0 15px 0;
 }
 
 .post-date {
@@ -243,26 +252,14 @@ h3 {
 }
 
 .post-read-more {
-  text-align: center;
-  margin-bottom: 15px;
-}
-.post-read-more--button {
-  padding: 10px 30px;
-  background: #38B49D;
-  color: #FFF !important;
-  border-bottom: none !important;
-  text-transform: uppercase;
-  transition: all 300ms ease;
-}
-.post-read-more--button:hover {
-  background: #DADADA;
+    margin-top: 20px;
+    color: rgba(0,0,0,.6);
+    border-width: 0;
+    font-size: 12px;
 }
 
-.post .post-content h2 {
-  border-left: none !important;
-  margin: 25px 20px -0px 18px;
-  color: #253240;
-  font-size: 25px;
+.post-read-more:hover {
+    color: rgba(0,0,0,1);
 }
 
 .post h3 {
@@ -273,27 +270,83 @@ h3 {
 .post img {
   position: relative;
   width: 100%;
+  max-height: 220px;
 }
 
-.post-title-image {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+.post-page .post-title-image {
+    max-height: 350px;
 }
 
-.post p, .post span {
+.post p {
+    color: rgba(0,0,0,.8);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -.004em;
+    margin-bottom: 10px;
+}
+
+.post span {
   padding: 20px;
 }
 
 .post a {
   cursor: pointer;
-  color: #666;
 }
-.post>p>a {border-bottom: 1px dotted #666; color: #333;}
 
-.post-page p {padding: 25px 20px 0px 20px;}
+.post-page-content a {
+    cursor: pointer;
+    color: #333;
+    border-bottom: 1px dotted #666;
+    text-decoration: none;
+}
+
+.post-page-content img {
+    max-height: 600px;
+    padding: 10px 0;
+}
+
+.post-page-content h2 {
+  margin: 20px 0px 18px 0px;
+  color: rgba(0,0,0,0.5);
+  font-size: 25px;
+}
+
+.post-page-content h3 {
+  margin: 20px 0px 18px 0px;
+}
 
 .post-comments {
   padding: 25px;
+}
+
+.post-author {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.post-author--image {
+    height: 55px !important;
+    width: 55px !important;
+    border-radius: 50%;
+}
+
+.post-author--info {
+    margin-left: 10px;
+    padding-top: 10px;
+}
+
+.post-author--info h4 {
+    font-weight: 300;
+    color: #597c2c;
+    font-size: 17px;
+}
+
+.post-author--info p {
+    font-weight: 300;
+    color: rgba(0,0,0,.6);
+    font-size: 13px;
 }
 
 #infscr-loading {
@@ -401,7 +454,7 @@ code {
 }
 
 .code {
-  margin: 20px 30px 0px 20px;
+  margin: 20px 30px;
   padding: 12px;
   border: 1px solid #dddddd;
   border-radius: 3px;
@@ -459,8 +512,6 @@ code {
   #exp p { display: block; margin-bottom: 15px; }
   #exp h3 { text-align: center; }
   .post { margin: 0px 0px 30px 0px; }
-  .post h4 { height: 200px; text-align:center; overflow: hidden; background: #E77E23; }
-  .post h4 img { min-height:200px; width: 570px; max-height: 500px; }
   .bar-logo { background-color: transparent; }
   .btn.red, .btn.blue { display: none;}
 }

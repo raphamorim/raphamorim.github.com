@@ -7,9 +7,9 @@ language: 'en'
 image: 'assets/images/posts/code-every-single-day.jpg'
 ---
 
-Yesterday i was reading some posts and saw something cool ([here](http://ejohn.org/blog/write-code-every-day/)). A challenge adopted by Jonh Resig [[@jeresig](https://twitter.com/jeresig)] (the creator of the jQuery JavaScript library). The goal was to code every single day.
-
 <!-- more -->
+
+Yesterday i was reading some posts and saw something cool ([here](http://ejohn.org/blog/write-code-every-day/)). A challenge adopted by Jonh Resig [[@jeresig](https://twitter.com/jeresig)] (the creator of the jQuery JavaScript library). The goal was to code every single day.
 
 After read this post, I chose try do this too. But  have some rules to be followed.
 

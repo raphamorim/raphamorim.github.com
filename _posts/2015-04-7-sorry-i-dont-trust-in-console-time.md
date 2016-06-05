@@ -1,13 +1,12 @@
 ---
 layout: post
-title: "Sorry bro, I simply don't trust in Console.Time or neither similar"
+title: "Sorry, I simply don't trust in Console.Time or neither similar"
 description: "It's normal for measure time. Many developers choose the console.time or in some cases use Date.getTime(). But, don't trust 100% in any of these."
-link: 'http://raphamorim.github.io/sorry-i-dont-trust-in-console-time'
 language: 'en'
 image: 'assets/images/posts/trustless.jpg'
 ---
 
-It's normal for measure time. Many developers choose the console.time or in some cases use Date.getTime(). 
+It's normal for measure time. Many developers choose the console.time or in some cases use Date.getTime().
 
 <!-- more -->
 

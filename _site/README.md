@@ -1,6 +1,28 @@
-# [raphamorim.com](http://raphamorim.com)
+## Write in [raphamorim.com](http://raphamorim.com)
 
-My personal website where I talk about development. On issues related to Development (e.g: JavaScript, NodeJS, Python, Front-End) and Otaku/Geek stuffs.
+Create a file in `_posts` with the article date + title (lowcase) as filename. Like:
+
+Filename: `2016-05-22-creating-with-webgl-part-1.md`
+
+```markdown
+
+---
+layout: post
+title: "Creating with WebGL • Part 1"
+description: 'Some Amazing Description'
+language: 'en'
+image: 'assets/images/posts/webgl-1.jpg'
+
+author: ['Raphael Amorim', 'raphamundi']
+---
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt corporis amet cum quidem qui excepturi porro modi saepe animi, sequi dolores, quo beatae libero optio, illum dolorem, voluptatem reiciendis. Magni?
+
+<!-- more -->
+
+Continues here...
+
+```
 
 ## How it works?
 

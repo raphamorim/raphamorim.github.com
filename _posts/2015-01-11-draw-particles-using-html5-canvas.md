@@ -3,17 +3,16 @@ layout: post
 title: 'Draw particles using HTML5 Canvas'
 description: 'Canvas for me has been the most fun technology in HTML5. The
 amount of cool things that can create only drawing geometric figures is very broad.'
-link: 'http://raphamorim.github.io/draw-particles-using-html5-canvas'
 language: 'en'
 image: 'assets/images/experiments/particles.jpg'
 ---
+
+<!-- more -->
 
 Originally published in the medium, [read
 here](https://medium.com/@raphamorim/draw-particles-using-html5-canvas-6151ab214f7a).
 You can read on portuguese too,
 [here](http://imasters.com.br/front-end/web-standards/desenhando-particulas-usando-html5-canvas/)
-
-<!-- more -->
 
 Canvas for me has been the most fun technology in HTML5. The amount of cool
 things that can create only drawing geometric figures is very broad.

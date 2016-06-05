@@ -1,17 +1,16 @@
 ---
 layout: post
 title: "When AST has saved my Project"
-description: ""
-link: 'http://raphamorim.github.io/when-AST-save-my-project'
+description: "For people who don't now. I've created ranza for check unusable dependencies. Why? To avoid accumulation of dependencies that are not being used...."
 language: 'en'
 image: 'assets/images/posts/code-ast.jpg'
 ---
 
-For people who don't now. I've created [ranza](http://github/raphamorim/ranza) for check unusable dependencies. Why? To avoid accumulation of dependencies that are not being used....
+For people who don't now. I've created ranza for check unusable dependencies. Why? To avoid accumulation of dependencies that are not being used....
 
 <!-- more -->
 
-The Ranza initially was using **fs** module to read files and apply an regex in all data to catch all requires in that file. Working only for Nodejs projects.
+The [Ranza](http://github/raphamorim/ranza) initially was using **fs** module to read files and apply an regex in all data to catch all requires in that file. Working only for Nodejs projects.
 
 Well, in that time I don't realized wich using that technique for get all requires in the file/project was a problem.
 
