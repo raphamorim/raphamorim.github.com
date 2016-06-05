@@ -313,6 +313,10 @@ h3 {
   font-size: 25px;
 }
 
+.post-page-content h3 {
+  margin: 20px 0px 18px 0px;
+}
+
 .post-comments {
   padding: 25px;
 }
@@ -450,7 +454,7 @@ code {
 }
 
 .code {
-  margin: 20px 30px 0px 20px;
+  margin: 20px 30px;
   padding: 12px;
   border: 1px solid #dddddd;
   border-radius: 3px;

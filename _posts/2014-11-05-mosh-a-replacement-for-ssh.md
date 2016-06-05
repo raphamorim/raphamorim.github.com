@@ -7,9 +7,9 @@ language: 'en'
 image: 'assets/images/posts/mosh-and-lucario.jpg'
 ---
 
-Read in portuguese on [iMasters](http://imasters.com.br/desenvolvimento/mosh-um-substituto-para-o-ssh/).
-
 <!-- more -->
+
+Read in portuguese on [iMasters](http://imasters.com.br/desenvolvimento/mosh-um-substituto-para-o-ssh/).
 
 If you use SSH constantly, probably some time you may have been annoyed when their connection was slow. Be in delay of command responses sent or even typing something.
 

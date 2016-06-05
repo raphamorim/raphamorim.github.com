@@ -2,16 +2,15 @@
 layout: post
 title: 'Stop apologizing and start making mistakes'
 description: "This article is the result of the experience I have gained performing consulting and observing the attitude of many developers."
-link: 'http://raphamorim.github.io/Stop-apologizing-and-start-making-mistakes'
 language: 'en'
 image: 'assets/images/posts/kaka-player.jpeg'
 ---
 
-You can read the original article in portuguese on [Medium](https://medium.com/@raphamorim/pare-de-dar-desculpas-e-aprenda-a-errar-ad17bbebb8a2).
+Currently I see enough people create reasons to run away from anything, often out of laziness or not to believe in yourself. Excuses not to study more, do not be a better professional or not take their mistakes and be a better person. Well, I'll share my story and I sincerely hope that you start to believe more in yourself.
 
 <!-- more -->
 
-Currently I see enough people create reasons to run away from anything, often out of laziness or not to believe in yourself. Excuses not to study more, do not be a better professional or not take their mistakes and be a better person. Well, I'll share my story and I sincerely hope that you start to believe more in yourself.
+BTW: You can read the original article in portuguese on [Medium](https://medium.com/@raphamorim/pare-de-dar-desculpas-e-aprenda-a-errar-ad17bbebb8a2).
 
 There are 2 years ago, I was 17 and loved develop. Then leaves for college and work in Petrobras. At the time I lived in Itaboraí and went daily to the center of Rio de Janeiro. A distance of something like 50km, depending on the traffic the trip could consume up to 3 to 5 hours.
 

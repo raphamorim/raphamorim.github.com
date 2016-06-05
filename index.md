@@ -6,7 +6,7 @@ language: 'en'
 
 ## Hi!
 
-How you doin?
+How are you?
 
 My name is Raphael Amorim and I'm 20.
 

@@ -24,7 +24,7 @@ lsi:         false
 highlighter: pygments
 markdown:    kramdown
 permalink:   /:title/
-paginate: 10
+paginate: 4
 
 maruku:
   use_tex:    false
