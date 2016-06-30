@@ -6,8 +6,4 @@ TODO:
 - plataforma de leitura
 - com search
 
-- leitor em realidade virtual?
-
-https://br.pinterest.com/pin/95771929552969467/
-
-btns: https://br.pinterest.com/pin/359654720222788765/
+- leitor em realidade virtual? (+1)
