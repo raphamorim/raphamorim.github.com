@@ -9,7 +9,6 @@
       			{% unless post.draft %}
         			<li class="post">
                 <a class="post-title-link" href="{{ post.url }}">
-                <img class="post-title-image" src="/{{ post.image }}">
                 <h2 class="post-title">{{ post.title }}</h2>
                 {% if post.excerpt %}
                     {{ post.excerpt | markdownify }}
