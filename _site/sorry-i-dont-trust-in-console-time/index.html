@@ -6,7 +6,11 @@
   <!-- Meta -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="It's normal for measure time. Many developers choose the console.time or in some cases use Date.getTime(). But, don't trust 100% in any of these." />
+
+  
+    <meta name="twitter:description" content="It’s normal for measure time. Many developers choose the console.time or in some cases use Date.getTime(). I give you a simple example: The Code console.time('execution time: '); var total = 0; for (var i = 0; i &lt;= 1e2; i++) { &nbsp;&nbsp;&nbsp;&nbsp;total += i; } console.log(total); console.timeEnd('execution time: '); Results Chrome (version 41.0) Firefox (version 37.0.1) But, don’t trust 100% in any of these. Why I’m saying that? If you need to measure time precisely, neither console.time() or using Date.getTime() will ,get you far. Using Date.getTime() you got something like this: var start = (new Date).getTime(); /* Run a test...." />
+  
+
   <meta name="keywords" content="raphael, amorim, developer, open, javascript, python, clojure, source">
 
   <!-- Facebook -->
@@ -21,7 +25,11 @@
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sorry, I simply don't trust in Console.Time or neither similar - Raphamorim">
-  <meta name="twitter:description" content="It's normal for measure time. Many developers choose the console.time or in some cases use Date.getTime(). But, don't trust 100% in any of these.">
+
+  
+    <meta name="twitter:description" content="It’s normal for measure time. Many developers choose the console.time or in some cases use Date.getTime(). I give you a simple example: The Code console.time('execution time: '); var total = 0; for (var i = 0; i &lt;= 1e2; i++) { &nbsp;&nbsp;&nbsp;&nbsp;total += i; } console.log(total); console.timeEnd('execution time: '); Results Chrome (version 41.0) Firefox (version 37.0.1) But, don’t trust 100% in any of these. Why I’m saying that? If you need to measure time precisely, neither console.time() or using Date.getTime() will ,get you far. Using Date.getTime() you got something like this: var start = (new Date).getTime(); /* Run a test...." />
+  
+
   <meta name="twitter:url" content="http://raphamorim.com/sorry-i-dont-trust-in-console-time/">
   <meta name="twitter:image" content="http://raphamorim.com/assets/images/posts/trustless.jpg"/>
 
@@ -44,7 +52,7 @@
           <a href="/blog">
             <li>Blog</li>
           </a>
-          <a href="http://github.com/raphamorim" target="_blank">
+          <a href="//github.com/raphamorim" target="_blank">
             <li>GitHub</li>
           </a>
           <a href="/experiments">
@@ -61,14 +69,11 @@
   </div>
   <div id="bar-mobile-menu">
     <ul class='pagenav'>
-    <a href="/blog">
+    <a href="//blog">
       <li>Blog</li>
     </a>
     <a href="http://github.com/raphamorim">
       <li>GitHub</li>
-    </a>
-    <a href="/projects">
-      <li>Projects</li>
     </a>
     <a href="/experiments">
       <li>Experiments</li>

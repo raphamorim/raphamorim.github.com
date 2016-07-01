@@ -6,7 +6,13 @@
   <!-- Meta -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+
+  {% if page.layout == 'post' %}
+    <meta name="twitter:description" content="{{ content | strip_html | truncatewords: 100 }}" />
+  {% else %}
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  {% endif %}
+
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
 
   <!-- Facebook -->
@@ -21,7 +27,14 @@
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}">
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+  {% if page.layout == 'post' %}
+    <meta name="twitter:description" content="{{ content | strip_html |
+    truncatewords: 100}}" />
+  {% else %}
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  {% endif %}
+
   <meta name="twitter:url" content="http://raphamorim.com{% if page.url != '/index.html' %}{{ page.url }}{% endif %}">
   <meta name="twitter:image" content="{{site.url}}{% if page.image %}{{page.image}}{%else%}assets/images/rapha.jpg{% endif %}"/>
 

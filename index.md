@@ -1,22 +1,20 @@
 ---
-layout: home
-class: home
+layout: about
+class: about
 language: 'en'
 ---
 
-## Hi!
+<br><br>
 
-How are you?
+## Raphael Amorim
 
-My name is Raphael Amorim and I'm 20.
+Just a kid (20 years) looking for good challenges
 
-I'm a **Developer** by the day.
+I'm a Software Developer in **Globo.com**
 
-But, by the night I'm an **Open Source** Evangelist.
+Writing algorithms in **.js**, **.py** and **.go**
 
-Always trying turn coffee into code.
-
-I love create and share things.
+Also I already worked in Petrobras, Videolog, [...]
 
 <br>
 
