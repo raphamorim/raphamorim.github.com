@@ -3,41 +3,20 @@
   {% include nav.html %}
 
 	<div class='main'>
-		<div class="container">
+		<div class="container space">
 			<ul id="posts">
-      		{% for post in paginator.posts %}
+      		{% for post in site.posts %}
       			{% unless post.draft %}
         			<li class="post">
-                <a class="post-title-link" href="{{ post.url }}">
-                <img class="post-title-image" src="/{{ post.image }}">
-                <h2 class="post-title">{{ post.title }}</h2>
-                {% if post.excerpt %}
-                    {{ post.excerpt | markdownify }}
-                    </a><a class="post-read-more" href="{{ post.url }}" >Read more...</a>
-                {% else %}
-                    </a>{{ post.content }}
-                {% endif %}
-              </li>
-            {% endunless %}
-      		{% endfor %}
-
-     <p class="pagination">
-     {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-          <a class="newer" href="/blog">Previous</a>
-        {% else %}
-          <a class="newer" href="/blog/page{{paginator.previous_page}}">Previous</a>
-        {% endif %}
-     {% else %}
-        <span class="newer">Previous</span>
-     {% endif %}
-
-     <span>Page <strong>{{paginator.page}}</strong> / <strong>{{paginator.total_pages}}</strong></span>
-     {% if paginator.next_page %}
-       <a class="older" href="/blog/page{{paginator.next_page}}">Next</a>
-     {% else %}
-       <span class="older">Next</span>
-     {% endif %}
-     </p>
+                        <a class="post-title-link" href="{{ post.url }}">
+                            <h2 class="post-title">{{ post.title }}</h2>
+                        </a>
+                        <span class="post-date">{{ post.date | date:"%b %d, %Y" }}</span>
+                    </li>
+                {% endunless %}
+      	    {% endfor %}
+            </ul>
+        </div>
+    </div>
 
 {% include footer.html %}

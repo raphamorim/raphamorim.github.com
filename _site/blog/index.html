@@ -6,7 +6,11 @@
   <!-- Meta -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="HTML5, CSS3, NodeJS, WebGL, JavaScript and other stuffs." />
+
+  
+    <meta name="description" content="HTML5, CSS3, NodeJS, WebGL, JavaScript and other stuffs." />
+  
+
   <meta name="keywords" content="raphael, amorim, developer, open, javascript, python, clojure, source">
 
   <!-- Facebook -->
@@ -21,7 +25,11 @@
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Blog - Raphamorim">
-  <meta name="twitter:description" content="HTML5, CSS3, NodeJS, WebGL, JavaScript and other stuffs.">
+
+  
+    <meta name="twitter:description" content="HTML5, CSS3, NodeJS, WebGL, JavaScript and other stuffs.">
+  
+
   <meta name="twitter:url" content="http://raphamorim.com/blog/">
   <meta name="twitter:image" content="http://raphamorim.com/assets/images/rapha.jpg"/>
 
@@ -29,57 +37,55 @@
   <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/base.min.css" type="text/css" />
+  <link rel="stylesheet" href="/assets/css/base.css" type="text/css" />
 </head>
 <body class="blog">
 
 
   <nav>
-    <div class='container'>
-      <a href="/" class="bar-link">
-        <div class="bar-logo">RAPHA<span>MORIM</span></div>
-      </a>
-      <div class="bar-menu">
-        <ul class='pagenav'>
-          <a href="/blog">
-            <li>Blog</li>
-          </a>
-          <a href="http://github.com/raphamorim" target="_blank">
-            <li>GitHub</li>
-          </a>
-          <a href="/experiments">
-            <li>Experiments</li>
-          </a>
-          <a href="/talks">
-            <li>Talks</li>
-          </a>
-       </ul>
+    <div class="container">
+        <a href="/" class="bar-link">
+            <div class="bar-logo">
+                Raphamorim
+            </div>
+        </a>
+        <div class="bar-menu">
+            <ul class="pagenav">
+                <a href="/about">
+                    <li>About</li>
+                </a>
+                <a href="/articles">
+                    <li>Articles</li>
+                </a>
+                <a target="_blank" href="https://twitter.com/@raphamundi">
+                    <li>@raphamundi</li>
+                </a>
+                <a href="/talks">
+                    <li>Talks</li>
+                </a>
+            </ul>
+        </div>
+        <div class="nav-toggle">
+            <span></span>
+        </div>
     </div>
-    <div class="nav-toggle">
-        <span></span>
+    <div id="bar-mobile-menu">
+        <ul class="pagenav">
+            <a href="/about">
+                <li>About</li>
+            </a>
+            <a href="/articles">
+                <li>Articles</li>
+            </a>
+            <a target="_blank" href="https://twitter.com/@raphamundi">
+                <li>@raphamundi</li>
+            </a>
+            <a href="/talks">
+                <li>Talks</li>
+            </a>
+        </ul>
     </div>
-  </div>
-  <div id="bar-mobile-menu">
-    <ul class='pagenav'>
-    <a href="/blog">
-      <li>Blog</li>
-    </a>
-    <a href="http://github.com/raphamorim">
-      <li>GitHub</li>
-    </a>
-    <a href="/projects">
-      <li>Projects</li>
-    </a>
-    <a href="/experiments">
-      <li>Experiments</li>
-    </a>
-    <a href="/talks">
-      <li>Talks</li>
-    </a>
-  </ul>
-  </div>
 </nav>
-
 
 	<div class='main'>
 		<div class="container">
@@ -87,8 +93,25 @@
       		
       			
         			<li class="post">
+                <a class="post-title-link" href="/be-vim-hero/">
+                <h2 class="post-title">VIM Hero - Chapter One</h2>
+                
+                    <p>Probabily you already have see VIM in threads like “Best Editors”, “Editor used
+by Hackers” and stuffs like that. Vim (Vi Improved) is a free software and can
+be (for me) the most flexible editor ever. VIM is a editor with lot of features,
+but unfortanily this features is unknow by the most part of programmers.</p>
+
+<p>In this post I’ll show some unknow Vim features.</p>
+
+
+                    </a><a class="post-read-more" href="/be-vim-hero/" >Read more...</a>
+                
+              </li>
+            
+      		
+      			
+        			<li class="post">
                 <a class="post-title-link" href="/creating-games-to-PSP-using-C/">
-                <img class="post-title-image" src="/assets/images/posts/psp.jpg">
                 <h2 class="post-title">Creating Games to PSP using C</h2>
                 
                     <p>I am not sure why he was lying in my bed thinking of good games I played. Then I remembered several video games that I had, then came to my head: “Raphael your PSP is in the box. Let’s play a game!”</p>
@@ -102,7 +125,6 @@
       			
         			<li class="post">
                 <a class="post-title-link" href="/framework-ou-library/">
-                <img class="post-title-image" src="/assets/images/posts/question.jpg">
                 <h2 class="post-title">Framework || Library</h2>
                 
                     <p>Frequentemente vejo muitos outros desenvolvedores levantarem a mesma questão: “Quais seriam as definições técnicas que permitem distinguir o que é Framework e Library?”. A primeira vez que alguém me perguntou isso foi meses atrás, eu havia palestrado sobre React e uma das perguntas feitas foi: “por quais motivos React é uma library e não um framework?”…</p>
@@ -116,7 +138,6 @@
       			
         			<li class="post">
                 <a class="post-title-link" href="/missao-braziljs/">
-                <img class="post-title-image" src="/assets/images/posts/braziljs2015/me.png">
                 <h2 class="post-title">A minha missão no Braziljs</h2>
                 
                     <p>Há algumas semanas atrás eu palestrei no BrazilJs, evento que se auto intitula a maior conferência de JavaScript do Universo e nessa edição superou o recorde mundial com 1.300 participantes presentes. Logo no meu primeiro Braziljs eu estava indo para palestrar na maior conferência de JavaScript do mundo, mas eu tinha uma missão pessoal muito maior.</p>
@@ -130,7 +151,6 @@
       			
         			<li class="post">
                 <a class="post-title-link" href="/redesenhando-sua-arquitetura-com-queues-workers-services/">
-                <img class="post-title-image" src="/assets/images/posts/filas.jpg">
                 <h2 class="post-title">Uma arquitetura orientada a serviços e filas de mensagens</h2>
                 
                     <p>Boas arquiteturas possuem princípios sólidos para alcançar desempenho e escalabilidade em aplicações. Porém quando é demandado um fluxo bastante intenso de dados, é necessário então, voltar atrás e pensar em uma arquitetura que atenda essas demandas.</p>
@@ -141,13 +161,105 @@
               </li>
             
       		
+      			
+        			<li class="post">
+                <a class="post-title-link" href="/when-AST-save-my-project/">
+                <h2 class="post-title">When AST has saved my Project</h2>
+                
+                    <p>For people who don’t now. I’ve created ranza for check unusable dependencies. Why? To avoid accumulation of dependencies that are not being used….</p>
+
+
+                    </a><a class="post-read-more" href="/when-AST-save-my-project/" >Read more...</a>
+                
+              </li>
+            
+      		
+      			
+        			<li class="post">
+                <a class="post-title-link" href="/Stop-apologizing-and-start-making-mistakes/">
+                <h2 class="post-title">Stop apologizing and start making mistakes</h2>
+                
+                    <p>Currently I see enough people create reasons to run away from anything, often out of laziness or not to believe in yourself. Excuses not to study more, do not be a better professional or not take their mistakes and be a better person. Well, I’ll share my story and I sincerely hope that you start to believe more in yourself.</p>
+
+
+                    </a><a class="post-read-more" href="/Stop-apologizing-and-start-making-mistakes/" >Read more...</a>
+                
+              </li>
+            
+      		
+      			
+        			<li class="post">
+                <a class="post-title-link" href="/Do-not-be-a-front-end-much-less-back-end/">
+                <h2 class="post-title">Do not be a front-end, much less back-end</h2>
+                
+                    <p>This article is the result of the experience I have gained performing consulting and observing the attitude of many developers.</p>
+
+
+                    </a><a class="post-read-more" href="/Do-not-be-a-front-end-much-less-back-end/" >Read more...</a>
+                
+              </li>
+            
+      		
+      			
+        			<li class="post">
+                <a class="post-title-link" href="/sorry-i-dont-trust-in-console-time/">
+                <h2 class="post-title">Sorry, I simply don't trust in Console.Time or neither similar</h2>
+                
+                    <p>It’s normal for measure time. Many developers choose the console.time or in some cases use Date.getTime().</p>
+
+
+                    </a><a class="post-read-more" href="/sorry-i-dont-trust-in-console-time/" >Read more...</a>
+                
+              </li>
+            
+      		
+      			
+        			<li class="post">
+                <a class="post-title-link" href="/draw-particles-using-html5-canvas/">
+                <h2 class="post-title">Draw particles using HTML5 Canvas</h2>
+                
+                    
+
+                    </a><a class="post-read-more" href="/draw-particles-using-html5-canvas/" >Read more...</a>
+                
+              </li>
+            
+      		
+      			
+        			<li class="post">
+                <a class="post-title-link" href="/Some-Games-You-Should-Play-Before-You-Die/">
+                <h2 class="post-title">Yeah, these are my favorite games!</h2>
+                
+                    <p>Here is my personal list of my favorite games, I think everyone should play
+these before die. With time I’ll updating the list.</p>
+
+
+                    </a><a class="post-read-more" href="/Some-Games-You-Should-Play-Before-You-Die/" >Read more...</a>
+                
+              </li>
+            
+      		
+      			
+        			<li class="post">
+                <a class="post-title-link" href="/Anime-You-Should-Watch-Before-You-Die/">
+                <h2 class="post-title">Some Animes You Should Watch Before You Die</h2>
+                
+                    <p>Here is my personal list of my favorite animes, I think everyone should see
+these before die. Has few classics, but with time I will updating the list.</p>
+
+
+                    </a><a class="post-read-more" href="/Anime-You-Should-Watch-Before-You-Die/" >Read more...</a>
+                
+              </li>
+            
+      		
 
      <p class="pagination">
      
         <span class="newer">Previous</span>
      
 
-     <span>Page <strong>1</strong> / <strong>7</strong></span>
+     <span>Page <strong>1</strong> / <strong>3</strong></span>
      
        <a class="older" href="/blog/page2">Next</a>
      

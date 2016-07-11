@@ -34,17 +34,9 @@ hr {display: none;}
 p {line-height: 1.5em;}
 b, strong {font-weight: bold;}
 
-/* Open Sans font */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3ZBw1xU1rKptJj_0jans920.woff2) format('woff2');
-}
-
 body {
-  font: normal normal 20px/1.2em 'Open Sans', Helvetica, arial, sans-serif;
-  background: #FAFAFA;
+  font: normal normal 20px/1.2em Helvetica, arial, sans-serif;
+  background: #FFF;
   color: #777;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -57,7 +49,6 @@ nav {
   top:0;
   left:0;
   background: #FFFFFF;
-  border-bottom: 1px solid #E9E9E9;
   width: 100%;
   height: 144px;
   z-index: 2;
@@ -75,7 +66,6 @@ h3 {
 .main {
   position: relative;
   width: 100%;
-  background-color: #FAFAFA;
   margin-top: -20px;
   padding-top: 30px;
 }
@@ -87,49 +77,65 @@ h3 {
   z-index: 1;
 }
 
-.bar-logo {
-  position: relative;
-  width: 200px;
-  height: 66px;
-  float: left;
-  padding-top: 20px;
-  font-size: 25px;
-  font-weight: 600;
-  text-align: center;
-  color: #666666;
+.container-topic {
+  color: rgba(0,0,0,.1);
+  text-align: left;
+  margin: 90px 0 30px;
+  font-size: 40px;
+  padding: 0 20px;
 }
 
-.bar-logo span {
-  color: #82B440;
+.container.space {
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.bar-logo {
+    position: absolute;
+    font-size: 24px;
+    letter-spacing: 7px;
+    line-height: 30px;
+    color: rgba(0, 0, 0, 0.498039);
+    font-weight: 600;
+    word-wrap: break-word;
+    width: 110px;
+    height: 110px;
+    text-transform: uppercase;
+    margin-left: 25px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.498039);
+    padding: 5px 0px 0px 8px;
 }
 
 .bar-menu {
+  margin-top: 20px;
+  margin-left: 30px;
   position: relative;
   text-align: right;
   float: right;
 }
 
 .bar-menu ul {
-  margin-top: 18px;
-  min-width: 500px;
+    margin-top: 18px;
+    min-width: 300px;
 }
 
 .bar-menu ul a li {
-  float: left;
-  text-transform: uppercase;
-  color: #c1c0c0;
-  padding: 5px 10px 5px 10px;
-  margin-right: 5px;
+    float: left;
+    text-transform: uppercase;
+    color: #c1c0c0;
+    padding: 5px 10px 5px 10px;
+    margin-right: 5px;
 }
 
 .bar-menu ul a.active li {
-  color: #777777;
+  color: rgba(0,0,0,.8);
 }
 
 .bar-menu ul a:hover li {
-  color: #82B440;
+  color: rgba(0,0,0,.8);
 }
-
 
 /* Nav Toogle */
 .nav-toggle {
@@ -171,95 +177,75 @@ h3 {
 /* End of Nav-Toggle */
 
 
-.dialog {
+.container-dialog {
   margin-top: 20px;
   padding: 25px 5px 5px 5px;
 }
 
-.dialog h1 {
+.container-dialog h1 {
   font-size: 70px;
   padding-bottom: 10px;
 }
 
-.dialog h2 {
+.container-dialog h2 {
   font-size: 40px;
   padding-bottom: 10px;
 }
 
-.dialog p {
-  font-size: 25px;
-  line-height: 1.8em;
+.container-dialog p {
+  font-weight: lighter;
+  font-style: normal;
+  letter-spacing: -0.004em;
+  font-size: 22px;
+  line-height: 1.5em;
+  margin-top: 25px;
 }
 
-.dialog strong {
-  padding: 5px 10px;
-  margin: 3px;
-  color: #FFF;
-}
-.dialog>p:nth-child(odd) strong{
-  background-color: #29B191;
-}
-.dialog>p:nth-child(even) strong {
-  background-color: #8A4876;
+.container-dialog strong {
+  padding: 0 1px;
+  color: rgba(0,0,0,0.5);
 }
 
-.me {
-  float: right;
-  margin-top: -450px;
-  margin-right: 60px;
-  margin-bottom: 20px;
-}
-
-.me img {
+.container-image img {
   height: 500px;
 }
 
 /* Posts */
 #posts {
-  position: relative;
-  margin: 0 auto;
-  margin-top: 40px;
-  width: 90%;
+    position: relative;
+    width: 100%;
+    margin: 40px auto 0px;
 }
 
 .post {
-  position: relative;
-  width: 100%;
-  background-color: #FFF;
-  border-radius: 3px;
-  padding: 20px 30px;
-  box-shadow: 0 1px 4px rgba(0,0,0,.04);
-  border: 1px solid rgba(0,0,0,.09);
-  margin: 0px 0px 50px 0px;
+    position: relative;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0980392);
 }
 
 .post-title {
-  text-align: left;
-  font-size: 28px;
-  margin-top: 10px;
-  font-weight: 550;
-  color: rgba(0,0,0,.8);
-  font-style: normal;
-  font-family: Helvetica;
-  padding: 5px 0 15px 0;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: left;
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.498039);
+    font-family: Helvetica;
+    padding: 5px 0px 15px;
+}
+
+.post-page-title {
+    font-size: 40px;
 }
 
 .post-date {
-  color: #999;
-  text-align: center;
-  font-size: 14px;
-  font-size: 300;
-}
-
-.post-read-more {
-    margin-top: 20px;
-    color: rgba(0,0,0,.6);
-    border-width: 0;
-    font-size: 12px;
-}
-
-.post-read-more:hover {
-    color: rgba(0,0,0,1);
+    color: rgb(153, 153, 153);
+    text-align: center;
+    font-size: 14px;
+    float: right;
+    text-transform: uppercase;
+    margin-top: -33px;
 }
 
 .post h3 {
@@ -268,27 +254,22 @@ h3 {
 }
 
 .post img {
-  position: relative;
-  width: 100%;
-  max-height: 300px;
+    position: relative;
+    width: 100%;
+    max-height: 400px;
 }
 
-.post-page .post-title-image {
-    max-height: 350px;
+.post-image {
+  padding: 15px 0;
 }
 
 .post p {
-    color: rgba(0,0,0,.8);
-    font-weight: 400;
+    font-weight: lighter;
     font-style: normal;
-    font-size: 18px;
-    line-height: 1.5;
-    letter-spacing: -.004em;
-    margin-bottom: 10px;
-}
-
-.post span {
-  padding: 20px;
+    letter-spacing: -0.004em;
+    font-size: 22px;
+    line-height: 1.5em;
+    margin-top: 25px;
 }
 
 .post a {
@@ -308,9 +289,10 @@ h3 {
 }
 
 .post-page-content h2 {
-  margin: 20px 0px 18px 0px;
+  margin: 40px 0px;
   color: rgba(0,0,0,0.5);
   font-size: 25px;
+  text-transform: uppercase;
 }
 
 .post-page-content h3 {
@@ -391,17 +373,15 @@ h3 {
   opacity: .5;
 }
 
-/* Experiments */
+/* Talks */
 
-#exp img { width: 100%; border-right: 15px solid #E9877E; }
-#exp h3 { margin: 10px 0px 15px 0px; font-size: 23px; color: #679609; }
-#exp h3 a { color: #679609; }
-#exp p { font-size: 16px; margin-bottom: 10px; color: #555;}
-#exp a { color: #666; font-weight: bold; }
-#exp li {
-  margin-top: 40px;
+#talks h3 { margin: 10px 0px 15px 0px; font-size: 23px; color: rgba(0,0,0,.4); }
+#talks h3 a { color: rgba(0,0,0,.6); }
+#talks p { font-size: 16px; line-height: 1px; color: #555;}
+#talks a { color: #666; font-weight: bold; }
+#talks li {
   background: #FFFFFF;
-  padding: 10px 15px;
+  padding: 15px 4px;
 }
 
 ::selection {
@@ -504,13 +484,12 @@ code {
 }
 
 @media only screen and (max-width: 600px) {
-  .talks .container, .experiments .container { min-height: 0px;}
   .main { margin-top: -50px; }
   .dialog p { line-height: 1.5em; clear: both; margin: 0px; display: inline; text-align: center; }
   .dialog strong { padding: 0px; margin: 0px; }
   .dialog .btn { padding: 10px; }
-  #exp p { display: block; margin-bottom: 15px; }
-  #exp h3 { text-align: center; }
+  #talks p { display: block; margin-bottom: 15px; }
+  #talks h3 { text-align: center; }
   .post { margin: 0px 0px 30px 0px; }
   .bar-logo { background-color: transparent; }
   .btn.red, .btn.blue { display: none;}

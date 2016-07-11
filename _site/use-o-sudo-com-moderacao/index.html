@@ -6,7 +6,11 @@
   <!-- Meta -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Você com certeza já se encontrou numa situação de acabar usando o sudo na execução de algum comando para realizar alguma tarefa ou iniciar/fechar uma aplicação por meio do bash." />
+
+  
+    <meta name="twitter:description" content="Você com certeza já se encontrou numa situação de acabar usando o sudo na execução de algum comando para realizar alguma tarefa ou iniciar/fechar uma aplicação por meio do bash. Rodar um comando como root(raiz) não é nenhum pecado, desde que não seja do nível de um “rm -rf / “. O problema em si está em rodar comandos com tamanha permissão como se fosse printar algo no console, sem no mínimo pensar mais de uma vez no que você vai estar executando. Frequentemente desenvolvedores utilizam o sudo como ferramenta para rodar o comando quando há qualquer tipo de erro..." />
+  
+
   <meta name="keywords" content="raphael, amorim, developer, open, javascript, python, clojure, source">
 
   <!-- Facebook -->
@@ -21,7 +25,11 @@
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Use o sudo com moderação - Raphamorim">
-  <meta name="twitter:description" content="Você com certeza já se encontrou numa situação de acabar usando o sudo na execução de algum comando para realizar alguma tarefa ou iniciar/fechar uma aplicação por meio do bash.">
+
+  
+    <meta name="twitter:description" content="Você com certeza já se encontrou numa situação de acabar usando o sudo na execução de algum comando para realizar alguma tarefa ou iniciar/fechar uma aplicação por meio do bash. Rodar um comando como root(raiz) não é nenhum pecado, desde que não seja do nível de um “rm -rf / “. O problema em si está em rodar comandos com tamanha permissão como se fosse printar algo no console, sem no mínimo pensar mais de uma vez no que você vai estar executando. Frequentemente desenvolvedores utilizam o sudo como ferramenta para rodar o comando quando há qualquer tipo de erro..." />
+  
+
   <meta name="twitter:url" content="http://raphamorim.com/use-o-sudo-com-moderacao/">
   <meta name="twitter:image" content="http://raphamorim.com/assets/images/posts/sudo.jpg"/>
 
@@ -29,75 +37,69 @@
   <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/base.min.css" type="text/css" />
+  <link rel="stylesheet" href="/assets/css/base.css" type="text/css" />
 </head>
 <body>
 
 
   <nav>
-    <div class='container'>
-      <a href="/" class="bar-link">
-        <div class="bar-logo">RAPHA<span>MORIM</span></div>
-      </a>
-      <div class="bar-menu">
-        <ul class='pagenav'>
-          <a href="/blog">
-            <li>Blog</li>
-          </a>
-          <a href="http://github.com/raphamorim" target="_blank">
-            <li>GitHub</li>
-          </a>
-          <a href="/experiments">
-            <li>Experiments</li>
-          </a>
-          <a href="/talks">
-            <li>Talks</li>
-          </a>
-       </ul>
+    <div class="container">
+        <a href="/" class="bar-link">
+            <div class="bar-logo">
+                Raphamorim
+            </div>
+        </a>
+        <div class="bar-menu">
+            <ul class="pagenav">
+                <a href="/about">
+                    <li>About</li>
+                </a>
+                <a href="/articles">
+                    <li>Articles</li>
+                </a>
+                <a target="_blank" href="https://twitter.com/@raphamundi">
+                    <li>@raphamundi</li>
+                </a>
+                <a href="/talks">
+                    <li>Talks</li>
+                </a>
+            </ul>
+        </div>
+        <div class="nav-toggle">
+            <span></span>
+        </div>
     </div>
-    <div class="nav-toggle">
-        <span></span>
+    <div id="bar-mobile-menu">
+        <ul class="pagenav">
+            <a href="/about">
+                <li>About</li>
+            </a>
+            <a href="/articles">
+                <li>Articles</li>
+            </a>
+            <a target="_blank" href="https://twitter.com/@raphamundi">
+                <li>@raphamundi</li>
+            </a>
+            <a href="/talks">
+                <li>Talks</li>
+            </a>
+        </ul>
     </div>
-  </div>
-  <div id="bar-mobile-menu">
-    <ul class='pagenav'>
-    <a href="/blog">
-      <li>Blog</li>
-    </a>
-    <a href="http://github.com/raphamorim">
-      <li>GitHub</li>
-    </a>
-    <a href="/projects">
-      <li>Projects</li>
-    </a>
-    <a href="/experiments">
-      <li>Experiments</li>
-    </a>
-    <a href="/talks">
-      <li>Talks</li>
-    </a>
-  </ul>
-  </div>
 </nav>
-
 
   <div class='main'>
 
     <div class="container">
         <ul id="posts">
             <li class="post post-page">
-                <div class="post-author">
-                    
-                        <a href="//twitter.com/@raphamundi" target="_blank">
-                            <img class="post-author--image" src="/assets/images/author/raphamundi.jpg"/>
-                            <div class="post-author--info">
-                                <h4 class="post-author--name">Raphael Amorim</h4>
-                    
-                    </a><p class="post-author--date">05 July • 2014</p>
-                </div>
-                </div>
-                <img class="post-title-image" src="/assets/images/posts/sudo.jpg">
-                <h2 class="post-title">Use o sudo com moderação</h2>
+                <h2 class="post-title post-page-title">Use o sudo com moderação</h2>
+                <span class="post-date">05 Jul • 2014</span>
+                <span class="post-break"></span>
+
+                
+                    <img class="post-image" src="/assets/images/posts/sudo.jpg">
+                
+
                 <div class="post-page-content">
                     <p>Você com certeza já se encontrou numa situação de acabar usando o sudo na execução de algum comando para realizar alguma tarefa ou iniciar/fechar uma aplicação por meio do bash.</p>
 
@@ -141,8 +143,6 @@ deveria ser a última bala do revólver.</p>
   </div> <!-- /container -->
 
 <script src="/assets/js/app.js" async></script>
-
-
 </body>
 </html>
 

@@ -6,7 +6,6 @@ name: Raphamorim
 description: I have a passion for web development and love to create.
 keywords: "raphael, amorim, developer, open, javascript, python, clojure, source"
 
-url: http://raphamorim.com/
 domain: raphamorim.com
 commentlinks: true
 twitter-username: raphamundi
@@ -16,15 +15,14 @@ gems: [jekyll-paginate, jekyll-gist]
 
 source:      .
 destination: ./_site
-plugins_dir:     ./_plugins
-paginate_path: 'blog/page:num'
+paginate_path: '/page:num'
 
 future:      true
 lsi:         false
 highlighter: pygments
 markdown:    kramdown
 permalink:   /:title/
-paginate: 4
+paginate: 3
 
 maruku:
   use_tex:    false
