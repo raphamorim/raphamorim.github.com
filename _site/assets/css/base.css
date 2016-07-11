@@ -373,17 +373,15 @@ h3 {
   opacity: .5;
 }
 
-/* Experiments */
+/* Talks */
 
-#exp img { width: 100%; border-right: 15px solid #E9877E; }
-#exp h3 { margin: 10px 0px 15px 0px; font-size: 23px; color: #679609; }
-#exp h3 a { color: #679609; }
-#exp p { font-size: 16px; margin-bottom: 10px; color: #555;}
-#exp a { color: #666; font-weight: bold; }
-#exp li {
-  margin-top: 40px;
+#talks h3 { margin: 10px 0px 15px 0px; font-size: 23px; color: rgba(0,0,0,.4); }
+#talks h3 a { color: rgba(0,0,0,.6); }
+#talks p { font-size: 16px; line-height: 1px; color: #555;}
+#talks a { color: #666; font-weight: bold; }
+#talks li {
   background: #FFFFFF;
-  padding: 10px 15px;
+  padding: 15px 4px;
 }
 
 ::selection {
@@ -486,13 +484,12 @@ code {
 }
 
 @media only screen and (max-width: 600px) {
-  .talks .container, .experiments .container { min-height: 0px;}
   .main { margin-top: -50px; }
   .dialog p { line-height: 1.5em; clear: both; margin: 0px; display: inline; text-align: center; }
   .dialog strong { padding: 0px; margin: 0px; }
   .dialog .btn { padding: 10px; }
-  #exp p { display: block; margin-bottom: 15px; }
-  #exp h3 { text-align: center; }
+  #talks p { display: block; margin-bottom: 15px; }
+  #talks h3 { text-align: center; }
   .post { margin: 0px 0px 30px 0px; }
   .bar-logo { background-color: transparent; }
   .btn.red, .btn.blue { display: none;}
