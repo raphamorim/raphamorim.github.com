@@ -37,72 +37,69 @@
   <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/base.min.css" type="text/css" />
+  <link rel="stylesheet" href="/assets/css/base.css" type="text/css" />
 </head>
 <body>
 
 
   <nav>
-    <div class='container'>
-      <a href="/" class="bar-link">
-        <div class="bar-logo">RAPHA<span>MORIM</span></div>
-      </a>
-      <div class="bar-menu">
-        <ul class='pagenav'>
-          <a href="/blog">
-            <li>Blog</li>
-          </a>
-          <a href="//github.com/raphamorim" target="_blank">
-            <li>GitHub</li>
-          </a>
-          <a href="/experiments">
-            <li>Experiments</li>
-          </a>
-          <a href="/talks">
-            <li>Talks</li>
-          </a>
-       </ul>
+    <div class="container">
+        <a href="/" class="bar-link">
+            <div class="bar-logo">
+                Raphamorim
+            </div>
+        </a>
+        <div class="bar-menu">
+            <ul class="pagenav">
+                <a href="/about">
+                    <li>About</li>
+                </a>
+                <a href="/articles">
+                    <li>Articles</li>
+                </a>
+                <a target="_blank" href="https://twitter.com/@raphamundi">
+                    <li>@raphamundi</li>
+                </a>
+                <a href="/talks">
+                    <li>Talks</li>
+                </a>
+            </ul>
+        </div>
+        <div class="nav-toggle">
+            <span></span>
+        </div>
     </div>
-    <div class="nav-toggle">
-        <span></span>
+    <div id="bar-mobile-menu">
+        <ul class="pagenav">
+            <a href="/about">
+                <li>About</li>
+            </a>
+            <a href="/articles">
+                <li>Articles</li>
+            </a>
+            <a target="_blank" href="https://twitter.com/@raphamundi">
+                <li>@raphamundi</li>
+            </a>
+            <a href="/talks">
+                <li>Talks</li>
+            </a>
+        </ul>
     </div>
-  </div>
-  <div id="bar-mobile-menu">
-    <ul class='pagenav'>
-    <a href="//blog">
-      <li>Blog</li>
-    </a>
-    <a href="http://github.com/raphamorim">
-      <li>GitHub</li>
-    </a>
-    <a href="/experiments">
-      <li>Experiments</li>
-    </a>
-    <a href="/talks">
-      <li>Talks</li>
-    </a>
-  </ul>
-  </div>
 </nav>
-
 
   <div class='main'>
 
     <div class="container">
         <ul id="posts">
             <li class="post post-page">
-                <div class="post-author">
-                    
-                        <a href="//twitter.com/@raphamundi" target="_blank">
-                            <img class="post-author--image" src="/assets/images/author/raphamundi.jpg"/>
-                            <div class="post-author--info">
-                                <h4 class="post-author--name">Raphael Amorim</h4>
-                    
-                    </a><p class="post-author--date">25 September • 2014</p>
-                </div>
-                </div>
-                <img class="post-title-image" src="/assets/images/posts/docker.jpg">
-                <h2 class="post-title">Hello, my name is Docker</h2>
+                <h2 class="post-title post-page-title">Hello, my name is Docker</h2>
+                <span class="post-date">25 Sep • 2014</span>
+                <span class="post-break"></span>
+
+                
+                    <img class="post-image" src="/assets/images/posts/docker.jpg">
+                
+
                 <div class="post-page-content">
                     <!-- more -->
 
@@ -279,8 +276,6 @@ When a Dockerfile is finished executing, you end up having formed an image, whic
   </div> <!-- /container -->
 
 <script src="/assets/js/app.js" async></script>
-
-
 </body>
 </html>
 

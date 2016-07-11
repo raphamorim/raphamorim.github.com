@@ -2,19 +2,20 @@
 
   {% include nav.html %}
 
-	<div class='main'>
-		<div class="container space">
-			<ul id="posts">
-      		{% for post in site.posts %}
-      			{% unless post.draft %}
-        			<li class="post">
+    <div class='main'>
+        <div class="container">
+            <h2 class="container-topic">Recent Articles</h2>
+            <ul id="posts">
+            {% for post in paginator.posts %}
+                {% unless post.draft %}
+                    <li class="post">
                         <a class="post-title-link" href="{{ post.url }}">
                             <h2 class="post-title">{{ post.title }}</h2>
                         </a>
                         <span class="post-date">{{ post.date | date:"%b %d, %Y" }}</span>
                     </li>
                 {% endunless %}
-      	    {% endfor %}
+            {% endfor %}
             </ul>
         </div>
     </div>

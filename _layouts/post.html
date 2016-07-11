@@ -7,23 +7,14 @@
     <div class="container">
         <ul id="posts">
             <li class="post post-page">
-                <div class="post-author">
-                    {% if post.author && post.author.length %}
-                        <a href="//twitter.com/@{{ post.author[1] }}" target="_blank">
-                            <img class="post-author--image" src="/assets/images/author/{{ post.author[1] }}.jpg"/>
-                            <div class="post-author--info">
-                                <h4 class="post-author--name">{{ post.author[0] }}</h4>
-                    {% else %}
-                        <a href="//twitter.com/@raphamundi" target="_blank">
-                            <img class="post-author--image" src="/assets/images/author/raphamundi.jpg"/>
-                            <div class="post-author--info">
-                                <h4 class="post-author--name">Raphael Amorim</h4>
-                    {% endif %}
-                    </a><p class="post-author--date">{{ page.date | date:"%d %B • %Y" }}</p>
-                </div>
-                </div>
-                <img class="post-title-image" src="/{{ page.image }}">
-                <h2 class="post-title">{{ page.title }}</h2>
+                <h2 class="post-title post-page-title">{{ page.title }}</h2>
+                <span class="post-date">{{ page.date | date:"%d %b • %Y" }}</span>
+                <span class="post-break"></span>
+
+                {% if page.image %}
+                    <img class="post-image" src="/{{ page.image }}">
+                {% endif %}
+
                 <div class="post-page-content">
                     {{ content }}
                 </div>
