@@ -19,3 +19,5 @@ Speaker at over twenty conferences giving talks about web technologies like WebG
 These conferences include events such as WordCamp, BrazilJS and The International Free Software Forum (FISL).
 
 In 2015, I was one of the most active software developers in Brazil on GitHub having done meaningful contributions to open source projects for 500 days in a row.
+
+Doing amazing stuffs with [@ntmedina](http://ntmedina.github.io).
