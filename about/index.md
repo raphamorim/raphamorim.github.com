@@ -8,7 +8,7 @@ language: 'en'
 
 I'm a Software Developer in **Globo.com**.
 
-Also I'm a kid (20 years) looking for good challenges.
+Also I'm a young guy (20 years) looking for good challenges.
 
 Writing algorithms in **.js**, **.py** and **.go**.
 
