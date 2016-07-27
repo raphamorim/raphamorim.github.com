@@ -395,11 +395,13 @@ h3 {
   z-index: 0;
   width: 100%;
   background: #FFF;
-  padding: 30px 0px 5px 0px;
+  padding: 120px 0px 5px 0px;
   opacity: 0;
   height: 0px;
   margin-top: -30px;
   overflow: hidden;
+  border-bottom: 2px dashed #a5a5a5;
+  box-shadow: 0px 6px 6px rgba(0,0,0,.2);
 }
 
 #bar-mobile-menu li {
@@ -418,7 +420,7 @@ h3 {
 }
 
 #bar-mobile-menu a.active {
-  color: #a7f016;
+  font-weight: bold;
 }
 
 ::selection {
@@ -493,4 +495,6 @@ code {
   .post { margin: 0px 0px 30px 0px; }
   .bar-logo { background-color: transparent; }
   .btn.red, .btn.blue { display: none;}
+
+  #posts .post-date { display: none; }
 }
