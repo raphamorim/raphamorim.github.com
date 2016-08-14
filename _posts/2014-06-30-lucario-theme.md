@@ -3,7 +3,6 @@ layout: post
 title: 'Lucario Theme'
 description: "I always had problems when it came to theme, so I created my own theme! This theme was inspired by the flat design, i've picked some popular colors in this
 concept."
-link: 'http://raphamorim.com/lucario-theme/'
 language: 'en'
 image: 'assets/images/posts/lucario-theme.png'
 ---

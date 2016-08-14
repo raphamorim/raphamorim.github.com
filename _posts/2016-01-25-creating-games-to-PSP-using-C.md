@@ -2,7 +2,6 @@
 layout: post
 title: "Creating Games to PSP using C"
 description: 'By the time I turned on my PSP, I realized that most of the games I never was not bought. Do not get me wrong, but for a kid in school it was like a dream.'
-link: 'http://raphamorim.github.io/creating-games-to-PSP-using-C'
 language: 'en'
 image: 'assets/images/posts/psp.jpg'
 ---
@@ -110,7 +109,7 @@ Include “pspkernel.h” which will allow us to exit the application, "pspdebug
     <code>#include < pspdebug.h ></code>
     <code>#include < pspdisplay.h ></code>
     <code></code>
-    <code>#include "../common/callback.h"</code>    
+    <code>#include "../common/callback.h"</code>
 </div>
 
 We will tell the PSP a little about our program. In "PSP_MODULE_INFO" we will tell it the name of our program, any attributes, and its major and minor version. Define "pspDebugScreenPrintf" as "printf" which will allow us to type text on the screen.

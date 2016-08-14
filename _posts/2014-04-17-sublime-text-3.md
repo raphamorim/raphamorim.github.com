@@ -2,7 +2,6 @@
 layout: post
 title: 'My "Sublime Text" Way of Life'
 description: "Every person I know ever used or heard of Sublime Text (my favorite text editor). Is very difficult not to love it. What tools and plugins i use in Sublime? What tools you should know (or be using)?"
-link: 'http://raphamorim.com/sublime-text-3/'
 language: 'en'
 image: 'assets/images/posts/sublime-text-3.jpg'
 ---

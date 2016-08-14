@@ -3,7 +3,6 @@ layout: post
 title: 'TreeData.js - experimento #2'
 description: 'Segundo experimento, permite ao desenvolvedor criar estruturas de dados não lineares em específico: árvores, tudo isso
 apenas definindo um objeto e iniciando uma função de build passando esse objeto como parâmetro.'
-link: 'http://raphamorim.com/exp-tree-data-js/'
 language: 'pt-br'
 image: 'assets/images/posts/treeData.jpg'
 ---
@@ -28,6 +27,6 @@ apenas definindo um objeto e iniciando uma função de build passando esse objet
 Em futuro próximo ele irá ser apenas um método do objeto para facilitar a iniciação,
 e talvez eu associe o plugin ao Jquery.
 
-Se deseja ver o plugin: **[treeData.js](http://raphamorim.com/treeData.js/)**
+Se deseja ver o plugin: **[treeData.js](http://raphamorim.io/treeData.js/)**
 
 Projeto no GitHub: **[forkar projeto :)](https://github.com/raphamorim/treeData.js)**

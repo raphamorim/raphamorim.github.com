@@ -2,7 +2,6 @@
 layout: post
 title: "What I've learned writting code every single day in a Half Year"
 description: 'It has been 195 days since I challenged myself to write code every single day. Still steady, I intend to reach a whole year of contributions and you can follow here.'
-link: 'http://raphamorim.github.io/what-ive-learned-writting-code-every-single-day-in-a-half-year/'
 language: 'en'
 image: 'assets/images/posts/rocky-balboa.jpg'
 ---

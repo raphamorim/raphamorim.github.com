@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Some Animes You Should Watch Before You Die'
-description: ''
-link: 'http://raphamorim.github.io/Anime-You-Should-Watch-Before-You-Die '
+description: 'My personal list of my favorite animes, I think everyone should see
+these before die. Has few classics, but with time I will updating the list.'
 language: 'en'
 image: 'assets/images/posts/animes/steins-gate-1.jpg'
 ---

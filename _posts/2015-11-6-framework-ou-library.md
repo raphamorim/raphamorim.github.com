@@ -2,7 +2,6 @@
 layout: post
 title: "Framework || Library"
 description: 'Frequentemente vejo muitos outros desenvolvedores levantarem a mesma questão: Quais seriam as definições técnicas que permitem distinguir o que é Framework e Library?. A primeira vez que alguém me perguntou isso foi meses atrás, eu havia palestrado sobre React e uma das perguntas feitas foi: "por quais motivos React é uma library e não um framework?'
-link: 'http://raphamorim.github.io/framework-ou-library'
 language: 'pt-br'
 image: 'assets/images/posts/question.jpg'
 ---

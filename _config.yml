@@ -1,12 +1,12 @@
 safe:        false
 baseurl:     /
-url: http://raphamorim.com/
+url: http://raphamorim.io/
 
 name: Raphamorim
 description: I have a passion for web development and love to create.
 keywords: "raphael, amorim, developer, open, javascript, python, clojure, source"
 
-domain: raphamorim.com
+domain: raphamorim.io
 commentlinks: true
 twitter-username: raphamundi
 feedburnerurl: http://feeds.feedburner.com/raphamorim

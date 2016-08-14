@@ -2,7 +2,6 @@
 layout: post
 title: 'Use o sudo com moderação'
 description: 'Você com certeza já se encontrou numa situação de acabar usando o sudo na execução de algum comando para realizar alguma tarefa ou iniciar/fechar uma aplicação por meio do bash.'
-link: 'http://raphamorim.com/use-o-sudo-com-moderacao/'
 language: 'pt-br'
 image: 'assets/images/posts/sudo.jpg'
 ---

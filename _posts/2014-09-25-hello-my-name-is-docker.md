@@ -4,7 +4,6 @@ title: 'Hello, my name is Docker'
 description: 'Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. This means
 it can automates the deployment of applications inside software containers, by providing an additional layer of
 abstraction and automation of operating system–level virtualization on Linux.'
-link: 'http://raphamorim.github.io/hello-my-name-is-docker/'
 language: 'en'
 image: 'assets/images/posts/docker.jpg'
 ---
