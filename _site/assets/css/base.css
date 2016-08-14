@@ -377,7 +377,7 @@ h3 {
 
 #talks h3 { margin: 10px 0px 15px 0px; font-size: 23px; color: rgba(0,0,0,.4); }
 #talks h3 a { color: rgba(0,0,0,.6); }
-#talks p { font-size: 16px; line-height: 1px; color: #555;}
+#talks p { font-size: 16px; line-height: 1.5em; margin-top: 5px; color: #555;}
 #talks a { color: #666; font-weight: bold; }
 #talks li {
   background: #FFFFFF;
@@ -468,11 +468,6 @@ code {
 .btn.red:hover  { background-color: #e23226; }
 .btn.blue:hover { background-color: #1b91e3; }
 
-.ph-loader, .ph-end {
-  padding: 5px;
-  text-align: center;
-}
-
 /* Medias */
 @media only screen and (max-width: 980px) {
   nav .container, .main .container {
@@ -480,7 +475,6 @@ code {
   }
 
   .bar-menu { display: none; }
-  .me { display: none; }
   .nav-toggle { display: block; }
   .post h2 { font-size: 25px; }
 }
@@ -490,11 +484,6 @@ code {
   .dialog p { line-height: 1.5em; clear: both; margin: 0px; display: inline; text-align: center; }
   .dialog strong { padding: 0px; margin: 0px; }
   .dialog .btn { padding: 10px; }
-  #talks p { display: block; margin-bottom: 15px; }
-  #talks h3 { text-align: center; }
   .post { margin: 0px 0px 30px 0px; }
-  .bar-logo { background-color: transparent; }
-  .btn.red, .btn.blue { display: none;}
-
   #posts .post-date { display: none; }
 }
