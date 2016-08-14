@@ -1,4 +1,4 @@
-## Write in [raphamorim.com](http://raphamorim.com)
+## Write in [raphamorim.io](http://raphamorim.io)
 
 Create a file in `_posts` with the article date + title (lowcase) as filename. Like:
 
@@ -11,7 +11,6 @@ layout: post
 title: "Creating with WebGL • Part 1"
 description: 'Some Amazing Description'
 language: 'en'
-image: 'assets/images/posts/webgl-1.jpg'
 
 author: ['Your Name', 'yourTwitterProfile']
 ---
