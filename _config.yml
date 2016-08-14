@@ -19,7 +19,7 @@ paginate_path: '/page:num'
 
 future:      true
 lsi:         false
-highlighter: pygments
+highlighter: rouge
 markdown:    kramdown
 permalink:   /:title/
 paginate: 3
