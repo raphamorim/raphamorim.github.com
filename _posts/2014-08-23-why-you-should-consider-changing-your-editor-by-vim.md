@@ -2,7 +2,6 @@
 layout: post
 title: 'Why would you consider switching to Vim?'
 description: 'I started using vim a little time, and I ended up in this period, left the Sublime Text and the Atom. I confess that I still use when I want to use some feature of the editors'
-link: 'http://raphamorim.github.io/why-you-should-consider-changing-your-editor-by-vim/'
 language: 'en'
 image: 'assets/images/posts/vim.jpg'
 ---
@@ -11,13 +10,13 @@ I started using vim just occasionally and I recently found myself using it almos
 
 <!-- more -->
 
-Here is what I learned so far: 
+Here is what I learned so far:
 
 ### Learning Curve
 
-I felt the difference between vim and other editors in short time. Vim's learning curve is something to stand out. 
+I felt the difference between vim and other editors in short time. Vim's learning curve is something to stand out.
 
-At the beginning, it was quite difficult, to be honest. Everything you are used to do on other editors becomes different. You have to relearn basic things like creating a new line and deleting a word "The Vim Way". But I kept using it. 
+At the beginning, it was quite difficult, to be honest. Everything you are used to do on other editors becomes different. You have to relearn basic things like creating a new line and deleting a word "The Vim Way". But I kept using it.
 
 I was determined to continue using Vim, reading more about it and learning tricks. I ook me a while to get used to using Vim’s shortcuts, but I really like that now. It feels like playing some game when I use "vim combos" in keyboard. Damn! This is really cool.
 
@@ -25,7 +24,7 @@ Cool link about vim learning curve: [The Vim Learning Curve is a Myth](http://ro
 
 ### Oh! you are really fast
 
-Something obvious is the speed of vim to open or edit some file. But vim isn't about speed, neither anything related with this. It's about practicality. Vim lets you can edit so fast any file/project using terminal. 
+Something obvious is the speed of vim to open or edit some file. But vim isn't about speed, neither anything related with this. It's about practicality. Vim lets you can edit so fast any file/project using terminal.
 
 Now you need not wait for the editor to be able to open that little quick change to the file.
 
