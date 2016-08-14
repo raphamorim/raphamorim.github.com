@@ -1,6 +1,7 @@
 ---
 layout: about
 class: about
+title: 'About'
 language: 'en'
 description: 'My name is Raphael Amorim. I am a Software Developer in Globo.com. Also I am a young (20 years) looking for good challenges. Writing algorithms in .js, .py and .go.'
 ---
