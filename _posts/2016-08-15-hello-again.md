@@ -8,7 +8,7 @@ image: 'assets/images/posts/back-1.gif'
 
 Hello!
 
-I'm back. After a few months, the entire site has undergone several changes. Reasons: Delivering more faster and minimal possible content.
+I'm back. After a few months, the entire site has undergone several changes. Reason: Delivering more faster and minimal possible content.
 
 Now on a **regular 2G**, the raphamorim.io can deliver articles in less than **700 milliseconds**.
 
