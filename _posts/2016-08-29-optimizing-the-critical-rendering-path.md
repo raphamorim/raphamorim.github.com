@@ -36,7 +36,7 @@ So inline scripts blocks more than external scripts? No. You'll remove X request
 
 ... And the image resource? Make a test: Remove JS and CSS load and you’ll see a "polemic photo" doesn't block the domContentLoaded event. Why it happens? Images don't block the initial render of the page. Then when we talk about the critical rendering path we are typically talking about the HTML markup, CSS, and JavaScript.
 
-LLooking back to JS and CSS in the page, we can adopt different strategies.
+Looking back to JS and CSS in the page, we can adopt different strategies.
 
 One of the different possible strategies is to use the “async” keyword to unblock the parser. When present, it specifies that the script will be executed asynchronously as soon as it is available. The async attribute is only for external scripts. Then the script is executed asynchronously with the rest of the page (the script will be executed while the page continues the parsing).
 
