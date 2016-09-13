@@ -11,7 +11,7 @@ description: Upcoming lectures and previous talks.
     <h3><br>UPCOMING:</h3>
   <li>
      <h3>> <a href="http://2016.graphicalweb.org/">Graphical Web</a></h3>
-     <p>Theme: ???</p>
+     <p>Theme: Using Canvas Components</p>
      <p>1-4 NOVEMBER 2016</p>
      <p>Local: Met Office - Exeter, United Kingdom</p>
   </li>
@@ -20,6 +20,12 @@ description: Upcoming lectures and previous talks.
      <p>Theme: 500 Days of Open Source</p>
      <p>13-18 OCTUBER 2016</p>
      <p>Local: Centro Sul - Florianopolis - SC</p>
+  </li>
+  <li>
+     <h3>> <a href="http://frontinsalvador.com.br/">Front In Salvador</a></h3>
+     <p>Theme: Exploring Critical Rendering Path</p>
+     <p>8 OCTUBER 2016</p>
+     <p>Local: Auditório da Ruy Barbosa (Rio Vermelho) - Salvador - BA</p>
   </li>
 
   <h3><br><br>PAST:</h3>
