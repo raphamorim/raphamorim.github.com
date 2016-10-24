@@ -1,59 +1,3 @@
-/* reset */
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  line-height: 1em;
-  list-style: none;
-  text-decoration: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-main:after,
-nav:after,
-footer:after,
-header:after,
-section:after,
-form:after,
-div:after,
-ul:after,
-ol:after,
-li:after,
-dl:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  height: 0;
-  overflow: hidden;
-}
-hr {display: none;}
-p {line-height: 1.5em;}
-b, strong {font-weight: bold;}
-
-body {
-  font: normal normal 20px/1.2em Helvetica, arial, sans-serif;
-  background: #FFF;
-  color: #777;
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-}
-
-nav {
-  position: relative;
-  top:0;
-  left:0;
-  background: #FFFFFF;
-  width: 100%;
-  height: 144px;
-  z-index: 2;
-}
-
 nav .container {
   padding-top: 35px;
 }
@@ -61,20 +5,6 @@ nav .container {
 h3 {
   margin: 40px 20px -15px 20px;
   font-size: 20px;
-}
-
-.main {
-  position: relative;
-  width: 100%;
-  margin-top: -20px;
-  padding-top: 30px;
-}
-
-.container {
-  position: relative;
-  margin: 0px auto;
-  width: 920px;
-  z-index: 1;
 }
 
 .container-topic {
@@ -88,32 +18,6 @@ h3 {
 .container.space {
   margin-top: 50px;
   margin-bottom: 80px;
-}
-
-.bar-logo {
-    position: absolute;
-    font-size: 24px;
-    letter-spacing: 7px;
-    line-height: 30px;
-    color: rgba(0, 0, 0, 0.498039);
-    font-weight: 600;
-    word-wrap: break-word;
-    width: 110px;
-    height: 110px;
-    text-transform: uppercase;
-    margin-left: 25px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: rgba(0, 0, 0, 0.498039);
-    padding: 5px 0px 0px 8px;
-}
-
-.bar-menu {
-  margin-top: 20px;
-  margin-left: 30px;
-  position: relative;
-  text-align: right;
-  float: right;
 }
 
 .bar-menu ul {
