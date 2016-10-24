@@ -15,20 +15,24 @@ description: Upcoming lectures and previous talks.
      <p>1-4 NOVEMBER 2016</p>
      <p>Local: Met Office - Exeter, United Kingdom</p>
   </li>
+
+  <h3><br><br>PAST:</h3>
   <li>
      <h3>> <a href="http://2016.pythonbrasil.org.br/">Python Brasil 12</a></h3>
      <p>Theme: 500 Days of Open Source</p>
      <p>13-18 OCTUBER 2016</p>
      <p>Local: Centro Sul - Florianopolis - SC</p>
+     <p><a href="https://speakerdeck.com/raphamorim/500-days-of-open-source"
+     target="_blank" />See slides</p>
   </li>
   <li>
      <h3>> <a href="http://frontinsalvador.com.br/">Front In Salvador</a></h3>
      <p>Theme: Exploring Critical Rendering Path</p>
      <p>8 OCTUBER 2016</p>
      <p>Local: Auditório da Ruy Barbosa (Rio Vermelho) - Salvador - BA</p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/exploring-critical-rendering-path">See slides</a></p>
   </li>
-
-  <h3><br><br>PAST:</h3>
   <li>
      <h3>> Fórum Internacional do Software Livre (FISL) 17</h3>
      <p>Theme: The Mighty WebGL</p>
