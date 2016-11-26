@@ -8,15 +8,33 @@ description: Upcoming lectures and previous talks.
 ## Talks
 
 <ul id="talks">
-    <h3><br>UPCOMING:</h3>
+    <!-- <h3><br>UPCOMING:</h3> -->
+
+  <h3><br><br>PAST:</h3>
+  <li>
+     <h3>> Visagio Talks</h3>
+     <p>Theme: 500 Days of Open Source</p>
+     <p>26 NOVEMBER 2016</p>
+     <p>Local: Visagio Tecnologia, Centro - RJ</p>
+     <p><a href="https://speakerdeck.com/raphamorim/500-days-of-open-source"
+     target="_blank" />See slides</p>
+  </li>
+  <li>
+     <h3>> <a href="http://riodevday.github.io/">RioDevDay</a></h3>
+     <p>Theme: Exploring Critical Rendering Path</p>
+     <p>19 NOVEMBER 2016</p>
+     <p>Local: Estácio - Shopping Nova América - RJ</p>
+     <p><a
+     href="https://speakerdeck.com/raphamorim/exploring-critical-rendering-path">See slides</a></p>
+  </li>
   <li>
      <h3>> <a href="http://2016.graphicalweb.org/">Graphical Web</a></h3>
      <p>Theme: Using Canvas Components</p>
      <p>1-4 NOVEMBER 2016</p>
      <p>Local: Met Office - Exeter, United Kingdom</p>
+     <p><a href="https://speakerdeck.com/raphamorim/using-canvas-components"
+     target="_blank" />See slides</p>
   </li>
-
-  <h3><br><br>PAST:</h3>
   <li>
      <h3>> <a href="http://2016.pythonbrasil.org.br/">Python Brasil 12</a></h3>
      <p>Theme: 500 Days of Open Source</p>
