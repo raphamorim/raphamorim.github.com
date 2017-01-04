@@ -25,7 +25,7 @@ HTML can have no cache or a very very limited cache. So just imagine a case wher
 
 Note: Base64 encoding incurs transfer size overhead of [1.37 times the original data, with another 814 bytes of header data](https://en.wikipedia.org/wiki/Base64#MIME).
 
-**Data URIs is more slower in mobile**
+**Data URIs are slower in mobile**
 
 Data URI vs. Binary Image Materialization is a old topic on web and you  probably be tired of hearing about it again and again. However it's cool to demystify some myths/beliefs.
 
