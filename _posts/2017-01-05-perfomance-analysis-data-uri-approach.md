@@ -9,27 +9,27 @@ tl;dr: The idea of this article is to demystify some concepts about Data URIs re
 
 **What's Data URI?**
 
-The data URI is a uniform resource identifier (URI) scheme that provides a way to include data in-line in web pages. 
+The data URI is a uniform resource identifier (URI) scheme that provides a way to include in-line data on web pages. 
 
 It's a form of file literal or [here document](https://en.wikipedia.org/wiki/Here_document). This technique allows normally separate elements such as images and style sheets to be fetched in a single HTTP request, instead use multiple HTTP requests.
 
-In Resume: It's a base64 encoded data (e.g. images) resulting in bites. It can be used to improve performance (or in some cases decrease perfomance).
+In short: It's a base64 encoded data (e.g. images) resulting in bites. It can be used to improve performance (or in some cases decrease perfomance).
 
 **About Cache**
 
-Data URIs have cache limitations. Why? It's part of the file that include. A good approach is to use in CSS files, because you can work around in a custom/specified cache. In scenarios where use inline approach, will be cached only the part of the HTML cache control header. Then if the HTML isn't cached yet, the entire content of markup will be re-downloaded every time (including data URIs content-length).
+Data URIs have cache limitations. Why? It's part of the file that it is included. A good approach is to use in CSS files, because you can work around in a custom/specified cache. In scenarios where use inline approach, will be cached only the part of the HTML cache control header. Then if the HTML isn't cached yet, the entire content of markup will be downloaded every time (including data URIs content-length).
 
 This is bad.
 
-HTML can have no cache or a very very limited cache. So just imagine a case where a page have ten tag img (let's assume each one image have 9kb) which use a source based on Data URI, it'll agreggate **~108kb** uncacheable data (~12kb for each one) on your HTML file.
+HTML may have no cache or a very very limited cache. So just imagine a case where a page have ten img tags using Data URIs (let's assume each image have 9kb), it'll agreggate **~108kb** uncacheable data (~12kb for each one) on your HTML file.
 
 Note: Base64 encoding incurs transfer size overhead of [1.37 times the original data, with another 814 bytes of header data](https://en.wikipedia.org/wiki/Base64#MIME).
 
 **Data URIs are slower in mobile**
 
-Data URI vs. Binary Image Materialization is a old topic on web and you  probably be tired of hearing about it again and again. However it's cool to demystify some myths/beliefs.
+Data URI vs. Binary Image Materialization is an old topic on web and you are probably tired of hearing about it again and again. However it's cool to demystify some myths/beliefs.
 
-I maded some tests against Data URI materialization using Binary materialization and I get unexpected results that I've no idea.
+I made some tests comparing Data URI materialization with Binary materialization and I got surprisingly unexpected results.
 
 **Data URI**
 
@@ -47,11 +47,11 @@ I maded some tests against Data URI materialization using Binary materialization
 
 **But why it happens?**
 
-The data URI content must be decoded back into it's original form by the browser. This operation consumes CPU & battery on mobile devices (browser must decode the image each time a page renders).
+Data URI content must be decoded back into it's original form by the browser. This operation consumes CPU & battery on mobile devices (browser must decode the image each time a page renders).
 
-Binary images, on the other hand, require no extra decoding step and are fast for browsers to materialize. The downside of binary images is the connection overhead required to download them.
+Binary images, on the other hand, require no extra decoding step and are faster for browsers to materialize. The downside of binary images is the connection overhead required to download them.
 
-Note: Recent browsers use optimizations to improve networking performance, in particular connection keep-alive and pipelining, as well as establishing multiple server connections. If you’ve done a good job optimizing your pages, chances are the image is being downloaded from a warm, established connection, reducing TTFB and increasing throughput.
+Note: Recent browsers use optimizations to improve networking performance, in particular connection keep-alive and pipelining, as well as establishing multiple server connections. If you’ve done a good job optimizing your pages, chances are that the images are being downloaded from a warm, established connection, reducing [TTFB](https://en.wikipedia.org/wiki/Time_To_First_Byte) and increasing throughput.
 
 **Browser Support**
 
