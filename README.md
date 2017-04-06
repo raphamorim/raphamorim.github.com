@@ -1,29 +1,6 @@
-## Write in [raphamorim.io](http://raphamorim.io)
+## [raphamorim.io](http://raphamorim.io)
 
-Create a file in `_posts` with the article date + title (lowcase) as filename. Like:
-
-Filename: `2016-05-22-creating-with-webgl-part-1.md`
-
-```markdown
-
----
-layout: post
-title: "Creating with WebGL • Part 1"
-description: 'Some Amazing Description'
-language: 'en'
-
-author: ['Your Name', 'yourTwitterProfile']
----
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt corporis amet cum quidem qui excepturi porro modi saepe animi, sequi dolores, quo beatae libero optio, illum dolorem, voluptatem reiciendis. Magni?
-
-<!-- more -->
-
-Continues here...
-
-```
-
-## How it works?
+## How to run
 
 I use [Jekyll](http://jekyllrb.com/), a static generator in Ruby, to create this blog.
 

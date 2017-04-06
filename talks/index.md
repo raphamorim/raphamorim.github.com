@@ -34,6 +34,7 @@ description: Upcoming lectures and previous talks.
      <p>Local: Met Office - Exeter, United Kingdom</p>
      <p><a href="https://speakerdeck.com/raphamorim/using-canvas-components"
      target="_blank" />See slides</p>
+     <p><a href="https://www.youtube.com/watch?v=BuSP89XOTro">Watch talk video</a></p>
   </li>
   <li>
      <h3>> <a href="http://2016.pythonbrasil.org.br/">Python Brasil 12</a></h3>

@@ -12,7 +12,7 @@
 }
 .bar-menu ul {
   margin-top: 18px;
-  min-width: 300px;
+  min-width: 480px;
 }
 .bar-menu ul a li {
   float: left;
@@ -114,6 +114,7 @@
 }
 .post-page-title {
   font-size: 40px;
+  line-height: 1.2em;
 }
 .post-date {
   color: rgb(153, 153, 153);
