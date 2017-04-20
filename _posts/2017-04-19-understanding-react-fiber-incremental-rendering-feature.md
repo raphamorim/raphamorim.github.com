@@ -4,9 +4,9 @@ title: "Understanding React Fiber"
 language: 'en'
 ---
 
-In March 2013 (4 years ago) the react.js appeared, bringing with it ideas and features important to the current scenario - especially virtualdom use - by abruptly changing the frontend world.
+In March 2013 (4 years ago) the React.js appeared, bringing with it ideas and features important to the current scenario - especially virtualdom use - by abruptly changing the frontend world.
 
-The idea of creating web components enjoying [virtual-dom's diff algorithm](https://github.com/Matt-Esch/virtual-dom#motivation), [isomorphic applications](https://medium.com/airbnb-engineering/isomorphic-javascript-the-future-of-web-apps-10882b7a2ebc#.4nyzv6jea) using SSR, [rise of react-native](https://facebook.github.io/react-native/), permission for several approaches like: [containers and presenters](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0), [stateless functional components](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc)[...] and others killer features ended up winning and shining eyes from various developers.
+The idea of creating components enjoying [virtual-dom's diff algorithm](https://github.com/Matt-Esch/virtual-dom#motivation), [isomorphic applications](https://medium.com/airbnb-engineering/isomorphic-javascript-the-future-of-web-apps-10882b7a2ebc#.4nyzv6jea) using SSR, [rise of react-native](https://facebook.github.io/react-native/), permission for several approaches like: [containers and presenters](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0), [stateless functional components](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc)[...] and others killer features ended up winning and shining eyes from various developers.
 
 Currently we are close to another big change: React Fiber.
 
@@ -17,7 +17,19 @@ React is suited well for rendering data structures (for example, rendering the s
 
 In a resume: Animate a rotate effect in a component using ONLY React's life cycle (where not modify the virtual nested structure) will suffer performance cost of React's inner workings every frame. So for get high levels of animation performance you've to synchronizate the DOM (tween stack across the entirety of the animation chain in order to minimize layout thrashing) and skipping style updating when updates would be visually imperceptible.
 
-React Fiber takes charge of solving problems like it. Bringing a feature named "incremental rendering" which split rendering work into chunks and spread it out over multiple frames. The new rendering logic allows a better approximation of the principles of an animation.
+React Fiber takes charge of solving problems like it. Bringing a feature named "incremental rendering" which split rendering work into chunks and spread it out over multiple frames. The new rendering logic allows a better approximation of the [principles of an animation](https://en.wikipedia.org/wiki/12_basic_principles_of_animation).
+
+In traditional way React uses Stack, which is synchronous and recursive. But can't be split in chunks, have a heavyweight context and [other issues](https://github.com/facebook/react/issues/7942). Fiber brings async reconciliation (I'll explain more about it), assigning priority to different types of work.
+
+Fiber's internals uses requestAnimationFrame and requestIdleCallback APIs. It's iterative, not recursive. Then in the end it'll not drop frames.
+
+## Stack Sample
+
+![Stack Sample](/assets/images/posts/stack-example.gif)
+
+## Fiber Sample
+
+![Fiber Sample](/assets/images/posts/fiber-example.gif)
 
 However Fiber introduces several concepts and new features beyond.
 
@@ -27,6 +39,8 @@ Usually after a change of react app data (probably setState usage) results in a 
 
 Fiber is a rewrite focused on this algorithm.
 
-React Fiber Architecture brings a lot of new concepts, [and you can know more about it here](https://github.com/acdlite/react-fiber-architecture). Also Lin Clark talked about Fiber in React Conf 2017, worth to see:
+This architecture brings a lot of new concepts, [and you can know more about it here](https://github.com/acdlite/react-fiber-architecture). Also Lin Clark talked about Fiber in React Conf 2017, worth to see:
 
 <p><iframe width="100%" height="360" src="https://www.youtube.com/embed/ZCuYPiUIONs" frameborder="0" allowfullscreen></iframe></p>
+
+These changes and new architecture are a result from more than 2 years of React core team, however Fiber is not yet available, [you can track your progress here](http://isfiberreadyyet.com/).
