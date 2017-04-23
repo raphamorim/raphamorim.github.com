@@ -12,6 +12,8 @@ I'm a Software Developer in **Globo.com** and **jQuery** member.
 
 Currently writing algorithms in **.js**, **.ex** and **.go**.
 
+Love Japanese culture (親日), 70s/80s songs and a lot of 8bit art.
+
 I already worked in Petrobras, Videolog, Onyo Inc., Crave Food Services [...]
 
 Speaker at over twenty conferences giving talks about web technologies like JavaScript/ES6, Web Perfomance, React and Canvas/WebGL.
