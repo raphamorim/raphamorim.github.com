@@ -24,7 +24,7 @@ Na maneira tradicional; React usa uma pilha (stack) de processos de renderizaç�
 
 A parte interna do Fiber usa requestAnimationFrame e as APIs de requestIdleCallback. É iterativa, não recursiva. Logo não irá "dropar" frames, já que faz jus aos processos de Layout e Paint do browser.
 
-## Examplo com Pilha (stack)
+## Exemplo com Pilha (stack)
 
 ![Stack Sample](/assets/images/posts/stack-example.gif)
 
