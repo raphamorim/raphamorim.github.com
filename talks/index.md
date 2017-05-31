@@ -12,6 +12,14 @@ description: Upcoming lectures and previous talks.
 
   <h3><br><br>PAST:</h3>
   <li>
+     <h3>> Front in Salvador</h3>
+     <p>Theme: Scratching React Fiber</p>
+     <p>23 MAY 2017</p>
+     <p>Local: Auditório da Ruy Barbosa (Rio Vermelho) - Salvador - BA</p>
+     <p><a href="https://speakerdeck.com/raphamorim/scratching-react-fiber"
+     target="_blank" />See slides</p>
+  </li>
+  <li>
      <h3>> Visagio Talks</h3>
      <p>Theme: 500 Days of Open Source</p>
      <p>26 NOVEMBER 2016</p>
