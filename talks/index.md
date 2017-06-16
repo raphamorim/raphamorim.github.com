@@ -8,9 +8,39 @@ description: Upcoming lectures and previous talks.
 ## Talks
 
 <ul id="talks">
-    <!-- <h3><br>UPCOMING:</h3> -->
+  <h3><br>UPCOMING:</h3>
+  <li>
+     <h3>> The Conf</h3>
+     <p>Theme: Understanding Memory Behavior on NodeJS</p>
+     <p>19 SEP 2017</p>
+     <p>Local: Grand Hall of the Rebouças Convention Center - Sao Paulo - SP</p>
+  </li>
+  <li>
+     <h3>> DevParaná Conference</h3>
+     <p>Theme: Understanding Memory Behavior on NodeJS</p>
+     <p>22 JUL 2017</p>
+     <p>Local: Sebrae - Maringá - PR</p>
+  </li>
+  <li>
+     <h3>> TDC SP</h3>
+     <p>Theme: Understanding Memory Behavior on NodeJS</p>
+     <p>19 JUL 2017</p>
+     <p>Local: Anhembi Morumbi - Sao Paulo - SP</p>
+  </li>
+  <li>
+     <h3>> JSDay - Feira de Santana</h3>
+     <p>Theme: Understanding Memory Behavior on NodeJS</p>
+     <p>15 JUL 2017</p>
+     <p>Local: FTC, Feira de Santana - Feira de Santana - BA</p>
+  </li>
 
   <h3><br><br>PAST:</h3>
+  <li>
+     <h3>> Riojs</h3>
+     <p>Theme: Understanding Memory Behavior on NodeJS</p>
+     <p>14 JUN 2017</p>
+     <p>Local: Stone Pagamentos - Rio de Janeiro - RJ</p>
+  </li>
   <li>
      <h3>> Front in Salvador</h3>
      <p>Theme: Scratching React Fiber</p>
