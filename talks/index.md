@@ -10,14 +10,31 @@ description: Upcoming lectures and previous talks.
 <ul id="talks">
   <h3><br>UPCOMING:</h3>
   <li>
-     <h3>> The Conf</h3>
-     <p>Theme: Understanding Memory Behavior on NodeJS</p>
-     <p>19 SEP 2017</p>
-     <p>Local: Grand Hall of the Rebouças Convention Center - Sao Paulo - SP</p>
+    <h3>> React Conf Brazil</h3>
+    <p>Conf Link: <a href="http://reactconfbr.com.br">reactconfbr.com.br</a></p>
+    <p>Theme: Scratching React Fiber</p>
+    <p>7 OCT 2017</p>
+    <p>Local: Teatro Augusta, Rua Augusta, 943 - Sao Paulo - SP</p>
   </li>
   <li>
+    <h3>> Google Developer Group Maceió</h3>
+    <p>Event Link: <a href="https://devfest.gdgmaceio.org/">devfest.gdgmaceio.org</a></p>
+    <p>Theme: Merging Products</p>
+    <p>23 SEP 2017</p>
+    <p>Local: Ritz Lagoa da Anta - Maceió, AL</p>
+  </li>
+  <li>
+    <h3>> The Conf</h3>
+    <p>Conf Link: <a href="http://www.theconf.club/">theconf.club/</a></p>
+    <p>Theme: Understanding Memory Behavior on NodeJS</p>
+    <p>19 SEP 2017</p>
+    <p>Local: Grand Hall of the Rebouças Convention Center - Sao Paulo - SP</p>
+  </li>
+
+  <h3><br><br>PAST:</h3>
+  <li>
      <h3>> DevParaná Conference</h3>
-     <p>Theme: Understanding Memory Behavior on NodeJS</p>
+     <p>Theme: Merging Products</p>
      <p>22 JUL 2017</p>
      <p>Local: Sebrae - Maringá - PR</p>
   </li>
@@ -33,8 +50,6 @@ description: Upcoming lectures and previous talks.
      <p>15 JUL 2017</p>
      <p>Local: FTC, Feira de Santana - Feira de Santana - BA</p>
   </li>
-
-  <h3><br><br>PAST:</h3>
   <li>
      <h3>> Riojs</h3>
      <p>Theme: Understanding Memory Behavior on NodeJS</p>
