@@ -22,7 +22,7 @@ lsi:         false
 highlighter: rouge
 markdown:    kramdown
 permalink:   /:title/
-paginate: 4
+paginate: 5
 
 maruku:
   use_tex:    false

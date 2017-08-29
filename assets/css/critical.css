@@ -89,7 +89,7 @@ h3 {
 #posts {
   position: relative;
   width: 100%;
-  margin: 40px auto 0px;
+  margin: 40px auto 5em;
 }
 
 .post {
