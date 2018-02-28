@@ -74,7 +74,7 @@ h3 {
   font-size: 24px;
   letter-spacing: 7px;
   line-height: 30px;
-  color: rgba(0, 0, 0, 0.498039);
+  color: rgba(0, 0, 0, 0.5);
   font-weight: 600;
   word-wrap: break-word;
   width: 110px;
@@ -82,7 +82,7 @@ h3 {
   margin-left: 25px;
   border-width: 5px;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.498039);
+  border-color: rgba(0, 0, 0, 0.5);
   padding: 5px 0px 0px 8px;
 }
 
@@ -97,7 +97,7 @@ h3 {
   width: 100%;
   background-color: rgb(255, 255, 255);
   padding: 15px 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.0980392);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
 
 .container-topic {

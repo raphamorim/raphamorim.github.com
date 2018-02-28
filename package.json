@@ -10,7 +10,7 @@
   "description": "My place in the internet",
   "homepage": "https://github.com/raphamorim/raphamorim.github.com",
   "scripts": {
-    "start": "jekyll serve --livereload",
+    "start": "jekyll serve --watch",
     "build": "grunt"
   },
   "devDependencies": {

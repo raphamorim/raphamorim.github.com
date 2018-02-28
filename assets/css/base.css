@@ -178,9 +178,9 @@ nav .container {
 .post a {
   cursor: pointer;
 }
-.post-page-content a {
+.post-page-content a, .container-dialog a {
   cursor: pointer;
-  color: #333;
+  color: #000;
   border-bottom: 1px dotted #666;
   text-decoration: none;
 }

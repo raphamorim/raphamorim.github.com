@@ -1,22 +1,21 @@
 {% include header.html %}
+{% include nav.html %}
 
-  {% include nav.html %}
-
-	<div class='main'>
-		<div class="container space">
-			<ul id="posts">
-      		{% for post in site.posts %}
-      			{% unless post.draft %}
-        			<li class="post">
-                        <a class="post-title-link" href="{{ post.url }}">
-                            <h2 class="post-title">{{ post.title }}</h2>
-                        </a>
-                        <span class="post-date">{{ post.date | date:"%b %d, %Y" }}</span>
-                    </li>
-                {% endunless %}
-      	    {% endfor %}
-            </ul>
-        </div>
-    </div>
+<div class='main'>
+  <div class="container space">
+    <ul id="posts">
+      {% for post in site.posts %}
+        {% unless post.draft %}
+          <li class="post">
+            <a class="post-title-link" href="{{ post.url }}">
+              <h2 class="post-title">{{ post.title }}</h2>
+            </a>
+            <span class="post-date">{{ post.date | date:"%b %d, %Y" }}</span>
+          </li>
+        {% endunless %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
 
 {% include footer.html %}

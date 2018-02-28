@@ -8,16 +8,15 @@ description: Upcoming lectures and previous talks.
 ## Talks
 
 <ul id="talks">
-  <h3><br>UPCOMING:</h3>
   <li>
     <h3>> Devfest Rio de Janeiro 2017</h3>
     <p>Conf Link: <a href="https://gdgrio.github.io/devfest/">gdgrio.github.io/devfest</a></p>
     <p>Theme: Making for the Web with WebAssembly</p>
     <p>25 NOV 2017</p>
     <p>Local: Centro de Convenções SulAmérica, Rio de Janeiro - RJ</p>
+    <p><a href="https://speakerdeck.com/raphamorim/making-for-web-with-webassembly"
+     target="_blank">See slides</a></p>
   </li>
-
-  <h3><br><br>PAST:</h3>
   <li>
     <h3>> The Developers Conference Porto Alegre</h3>
     <p>Conf Link: <a href="http://www.thedevelopersconference.com.br/tdc/2017/index.html#portoalegre">thedevelopersconference.com.br/tdc/2017/portoalegre</a></p>
@@ -31,6 +30,8 @@ description: Upcoming lectures and previous talks.
     <p>Theme: Understanding Memory Behavior on Nodejs</p>
     <p>10 NOV 2017</p>
     <p>Local: UniRitter - Campus Zona Sul - Porto Alegre, RS</p>
+    <p><a href="https://speakerdeck.com/raphamorim/understanding-memory-behavior-on-nodejs"
+     target="_blank">See slides</a></p>
   </li>
   <li>
     <h3>> React Conf Brazil</h3>
@@ -38,6 +39,8 @@ description: Upcoming lectures and previous talks.
     <p>Theme: Scratching React Fiber</p>
     <p>7 OCT 2017</p>
     <p>Local: Teatro Augusta, Rua Augusta, 943 - Sao Paulo - SP</p>
+    <p><a href="https://speakerdeck.com/raphamorim/scratching-react-fiber"
+     target="_blank">See slides</a></p>
   </li>
   <li>
     <h3>> Google Developer Group Maceió</h3>
@@ -52,6 +55,8 @@ description: Upcoming lectures and previous talks.
     <p>Theme: Understanding Memory Behavior on NodeJS</p>
     <p>19 SEP 2017</p>
     <p>Local: Grand Hall of the Rebouças Convention Center - Sao Paulo - SP</p>
+    <p><a href="https://speakerdeck.com/raphamorim/understanding-memory-behavior-on-nodejs"
+     target="_blank">See slides</a></p>
     <p><iframe width="100%" height="320" src="https://www.youtube.com/embed/QYHL7xxwGCM?rel=0" frameborder="0" allowfullscreen></iframe></p>
   </li>
   <li>
@@ -65,18 +70,24 @@ description: Upcoming lectures and previous talks.
      <p>Theme: Understanding Memory Behavior on NodeJS</p>
      <p>19 JUL 2017</p>
      <p>Local: Anhembi Morumbi - Sao Paulo - SP</p>
+     <p><a href="https://speakerdeck.com/raphamorim/understanding-memory-behavior-on-nodejs"
+     target="_blank">See slides</a></p>
   </li>
   <li>
      <h3>> JSDay - Feira de Santana</h3>
      <p>Theme: Understanding Memory Behavior on NodeJS</p>
      <p>15 JUL 2017</p>
      <p>Local: FTC, Feira de Santana - Feira de Santana - BA</p>
+     <p><a href="https://speakerdeck.com/raphamorim/understanding-memory-behavior-on-nodejs"
+     target="_blank">See slides</a></p>
   </li>
   <li>
      <h3>> Riojs</h3>
      <p>Theme: Understanding Memory Behavior on NodeJS</p>
      <p>14 JUN 2017</p>
      <p>Local: Stone Pagamentos - Rio de Janeiro - RJ</p>
+     <p><a href="https://speakerdeck.com/raphamorim/understanding-memory-behavior-on-nodejs"
+     target="_blank">See slides</a></p>
   </li>
   <li>
      <h3>> Front in Salvador</h3>
@@ -84,7 +95,7 @@ description: Upcoming lectures and previous talks.
      <p>23 MAY 2017</p>
      <p>Local: Auditório da Ruy Barbosa (Rio Vermelho) - Salvador - BA</p>
      <p><a href="https://speakerdeck.com/raphamorim/scratching-react-fiber"
-     target="_blank" />See slides</p>
+     target="_blank">See slides</a></p>
   </li>
   <li>
      <h3>> Visagio Talks</h3>
@@ -92,7 +103,7 @@ description: Upcoming lectures and previous talks.
      <p>26 NOVEMBER 2016</p>
      <p>Local: Visagio Tecnologia, Centro - RJ</p>
      <p><a href="https://speakerdeck.com/raphamorim/500-days-of-open-source"
-     target="_blank" />See slides</p>
+     target="_blank">See slides</a></p>
   </li>
   <li>
      <h3>> <a href="http://riodevday.github.io/">RioDevDay</a></h3>
@@ -108,7 +119,7 @@ description: Upcoming lectures and previous talks.
      <p>1-4 NOVEMBER 2016</p>
      <p>Local: Met Office - Exeter, United Kingdom</p>
      <p><a href="https://speakerdeck.com/raphamorim/using-canvas-components"
-     target="_blank" />See slides</p>
+     target="_blank">See slides</a></p>
      <p><a href="https://www.youtube.com/watch?v=BuSP89XOTro">Watch talk video</a></p>
      <p><iframe width="100%" height="320" src="https://www.youtube.com/embed/BuSP89XOTro?rel=0" frameborder="0" allowfullscreen></iframe></p>
   </li>
@@ -267,7 +278,7 @@ description: Upcoming lectures and previous talks.
      <p>Theme: Works like Riot.js</p>
      <p>Jul 18 ~ 2015</p>
      <p>Local: He:labs • Glória, Rio de Janeiro - RJ</p>
-     <p><a href="https://speakerdeck.com/raphamorim/works-like-riot-dot-js">See slides</a>
+     <p><a href="https://speakerdeck.com/raphamorim/works-like-riot-dot-js">See slides</a></p>
   </li>
   <li>
      <h3>> Fórum Internacional do Software Livre (FISL) 16</h3>
