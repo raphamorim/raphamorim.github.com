@@ -11,7 +11,7 @@ I use [Jekyll](http://jekyllrb.com/), a static generator in Ruby, to create this
 2. Once installed these dependencies, open up the terminal and install [Jekyll](http://jekyllrb.com/) with the following command:
 
   ```sh
-  $ gem install jekyll
+  $ gem install jekyll jekyll-paginate jekyll-gist --user-install
   ```
 
 3. Now clone the project:
@@ -29,17 +29,17 @@ I use [Jekyll](http://jekyllrb.com/), a static generator in Ruby, to create this
 5. And finally run:
 
   ```sh
-  $ jekyll
+  $ jekyll serve
   ```
 
 You'll have access to the website at `http://0.0.0.0:4000/` :D
 
 ## Tips
 
-Run `grunt` for every little or bigger change on css/js files:
+Run `build` for every little or bigger change on css/js files:
 
   ```sh
-  $ grunt
+  $ npm run build
   ```
 
 ## About

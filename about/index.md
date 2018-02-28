@@ -3,12 +3,12 @@ layout: about
 class: about
 title: 'About'
 language: 'en'
-description: 'My name is Raphael Amorim. I am a Software Developer in Globo.com. Also I am a young (21 years) looking for good challenges. Writing algorithms in .js, .py and .go.'
+description: 'My name is Raphael Amorim. I am a Software Developer in GoDaddy. Also I am a young (21 years) looking for good challenges. Writing algorithms in .js, .py and .go.'
 ---
 
 ## Hi, my name is Raphael Amorim
 
-I'm a Software Developer in **Globo.com** and **jQuery** member.
+I'm a Software Developer in **GoDaddy** and **jQuery** member.
 
 Currently writing algorithms in **.js**, **.ex** and **.go**.
 

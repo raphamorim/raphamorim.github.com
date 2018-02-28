@@ -6,9 +6,9 @@ module.exports = function(grunt) {
 			main: {
 				files: {
 					"assets/js/app.js": [
-                        "assets/js/main.js",
-                        "assets/js/analytics.js"
-                    ]
+				    "assets/js/main.js",
+				    "assets/js/analytics.js"
+					]
 				}
 			}
 		},
