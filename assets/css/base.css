@@ -159,10 +159,10 @@ nav .container {
   text-align: right;
   float: right;
   visibility: visible;
+  display: flex;
 }
 .bar-menu ul {
   margin-top: 18px;
-  min-width: 480px;
 }
 .bar-menu ul a li {
   float: left;
