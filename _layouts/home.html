@@ -5,7 +5,8 @@
   <div class="container">
     <h2 class="container-topic">Recent Articles</h2>
     <ul id="posts">
-      {% for post in paginator.posts %}
+      {% assign posts = paginator.posts | where:"language", "en" %}
+      {% for post in posts %}
         {% unless post.draft %}
           <li class="post">
             <a class="post-title-link" href="{{ post.url }}">

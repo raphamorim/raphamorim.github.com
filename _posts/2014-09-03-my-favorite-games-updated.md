@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'My favorite games [updated]'
+title: 'Some Games You Should Play Before You Die'
 description: "Here's my list of my favorite games. I think everyone should play these games before die. Updated"
 language: 'en'
 image: 'assets/images/posts/games/radiata-stories.jpg'

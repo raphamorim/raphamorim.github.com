@@ -5,7 +5,8 @@
   <div class="container space">
     <h2 class="container-topic">List of Articles</h2>
     <ul id="posts">
-      {% for post in site.posts %}
+      {% assign posts = site.posts | where:"language", page.language %}
+      {% for post in posts %}
         {% unless post.draft %}
           <li class="post">
             <a class="post-title-link" href="{{ post.url }}">
