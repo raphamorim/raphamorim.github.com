@@ -82,7 +82,7 @@ h3 {
   margin-left: 0;
   border-width: 5px;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(0, 0, 0, 0.3);
   padding: 5px 0px 0px 8px;
 }
 
@@ -100,7 +100,7 @@ h3 {
 }
 
 .container-topic {
-  color: rgba(0, 0, 0, .1);
+  color: rgba(0, 0, 0, .3);
   text-align: left;
   margin: 90px 0 30px;
   font-size: 40px;
@@ -167,7 +167,7 @@ nav .container {
 .bar-menu ul a li {
   float: left;
   text-transform: uppercase;
-  color: #c1c0c0;
+  color: #a8a6a6;
   padding: 5px 10px 5px 10px;
   margin-right: 5px;
 }
