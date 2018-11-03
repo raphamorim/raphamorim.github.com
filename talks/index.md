@@ -18,11 +18,28 @@ description: Upcoming lectures and previous talks.
   </li>
 
   <li>
+    <h3>• Google DevFest Rio de Janeiro</h3>
+    <p>Conf Link: <a href="https://gdgrio.github.io/devfest/">https://gdgrio.github.io/devfest</a></p>
+    <p>Theme: Writing Your Own React Renderer</p>
+    <p>17 NOV 2018</p>
+    <p>Local: Centro de Convenções CBC - Rio de Janeiro, Brazil</p>
+  </li>
+
+  <li>
+    <h3>• React Rio Meetup</h3>
+    <p>Theme: Welcome to Hooks and new Lifecycles</p>
+    <p>06 NOV 2018</p>
+    <p>Local: Globocom - Rio de Janeiro, Brazil</p>
+  </li>
+
+  <li>
     <h3>• React Conf Brasil</h3>
     <p>Conf Link: <a href="http://reactconfbr.com.br">http://reactconfbr.com.br</a></p>
     <p>Theme: Writing Your Own React Renderer</p>
     <p>20 OCT 2018</p>
-    <p>Local: São Paulo, Brasil</p>
+    <p>Local: São Paulo, Brazil</p>
+    <p><a href="https://speakerdeck.com/raphamorim/writing-your-own-react-renderer"
+     target="_blank">See slides</a></p>
   </li>
 
   <li>
