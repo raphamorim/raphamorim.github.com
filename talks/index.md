@@ -26,6 +26,13 @@ description: Upcoming lectures and previous talks.
   </li>
 
   <li>
+    <h3>• UFRJ Hub</h3>
+    <p>Theme: 500 Days of Open Source</p>
+    <p>08 NOV 2018</p>
+    <p>Local: UFRJ Hub - Rio de Janeiro, Brazil</p>
+  </li>
+
+  <li>
     <h3>• React Rio Meetup</h3>
     <p>Theme: Welcome to Hooks and new Lifecycles</p>
     <p>06 NOV 2018</p>
