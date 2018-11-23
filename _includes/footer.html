@@ -1,9 +1,7 @@
 <script>
 // register ServiceWorker, remember to use absolute path!
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('/assets/js/sw.js', {
-    scope: "/{% if page.url != '/index.html' %}{{ page.url }}{% endif %}"
-  })
+  navigator.serviceWorker.register('/assets/js/sw.js')
 }
 </script>
 <script src="{{ site.url }}/assets/js/app.js" async></script>
