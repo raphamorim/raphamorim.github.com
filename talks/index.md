@@ -15,6 +15,7 @@ description: Upcoming lectures and previous talks.
     <p>Theme: Writing Your Own React Renderer</p>
     <p>30 NOV 2018</p>
     <p>Local: Berlin, Germany</p>
+    <p><iframe width="100%" height="320" src="https://www.youtube.com/embed/Hz_WTWb3sV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
   </li>
 
   <li>
