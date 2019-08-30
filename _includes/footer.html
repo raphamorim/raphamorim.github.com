@@ -1,7 +1,7 @@
 <script>
 // register ServiceWorker, remember to use absolute path!
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('/assets/js/sw.js')
+  navigator.serviceWorker.register('{{ site.url }}/assets/js/sw.js')
 }
 </script>
 <script src="{{ site.url }}/assets/js/app.js" async></script>

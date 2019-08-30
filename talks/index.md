@@ -10,6 +10,22 @@ description: Upcoming lectures and previous talks.
 <ul id="talks">
 
   <li>
+    <h3>• Front In Sampa</h3>
+    <p>Conf Link: <a href="https://frontinsampa.com.br">https://frontinsampa.com.br</a></p>
+    <p>Theme: UI Engineering with WebAssembly and React</p>
+    <p>13 JULY 2019</p>
+    <p>Local: Centro de Convenções Rebouças - São Paulo, Brazil</p>
+  </li>
+
+  <li>
+    <h3>• Criciuma Dev Conf</h3>
+    <p>Conf Link: <a href="https://criciumadev.com.br/conference">https://criciumadev.com.br/conference</a></p>
+    <p>Theme: Building Websites with Machines</p>
+    <p>04 MAY 2019</p>
+    <p>Local: Criciuma - Santa Catarina, Brazil</p>
+  </li>
+
+  <li>
     <h3>• React Day Berlin</h3>
     <p>Conf Link: <a href="https://reactday.berlin/">https://reactday.berlin</a></p>
     <p>Theme: Writing Your Own React Renderer</p>
