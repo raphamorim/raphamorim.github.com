@@ -64,7 +64,7 @@ h3 {
 
 .container {
   position: relative;
-  margin: 0px auto;
+  margin: 0 auto;
   width: 860px;
   z-index: 1;
 }
@@ -83,7 +83,7 @@ h3 {
   border-width: 5px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.3);
-  padding: 5px 0px 0px 8px;
+  padding: 5px 0 0 8px;
 }
 
 #posts {
@@ -95,7 +95,6 @@ h3 {
 .post {
   position: relative;
   width: 100%;
-  background-color: rgb(255, 255, 255);
   border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
 
@@ -123,7 +122,6 @@ nav {
   position: relative;
   top: 0;
   left: 0;
-  background: #FFFFFF;
   width: 100%;
   height: 144px;
   z-index: 2;
@@ -139,13 +137,13 @@ nav .container {
   z-index: 0;
   width: 100%;
   background: #FFF;
-  padding: 120px 0px 5px 0px;
+  padding: 120px 0 5px 0;
   opacity: 0;
-  height: 0px;
+  height: 0;
   margin-top: -30px;
   overflow: hidden;
   border-bottom: 2px dashed #a5a5a5;
-  box-shadow: 0px 6px 6px rgba(0, 0, 0, .2);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, .2);
 }
 
 .container.space {
@@ -181,7 +179,7 @@ nav .container {
 /* Nav Toogle */
 .nav-toggle {
   float: right;
-  padding: 30px 45px 13px 0px;
+  padding: 30px 45px 13px 0;
   display: none;
 }
 .nav-toggle>span, .nav-toggle span:before, .nav-toggle span:after {
@@ -259,7 +257,7 @@ nav .container {
   margin-top: 10px;
   color: rgba(0, 0, 0, 0.498039);
   font-family: Helvetica;
-  padding: 5px 0px 15px;
+  padding: 5px 0 15px;
 }
 .post-page-title {
   font-size: 40px;
@@ -309,13 +307,13 @@ nav .container {
   padding: 10px 0;
 }
 .post-page-content h2 {
-  margin: 40px 0px;
+  margin: 40px 0;
   color: rgba(0, 0, 0, 0.5);
   font-size: 25px;
   text-transform: uppercase;
 }
 .post-page-content h3 {
-  margin: 20px 0px 18px 0px;
+  margin: 20px 0 18px 0;
 }
 .post-comments {
   padding: 25px;
@@ -327,7 +325,7 @@ nav .container {
 
 /* Talks */
 #talks h3 {
-  margin: 10px 0px 15px 0px;
+  margin: 10px 0 15px 0;
   font-size: 23px;
   color: rgba(0, 0, 0, .4);
 }
@@ -342,7 +340,6 @@ nav .container {
   overflow: hidden;
 }
 #talks li {
-  background: #FFFFFF;
   padding: 15px 4px;
 }
 ::selection {
@@ -356,18 +353,18 @@ nav .container {
   z-index: 0;
   width: 100%;
   background: #FFF;
-  padding: 120px 0px 5px 0px;
+  padding: 120px 0 5px 0;
   opacity: 0;
-  height: 0px;
+  height: 0;
   margin-top: -30px;
   overflow: hidden;
   border-bottom: 2px dashed #a5a5a5;
-  box-shadow: 0px 6px 6px rgba(0, 0, 0, .2);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, .2);
 }
 #bar-mobile-menu li {
   padding: 15px 15px 15px 25px;
   font-size: 23px;
-  margin: 5px 0px;
+  margin: 5px 0;
   transition: all 600ms ease;
 }
 #bar-mobile-menu li:hover {
@@ -380,8 +377,8 @@ nav .container {
   font-weight: bold;
 }
 ::selection {
-  background-color: #F27B73;
-  color: #fff;
+  background-color: purple;
+  color: #FFF;
 }
 
 /* Code */
@@ -390,7 +387,7 @@ code {
   padding: 5px;
 }
 .code {
-  margin: 20px 0px;
+  margin: 20px 0;
   padding: 12px;
   border: 1px solid #dddddd;
   border-radius: 3px;
@@ -449,21 +446,58 @@ code {
   .dialog p {
     line-height: 1.5em;
     clear: both;
-    margin: 0px;
+    margin: 0;
     display: inline;
     text-align: center;
   }
   .dialog strong {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
   }
   .dialog .btn {
     padding: 10px;
   }
   .post {
-    margin: 0px 0px 30px 0px;
+    margin: 0 0 30px 0;
   }
   #posts .post-date {
     display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body, #bar-mobile-menu {
+    background: #1C1E21;
+    color: #FFF;
+  }
+
+  .container-topic, #talks h3, #talks h3 a {
+    color: dimgrey;
+  }
+
+  .post {
+    border-bottom: 1px solid transparent;
+  }
+
+  .post-title, #talks p, #bar-mobile-menu a {
+    color: #FFF;
+  }
+
+  .bar-logo {
+    color: ghostwhite;
+    border-color: dimgrey;
+  }
+
+  .post-page-content a,
+  .container-dialog a,
+  #talks a,
+  .container-dialog strong,
+  .bar-menu ul a.active li,
+  .bar-menu ul a:hover li {
+    color: aqua;
+  }
+
+  .nav-toggle>span, .nav-toggle span:before, .nav-toggle span:after {
+    background: white;
   }
 }
