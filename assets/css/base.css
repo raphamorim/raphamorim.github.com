@@ -479,7 +479,9 @@ code {
     border-bottom: 1px solid transparent;
   }
 
-  .post-title, #talks p, #bar-mobile-menu a {
+  .post-title, #talks p,
+  .post-page-content h2,
+  #bar-mobile-menu a {
     color: #FFF;
   }
 
