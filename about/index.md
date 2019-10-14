@@ -12,6 +12,8 @@ Software Developer Engineer at **GoDaddy** and **jQuery** member. I'm currently 
 
 Previously, I had work in companies like Globo.com and Videolog.
 
+I love compilers, WebAssembly and GL. Currently, I'm having some fun writing a lightweight language called [Kyoto](https://github.com/raphamorim/kyoto) powered by LLVM.
+
 Speaker at over [some conferences & events](/talks) giving talks about JavaScript, Web Perfomance, React, Canvas/WebGL and development processes.
 
 In 2015 was one of the most active software developers in the world list on GitHub having done meaningful contributions to open source projects for 513 days in a row.
