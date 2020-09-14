@@ -3,14 +3,14 @@ layout: about
 class: about
 title: 'About'
 language: 'en'
-description: "I'm Raphael Amorim. Software Developer Engineer at GoDaddy. Also I'm a young (22 years) which loves Japanese culture (親日), 70s/80s songs and a lot of 8bit art."
+description: "I'm Raphael Amorim. Software Developer Engineer at Spotify. Also, I love Japanese culture (親日), 70s/80s songs and a lot of 8bit art."
 ---
 
 ## Hi, I'm Raphael アモリム
 
-Software Developer Engineer at **GoDaddy** and **jQuery** member. I'm currently working as an Engineer on GoDaddy's Website Builder product. I love Japanese culture (親日), travel around the globe, listen to 60s-90s songs and 8bit art.
+Software Developer Engineer at **Spotify** and **jQuery** member. I love Japanese culture (親日), travel around the globe, listen to 60s-90s songs and 8bit art.
 
-Previously, I had work in companies like Globo.com and Videolog.
+Previously, I had work in companies like GoDaddy, Globo.com and Videolog.
 
 I love compilers, WebAssembly and GL. Currently, I'm having some fun writing a lightweight language called [Kyoto](https://github.com/raphamorim/kyoto) powered by LLVM.
 
