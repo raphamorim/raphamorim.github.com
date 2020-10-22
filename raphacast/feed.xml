@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>RaphaCast</title>
+    <googleplay:author>Raphael Amorim</googleplay:author>
+    <rawvoice:rating>TV-G</rawvoice:rating>
+    <rawvoice:location>Stockholm, Sweden</rawvoice:location>
+    <rawvoice:frequency>Monthly</rawvoice:frequency>
+    <author>Raphael Amorim</author>
+    <itunes:author>Raphael Amorim</itunes:author>
+    <itunes:email>rapha850@gmail.com</itunes:email>
+    <itunes:category text="Technology" />
+    <image>
+      <url>https://raphamorim.io/raphacast/logo.png</url>
+      <title>RaphaCast</title>
+      <link>https://raphamorim.io/raphacast/</link>
+    </image>
+    <itunes:owner>
+      <itunes:name>Raphael Amorim</itunes:name>
+      <itunes:email>rapha850@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:keywords>development,web,javascript,engineering</itunes:keywords>
+    <copyright>Raphael Amorim 2020</copyright>
+    <description>Exploring software engineering, expat life and other things</description>
+    <googleplay:image href="https://raphamorim.io/raphacast/logo.png" />
+    <language>en-us</language>
+    <itunes:explicit>no</itunes:explicit>
+    <pubDate>Mon, 22 Oct 2020 13:00:00 PDT</pubDate>
+    <link>https://raphamorim.io/raphacast/feed.xml</link>
+    <itunes:image href="https://raphamorim.io/raphacast/logo.png" />
+   <!--  <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>First Episode</title>
+      <pubDate>Mon, 13 Apr 2020 13:00:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/01-create-eng.mp3" type="audio/mpeg" length="34216300" />
+      <itunes:duration>54:08</itunes:duration>
+      <guid isPermaLink="false">cepod01</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+Raphael Amorim - @raphamorims
+
+https://twitter.com/raphamorims
+
+https://github.com/raphamorim
+
+https://instagram.com/raphamorims
+
+https://raphamorim.io
+
+Our podcast player: 
+
+https://raphamorim.io/raphacast/
+        </description>
+    </item> -->
+  </channel>
+</rss>
