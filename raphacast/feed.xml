@@ -10,6 +10,7 @@
     <itunes:author>Raphael Amorim</itunes:author>
     <itunes:email>rapha850@gmail.com</itunes:email>
     <itunes:category text="Technology" />
+    <email>rapha850@gmail</email>
     <image>
       <url>https://raphamorim.io/raphacast/logo.png</url>
       <title>RaphaCast</title>
@@ -28,7 +29,7 @@
     <pubDate>Mon, 22 Oct 2020 13:00:00 PDT</pubDate>
     <link>https://raphamorim.io/raphacast/feed.xml</link>
     <itunes:image href="https://raphamorim.io/raphacast/logo.png" />
-   <!--  <item>
+    <item>
       <author>Raphael Amorim</author>
       <itunes:author>Raphael Amorim</itunes:author>
       <title>First Episode</title>
@@ -52,6 +53,6 @@ Our podcast player:
 
 https://raphamorim.io/raphacast/
         </description>
-    </item> -->
+    </item>
   </channel>
 </rss>
