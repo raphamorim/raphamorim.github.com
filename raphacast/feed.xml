@@ -26,19 +26,21 @@
     <googleplay:image href="https://raphamorim.io/raphacast/logo.png" />
     <language>en-us</language>
     <itunes:explicit>no</itunes:explicit>
-    <pubDate>Mon, 22 Oct 2020 13:00:00 PDT</pubDate>
+    <pubDate>Fri, 23 Oct 2020 23:32:00 GMT</pubDate>
     <link>https://raphamorim.io/raphacast/feed.xml</link>
     <itunes:image href="https://raphamorim.io/raphacast/logo.png" />
     <item>
       <author>Raphael Amorim</author>
       <itunes:author>Raphael Amorim</itunes:author>
-      <title>First Episode</title>
-      <pubDate>Mon, 13 Apr 2020 13:00:00 GMT</pubDate>
-      <enclosure url="https://raphamorim.io/raphacast/audio/01-create-eng.mp3" type="audio/mpeg" length="34216300" />
-      <itunes:duration>54:08</itunes:duration>
+      <title>Introduction - First Season</title>
+      <pubDate>Fri, 23 Oct 2020 23:32:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/01-introduction.mp3" type="audio/mpeg" length="36000" />
+      <itunes:duration>00:36</itunes:duration>
       <guid isPermaLink="false">cepod01</guid>
       <itunes:explicit>no</itunes:explicit>
       <description>
+Brief introduction about the first season episodes.
+
 Raphael Amorim - @raphamorims
 
 https://twitter.com/raphamorims
@@ -46,12 +48,6 @@ https://twitter.com/raphamorims
 https://github.com/raphamorim
 
 https://instagram.com/raphamorims
-
-https://raphamorim.io
-
-Our podcast player: 
-
-https://raphamorim.io/raphacast/
         </description>
     </item>
   </channel>
