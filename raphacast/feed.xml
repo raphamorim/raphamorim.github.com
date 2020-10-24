@@ -34,7 +34,7 @@
       <itunes:author>Raphael Amorim</itunes:author>
       <title>Introduction - First Season</title>
       <pubDate>Fri, 23 Oct 2020 23:32:00 GMT</pubDate>
-      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/01-introduction.mp3" type="audio/mpeg" length="36000" />
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/00-introduction.mp3" type="audio/mpeg" length="36000" />
       <itunes:duration>00:36</itunes:duration>
       <guid isPermaLink="false">cepod01</guid>
       <itunes:explicit>no</itunes:explicit>
