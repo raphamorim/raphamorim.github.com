@@ -38,17 +38,7 @@
       <itunes:duration>00:36</itunes:duration>
       <guid isPermaLink="false">cepod01</guid>
       <itunes:explicit>no</itunes:explicit>
-      <description>
-Brief introduction about the first season episodes.
-
-Raphael Amorim - @raphamorims
-
-https://twitter.com/raphamorims
-
-https://github.com/raphamorim
-
-https://instagram.com/raphamorims
-        </description>
+      <description>Brief introduction about the first season format.</description>
     </item>
   </channel>
 </rss>
