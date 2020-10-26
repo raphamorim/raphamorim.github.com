@@ -503,3 +503,13 @@ code {
     background: white;
   }
 }
+
+.podcast-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.podcast-container a { border: none; }
+.podcast-logo{
+  border-radius: 10px;
+}
