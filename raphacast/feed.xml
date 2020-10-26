@@ -22,13 +22,13 @@
     </itunes:owner>
     <itunes:keywords>development,web,javascript,engineering</itunes:keywords>
     <copyright>Raphael Amorim 2020</copyright>
-    <description>Each episode is a different interview that explores software engineering, expat life, work culture, mental health and other things. Contains episodes in english, portuguese and spanish.</description>
+    <description>Each episode is a different interview that explores software engineering, expat life, work culture, mental health and other things. Contains episodes in english and portuguese.</description>
     <googleplay:image href="https://raphamorim.io/raphacast/logo.png" />
     <language>en-us</language>
     <itunes:explicit>no</itunes:explicit>
     <pubDate>Fri, 23 Oct 2020 23:32:00 GMT</pubDate>
     <link>https://raphamorim.io/raphacast/feed.xml</link>
-    <itunes:image href="https://raphamorim.io/raphacast/logo.png" />
+    <itunes:image href="https://raphamorim.io/raphacast/logo-itunes.png" />
     <item>
       <author>Raphael Amorim</author>
       <itunes:author>Raphael Amorim</itunes:author>
