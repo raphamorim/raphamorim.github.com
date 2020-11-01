@@ -22,10 +22,7 @@
     </itunes:owner>
     <itunes:keywords>development,web,javascript,engineering</itunes:keywords>
     <copyright>Raphael Amorim 2020</copyright>
-    <description>Each episode is a different interview that explores software engineering, expat life, work culture, mental health and other things. Contains episodes in english and portuguese.
-
-    Illustration created by Leonardo Carvalho (https://www.instagram.com/itsleodraws/).
-    Opening song "Slow Burn" by Kevin MacLeod (https://freemusicarchive.org/music/Kevin_MacLeod/Blues_Sampler/Slow_Burn).
+    <description>Each episode is a different interview that explores software engineering, expat life, work culture, mental health and other things. Contains episodes in english and portuguese. Find me on Twitter or Instagram by @raphamorims. Illustration created by Leonardo Carvalho (@itsleodraws on Instagram). Opening song "Slow Burn" by Kevin MacLeod.
     </description>
     <googleplay:image href="https://raphamorim.io/raphacast/logo.png" />
     <language>en-us</language>
