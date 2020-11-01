@@ -22,7 +22,11 @@
     </itunes:owner>
     <itunes:keywords>development,web,javascript,engineering</itunes:keywords>
     <copyright>Raphael Amorim 2020</copyright>
-    <description>Each episode is a different interview that explores software engineering, expat life, work culture, mental health and other things. Contains episodes in english and portuguese.</description>
+    <description>Each episode is a different interview that explores software engineering, expat life, work culture, mental health and other things. Contains episodes in english and portuguese.
+
+    Illustration created by Leonardo Carvalho (https://www.instagram.com/itsleodraws/).
+    Opening song "Slow Burn" by Kevin MacLeod (https://freemusicarchive.org/music/Kevin_MacLeod/Blues_Sampler/Slow_Burn).
+    </description>
     <googleplay:image href="https://raphamorim.io/raphacast/logo.png" />
     <language>en-us</language>
     <itunes:explicit>no</itunes:explicit>
@@ -50,6 +54,19 @@
       <guid isPermaLink="false">rcpod02</guid>
       <itunes:explicit>no</itunes:explicit>
       <description>Breve introdução sobre o formato da primeira temporada.</description>
+    </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>Ben Adam - Design, Development and Creativity (English)</title>
+      <pubDate>Sun, 1 Nov 2020 21:43:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/ben-adam-english.mp3" type="audio/mpeg" length="2537000" />
+      <itunes:duration>42:17</itunes:duration>
+      <guid isPermaLink="false">rcpod03</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+        Interview with Ben Adam (https://twitter.com/benadam11) that works as a Designer that also codes. He works at GoDaddy, specifically in the Website Builder product. In this episode we talk his path to learn different skill set, design & development learning process and creativity.
+      </description>
     </item>
   </channel>
 </rss>
