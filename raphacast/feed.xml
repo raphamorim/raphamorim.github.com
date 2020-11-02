@@ -63,12 +63,12 @@
       <itunes:author>Raphael Amorim</itunes:author>
       <title>Ben Adam - Design, Development and Creativity (English)</title>
       <pubDate>Sun, 01 Nov 2020 21:43:00 GMT</pubDate>
-      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/ben-adam-english.mp3" type="audio/mpeg" length="2537000" />
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/ben-adam-english.m4a" type="audio/m4a" length="2537000" />
       <itunes:duration>42:17</itunes:duration>
       <guid isPermaLink="false">rcpod03</guid>
       <itunes:explicit>no</itunes:explicit>
       <description>
-        Interview with Ben Adam (https://twitter.com/benadam11) that works as a Designer that also codes. He works at GoDaddy, specifically in the Website Builder product. In this episode we talk about his path to learn different skill set, design concepts, development learning process and creativity.
+        Interview with Ben Adam (https://twitter.com/benadam11) that works as a Designer that also codes. He works at GoDaddy, specifically in the Website Builder product. In this episode we talk his path to learn different skill set, design concepts, development learning process and creativity.
       </description>
     </item>
   </channel>
