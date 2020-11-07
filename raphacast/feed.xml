@@ -68,7 +68,26 @@
       <guid isPermaLink="false">rcpod03</guid>
       <itunes:explicit>no</itunes:explicit>
       <description>
-        Interview with Ben Adam (https://twitter.com/benadam11) that works as a Designer that also codes. He works at GoDaddy, specifically in the Website Builder product. In this episode we talk about his path to learn different skill set, design concepts, development learning process and creativity.
+        Interview with Ben Adam that works as a Designer that also codes. He works at GoDaddy, specifically in the Website Builder product. In this episode we talk about his path to learn different skill set, design concepts, development learning process and creativity.
+
+        Ben Addam twitter: https://twitter.com/benadam11
+        GoDaddy website builder: https://se.godaddy.com/websites/website-builder
+      </description>
+    </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>Will Mendes Neto - Da Bahia para Austrália (Português)</title>
+      <pubDate>Sat, 07 Nov 2020 09:40:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/will-mendes-neto-portugues.m4a" type="audio/m4a" length="2625000" />
+      <itunes:duration>43:45</itunes:duration>
+      <guid isPermaLink="false">rcpod04</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+        Entrevista com Will Mendes Neto - Will trabalha como desenvolvedor de software na Austrália pela Atlassian. Empresa responsável pelo Bitbucket, Jira, Trello e outras ferramentas. Will conta um pouco da sua jornada saindo da Bahia e se mudando para outro país. Abordando como lidou com a diferença de cultura no trabalho e no dia, especialmente considerando a migração da conversão/escrita no trabalho e na vida do português para o inglês.
+
+        Will Mendes Neto twitter: https://twitter.com/willmendesneto
+        Atlassian jobs: https://www.atlassian.com/company/careers/all-jobs
       </description>
     </item>
   </channel>
