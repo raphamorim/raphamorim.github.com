@@ -41,7 +41,7 @@
       <itunes:author>Raphael Amorim</itunes:author>
       <title>Introduction - First Season (English)</title>
       <pubDate>Fri, 23 Oct 2020 23:32:00 GMT</pubDate>
-      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/00-introduction-english.mp3" type="audio/mpeg" length="34000" />
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/00-introduction-english.m4a" type="audio/m4a" length="34000" />
       <itunes:duration>00:34</itunes:duration>
       <guid isPermaLink="false">rcpod01</guid>
       <itunes:explicit>no</itunes:explicit>
@@ -52,7 +52,7 @@
       <itunes:author>Raphael Amorim</itunes:author>
       <title>Introdução - Primeira Temporada (Português)</title>
       <pubDate>Fri, 23 Oct 2020 23:32:00 GMT</pubDate>
-      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/00-introduction-portuguese.mp3" type="audio/mpeg" length="33000" />
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/00-introduction-portuguese.m4a" type="audio/m4a" length="33000" />
       <itunes:duration>00:33</itunes:duration>
       <guid isPermaLink="false">rcpod02</guid>
       <itunes:explicit>no</itunes:explicit>
