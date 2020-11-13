@@ -90,5 +90,21 @@
         Atlassian jobs: https://www.atlassian.com/company/careers/all-jobs
       </description>
     </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>Abenezer Abebe - Ethiopian food, NBA and Spotify (English)</title>
+      <pubDate>Fri, 13 Nov 2020 21:59:10 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/abenezer-abebe-english.m4a" type="audio/m4a" length="3300000" />
+      <itunes:duration>46:09</itunes:duration>
+      <guid isPermaLink="false">rcpod05</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+        Interview with Abenezer Abebe. Abenezer works as a software engineer in spotify. In this episode we talked about a lot of different subjects such as Ethiopian food, Canada, NBA and Spotify culture. Also, we discussed about how Spotify platform teams work and how this structure affects the developers that work using the platform.
+
+        Abenezer Abebe twitter: https://twitter.com/Abenexer
+        Spotify jobs: https://www.spotifyjobs.com
+      </description>
+    </item>
   </channel>
 </rss>
