@@ -71,7 +71,7 @@
         Interview with Ben Adam that works as a Designer that also codes. He works at GoDaddy, specifically in the Website Builder product. In this episode we talk about his path to learn different skill set, design concepts, development learning process and creativity.
 
         Ben Addam twitter: https://twitter.com/benadam11
-        GoDaddy website builder: https://se.godaddy.com/websites/website-builder
+        GoDaddy website builder: https://godaddy.com/websites/website-builder
       </description>
     </item>
     <item>
@@ -95,7 +95,7 @@
       <itunes:author>Raphael Amorim</itunes:author>
       <title>Abenezer Abebe - Ethiopian food, NBA and Spotify (English)</title>
       <pubDate>Fri, 13 Nov 2020 21:59:10 GMT</pubDate>
-      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/abenezer-abebe-english.m4a" type="audio/m4a" length="3300000" />
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/abenezer-abebe-english.m4a" type="audio/m4a" length="2769000" />
       <itunes:duration>46:09</itunes:duration>
       <guid isPermaLink="false">rcpod05</guid>
       <itunes:explicit>no</itunes:explicit>
@@ -104,6 +104,23 @@
 
         Abenezer Abebe twitter: https://twitter.com/Abenexer
         Spotify jobs: https://www.spotifyjobs.com
+      </description>
+    </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>Fabio M. Costa - Histórias de Open Source, Mootools e Facebook (Português)</title>
+      <pubDate>Thu, 19 Nov 2020 20:34:10 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/fabio-m-costa-portugues.m4a" type="audio/m4a" length="2922000" />
+      <itunes:duration>48:42</itunes:duration>
+      <guid isPermaLink="false">rcpod06</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+        Entrevista com Fabio M. Costa. Fabio trabalhou como Senior Software Developer no Facebook, Yipit, Mootools, Globo.com e atualmente trabalha no website builder da GoDaddy. Nesse episódio, conversamos um pouco da sua jornada, trabalho e aprendizado pelo open source, experiência trabalhando no Mootools, cultura de trabalho no Estados Unidos, Inglês no dia a dia e outros.
+
+        Fabio M. Costa twitter: https://twitter.com/fabiomiranda
+        GoDaddy website builder: https://godaddy.com/websites/website-builder
+        GoDaddy Jobs: https://careers.godaddy.com
       </description>
     </item>
   </channel>
