@@ -123,5 +123,24 @@
         GoDaddy Jobs: https://careers.godaddy.com
       </description>
     </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>Episódio Especial • Perguntas e Respostas - Raphael Amorim</title>
+      <pubDate>Sat, 12 Dec 2020 19:34:10 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-1/perguntas-e-respostas-portugues.m4a" type="audio/m4a" length="1941000" />
+      <itunes:duration>32:21</itunes:duration>
+      <guid isPermaLink="false">rcpod07</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+        Neste episódio, respondi algumas perguntas que selecionei de um questionário que postei no twitter. A lista de perguntas:
+
+        - Você acha que já alcançou seu objetivo profissional na sua carreira? E qual o plano para os próximos anos na carreira?
+        - Com que ferramentas você se organiza e mantém o foco? E como você as usa?
+        - Pensando em todos os seus aprendizados durante a carreira, o que você diria para o seu eu no início de carreira para tornar a trajetória mais fácil ou mais proveitosa? Se puder cite algo que você se arrepende de ter feito e algo que se arrepende de não ter feito.
+        - Fora a parte de algoritmo e estrutura de dados, quais tópicos dentro da área do Front-end que você acha fundamental um desenvolvedor saber para ter sucesso no processo seletivo do Spotify? E com base na sua experiência, quais conhecimentos foram mais decisivos para que você passasse no processo seletivo?
+        - Estudo programação através de bootcamps, cursos online e de maneira autônoma. Mas estou sempre me perguntando se deveria tentar fazer uma faculdade. Qual sua visão sobre isso? As grandes empresas realmente exigem graduação na área?
+      </description>
+    </item>
   </channel>
 </rss>
