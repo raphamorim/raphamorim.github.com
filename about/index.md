@@ -8,11 +8,11 @@ description: "I'm Raphael Amorim. Software Developer Engineer at Spotify. Also, 
 
 ## Hi, I'm Raphael アモリム
 
-You can find me on Twitter by [raphamorims](https://twitter.com/raphamorims).
+You can find me on Twitter or Instagram by [raphamorims](https://twitter.com/raphamorims).
 
-Software Engineer at **Spotify** and **jQuery** member. I love Japanese culture (親日), travel around the globe, listen to 60s-90s songs and 8bit art.
+Brazilian software engineer at **Viaplay** and **jQuery** member. I love Japanese culture (親日), travel around the globe, listen to 60s-90s songs, telecaster guitars and 8bit art. Currently, I am living in Stockholm, Sweden.
 
-Previously, I had work in companies like GoDaddy, Globo.com and Videolog.
+Previously, I had work in companies like Spotify, GoDaddy, Globo.com and Videolog.
 
 I love compilers, WebAssembly and GL. Currently, I'm having some fun writing a lightweight language called [Kyoto](https://github.com/raphamorim/kyoto) powered by LLVM.
 
