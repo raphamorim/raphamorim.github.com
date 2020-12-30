@@ -143,7 +143,7 @@ nav .container {
   margin-top: -30px;
   overflow: hidden;
   border-bottom: 2px dashed #a5a5a5;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, .2);
+  box-shadow:0 60px 100px 2px rgba(0,0,0,0.4);
 }
 
 .container.space {
@@ -359,7 +359,6 @@ nav .container {
   margin-top: -30px;
   overflow: hidden;
   border-bottom: 2px dashed #a5a5a5;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, .2);
 }
 #bar-mobile-menu li {
   padding: 15px 15px 15px 25px;
