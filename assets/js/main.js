@@ -23,7 +23,7 @@ var __mobileBtn = function() {
 
     if (mobileMenu.style.opacity <= 0) {
       mobileMenu.style.opacity = 1;
-      mobileMenu.style.height = "390px";
+      mobileMenu.style.height = "430px";
     } else {
       mobileMenu.style.opacity = 0;
       mobileMenu.style.height = "0px";

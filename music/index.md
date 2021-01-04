@@ -8,7 +8,9 @@ description: "Articles about JavaScript, Web Performance, ReactJS, Webgl, HTML5 
 
 ## Sometimes, I like to create music.
 
-I mean, occasionally... <br/><br/><br/>
+[Raphael Amorim on Apple Music](https://music.apple.com/se/artist/raphael-amorim/1547161397?l=en)
+
+[Raphael Amorim on Spotify](https://open.spotify.com/artist/6Ij2Lu765q7pjWuXHOUF0s) <br/><br/><br/>
 
 #### Heart of the Rainforest
 
