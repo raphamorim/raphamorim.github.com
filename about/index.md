@@ -12,6 +12,8 @@ You can find me on Twitter or Instagram by [raphamorims](https://twitter.com/rap
 
 Brazilian software engineer at **Viaplay** and **jQuery** member. I love Japanese culture (親日), travel around the globe, listen to 60s-90s songs, telecaster guitars and 8bit art. Currently, I am living in Stockholm, Sweden.
 
+I like to create music, if you want to listen: [Apple Music](https://music.apple.com/se/artist/raphael-amorim/1547161397?l=en) or [Spotify](https://open.spotify.com/artist/6Ij2Lu765q7pjWuXHOUF0s).
+
 Previously, I had work in companies like Spotify, GoDaddy, Globo.com and Videolog.
 
 I love compilers, WebAssembly and GL. Currently, I'm having some fun writing a lightweight language called [Kyoto](https://github.com/raphamorim/kyoto) powered by LLVM.
