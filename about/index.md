@@ -8,7 +8,7 @@ description: "I'm Raphael Amorim. Software Developer Engineer at Spotify. Also, 
 
 ## Hi, I'm Raphael アモリム
 
-You can find me on [Twitter](https://twitter.com/raphamorims) or [Instagram](https://www.instagram.com/raphamorims/).
+You can find me on [Twitter](https://twitter.com/raphamorims) or [Instagram](https://www.instagram.com/ph.ael).
 
 Brazilian software engineer at **Viaplay** and **jQuery** member. I love Japanese culture (親日), travel around the globe, listen to 60s-90s songs, telecaster guitars and 8bit art. Currently, I am living in Stockholm, Sweden.
 
