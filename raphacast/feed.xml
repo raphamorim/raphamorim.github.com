@@ -142,5 +142,22 @@
         - Estudo programação através de bootcamps, cursos online e de maneira autônoma. Mas estou sempre me perguntando se deveria tentar fazer uma faculdade. Qual sua visão sobre isso? As grandes empresas realmente exigem graduação na área?
       </description>
     </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>2nd Season • Jefferson Brito (English)</title>
+      <pubDate>Sun, 27 Jun 2021 18:00:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-2/jefferson-brito-english.m4a" type="audio/m4a"/>
+      <itunes:duration>01:12:12</itunes:duration>
+      <guid isPermaLink="false">rcpod08</guid>
+      <itunes:explicit>yes</itunes:explicit>
+      <description>
+        In this episode, Raphael talks with Jefferson Brito. A software developer that works in Viaplay and lives in Stockholm, Sweden. Jefferson is from Rio de Janeiro and talks about the cultural differences between Brazil and Sweden.
+
+        Jefferson Brito instagram: https://www.instagram.com/neguinjeff
+        Viaplay: https://viaplay.se
+        NENT Jobs: https://careers.nentgroup.com/jobs
+      </description>
+    </item>
   </channel>
 </rss>
