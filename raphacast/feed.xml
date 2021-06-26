@@ -142,5 +142,40 @@
         - Estudo programação através de bootcamps, cursos online e de maneira autônoma. Mas estou sempre me perguntando se deveria tentar fazer uma faculdade. Qual sua visão sobre isso? As grandes empresas realmente exigem graduação na área?
       </description>
     </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>2nd Season • Jefferson Brito (English)</title>
+      <pubDate>Sun, 27 Jun 2021 10:00:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-2/jefferson-brito-english.m4a" type="audio/m4a"/>
+      <itunes:duration>01:12:12</itunes:duration>
+      <guid isPermaLink="false">rcpod08</guid>
+      <itunes:explicit>yes</itunes:explicit>
+      <description>
+        In this episode, Raphael talks with Jefferson Brito. A software engineer that works in Viaplay and lives in Stockholm, Sweden. Jefferson is originally from Rio de Janeiro and talks about his career path, moving to a foreign country in the middle of a pandemic, cultural differences between Brazil and Sweden.
+
+        Jefferson Brito Linkedin: https://www.linkedin.com/in/jeffrbrito
+        Jefferson Brito Instagram: https://www.instagram.com/neguinjeff
+        Viaplay: https://viaplay.se
+        NENT Jobs: https://careers.nentgroup.com/jobs
+      </description>
+    </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>2nd Season • Hallison Paz (Português)</title>
+      <pubDate>Sun, 27 Jun 2021 10:00:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-2/hallison-paz-portugues.mp3" type="audio/mp3"/>
+      <itunes:duration>53:23</itunes:duration>
+      <guid isPermaLink="false">rcpod09</guid>
+      <itunes:explicit>yes</itunes:explicit>
+      <description>
+        Neste episódio Raphael conversa com um Hallison Paz. Hallison é mestre e doutorando pelo laboratório de Visão Computacional e Computação Gráfica (Visgraf) do Instituto de Matemática Pura e Aplicada (IMPA). Engenheiro de Computação pelo Instituto Militar de Engenharia (IME). Co-criador do canal (Youtube) Programação Dinâmica. Neste episódio, Hallison revela um pouco de sua história, como organiza seus projetos e outras coisas.
+
+        Hallison Paz Linkedin: https://www.linkedin.com/in/hallpaz
+        Hallison Paz Instagram: https://www.instagram.com/hallpaz
+        Programação Dinâmica: https://pgdinamica.com
+      </description>
+    </item>
   </channel>
 </rss>
