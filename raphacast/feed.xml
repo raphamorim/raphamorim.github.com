@@ -150,7 +150,7 @@
       <enclosure url="https://raphamorim.io/raphacast/audio/season-2/jefferson-brito-english.m4a" type="audio/m4a"/>
       <itunes:duration>01:12:12</itunes:duration>
       <guid isPermaLink="false">rcpod08</guid>
-      <itunes:explicit>yes</itunes:explicit>
+      <itunes:explicit>no</itunes:explicit>
       <description>
         In this episode, Raphael talks with Jefferson Brito. A software engineer that works in Viaplay and lives in Stockholm, Sweden. Jefferson is originally from Rio de Janeiro and talks about his career path, moving to a foreign country in the middle of a pandemic, cultural differences between Brazil and Sweden.
 
@@ -168,13 +168,45 @@
       <enclosure url="https://raphamorim.io/raphacast/audio/season-2/hallison-paz-portugues.mp3" type="audio/mp3"/>
       <itunes:duration>53:23</itunes:duration>
       <guid isPermaLink="false">rcpod09</guid>
-      <itunes:explicit>yes</itunes:explicit>
+      <itunes:explicit>no</itunes:explicit>
       <description>
-        Neste episódio Raphael conversa com um Hallison Paz. Hallison é mestre e doutorando pelo laboratório de Visão Computacional e Computação Gráfica (Visgraf) do Instituto de Matemática Pura e Aplicada (IMPA). Engenheiro de Computação pelo Instituto Militar de Engenharia (IME). Co-criador do canal (Youtube) Programação Dinâmica. Neste episódio, Hallison revela um pouco de sua história, como organiza seus projetos e outras coisas.
+        Neste episódio Raphael conversa com Hallison Paz. Hallison é mestre e doutorando pelo laboratório de Visão Computacional e Computação Gráfica (Visgraf) do Instituto de Matemática Pura e Aplicada (IMPA). Engenheiro de Computação pelo Instituto Militar de Engenharia (IME). Co-criador do canal (Youtube) Programação Dinâmica. Neste episódio, Hallison revela um pouco de sua história, como organiza seus projetos e outras coisas.
 
         Hallison Paz Linkedin: https://www.linkedin.com/in/hallpaz
         Hallison Paz Instagram: https://www.instagram.com/hallpaz
         Programação Dinâmica: https://pgdinamica.com
+      </description>
+    </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>2nd Season • Carla Demarchi (Português)</title>
+      <pubDate>Wed, 14 Jul 2021 10:00:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-2/carla-demarchi-portugues.mp3" type="audio/mp3"/>
+      <itunes:duration>47:54</itunes:duration>
+      <guid isPermaLink="false">rcpod10</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+        Neste episódio Raphael conversa com Carla Demarchi. Carla trabalha como Design System Senior Designer na Globo.com. Ela também já trabalhou na Philips como Interaction Designer e é extramente ativa quanto a Design Systems, já tendo sido entrevistada por diversos meio a respeito deste assunto. Neste episódio conversamos um pouco de sua mudança para o Rio de Janeiro, pandêmia, vida saudável e outros assuntos.
+
+        Carla Demarchi Linkedin: https://www.linkedin.com/in/carlademarchi/
+        Carla Demarchi Twitter: https://twitter.com/demarchicarla
+      </description>
+    </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>2nd Season • Isabella Silveira (English)</title>
+      <pubDate>Wed, 14 Jul 2021 10:00:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-2/isabella-silveira-english.m4a" type="audio/m4a"/>
+      <itunes:duration>1:08:46</itunes:duration>
+      <guid isPermaLink="false">rcpod11</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+        In this episode, Raphael talks with Isabella Silveira. Isabella is a software engineer that works for Spotify and lives at Stockholm, Sweden. Isabella also have worked for iZettle, Work.Co, Huge Inc. and other companies. She also is a host of a podcast called Zofe and have done multiple conference talks around the world.
+
+        Isabella Silveira Linkedin: https://se.linkedin.com/in/isabellasilveira
+        Isabella Silveira Twitter: https://twitter.com/silveira_bells
       </description>
     </item>
   </channel>
