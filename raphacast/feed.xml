@@ -209,5 +209,39 @@
         Isabella Silveira Twitter: https://twitter.com/silveira_bells
       </description>
     </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>2nd Season • Maria Clara Santana (Português)</title>
+      <pubDate>Mon, 26 Jul 2021 10:00:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-2/maria-clara-portugues.mp3" type="audio/mp3"/>
+      <itunes:duration>36:26</itunes:duration>
+      <guid isPermaLink="false">rcpod12</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+        Neste episódio Raphael conversa com Maria Clara Santana. Ela trabalha na Alice Health e já trabalhou na Work.Co e Picter. Conversamos um pouco sobre sua história entrando no mundo da programação, usando inglês no dia a dia do trabalho e outros assuntos.
+
+        Maria Clara Twitter: https://twitter.com/olarclara
+        Maria Clara Linkedin https://www.linkedin.com/in/mariaclarasantana
+        Alice: https://www.alice.com.br/
+      </description>
+    </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>2nd Season • Etiene Dalcol (English)</title>
+      <pubDate>Mon, 26 Jul 2021 10:00:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-2/etiene-dalcol-english.mp3" type="audio/mp3"/>
+      <itunes:duration>50:58</itunes:duration>
+      <guid isPermaLink="false">rcpod13</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+        In this episode, Raphael talks to one of his inspirations in the IT field: Etiene Dalcol. Etiene is from Rio de Janeiro and currently lives in Barcelona. She is Software Engineer doing NLP / CompLing research, currently developing Polygloss, a mobile game that helps you express yourself in another language. Former lead developer of Sailor, lead organizer of LuaConf, participated in Google Summer of Code as a student and as a mentor, also spoke in many conferences. We talked a bit about the process of learning different languages, pandemic in Europe, diversity and other subjects.
+
+        Etiene Dalcol Linkedin: https://es.linkedin.com/in/etienedalcol
+        Etiene Dalcol Twitter: https://twitter.com/etiene_d
+        Polygloss: https://linktr.ee/polyglossapp
+      </description>
+    </item>
   </channel>
 </rss>

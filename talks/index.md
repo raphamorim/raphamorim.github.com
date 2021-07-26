@@ -15,6 +15,7 @@ description: Upcoming lectures and previous talks.
     <p>Theme: UI Engineering with WebAssembly and React</p>
     <p>13 JULY 2019</p>
     <p>Local: Centro de Convenções Rebouças - São Paulo, Brazil</p>
+    <p><iframe width="100%" height="315" src="https://www.youtube.com/embed/0--wKsxl-i4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
   </li>
 
   <li>
