@@ -24,7 +24,7 @@
     <copyright>Raphael Amorim 2020</copyright>
     <description>Each episode is a different interview that explores software engineering, expat life, work culture, mental health and other things. Contains episodes in english and portuguese. 
 
-    Find me on Twitter by @raphamorims.
+    Find me on Instagram by @ph.ael or Twitter by @raphamorims.
 
     Illustration created by Leonardo Carvalho (@itsleodraws on Instagram). 
 
@@ -241,6 +241,55 @@
         Etiene Dalcol Linkedin: https://es.linkedin.com/in/etienedalcol
         Etiene Dalcol Twitter: https://twitter.com/etiene_d
         Polygloss: https://linktr.ee/polyglossapp
+      </description>
+    </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>2nd Season • Jader Gomes (Português)</title>
+      <pubDate>Thu, 5 Aug 2021 10:00:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-2/jader-gomes-portugues.mp3" type="audio/mp3"/>
+      <itunes:duration>51:37</itunes:duration>
+      <guid isPermaLink="false">rcpod14</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+        Neste episódio Raphael conversa com Jader Gomes. Ele atualmente trabalha na Suflex como Tech Lead. Originalmente da Candeias, Bahia. Jader já trabalhou em empresas como Stone e IDwall. Conversamos um pouco sobre sua trajetória, experiências vivendo em São Paulo, NBA, comunidade de TI e outros assuntos. 
+
+        Jader Gomes Linkedin: https://www.linkedin.com/in/jdrgomes/
+        Jader Gomes Twitter: https://twitter.com/jdrgomes
+      </description>
+    </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>2nd Season • Tiffany Lam (English)</title>
+      <pubDate>Thu, 5 Aug 2021 10:00:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-2/tiffany-lam-english.mp3" type="audio/mp3"/>
+      <itunes:duration>47:41</itunes:duration>
+      <guid isPermaLink="false">rcpod15</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+        In this episode, Raphael talks with Tiffany Lam. Tiffany is an UX engineer that works for GoDaddy and lives at San Francisco, USA. Currently, she works on the Website Builder product, being responsible for experiment design and hypothesis testing, and creating prototypes to rapidly attain customer and stakeholder feedback. In this episode, we talked about empowering people with Website builder, San Francisco demographic changes over time, Golden State Warriors, thoughts about coding and design in the same time and other things.
+
+        Tiffany Lam Linkedin: https://www.linkedin.com/in/tiffanyhl
+      </description>
+    </item>
+    <item>
+      <author>Raphael Amorim</author>
+      <itunes:author>Raphael Amorim</itunes:author>
+      <title>2nd Season • Jessica Temporal (English)</title>
+      <pubDate>Thu, 5 Aug 2021 10:00:00 GMT</pubDate>
+      <enclosure url="https://raphamorim.io/raphacast/audio/season-2/jessica-temporal-english.mp3" type="audio/mp3"/>
+      <itunes:duration>47:43</itunes:duration>
+      <guid isPermaLink="false">rcpod16</guid>
+      <itunes:explicit>no</itunes:explicit>
+      <description>
+        In this episode, Raphael talks with Jessica Temporal. She works as Senior Developer Advocate at Auth0. Jessica is also the co-host and co-founder of Pizza de Dados, the first data science podcast in Brazil. Pizza is debating topics of data science with specialists in a diverse variety of areas in the field. All the episodes are recorded in Portuguese to help increase data literacy in Brazil. She also worked in Operação Serenata de Amor as a data scientist, iFood, Globo and is also part of the instructors' team at Data Bootcamp. We talked about her story into programming, python community, data insights and other things.
+
+        Jessica Temporal Linkedin: https://www.linkedin.com/in/jessicatemporal
+        Jessica Temporal Twitter: https://twitter.com/jesstemporal
+        Jessica Temporal Instagram: https://www.instagram.com/jesstemporal
+        Pizza de Dados Podcast (Portuguese): https://pizzadedados.com
       </description>
     </item>
   </channel>
