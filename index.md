@@ -1,12 +1,12 @@
 ---
-title: 'Raphael Amorim'
-layout: home
-class: home
+layout: about
+class: about
+title: 'About'
 language: 'en'
-description: "Written pieces, talks, and other bits by Raphael Amorim. I'll probably be writing about JavaScript, web performance, Python hacks, opengl, webgl, canvas and things I'm learning."
+description: "I'm Raphael Amorim. Software Developer Engineer. Also, I love Japanese culture (親日), 70s/80s songs and a lot of 8bit art."
 ---
 
-## Hi, I'm Raphael アモリム
+## Olá! I'm Raphael Amorim
 
 You can find me on [Twitter](https://twitter.com/raphamorims) or [Instagram](https://www.instagram.com/ph.ael).
 
