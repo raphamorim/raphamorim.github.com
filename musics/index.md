@@ -6,7 +6,7 @@ language: 'en'
 description: "Articles about JavaScript, Web Performance, ReactJS, Webgl, HTML5 Canvas and other things."
 ---
 
-## I like to create music.
+## I Like to Create Music
 
 Super influenced by 90s hip hop, neoclassical new-age, Japanese jazz, soul music and bossa nova.
 
