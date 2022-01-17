@@ -3,7 +3,7 @@ layout: about
 class: about
 title: 'About'
 language: 'en'
-description: "I'm Raphael Amorim. Software Developer Engineer at Spotify. Also, I love Japanese culture (親日), 70s/80s songs and a lot of 8bit art."
+description: "I'm Raphael Amorim. Software Developer Engineer. Also, I love Japanese culture (親日), 70s/80s songs and a lot of 8bit art."
 ---
 
 ## Hi, I'm Raphael アモリム
