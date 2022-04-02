@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Challenge Accepted: Write code every single day'
-description: "Like say master Barney Stinson: Challenge Accepted! Yeah, from now i'll write code every single day...."
+description: "Challenge Accepted! Yeah, from now i'll write code every single day...."
 language: 'en'
 image: 'assets/images/posts/code-every-single-day.jpg'
 ---
