@@ -16,6 +16,8 @@ Brazilian software engineer at **Viaplay** and **jQuery** member. I love Japanes
 
 Previously, I had work in companies like Spotify, GoDaddy, Globo.com and Videolog.
 
+On my free time I am also developing React Ape, which is a React renderer to build UI interfaces using Canvas/WebGL, more info [here](https://raphamorim.io/react-ape/).
+
 I love compilers, WebAssembly and GL. Currently, I'm having some fun writing a lightweight language called [Kyoto](https://github.com/raphamorim/kyoto) powered by LLVM.
 
 Speaker at over some [conferences & events](/talks) giving talks about JavaScript, Web Perfomance, React, Canvas/WebGL and development processes.
