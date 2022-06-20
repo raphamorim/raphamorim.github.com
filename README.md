@@ -44,6 +44,8 @@ Run `build` for every little or bigger change on css/js files:
 
 ## About
 
-Credits: Inspired by Andy Taylor and [Zeno Rocha](http://github.com/zenorocha).
+Thanks [Raphael Eckhardt](https://github.com/Raphseck) for the fox illustration!
+
+You can also see the source code of [Firefox offline page here](https://github.com/raphamorim/firefox-offline-game).
 
 License: **MIT** License © [Raphael Amorim](http://github.com/raphamorim).

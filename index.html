@@ -1,0 +1,48 @@
+---
+layout: about
+class: about
+title: 'About'
+language: 'en'
+description: "Software Developer Engineer. Also, I love Japanese culture (親日), 70s/80s songs and a lot of 8-bit art."
+---
+
+<div id="firefox-Runner">
+	<div hidden>
+		<div id="offline-resources-1x">
+			<img id="1x-obstacle-large" src="assets/images/default_100_percent/offline/100-obstacle-large-sprite.png">
+			<img id="1x-obstacle-small" src="assets/images/default_100_percent/offline/100-obstacle-small-sprite.png">
+			<img id="1x-cloud" src="assets/images/default_100_percent/offline/100-cloud.png">
+			<img id="1x-text" src="assets/images/default_100_percent/offline/100-text-sprite.png">
+			<img id="1x-horizon" src="assets/images/default_100_percent/offline/100-horizon.png">
+			<img id="1x-trex" src="assets/images/default_100_percent/offline/100-offline-fox.png">
+			<img id="1x-restart" src="assets/images/default_100_percent/offline/100-restart.png">
+		</div>
+		<div id="offline-resources-2x">
+			<img id="2x-obstacle-large" src="assets/images/default_200_percent/offline/200-obstacle-large-sprite.png">
+			<img id="2x-obstacle-small" src="assets/images/default_200_percent/offline/200-obstacle-small-sprite.png">
+			<img id="2x-cloud" src="assets/images/default_200_percent/offline/200-cloud.png">
+			<img id="2x-text" src="assets/images/default_200_percent/offline/200-text-sprite.png">
+			<img id="2x-horizon" src="assets/images/default_200_percent/offline/200-horizon.png">
+			<img id="2x-trex" src="assets/images/default_200_percent/offline/200-offline-fox.png">
+			<img id="2x-restart" src="assets/images/default_200_percent/offline/200-restart.png">
+		</div>
+		<template id="audio-resources">
+			<audio id="offline-sound-press" src="assets/sounds/button-press.mp3"></audio>
+			<audio id="offline-sound-hit" src="assets/sounds/hit.mp3"></audio>
+			<audio id="offline-sound-reached" src="assets/sounds/score-reached.mp3"></audio>
+		</template>
+	</div>
+	<div id="main-message">
+		<h1 i18n-content="heading">> press space</h1>
+		<p>Welcome to my spot in the internet.</p>
+		<p>You can find all the information regarding my books, talks, podcast and etcetera.</p>
+		<div class="error-code">IMPORTED_ENGLISH_MODULE</div>
+		<div class="error-code">ERR_IMPORTING_PORTUGUESE_MODULE</div>
+		<div class="error-code">ERR_IMPORTING_SPANISH_MODULE</div>
+		<div class="error-code">ERR_IMPORTING_SWEDISH_MODULE</div>
+	</div>
+</div>
+<script src="assets/js/runner.js"></script>
+<script>
+	new Runner('#firefox-Runner');
+</script>
