@@ -1,7 +1,7 @@
 ---
 layout: about
 title: Music
-class: 'Music'
+class: music
 language: 'en'
 description: "Articles about JavaScript, Web Performance, ReactJS, Webgl, HTML5 Canvas and other things."
 ---

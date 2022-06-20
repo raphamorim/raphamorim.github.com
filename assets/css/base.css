@@ -75,19 +75,45 @@ h3 {
 
 .bar-logo {
   position: absolute;
-  font-size: 24px;
-  letter-spacing: 7px;
+  font-size: 19px;
+  letter-spacing: 10px;
   line-height: 30px;
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
   word-wrap: break-word;
-  width: 110px;
-  height: 110px;
+  width: 85px;
+  /*text-align: center;*/
+  height: 105px;
   margin-left: 0;
   border-width: 4px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.3);
+  border-style: dashed;
   padding: 6px 0 0 8px;
+  transform: rotate(0deg);
+}
+
+.about .bar-logo {
+  animation: 1s animateBorder linear;
+  animation-delay: 300ms;
+}
+
+@keyframes animateBorder {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
 #posts {
@@ -107,6 +133,10 @@ h3 {
   text-align: left;
   margin: 90px 0 30px;
   font-size: 40px;
+}
+
+.blink {
+  animation: blinker 4s linear infinite;
 }
 
 @media only screen and (max-width:980px) {
@@ -144,7 +174,8 @@ nav .container {
   padding: 120px 0 5px 0;
   opacity: 0;
   height: 0;
-  margin-top: -30px;
+  margin-top: -80px;
+  /*z-index: 4;*/
   overflow: hidden;
   border-bottom: 2px dashed #a5a5a5;
   box-shadow:0 60px 100px 2px rgba(0,0,0,0.4);
@@ -438,6 +469,12 @@ code {
   .post h2 {
     font-size: 21px;
   }
+  .github-corner {
+    display: none;
+  }
+  .blink {
+    animation: none;
+  }
 }
 @media only screen and (max-width:600px) {
   .main {
@@ -559,13 +596,27 @@ code {
   text-transform: uppercase;
 }
 
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 .github-corner:hover .octo-arm {
-  animation:octocat-wave 560ms ease-in-out}@keyframes
-                    octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media
-                    (max-width:500px){.github-corner:hover
-                        .octo-arm{animation:none}.github-corner
-                        .octo-arm{animation:octocat-wave 560ms
-                            ease-in-out}}
+  animation:octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%, 100% {
+    transform:rotate(0);
+  }
+  20%, 60% {
+    transform:rotate(-25deg);
+  }
+  40%, 80% {
+    transform:rotate(10deg);
+  }
+}
 
 @media (max-width: 640px), (max-height: 640px) {
   h1 {
