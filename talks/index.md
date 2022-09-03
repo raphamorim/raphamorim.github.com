@@ -10,6 +10,14 @@ description: Upcoming lectures and previous talks.
 <ul id="talks">
 
   <li>
+    <h3>• Viaplay Rust Workshop</h3>
+    <p>Theme: Rust 101 for Web</p>
+    <p>1 SEPTEMBER 2022</p>
+    <p>Local: Stockholm, Sweden</p>
+    <p>Slides: <a href="https://speakerdeck.com/raphamorim/rust-101-for-web" target="_blank">speakerdeck.com/raphamorim/rust-101-for-web</a></p>
+  </li>
+  
+  <li>
     <h3>• Front In Sampa</h3>
     <p>Conf Link: <a href="https://frontinsampa.com.br">https://frontinsampa.com.br</a></p>
     <p>Theme: UI Engineering with WebAssembly and React</p>
