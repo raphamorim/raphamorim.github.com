@@ -78,8 +78,8 @@ h3 {
   font-size: 19px;
   letter-spacing: 10px;
   line-height: 30px;
-  color: rgba(0, 0, 0, 0.6);
-  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 800;
   word-wrap: break-word;
   width: 85px;
   /*text-align: center;*/
@@ -87,33 +87,9 @@ h3 {
   margin-left: 0;
   border-width: 4px;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.3);
-  border-style: dashed;
+  border-color: rgba(0, 0, 0, 0.8);
   padding: 6px 0 0 8px;
   transform: rotate(0deg);
-}
-
-.about .bar-logo {
-  animation: 1s animateBorder linear;
-  animation-delay: 300ms;
-}
-
-@keyframes animateBorder {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
 }
 
 #posts {
@@ -133,10 +109,6 @@ h3 {
   text-align: left;
   margin: 90px 0 30px;
   font-size: 40px;
-}
-
-.blink {
-  animation: blinker 4s linear infinite;
 }
 
 @media only screen and (max-width:980px) {
@@ -200,7 +172,7 @@ nav .container {
 .bar-menu ul a li {
   float: left;
   text-transform: uppercase;
-  color: #a8a6a6;
+  color: #9b9999;
   padding: 5px 10px 5px 10px;
   margin-right: 5px;
 }
@@ -377,10 +349,6 @@ nav .container {
 #talks li {
   padding: 15px 4px;
 }
-::selection {
-  background-color: #41494f;
-  color: #fff;
-}
 
 /* Mobile and Tablets */
 #bar-mobile-menu {
@@ -411,7 +379,7 @@ nav .container {
   font-weight: bold;
 }
 ::selection {
-  background-color: purple;
+  background-color: black;
   color: #FFF;
 }
 
@@ -471,9 +439,6 @@ code {
   }
   .github-corner {
     display: none;
-  }
-  .blink {
-    animation: none;
   }
 }
 @media only screen and (max-width:600px) {
@@ -585,37 +550,6 @@ code {
   top: 0;
   width: 100vw;
   z-index: 1;
-}
-.error-code {
-  margin: 10px 0;
-  color: #777;
-  display: block;
-  font-size: .86667em;
-  margin-top: 15px;
-  opacity: .5;
-  text-transform: uppercase;
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-
-.github-corner:hover .octo-arm {
-  animation:octocat-wave 560ms ease-in-out;
-}
-
-@keyframes octocat-wave {
-  0%, 100% {
-    transform:rotate(0);
-  }
-  20%, 60% {
-    transform:rotate(-25deg);
-  }
-  40%, 80% {
-    transform:rotate(10deg);
-  }
 }
 
 @media (max-width: 640px), (max-height: 640px) {
