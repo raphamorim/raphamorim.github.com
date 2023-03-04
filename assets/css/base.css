@@ -73,23 +73,18 @@ h3 {
   z-index: 1;
 }
 
-.bar-logo {
+.logo {
+  width: 70px;
   position: absolute;
-  font-size: 19px;
-  letter-spacing: 10px;
-  line-height: 30px;
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 800;
-  word-wrap: break-word;
-  width: 85px;
-  /*text-align: center;*/
-  height: 105px;
-  margin-left: 0;
-  border-width: 4px;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.8);
-  padding: 6px 0 0 8px;
-  transform: rotate(0deg);
+  margin-top: 20px;
+}
+
+.dot {
+  height: 18px;
+  width: 18px;
+  background-color: rgba(0,0,0,.8);
+  border-radius: 50%;
+  display: inline-block;
 }
 
 #posts {
@@ -306,7 +301,7 @@ nav .container {
 .post-page-content a, .container-dialog a, #talks a {
   cursor: pointer;
   color: #000;
-  border-bottom: 1px dotted #666;
+  border-bottom: 2px dotted #333;
   text-decoration: none;
 }
 .post-page-content img {
@@ -359,7 +354,6 @@ nav .container {
   padding: 120px 0 5px 0;
   opacity: 0;
   height: 0;
-  margin-top: -30px;
   overflow: hidden;
   border-bottom: 2px dashed #a5a5a5;
 }

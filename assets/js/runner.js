@@ -314,7 +314,6 @@ Runner.prototype = {
     this.distanceMeter = new DistanceMeter(this.canvas,
           this.images.TEXT_SPRITE, this.dimensions.WIDTH);
 
-    // Draw t-rex
     this.tRex = new Trex(this.canvas, this.images.TREX);
 
     this.outerContainerEl.appendChild(this.containerEl);
@@ -544,6 +543,8 @@ Runner.prototype = {
    * Bind relevant key / mouse / touch listeners.
    */
   startListening: function() {
+    setTimeout(() => this.play(), 10);
+
     // Keys.
     document.addEventListener(Runner.events.KEYDOWN, this);
     document.addEventListener(Runner.events.KEYUP, this);
@@ -2253,3 +2254,5 @@ Horizon.prototype = {
   }
 };
 })();
+
+new Runner('#firefox-Runner');
