@@ -1,2 +1,2 @@
 run:
-	jekyll serve
+	jekyll serve --watch

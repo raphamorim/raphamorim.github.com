@@ -16,6 +16,8 @@ I have been responsible for Viaplay adoption of Rust language. Built starter inf
 
 Wrote a book about WebAssembly in Portuguese.
 
+In 2015, I was one of the most active software developers in the world on GitHub, having made meaningful contributions to open source projects for 513 days in a row.
+
 Currently having fun building a terminal application written in Rust, called [Rio](https://github.com/raphamorim/rio).
 
 I also like to create music, if you want to listen: [Apple Music](https://music.apple.com/se/artist/raphael-amorim/1547161397?l=en) or [Spotify](https://open.spotify.com/artist/6Ij2Lu765q7pjWuXHOUF0s).
