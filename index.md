@@ -3,7 +3,7 @@ layout: about
 class: about
 title: 'About'
 language: 'en'
-description: "I amm Raphael Amorim. Software Developer Engineer. I love Japanese culture (親日), 70s/80s songs and a lot of 8bit art."
+description: "I am Raphael Amorim. Software Developer Engineer. I love Japanese culture (親日), 70s/80s songs and a lot of 8bit art."
 ---
 
 ## Olá • Hello • こんにちは
