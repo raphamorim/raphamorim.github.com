@@ -142,7 +142,7 @@ h3 {
 
 .me .image {
   margin: 10px;  
-  height: 320px;
+  width: 320px;
 }
 
 .section {
@@ -156,6 +156,12 @@ h3 {
   text-align: right;
   margin-right: 16px;
   font-size: 16px;
+  line-height: 1.4em;
+}
+
+.section .title {
+  line-height: 1.4em;
+  width: 80%;
 }
 
 .section .project {
@@ -169,7 +175,7 @@ h3 {
   padding: 0 20px;
   width: 800px;
   font-size: 16px;
-  line-height: 1.6em;
+  line-height: 1.8em;
 }
 
 .me .image img {
