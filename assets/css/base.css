@@ -142,13 +142,15 @@ h3 {
 
 .me .image {
   margin: 10px;  
-  width: 320px;
+  width: 280px;
 }
 
 .section {
   font-size: 18px;
   margin: 1em 0;
   display: flex;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .sections .date {
@@ -165,7 +167,7 @@ h3 {
 }
 
 .section .project {
-  width: 120px;
+  width: 90px;
   text-align: center;
   font-size: 18px;
   text-align: left;
@@ -173,7 +175,7 @@ h3 {
 
 .section .project-info {
   padding: 0 20px;
-  width: 800px;
+  width: 80%;
   font-size: 16px;
   line-height: 1.8em;
 }
@@ -556,6 +558,9 @@ code {
   }
   .me .info h1::after {
     width: 100%;
+  }
+  .section .project {
+    width: 50px;
   }
   .me .info {
     text-align: center;
