@@ -40,10 +40,26 @@ b, strong {
   font-weight: bold;
 }
 
+@font-face {
+  font-family: 'ShipporiMincho';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/ShipporiMincho/ShipporiMincho-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'ShipporiMincho';
+  font-style: bold;
+  font-weight: 600;
+  src: url('../fonts/ShipporiMincho/ShipporiMincho-bOLD.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
 body {
   font: normal normal 20px/1.2em Helvetica, arial;
+  font-family: "ShipporiMincho","Palatino","Georgia","Times New Roman",serif;
+  font-size: 16px;
   background: #FFF;
-  color: #777;
+  color: #666;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
@@ -79,6 +95,87 @@ h3 {
   margin-top: 20px;
 }
 
+.me {
+  background: #0F0D0E;
+}
+
+.me .presentation {
+  display: flex;
+}
+
+.me .info {
+  padding: 60px 20px;
+  width: 400px;
+}
+
+.me .info {
+  color: #FFF;
+}
+
+.me .info a {
+  color: #FFF;
+  border-bottom: 2px dotted #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.me .info h1 {
+  font-size: 34px;
+  color: #FFF;
+}
+
+.me .info h1::after {
+  content: "";
+  background-color: #383134;
+  height: 10px;
+  position: absolute;
+  top: 82px;
+  transform: translateY(-50%);
+  left: 0;
+  width: 340px;
+  z-index: -1;
+}
+
+.me .info .info-details {
+  margin-top: 40px;
+}
+
+.me .image {
+  margin: 10px;  
+  height: 320px;
+}
+
+.section {
+  font-size: 18px;
+  margin: 1em 0;
+  display: flex;
+}
+
+.sections .date {
+  width: 70px;
+  text-align: right;
+  margin-right: 16px;
+  font-size: 16px;
+}
+
+.section .project {
+  width: 120px;
+  text-align: center;
+  font-size: 18px;
+  text-align: left;
+}
+
+.section .project-info {
+  padding: 0 20px;
+  width: 800px;
+  font-size: 16px;
+  line-height: 1.6em;
+}
+
+.me .image img {
+  width: 100%;
+  height: 100%;
+}
 .dot {
   height: 18px;
   width: 18px;
@@ -225,16 +322,16 @@ nav .container {
   padding-bottom: 10px;
 }
 .container-dialog h2 {
-  font-size: 40px;
-  padding-bottom: 10px;
+  font-size: 24px;
+  margin: 28px 0 24px 0;
 }
 .container-dialog p {
   font-weight: lighter;
   font-style: normal;
   letter-spacing: -0.004em;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.5em;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 .container-dialog strong {
   padding: 0 1px;
@@ -442,6 +539,22 @@ code {
   .post p, .container-dialog p {
     font-size: 20px;
   }
+  .me .container {
+    margin: none;
+    width: auto;
+  }
+  .me .presentation {
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
+  }
+  .me .info h1::after {
+    width: 100%;
+  }
+  .me .info {
+    text-align: center;
+    width: 330px;
+  }
   .dialog p {
     line-height: 1.5em;
     clear: both;
@@ -574,4 +687,10 @@ code {
     line-height: 1.61em;
     margin-top: 8px;
   }
+}
+
+@media print {
+ /* .me {
+    display: none;
+  }*/
 }

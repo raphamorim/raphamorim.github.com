@@ -1,22 +1,31 @@
 {% include header.html %}
-{% include nav.html %}
+
+<div class='me'>
+  <div class='container'>
+    <div class='presentation'>
+      <div class='info'>
+        <h1>Raphael Amorim</h1>
+        <div class='info-details'>
+          <p>Github: <a href="https://github.com/raphamorim">@raphamorim</a></p>
+          <p>Twitter: <a href="https://twitter.com/raphamorims">@raphamorims</a></p>
+          <p>Linkedin: <a href="https://www.linkedin.com/in/hugoraphael/">linkedin.com/in/hugoraphael</a></p>
+          <br/>
+          <p><i><a href="mailto:rapha850@gmail.com">rapha850@gmail.com</a></i></p>
+          <p><i><a href="https://raphamorim.io">https://raphamorim.io</a></i></p>
+        </div>
+      </div>
+      <div class='image'>
+        <img src="assets/images/react-berlin-short.jpg">
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class='main'>
-  <div class="container">
-    <h2 class="container-topic">Recent Articles</h2>
-    <ul id="posts">
-      {% assign posts = paginator.posts | where:"language", "en" %}
-      {% for post in posts %}
-        {% unless post.draft %}
-          <li class="post">
-            <a class="post-title-link" href="{{ post.url }}">
-              <h2 class="post-title">{{ post.title }}</h2>
-            </a>
-            <span class="post-date">{{ post.date | date:"%b %d, %Y" }}</span>
-          </li>
-        {% endunless %}
-      {% endfor %}
-    </ul>
+  <div class='container space'>
+    <div class='container-dialog'>
+      {{ content }}
+    </div>
   </div>
 </div>
 
