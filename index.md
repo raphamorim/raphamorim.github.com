@@ -103,27 +103,28 @@ Escapades in research and development, ranging from serious research projects to
 
 <div class="sections">
 	<div class="section">
-		<div class="date">Rio terminal</div>
-		<div class="title">I wrote a terminal called Rio, which is built over WebGPU, WebAssembly and Rust. The WebGPU API makes it suitable for general purpose graphics and compute on the GPU.</div>
-	</div>
-	<div class="section">
-		<div class="date">Nov 2018</div>
-		<div class="title">Writing Your Own React Renderer - React Day Berlin</div>
-	</div>
-	<div class="section">
-		<div class="date">Sep 2017</div>
-		<div class="title">Understanding Memory Behavior on NodeJS - The Conf</div>
-	</div>
-	<div class="section">
-		<div class="date">Nov 2016</div>
-		<div class="title">Using Canvas Components - Graphical Web UK</div>
-	</div>
-	<div class="section">
-		<div class="date">Jul 2016</div>
-		<div class="title">The Mighty WebGL - Free Software International Forum</div>
-	</div>
-	<div class="section">
-		<div class="date">Aug 2015</div>
-		<div class="title">500 Days of Open Source - BrazilJs</div>
+		<div class="date">Nov 2022 – Present</div>
+		<div class="project-info">
+			<strong>Viaplay</strong>, <i>Senior Software Engineer</i><br/>
+			Currently working on creating tooling and infrastructure ready for Rust in Viaplay, teaching the language in internal workshops and creating the first Rust microservices in the company. Also doing daily tasks that consists in developing on backend and on the frontend with Reactjs.</p><br/><br/></div>
 	</div>
 </div> -->
+
+## Volunteering
+
+<div class="sections">
+	<div class="section">
+		<div class="project">Teacher</div>
+		<div class="project-info">
+			Django Girls (2015-2017)
+			<p>Django Girls is a non-profit organization that empowers and helps women to organize free, one-day programming workshops by providing tools, resources and support.</p><br/><br/></div>
+	</div>
+	<div class="section">
+		<div class="project">Teacher</div>
+		<div class="project-info">
+			Mozilla (2015-2016)
+			<p>The Rio Mozilla Club was a social project that seeks to transform Lan Centers in multidisciplinary areas of informal learning and exchange of experience in digital culture. We want to make web users in content producers and not just consumers of media.</p>
+			<p>We believe digital skills are essential for participation in the 21 century and everyone can take more advantage about the knowledge in the many areas of Internet, Web and content creation.<br/><br/></p>
+		</div>
+	</div>
+</div>
