@@ -5,3 +5,4 @@ _site
 package-lock.json
 yarn.lock
 .jekyll-cache
+.jekyll-metadata

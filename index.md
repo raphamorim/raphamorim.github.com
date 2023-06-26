@@ -27,6 +27,55 @@ I also like to create music. If you want to listen, check out [Apple Music](http
 	</div>
 </div>
 
+## Employment
+
+<div class="sections">
+	<div class="section">
+		<div class="experience">Jan 2021 – Present</div>
+		<div class="project-info">
+			<strong>Viaplay</strong>, <i>Senior Software Engineer</i><br/>
+			Stockholm, Sweden<br/>
+			Currently working on creating tooling and infrastructure ready for Rust in Viaplay, teaching the language in internal workshops and creating the first Rust microservices in the company.<br/></div>
+	</div>
+	<div class="section">
+		<div class="experience">Aug 2020 – Dec 2020</div>
+		<div class="project-info">
+			<strong>Spotify</strong>, <i>Software Engineer III</i><br/>
+			Stockholm, Sweden<br/>
+			Core developer of an editor for music publishers and internal content editors.<br/></div>
+	</div>
+	<div class="section">
+		<div class="experience">Feb 2018 – May 2020</div>
+		<div class="project-info">
+			<strong>GoDaddy</strong>, <i>Software Development Engineer III</i><br/>
+			USA - Remote<br/>
+			Core developer of GoCentral Website Builder.<br/></div>
+	</div>
+	<div class="section">
+		<div class="experience">Jul 2016 – Feb 2018</div>
+		<div class="project-info">
+			<strong>Globo.com</strong>, <i>Software Developer</i><br/>
+			Rio de Janeiro, Brazil<br/>
+			Globo.com is the web portal of the Brazil-based Globo Organization, the largest media group in Latin America. The website is one of the largest web portals in Brazil, delivering news, entertainment and sports content to 30 million unique users per day.<br/></div>
+	</div>
+	<div class="section">
+		<div class="experience">Oct 2015 – Jun 2016</div>
+		<div class="project-info">
+			<strong>FLAGCX</strong>, <i>Freelance Software Developer</i><br/>
+			Rio de Janeiro, Brazil<br/>
+			As a startup inside a big company, our small team design, build and maintain products that support Business Intelligence teams automating operational tasks, creating metrics and using data visualization techniques to get business insights.
+		</div>
+	</div>
+	<div class="section">
+		<div class="experience">Oct 2013 – Sep 2015</div>
+		<div class="project-info">
+			<strong>Videolog.tv</strong>, <i>Intern / Junior Developer</i><br/>
+			Rio de Janeiro, Brazil<br/>
+			Videolog is a Brazilian version of Youtube, it was born before the famous video portal but have not achieved the same success.
+		</div>
+	</div>
+</div>
+
 ## Talks
 
 <div class="sections">
@@ -99,16 +148,18 @@ Escapades in research and development, ranging from serious research projects to
 	</div>
 </div>
 
-<!-- ## Employment
+Worth mentioning other projects that I have created:
 
-<div class="sections">
-	<div class="section">
-		<div class="date">Nov 2022 – Present</div>
-		<div class="project-info">
-			<strong>Viaplay</strong>, <i>Senior Software Engineer</i><br/>
-			Currently working on creating tooling and infrastructure ready for Rust in Viaplay, teaching the language in internal workshops and creating the first Rust microservices in the company. Also doing daily tasks that consists in developing on backend and on the frontend with Reactjs.</p><br/><br/></div>
-	</div>
-</div> -->
+Lucario - A color scheme/theme with more than half million downloads, Github: [github.com/raphamorim/lucario](https://github.com/raphamorim/lucario/).
+
+Native-CSS - A conversor of pure CSS to javascript literal objects or React Style objects. It was used by Google in few projects for many years. Github: [github.com/raphamorim/native-css](https://github.com/raphamorim/native-css).
+
+Origamijs - Lightweight Library to create using HTML5 Canvas. Origamijs was used by Mozilla and other code schools to teach programming for kids. Github [github.com/raphamorim/origami.js](https://github.com/raphamorim/origami.js).
+
+Kyoto - Programming language LLVM-based designed to build WebAssembly written in C++. [github.com/raphamorim/kyoto](https://github.com/raphamorim/kyoto).
+
+<br/>
+
 
 ## Volunteering
 

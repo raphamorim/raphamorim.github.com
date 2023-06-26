@@ -161,6 +161,14 @@ h3 {
   line-height: 1.4em;
 }
 
+.sections .experience {
+  width: 80px;
+  text-align: left;
+  margin-right: 16px;
+  font-size: 14px;
+  line-height: 1.4em;
+}
+
 .section .title {
   line-height: 1.4em;
   width: 80%;
