@@ -150,16 +150,15 @@ Escapades in research and development, ranging from serious research projects to
 
 Worth mentioning other projects that I have created:
 
-Lucario - A color scheme/theme with more than half million downloads, Github: [github.com/raphamorim/lucario](https://github.com/raphamorim/lucario/).
+Lucario - *A color scheme/theme with more than half million downloads, Github: [github.com/raphamorim/lucario](https://github.com/raphamorim/lucario/)*.
 
-Native-CSS - A conversor of pure CSS to javascript literal objects or React Style objects. It was used by Google in few projects for many years. Github: [github.com/raphamorim/native-css](https://github.com/raphamorim/native-css).
+Native-CSS - *A conversor of pure CSS to javascript literal objects or React Style objects. It was used by Google in few projects for many years. Github: [github.com/raphamorim/native-css](https://github.com/raphamorim/native-css)*.
 
-Origamijs - Lightweight Library to create using HTML5 Canvas. Origamijs was used by Mozilla and other code schools to teach programming for kids. Github [github.com/raphamorim/origami.js](https://github.com/raphamorim/origami.js).
+Origamijs - *Lightweight Library to create using HTML5 Canvas. Origamijs was used by Mozilla and other code schools to teach programming for kids. Github [github.com/raphamorim/origami.js](https://github.com/raphamorim/origami.js)*.
 
-Kyoto - Programming language LLVM-based designed to build WebAssembly written in C++. [github.com/raphamorim/kyoto](https://github.com/raphamorim/kyoto).
+Kyoto - *Programming language LLVM-based designed to build WebAssembly written in C++. [github.com/raphamorim/kyoto](https://github.com/raphamorim/kyoto)*.
 
 <br/>
-
 
 ## Volunteering
 
