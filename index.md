@@ -123,7 +123,7 @@ Escapades in research and development, ranging from serious research projects to
 		<div class="project-info">I wrote a terminal called Rio, which is built over WebGPU, WebAssembly and Rust. The WebGPU API makes it suitable for general purpose graphics and compute on the GPU.<br/><br/>
 		Rio terminal is largely used by many developers nowadays, having featured multiple times into Github's trending projects.<br/><br/>
 		Github: <a href="https://github.com/raphamorim/rio">https://github.com/raphamorim/rio</a><br/>
-		Webiste: <a href="https://raphamorim.io/rio/">https://raphamorim.io/rio</a><br/>
+		Website: <a href="https://raphamorim.io/rio/">https://raphamorim.io/rio</a><br/>
 		Hacker News: <a href="https://news.ycombinator.com/item?id=36057687">https://news.ycombinator.com/item?id=36057687</a><br/>
 		Product Hunt: <a href="https://www.producthunt.com/posts/rio-terminal">https://www.producthunt.com/posts/rio-terminal</a><br/>
 		<br/>
