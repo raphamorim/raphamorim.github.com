@@ -81,7 +81,7 @@ I also like to create music. If you want to listen, check out [Apple Music](http
 <div class="sections">
 	<div class="section">
 		<div class="date">Nov 2023</div>
-		<div class="title">Bring Gameboy alive in the Web with Rust and WebAssembly - RustLab Italy</div>
+		<div class="title"><a href="https://www.youtube.com/watch?v=wvccOkvpbY0">Bring Gameboy alive in the Web with Rust and WebAssembly</a> - RustLab Italy</div>
 	</div>
 	<div class="section">
 		<div class="date">Jul 2019</div>
