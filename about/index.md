@@ -3,7 +3,7 @@ layout: about
 class: about
 title: 'About'
 language: 'en'
-description: "I am Raphael Amorim. Software Developer Engineer. I love Japanese culture (親日), 70s/80s songs and a lot of 8bit art."
+description: "Welcome to my humble little spot at internet"
 ---
 
 ## Olá • Hello • こんにちは
@@ -14,7 +14,7 @@ Previously, I worked at companies like Viaplay, Spotify, GoDaddy, and Globo.com.
 
 I was responsible for Viaplay's adoption of the Rust language. I built the starter infrastructure, released the first service for production, and actively worked on developing a Rust culture, which led to the language's adoption in the upcoming years, along with many other feats. [See when it all started](https://www.linkedin.com/posts/hugoraphael_i-dont-post-very-often-in-the-linkedin-but-activity-6975346956734738432-Csqi).
 
-I wrote a book about WebAssembly in Portuguese.
+I wrote [a book about WebAssembly in Portuguese](https://www.casadocodigo.com.br/products/livro-webassembly).
 
 In 2015, I was one of the most active software developers in the world on GitHub, having made meaningful contributions to open-source projects for 513 days in a row.
 

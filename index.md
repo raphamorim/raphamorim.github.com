@@ -1,33 +1,24 @@
 ---
-layout: home
-class: home
+layout: about
+class: about
 title: 'Raphael Amorim'
 language: 'en'
 description: "I am Raphael Amorim. Software Developer Engineer. I love Japanese culture (親日), 70s/80s songs and a lot of 8bit art."
 ---
 
-## About
+## Olá • Hello • こんにちは
 
-My name is Raphael Amorim, and I'm a developer.
+My name is Raphael Amorim.
 
-Previously, I worked at companies like Viaplay, Spotify, GoDaddy, and Globo.com. I have been a speaker at a few [conferences](#talks).
+Previously, I worked at companies like Viaplay, Spotify, GoDaddy, and Globo.com. I have been a speaker at a few conferences.
 
 I was responsible for Viaplay's adoption of the Rust language. I built the starter infrastructure, released the first service for production, and actively worked on developing a Rust culture, which led to the language's adoption in the upcoming years, along with many other feats. [See when it all started](https://www.linkedin.com/posts/hugoraphael_i-dont-post-very-often-in-the-linkedin-but-activity-6975346956734738432-Csqi).
 
+I wrote [a book about WebAssembly in Portuguese](https://www.casadocodigo.com.br/products/livro-webassembly).
+
 Currently, I am having fun building a terminal emulator written in Rust, called [Rio](https://github.com/raphamorim/rio).
 
-I also like to create music. If you want to listen, check out [Apple Music](https://music.apple.com/se/artist/raphael-amorim/1547161397?l=en) or [Spotify](https://open.spotify.com/artist/6Ij2Lu765q7pjWuXHOUF0s).
-
-## Books
-
-<div class="sections">
-	<div class="section">
-		<div class="date">Aug 2023</div>
-		<div class="title">Desmitificando WebAssembly (English title: Demystifying WebAssembly)</div>
-	</div>
-</div>
-
-## Employment
+<!-- ## Employment
 
 <div class="sections">
 	<div class="section">
@@ -115,7 +106,7 @@ I also like to create music. If you want to listen, check out [Apple Music](http
 			Working as a frontend developer (HTML5, CSS3, JS) and backend developer (Java and PHP).<br/>
 		</div>
 	</div>
-</div>
+</div> -->
 
 ## Talks
 
@@ -158,7 +149,7 @@ I also like to create music. If you want to listen, check out [Apple Music](http
 	</div>
 </div>
 
-## Projects
+<!-- ## Projects
 
 Escapades in research and development, ranging from serious research projects to one-off diversions.
 
@@ -201,8 +192,8 @@ Native-CSS - *A conversor of pure CSS to javascript literal objects or React Sty
 
 Origamijs - *Lightweight Library to create using HTML5 Canvas. Origamijs was used by Mozilla and other code schools to teach programming for kids. Github [github.com/raphamorim/origami.js](https://github.com/raphamorim/origami.js)*.
 
-<br/>
-
+<br/> -->
+<!-- 
 ## Volunteering
 
 <div class="sections">
@@ -221,3 +212,4 @@ Origamijs - *Lightweight Library to create using HTML5 Canvas. Origamijs was use
 		</div>
 	</div>
 </div>
+ -->
