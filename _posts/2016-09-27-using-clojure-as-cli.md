@@ -2,6 +2,7 @@
 layout: post
 title: 'Setup Clojure in OS X'
 description: "Setting up Clojure as CLI, including REPL support. The following instructions are for installing Clojure on Mac OS X 10.11 (El Captain). Although they should work for any *nix based system."
+archived: true
 language: 'en'
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title: 'Why would you consider switching to Vim?'
 description: 'I started using vim a little time, and I ended up in this period, left the Sublime Text and the Atom. I confess that I still use when I want to use some feature of the editors'
+archived: true
 language: 'en'
 image: 'assets/images/posts/vim.jpg'
 ---

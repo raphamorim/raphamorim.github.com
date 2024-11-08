@@ -2,6 +2,7 @@
 layout: post
 title: 'Challenge Accepted: Write code every single day'
 description: "Challenge Accepted! Yeah, from now i'll write code every single day...."
+archived: true
 language: 'en'
 image: 'assets/images/posts/code-every-single-day.jpg'
 ---

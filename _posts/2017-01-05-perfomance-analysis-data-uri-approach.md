@@ -2,6 +2,7 @@
 layout: post
 title: 'Perfomance Analysis #1: Data URIs'
 description: 'The idea of this article is to demystify some concepts about Data URIs related to perfomance. The data URI is a uniform resource identifier (URI) scheme that provides a way to include data in-line in web pages...'
+archived: true
 language: 'en'
 ---
 

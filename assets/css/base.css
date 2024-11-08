@@ -155,7 +155,6 @@ h3 {
 .post {
   position: relative;
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
 
 .container-topic {
@@ -375,9 +374,6 @@ nav .container {
 }
 .post-page-content h3 {
   margin: 20px 0 18px 0;
-}
-.post-comments {
-  padding: 25px;
 }
 #infscr-loading {
   text-align: center;

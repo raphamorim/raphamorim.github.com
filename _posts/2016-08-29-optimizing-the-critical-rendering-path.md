@@ -2,6 +2,7 @@
 layout: post
 title: 'Optimizing the critical rendering path'
 description: "This guide will not bring you a magic formula to optimize critical render path. When the subject is web performance: there's no magic formula. Analyze performance is careful and meticulous process, and it can bring different results based on various existing variables."
+archived: true
 language: 'en'
 image: 'assets/images/posts/webperf-1.jpg'
 ---

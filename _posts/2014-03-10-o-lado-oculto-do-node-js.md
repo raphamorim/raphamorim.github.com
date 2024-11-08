@@ -2,6 +2,7 @@
 layout: post
 title: 'O lado oculto do Node.js'
 description: 'Mesmo o Node sendo aclamado por muitos programadores, ele possui defeitos assim como a maioria das ferramentas.'
+archived: true
 language: 'pt-br'
 image: 'assets/images/posts/why-node-js.jpg'
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: "A minha missão no Braziljs"
 description: "Há algumas semanas atrás eu palestrei no BrazilJs, evento que se auto intitula a maior conferência de JavaScript do Universo e nessa edição superou o recorde mundial com 1.300 participantes presentes. Logo no meu primeiro Braziljs eu estava indo para palestrar na maior conferência de JavaScript do mundo, mas eu tinha uma missão pessoal muito maior."
+archived: true
 language: 'pt-br'
 image: 'assets/images/posts/braziljs2015/me.png'
 ---

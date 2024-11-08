@@ -3,6 +3,7 @@ layout: post
 title: 'Draw particles using HTML5 Canvas'
 description: 'Canvas for me has been the most fun technology in HTML5. The
 amount of cool things that can create only drawing geometric figures is very broad.'
+archived: true
 language: 'en'
 image: 'assets/images/experiments/particles.jpg'
 ---

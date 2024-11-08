@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "React Fiber - O que muda agora?"
+archived: true
 language: 'pt-br'
 ---
 

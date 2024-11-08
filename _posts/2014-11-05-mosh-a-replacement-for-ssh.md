@@ -2,6 +2,7 @@
 layout: post
 title: 'Mosh, a replacement for SSH'
 description: 'The mosh is a tool used to connect from a client computer to a server over the Internet to perform a remote terminal.'
+archived: true
 language: 'en'
 image: 'assets/images/posts/mosh-and-lucario.jpg'
 ---

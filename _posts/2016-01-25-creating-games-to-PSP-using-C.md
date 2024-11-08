@@ -2,6 +2,7 @@
 layout: post
 title: "Creating Games to PSP using C"
 description: 'By the time I turned on my PSP, I realized that most of the games I never was not bought. Do not get me wrong, but for a kid in school it was like a dream.'
+archived: true
 language: 'en'
 image: 'assets/images/posts/psp.jpg'
 ---

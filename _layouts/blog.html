@@ -5,7 +5,7 @@
   <div class="container space">
     <h2 class="container-topic">List of Articles</h2>
     <ul id="posts">
-      {% assign posts = site.posts | where:"language", page.language %}
+      {% assign posts = site.posts | where: "archived", page.archived %}
       {% for post in posts %}
         {% unless post.draft %}
           <li class="post">

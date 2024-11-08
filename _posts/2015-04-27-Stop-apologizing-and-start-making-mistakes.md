@@ -2,6 +2,7 @@
 layout: post
 title: 'Stop apologizing and start making mistakes'
 description: "This article is the result of the experience I have gained performing consulting and observing the attitude of many developers."
+archived: true
 language: 'en'
 image: 'assets/images/posts/kaka-player.jpeg'
 ---

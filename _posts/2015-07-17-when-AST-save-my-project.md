@@ -2,6 +2,7 @@
 layout: post
 title: "When AST has saved my Project"
 description: "For people who don't now. I've created ranza for check unusable dependencies. Why? To avoid accumulation of dependencies that are not being used...."
+archived: true
 language: 'en'
 image: 'assets/images/posts/code-ast.jpg'
 ---

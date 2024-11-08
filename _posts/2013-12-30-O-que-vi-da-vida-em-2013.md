@@ -2,6 +2,7 @@
 layout: post
 title: 'O que vi da vida em 2013'
 description: 'Dois mil e treze foi realmente um ano que marcou minha vida, de uma forma especial na parte profissional...'
+archived: true
 language: 'pt-br'
 image: 'assets/images/posts/ano-2013.jpg'
 ---
