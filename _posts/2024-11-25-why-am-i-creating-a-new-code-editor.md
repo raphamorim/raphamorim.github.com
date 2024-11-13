@@ -21,13 +21,13 @@ They also tend to look the same:
 
 Which got me thinking, why do I feel that's lacking something whenever I use any of them? It's because they are "too much of everything and less of code editing".
 
-The editor that I working on is my personal attempt to get back to the foundation of what a code editor should do well: edit code, and to achieve in the current state of editors, is required to seek innovation.
+The editor that I working on is my personal attempt to get back to the foundation of what a code editor should do well: edit code. In order to achieve it in the current state of editors, it is required to seek innovation.
 
 ### What's innovation?
 
 That's actually a very good question. You can google it and you would still find different kind of answers. If you also search on tech forums, you would find that everyone have they own perception of innovation.
 
-For example, let's jump into browsers universe: Many people would consider [Arc browser](https://arc.net/) as an innovative user experience on browsers, but some wouldn't. Then you could find people that would consider a [Firefox](https://www.mozilla.org/en-US/firefox/) performance improvement based on a new architecture as an innovation example, but also would have people that would disagree.
+For example, let's jump into browsers universe: Many people would consider [Arc browser](https://arc.net/) as an innovative user experience, but some wouldn't. Then you could find people that would consider a [Firefox](https://www.mozilla.org/en-US/firefox/) performance improvement based on a new architecture as an innovation example, but also would have people that would disagree.
 
 In the editors universe you can actually create a long (seriously, would be very long) discussion about what and which features are innovative on Elvis, VI, Emacs, LSE, DreamWeaver, Atom, Sublime Text, Notepad, Brackets, Kile and so many others.
 
@@ -35,7 +35,7 @@ In my humble opinion, I would say innovation is quite personal and it depends a 
 
 So if the percetion of innovation is personal, I can tell some of my goals on text editor that I working on.
 
-• Reivent mouse free editors, a text editor should be capable to deliver as much without require a long learning curve, in fact it should fit from a programmer to a non-programmer without having few days to catch up.
+• Reinvent mouse free editors, a text editor should be capable to deliver as much without require a long learning curve, in fact it should fit from a programmer to a non-programmer without having few days to catch up.
 
 • Keyboard based movement should not feel like you are playing an instrument but actually be short and effective.
 
