@@ -33,7 +33,7 @@ In the editors universe you can actually create a long (seriously, would be very
 
 In my humble opinion, I would say innovation is quite personal and it depends a lot of which kind of background, personality and taste that you have. There is a lot of stuff that is built on popular or commom taste but would not necessarily be innovative.
 
-So if the percetion of innovation is personal, I can tell some of my goals on text editor that I working on.
+So if the percetion of innovation is personal, I can tell some of my goals on text editor that I am working on.
 
 • Reinvent mouse free editors, a text editor should be capable to deliver as much without require a long learning curve, in fact it should fit from a programmer to a non-programmer without having few days to catch up.
 
@@ -41,7 +41,7 @@ So if the percetion of innovation is personal, I can tell some of my goals on te
 
 • Keyboard based movement should not feel like you are playing an instrument but actually be short and effective.
 
-• A editor that can actually adjust to your way of typing and self adjust for people to increase typing speed. I have been working lately with researchers on this and it is still a lot to sort out.
+• An editor that can actually adjust to your way of typing and self adjust to increase typing speed. I have been working lately with researchers on this and it is still a lot to sort out.
 
 • Plug and play UI, you should be capable to not only configure an editor to look yours but actually make it yours. This feature is a bit complex to explain in a single bullet point and I definitely got carried about over adding this (lol).
 
