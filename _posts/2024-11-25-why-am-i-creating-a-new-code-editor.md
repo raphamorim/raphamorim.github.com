@@ -13,7 +13,7 @@ With all that being said, let's have a chat.
 
 Have you ever thought that a lot of code editors lately have become too much of everything and less of code editing?
 
-Most of the existant code editors are a great piece of software: fast, configurable, AI support, plugins, themes, contain built-in terminals, file tree views and etecetera. I cannot complain about they cannot do, they basically can do everything you would ever need!
+Most of the existant code editors are a great piece of software: fast, configurable, AI support, plugins, themes, contain built-in terminals, file tree views and etecetera. I cannot complain about what they cannot do, they basically can do everything you would ever need!
 
 They also tend to look the same:
 
