@@ -49,7 +49,7 @@ Lately, my work has been interview and sit with different programmers and non-pr
 
 ### Tech Stack (so far)
 
-This text editor already exist and the prototype is actually cross-platform.
+This text editor already exist and the prototype it is cross-platform.
 
 • Written in Rust
 
@@ -59,7 +59,7 @@ This text editor already exist and the prototype is actually cross-platform.
 
 I'm not going to talk about the "why" for any of this. I'm just laying out the tech stack as-is for people who are interested. Take it as you will.
 
-### When is gonna it released?
+### When it will be released?
 
 No idea!
 
