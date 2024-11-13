@@ -348,6 +348,7 @@ nav .container {
   font-size: 18px;
   line-height: 1.5em;
   margin-top: 14px;
+  color:#000;
 }
 .post a {
   cursor: pointer;
@@ -369,6 +370,7 @@ nav .container {
 }
 .post-page-content h3 {
   margin: 20px 0 18px 0;
+  text-decoration: underline;
 }
 #infscr-loading {
   text-align: center;
