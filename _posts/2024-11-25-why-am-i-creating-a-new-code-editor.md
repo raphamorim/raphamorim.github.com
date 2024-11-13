@@ -66,6 +66,7 @@ No idea!
 This year has been quite busy for me as a new parent and the few time that I had was to work on [Rio terminal](https://github.com/raphamorim/rio) and create the editor prototype. As mentioned before, the current step has been iterate on personas and keep stabilizing the editor.
 
 I hope you that you found this chat interesting. Given its our first time talking, there were so many more things I could've covered but I'll save them for future.
+
 _
 
 If you want to keep up to date, follow me on [Twitter](https://x.com/raphamorims), [Bsky](https://bsky.app/profile/mustache.bsky.social) or [Mastodon](https://mas.to/@mustache).
