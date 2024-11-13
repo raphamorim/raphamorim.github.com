@@ -37,6 +37,8 @@ So if the percetion of innovation is personal, I can tell some of my goals on te
 
 • Reinvent mouse free editors, a text editor should be capable to deliver as much without require a long learning curve, in fact it should fit from a programmer to a non-programmer without having few days to catch up.
 
+• Hybrid, it can be used on GUI or/and terminal, you will be able to use the editor in any context you want to. I would love to share and show more on this but I do no want to spoil details.
+
 • Keyboard based movement should not feel like you are playing an instrument but actually be short and effective.
 
 • A editor that can actually adjust to your way of typing and self adjust for people to increase typing speed. I have been working lately with researchers on this and it is still a lot to sort out.
