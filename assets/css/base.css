@@ -315,7 +315,7 @@ nav .container {
   font-size: 24px;
   text-align: left;
   margin-top: 10px;
-  color: rgba(0, 0, 0, 0.498039);
+  color: #333;
   padding: 5px 0 15px;
 }
 .post-page-title {
@@ -371,6 +371,7 @@ nav .container {
 .post-page-content h3 {
   margin: 20px 0 18px 0;
   text-decoration: underline;
+  color: #333;
 }
 #infscr-loading {
   text-align: center;
