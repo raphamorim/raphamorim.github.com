@@ -10,7 +10,7 @@ description: "I am Raphael Amorim. Software Developer Engineer. I love Japanese 
 
 My name is Raphael Amorim.
 
-Currently, I am working at [Charm](https://charm.sh/) to make the command line glamorous. I am also developing a code editor called Boo and maintaining the [Rio](https://github.com/raphamorim/rio) terminal emulator.
+Currently, I am working at [Charm](https://charm.sh/) to make the command line glamorous. I am also developing a code editor called [Boo](https://raphamorim.io/why-am-i-creating-a-new-code-editor) and maintaining the [Rio](https://github.com/raphamorim/rio) terminal emulator.
 
 Previously, I worked at companies like Viaplay, Spotify, GoDaddy, and Globo.com. I have been a speaker at a few conferences.
 
