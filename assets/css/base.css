@@ -49,9 +49,16 @@ b, strong {
 
 @font-face {
   font-family: 'ShipporiMincho';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/ShipporiMincho/ShipporiMincho-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'ShipporiMincho';
   font-style: bold;
   font-weight: 600;
-  src: url('../fonts/ShipporiMincho/ShipporiMincho-bOLD.ttf') format('truetype'), /* Safari, Android, iOS */
+  src: url('../fonts/ShipporiMincho/ShipporiMincho-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
 }
 
 body {
@@ -141,7 +148,7 @@ h3 {
 .dot {
   height: 18px;
   width: 18px;
-  background-color: rgba(0,0,0,.8);
+  background-color: #2a33d4;
   border-radius: 50%;
   display: inline-block;
 }
@@ -224,15 +231,15 @@ nav .container {
 .bar-menu ul a li {
   float: left;
   text-transform: uppercase;
-  color: #9b9999;
+  color: #000;
   padding: 5px 10px 5px 10px;
   margin-right: 5px;
 }
 .bar-menu ul a.active li {
-  color: rgba(0, 0, 0, .8);
+  color: rgb(12, 80, 255);
 }
 .bar-menu ul a:hover li {
-  color: rgba(0, 0, 0, .8);
+  color: rgb(12, 80, 255);
 }
 
 /* Nav Toogle */
@@ -279,10 +286,12 @@ nav .container {
 }
 .container-dialog h1 {
   font-size: 70px;
+  color: #2a33d4;
   padding-bottom: 10px;
 }
 .container-dialog h2 {
   font-size: 24px;
+  color: #2a33d4;
   margin: 28px 0 24px 0;
 }
 .container-dialog p {
@@ -356,7 +365,7 @@ nav .container {
 .post-page-content a, .container-dialog a, #talks a {
   cursor: pointer;
   color: #000;
-  border-bottom: 2px dotted #333;
+  border-bottom: 1px solid rgb(12, 80, 255);
   text-decoration: none;
 }
 .post-page-content img {

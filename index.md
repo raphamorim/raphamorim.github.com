@@ -10,13 +10,13 @@ description: "I am Raphael Amorim. Software Developer Engineer. I love Japanese 
 
 My name is Raphael Amorim.
 
+Currently, I am working at [Charm](https://charm.sh/) to make the command line glamorous. I am also developing a code editor called Boo and maintaining the [Rio](https://github.com/raphamorim/rio) terminal emulator.
+
 Previously, I worked at companies like Viaplay, Spotify, GoDaddy, and Globo.com. I have been a speaker at a few conferences.
 
 I was responsible for Viaplay's adoption of the Rust language. I built the starter infrastructure, released the first service for production, and actively worked on developing a Rust culture, which led to the language's adoption in the upcoming years, along with many other feats. [See when it all started](https://www.linkedin.com/posts/hugoraphael_i-dont-post-very-often-in-the-linkedin-but-activity-6975346956734738432-Csqi).
 
 I wrote [a book about WebAssembly in Portuguese](https://www.casadocodigo.com.br/products/livro-webassembly).
-
-Currently, I am having fun building a terminal emulator written in Rust, called [Rio](https://github.com/raphamorim/rio).
 
 <!-- ## Employment
 
