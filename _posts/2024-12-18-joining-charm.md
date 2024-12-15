@@ -4,6 +4,7 @@ title: "Joining Charm"
 archived: false
 language: 'en'
 image: 'assets/images/posts/rio-3d.png'
+description: "Three years ago, to be precise Oct 2021, I started Rio Terminal because I wanted to learn Rust and wanted to have a project that I would use in my daily life. I always loved terminals and thought well why not? Truth is that, was such a good investment of my time, not only did I learn Rust but I also..."
 ---
 
 Image above: Rio terminal logo made with Charm classic style by [Christian Rocha](https://x.com/meowgorithm).
