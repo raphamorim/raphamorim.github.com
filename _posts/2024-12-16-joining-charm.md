@@ -9,7 +9,7 @@ description: "Three years ago, to be precise Oct 2021, I started Rio Terminal be
 
 Image above: Rio terminal logo made with Charm classic style by [Christian Rocha](https://x.com/meowgorithm).
 
-tl;dr: I am so happy to announce that I am joining Charmbracelet next year!
+tl;dr: I am so happy to announce that I am joining Charm next year!
 
 --
 
@@ -17,7 +17,7 @@ Three years ago, to be precise Oct 2021, I started Rio Terminal because I wanted
 
 Time flies like crazy, during Rio development I learned a lot about how a terminal works and user interfaces on terminals (TUI), also got to know different terminal maintainers, TUI libraries, and TUI maintainers... ok I think you got it already. I was completely immersed in the terminal world.
 
-Why am I talking about Rio in this article? Well, because of Rio Terminal's development, I ended up being connected to a company that I have been a fan of (yes, publically a fan) since they started: Charmbracelet. They make terminals look so fun! A terminal does not necessarily need to be a ~boring~ black screen with white text. It can look fantastic, fancy, and glamorous.
+Why am I talking about Rio in this article? Well, because of Rio Terminal's development, I ended up being connected to a company that I have been a fan of (yes, publically a fan) since they started: Charm. They make terminals look so fun! A terminal does not necessarily need to be a ~boring~ black screen with white text. It can look fantastic, fancy, and glamorous.
 
 Not only do they make terminals look good but they do it in the best [Open Source](https://github.com/charmbracelet/) style. During my first talk with Charm peeps, I was amazed at how talented and skilled each one of them is, so being realistic, I was surprised that I got an offer to work there <3
 
