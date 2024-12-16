@@ -4,7 +4,7 @@ title: "Joining Charm"
 archived: false
 language: 'en'
 image: 'assets/images/posts/rio-wish.png'
-description: "Three years ago, to be precise Oct 2021, I started Rio Terminal because I wanted to learn Rust and wanted to have a project that I would use in my daily life. I always loved terminals and thought well why not? Truth is that, was such a good investment of my time, not only did I learn Rust but I also..."
+description: "Two years ago, to be precise Oct 2022, I started Rio Terminal because I wanted to learn Rust and wanted to have a project that I would use in my daily life. I always loved terminals and thought well why not? Truth is that, was such a good investment of my time, not only did I learn Rust but I also..."
 ---
 
 Image above: Wish and Rio made with Charm classic style by [Christian Rocha](https://x.com/meowgorithm).
@@ -13,7 +13,7 @@ tl;dr: I am so happy to announce that I am joining Charm next year!
 
 --
 
-Three years ago, to be precise Oct 2021, I started Rio Terminal because I wanted to learn Rust and wanted to have a project that I would use in my daily life. I always loved terminals and thought well why not? Truth is that, was such a good investment of my time, not only did I learn Rust but I also met tons of great people and learned that I didn't know anything about how a terminal works.
+Two years ago, to be precise Oct 2022, I started Rio Terminal because I wanted to learn Rust and wanted to have a project that I would use in my daily life. I always loved terminals and thought well why not? Truth is that, was such a good investment of my time, not only did I learn Rust but I also met tons of great people and learned that I didn't know anything about how a terminal works.
 
 Time flies like crazy, during Rio development I learned a lot about how a terminal works and user interfaces on terminals (TUI), also got to know different terminal maintainers, TUI libraries, and TUI maintainers... ok I think you got it already. I was completely immersed in the terminal world.
 
