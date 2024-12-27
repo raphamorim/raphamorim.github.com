@@ -40,30 +40,8 @@ b, strong {
   font-weight: bold;
 }
 
-@font-face {
-  font-family: 'ShipporiMincho';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/ShipporiMincho/ShipporiMincho-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
-}
-
-@font-face {
-  font-family: 'ShipporiMincho';
-  font-style: normal;
-  font-weight: 300;
-  src: url('../fonts/ShipporiMincho/ShipporiMincho-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
-}
-
-@font-face {
-  font-family: 'ShipporiMincho';
-  font-style: bold;
-  font-weight: 600;
-  src: url('../fonts/ShipporiMincho/ShipporiMincho-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
-}
-
 body {
-  font: normal normal 20px/1.2em Helvetica, arial;
-  font-family: "ShipporiMincho","Palatino","Georgia","Times New Roman",serif;
+  font-family: "Palatino","Georgia","Times New Roman",serif;
   font-size: 16px;
   background: #FFF;
   color: #666;
