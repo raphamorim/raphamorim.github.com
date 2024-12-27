@@ -6,7 +6,7 @@ language: 'en'
 description: "I am Raphael Amorim. Software Developer Engineer. I love Japanese culture (親日), 70s/80s songs and a lot of 8bit art."
 ---
 
-## Olá • Hello • こんにちは
+## Olá • Hello • Hej •
 
 My name is Raphael Amorim.
 
