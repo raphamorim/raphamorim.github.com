@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+node_modules
+_site
+package-lock.json
+yarn.lock
+.jekyll-cache
+.jekyll-metadata
