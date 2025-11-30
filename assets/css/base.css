@@ -482,3 +482,20 @@ code {
     display: none;
   }
 }
+
+/* Mouse trail effect */
+svg.trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+svg.trail path {
+  fill: none;
+  stroke: #2a33d4;
+  stroke-width: 8px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
