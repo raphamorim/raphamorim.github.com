@@ -15,4 +15,4 @@ Even though I was happy to see alternatives to Twitter, Bluesky and Mastodon nev
 
 Every week on social media, there was a new topic, a new drama. Honestly, I just want to code. I’m not a developer relations person or anything like that. Discussions about whether to use language X or Y just aren’t my thing. I’d rather spend my time building my own language (which I’m actually doing). But if that’s something you enjoy, please don’t feel judged — everyone has different interests, and as long as it doesn’t offend or attack anyone, I think that’s totally fair.
 
-* Arrivederci — because I’m on my way to Italy to speak at RustLab this year.
+Arrivederci — because I’m on my way to Italy to speak at RustLab this year.

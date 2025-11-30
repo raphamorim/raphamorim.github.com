@@ -44,11 +44,12 @@ body {
   font-family: "Palatino","Georgia","Times New Roman",serif;
   font-size: 16px;
   background: #FFF;
-  color: #666;
+  color: rgba(0, 0, 0, 0.85);
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  transition: background-color .25s cubic-bezier(.4,0,.2,1),color .25s cubic-bezier(.4,0,.2,1);
 }
 
 nav {
@@ -63,7 +64,6 @@ h3 {
 .main {
   position: relative;
   width: 100%;
-  margin-top: -20px;
   padding-top: 30px;
 }
 
@@ -72,6 +72,7 @@ h3 {
   margin: 0 auto;
   width: 860px;
   z-index: 1;
+  padding: 20px 0;
 }
 
 .logo {
@@ -124,40 +125,15 @@ h3 {
 }
 
 .dot {
-  height: 18px;
-  width: 18px;
+  height: 28px;
+  width: 28px;
   background-color: #2a33d4;
-  border-radius: 50%;
   display: inline-block;
-}
-
-#posts {
-  position: relative;
-  width: 100%;
-  margin: 40px 0;
-}
-
-.post {
-  position: relative;
-  width: 100%;
-}
-
-.container-topic {
-  text-align: left;
-  margin: 90px 0 30px;
-  font-size: 32px;
 }
 
 @media only screen and (max-width:980px) {
   nav .container, .main .container {
     width: 90%;
-  }
-  .main {
-    margin-top: -50px;
-  }
-  .post p {
-    font-size: 16px;
-    margin-top: 16px;
   }
 }
 
@@ -166,7 +142,6 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: 144px;
   z-index: 2;
   visibility: visible;
 }
@@ -175,104 +150,21 @@ nav .container {
   padding-top: 35px;
 }
 
-#bar-mobile-menu {
-  position: absolute;
-  z-index: 0;
-  width: 100%;
-  background: #FFF;
-  padding: 120px 0 5px 0;
-  opacity: 0;
-  height: 0;
-  margin-top: -80px;
-  /*z-index: 4;*/
-  overflow: hidden;
-  border-bottom: 2px dashed #a5a5a5;
-  box-shadow:0 60px 100px 2px rgba(0,0,0,0.4);
-}
-
-.container.space {
-  margin-top: 50px;
-  margin-bottom: 80px;
-}
-.bar-menu {
-  margin-top: 20px;
-  margin-left: 30px;
-  position: relative;
-  text-align: right;
-  float: right;
-  visibility: visible;
-  display: flex;
-}
-.bar-menu ul {
-  margin-top: 18px;
-}
-.bar-menu ul a li {
-  float: left;
-  text-transform: uppercase;
-  color: #000;
-  padding: 5px 10px 5px 10px;
-  margin-right: 5px;
-}
-.bar-menu ul a.active li {
-  color: rgb(12, 80, 255);
-}
-.bar-menu ul a:hover li {
-  color: rgb(12, 80, 255);
-}
-
-/* Nav Toogle */
-.nav-toggle {
-  float: right;
-  padding: 30px 45px 13px 0;
-  display: none;
-}
-.nav-toggle>span, .nav-toggle span:before, .nav-toggle span:after {
-  cursor: pointer;
-  border-radius: 1px;
-  height: 5px;
-  width: 40px;
-  background: #666;
-  position: absolute;
-  display: block;
-  content: '';
-}
-.nav-toggle span:before {
-  top: -10px;
-}
-.nav-toggle span:after {
-  bottom: -10px;
-}
-.nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
-  transition: all 500ms ease-in-out;
-}
-.nav-toggle.active span {
-  background-color: transparent;
-}
-.nav-toggle.active span:before, .nav-toggle.active span:after {
-  top: 0;
-}
-.nav-toggle.active span:before {
-  transform: rotate(45deg);
-}
-.nav-toggle.active span:after {
-  transform: rotate(-45deg);
-}
-
-/* End of Nav-Toggle */
-.container-dialog {
-  padding: 20px 0;
-}
-.container-dialog h1 {
+h1 {
+  font-family: "EB Garamond", serif;
+  font-style: italic;
   font-size: 70px;
   color: #2a33d4;
   padding-bottom: 10px;
 }
-.container-dialog h2 {
-  font-size: 24px;
+h2 {
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  font-size: 28px;
   color: #2a33d4;
   margin: 28px 0 24px 0;
 }
-.container-dialog p {
+p {
   font-weight: lighter;
   font-style: normal;
   letter-spacing: -0.004em;
@@ -280,69 +172,26 @@ nav .container {
   line-height: 1.5em;
   margin-top: 20px;
 }
-.container-dialog strong {
+strong {
   padding: 0 1px;
   color: rgba(0, 0, 0, 0.5);
 }
 .container-image img {
   height: 500px;
 }
-
-/* Posts */
-.post ul {
-  margin-bottom: 15px;
-}
-.post ul li {
-  margin-top: 20px;
-  margin-bottom: 5px;
-}
-.post-title {
-  font-weight: 300;
-  text-decoration: underline;
-  font-size: 24px;
-  text-align: left;
-  margin-top: 10px;
-  color: #333;
-  padding: 5px 0 15px;
-}
-.post-page-title {
-  font-size: 30px;
-  line-height: 1.2em;
-}
 .post-date {
   text-align: left;
   font-size: 14px;
   text-transform: uppercase;
 }
-.post h3 {
-  margin: 30px 20px -15px 20px;
-  font-size: 20px;
-}
-.post img {
-  position: relative;
-  max-width: 100%;
-  min-width: 95%;
-  max-height: 600px;
-}
 .post-image {
+  width: 100%;
   padding: 15px 0;
 }
-.post p {
-  font-weight: lighter;
-  font-style: normal;
-  letter-spacing: -0.004em;
-  font-size: 18px;
-  line-height: 1.5em;
-  margin-top: 14px;
-  color:#000;
-}
-.post a {
-  cursor: pointer;
-}
-.post-page-content a, .container-dialog a, #talks a {
+a {
   cursor: pointer;
   color: #000;
-  border-bottom: 1px solid rgb(12, 80, 255);
+  border-bottom: 2px solid rgb(12, 80, 255);
   text-decoration: none;
 }
 .post-page-content img {
@@ -441,24 +290,12 @@ code {
 
 /* Medias */
 @media only screen and (max-width:980px) {
-  .bar-menu {
-    display: none;
-  }
-  .nav-toggle {
-    display: block;
-  }
-  .post h2 {
-    font-size: 21px;
-  }
   .github-corner {
     display: none;
   }
 }
 @media only screen and (max-width:600px) {
-  .main {
-    margin-top: -50px;
-  }
-  .post p, .container-dialog p {
+  p {
     font-size: 20px;
   }
   .dialog p {
@@ -474,9 +311,6 @@ code {
   }
   .dialog .btn {
     padding: 10px;
-  }
-  .post {
-    margin: 0 0 30px 0;
   }
   #posts .post-date {
     display: none;

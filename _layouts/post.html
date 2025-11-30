@@ -3,21 +3,17 @@
 
 <div class='main'>
   <div class="container">
-    <ul id="posts">
-      <li class="post post-page">
-        <h2 class="post-title post-page-title">{{ page.title }}</h2>
-        <span class="post-date">{{ page.date | date:"%d %b • %Y" }}</span>
-        <span class="post-break"></span>
+    <h2>{{ page.title }}</h2>
+    <span class="post-date">{{ page.date | date:"%d %b • %Y" }}</span>
+    <span class="post-break"></span>
 
-        {% if page.image %}
-          <img class="post-image" src="/{{ page.image }}">
-        {% endif %}
+    {% if page.image %}
+      <img class="post-image" src="/{{ page.image }}">
+    {% endif %}
 
-        <div class="post-page-content">
-          {{ content }}
-        </div>
-      </li>
-    </ul>
+    <div class="post-page-content">
+      {{ content }}
+    </div>
   </div>
 </div>
 
