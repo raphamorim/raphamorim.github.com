@@ -21,7 +21,7 @@ Since I was a kid, I liked to build Lego blocks. That’s probably what I did th
 
 When programming becomes repetitive, the odds of you creating something that makes people go “wow” are reduced quite a bit. It isn’t a rule, of course. You need to be inspired to make inspiring software.
 
-I always use the example of The [Legend of Zelda: Breath of the Wild](https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild). This game is so well crafted that I know people who don’t even like video games but bought a console just to play it — and once they finished, they sold everything. This is what I’m talking about: taking time to build something so that once people try it, they remember it for as long as they live.
+I always use the example of [The Legend of Zelda: Breath of the Wild](https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild). This game is so well crafted that I know people who don’t even like video games but bought a console just to play it — and once they finished, they sold everything. This is what I’m talking about: taking time to build something so that once people try it, they remember it for as long as they live.
 
 Boo isn’t a business. I don’t need or want to make money out of it. I don’t have a deadline, nor do I want to create another VS Code. I don’t feel like forcing it to happen.
 
