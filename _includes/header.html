@@ -53,6 +53,8 @@
   <!-- <link rel="stylesheet" href="../assets/css/base.min.css" type="text/css" /> -->
 </head>
 <body{% if page.class %} class="{{ page.class }}"{% endif %}>
+  {% if page.url == '/' %}
   <svg class="trail" viewBox="0 0 1 1">
     <path d="" />
   </svg>
+  {% endif %}
