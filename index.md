@@ -5,7 +5,7 @@ language: 'en'
 description: "I am Raphael Amorim. Software Developer Engineer. I love Japanese culture (親日), 70s/80s songs and a lot of 8bit art."
 ---
 
-## Crafting sofware that makes you feel something
+## Welcome to my tiny place on the internet
 
 Hey there, my name is Raphael.
 
