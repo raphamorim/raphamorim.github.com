@@ -7,7 +7,7 @@ keywords: "software, development, programming, system ,rust, javascript, python,
 domain: rapha.land
 commentlinks: true
 feedburnerurl: http://feeds.feedburner.com/raphamorim
-google-analytics-tracking-id: UA-49746836-1
+google-analytics-tracking-id: G-13K8QY0XCQ
 plugins: [jekyll-paginate, jekyll-gist]
 
 source:      .
