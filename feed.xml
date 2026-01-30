@@ -3,27 +3,19 @@ layout: null
 permalink: /feed.xml
 ---
 
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"{% if site.lang %} xml:lang="{{ site.lang }}"{% endif %}>
-  <generator uri="https://rapha.land" version="{{ jekyll.version }}">Raphael Amorim</generator>
-  <link href="{{ page.url | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/atom+xml" />
-  <link href="{{ '/' | prepend: site.baseurl | prepend: site.url }}" rel="alternate" type="text/html" {% if site.lang %}hreflang="{{ site.lang }}" {% endif %}/>
-  <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>{{ '' | prepend: site.baseurl | prepend: site.url | xml_escape }}/</id>
-  <title type="html">{{ site.title | smartify | xml_escape }}</title>
-  {% if site.description %}<subtitle>{{ site.description | xml_escape }}</subtitle>{% endif %}
-
+<rss version="2.0">
+<channel>
+  <title>Raphael Amorim</title>
+  <description>{{ site.description | xml_escape }}</description>
+  <link>{{ page.url | prepend: site.baseurl | prepend: site.url }}</link>
   {% for post in site.posts %}
-    <entry xml:lang="en-us">
-      <title type="html">{{ post.title | smartify | strip_html | replace: '\n', ' ' | strip | xml_escape }}</title>
-      <link href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" rel="alternate" type="text/html" title="{{ post.title | xml_escape }}" />
-      <id>{{ post.url | prepend: site.baseurl | prepend: site.url }}</id>
-      <content type="html" xml:base="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.description | strip | xml_escape }}</content>
-      <summary type="html">{{ post.description | strip_html | replace: '\n', ' ' | strip | xml_escape }}</summary>
-      <updated>{{ post.date }}</updated>
-      <author>
-        <name>Raphael Amorim</name>
-      </author>
-    </entry>
+    <item xml:lang="en-us">
+      <title>{{ post.title | smartify | strip_html | replace: '\n', ' ' | strip | xml_escape }}</title>
+      <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+      <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+      <description>{{ post.description | strip | xml_escape }}</description>
+      <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+    </item>
   {% endfor %}
-</feed>
+</channel>
+</rss>
