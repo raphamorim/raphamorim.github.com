@@ -35,6 +35,10 @@ I wrote [a book about WebAssembly in Portuguese](https://www.casadocodigo.com.br
 
 <div class="sections">
 	<div class="section">
+		<div class="date">Nov 2025</div>
+		<div class="title"><a href="https://www.youtube.com/watch?v=ntnJ83v2DrU">Terminals are just text? Think again</a></div>
+	</div>
+	<div class="section">
 		<div class="date">Nov 2023</div>
 		<div class="title"><a href="https://www.youtube.com/watch?v=wvccOkvpbY0">Bring Gameboy alive in the Web with Rust and WebAssembly</a></div>
 	</div>
