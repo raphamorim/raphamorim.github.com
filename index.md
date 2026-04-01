@@ -9,9 +9,9 @@ description: "I am Raphael Amorim. Software Developer Engineer. I love Japanese 
 
 Hey there, my name is Raphael.
 
-I created [Rio](https://github.com/raphamorim/rio) terminal emulator, a code editor called [Boo](https://raphamorim.io/why-am-i-creating-a-new-code-editor) and Jam programming language. Currently, I am working at [Charm](https://charm.sh/) to make the command line glamorous.
+I created [Rio](https://github.com/raphamorim/rio) terminal emulator and Jam programming language.
 
-Previously, I worked at companies like Viaplay, Spotify, GoDaddy, and Globo.com. I have been a speaker at a few conferences.
+Previously, I worked at companies like Spotify, Charm, Viaplay, GoDaddy, and Globo.com. I have been a speaker at a few conferences.
 
 I was responsible for Viaplay's adoption of the Rust language. I built the starter infrastructure, released the first service for production, and actively worked on developing a Rust culture, which led to the language's adoption in the upcoming years, along with many other feats. [See when it all started](https://www.linkedin.com/posts/hugoraphael_i-dont-post-very-often-in-the-linkedin-but-activity-6975346956734738432-Csqi).
 
