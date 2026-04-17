@@ -173,8 +173,8 @@ p {
   margin-top: 20px;
 }
 strong {
-  padding: 0 1px;
-  color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
 }
 .container-image img {
   height: 500px;
@@ -198,15 +198,122 @@ a {
   max-height: 600px;
   padding: 10px 0;
 }
+.post-page-content .post-figure {
+  margin: 32px 0;
+  text-align: center;
+}
+.post-page-content .post-figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 6px;
+}
+.post-page-content .post-figure figcaption {
+  margin-top: 12px;
+  font-family: "Palatino", "Georgia", "Times New Roman", serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: lighter;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.55);
+  letter-spacing: -0.004em;
+}
 .post-page-content h2 {
   margin: 40px 0;
   color: rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
 }
 .post-page-content h3 {
-  margin: 20px 0 18px 0;
-  text-decoration: underline;
-  color: #333;
+  margin: 44px 0 14px 0;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: #1a1a1a;
+}
+.post-page-content h4 {
+  margin: 32px 0 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  color: #1a1a1a;
+}
+.post-page-content ul,
+.post-page-content ol {
+  margin: 24px 0;
+  padding-left: 2em;
+  font-weight: lighter;
+  font-size: 18px;
+  line-height: 1.5em;
+  letter-spacing: -0.004em;
+  list-style-position: outside;
+}
+.post-page-content ul { list-style-type: disc; }
+.post-page-content ol {
+  list-style-type: decimal;
+  font-variant-numeric: tabular-nums;
+}
+.post-page-content li {
+  margin: 14px 0;
+  padding-left: 10px;
+}
+.post-page-content li::marker {
+  color: rgba(0, 0, 0, 0.35);
+  font-weight: 400;
+  font-size: 0.95em;
+}
+.post-page-content li > p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
+.post-page-content li > p + p {
+  margin-top: 10px;
+}
+.post-page-content li > ul,
+.post-page-content li > ol {
+  margin: 10px 0 4px 0;
+}
+.post-page-content li:after { content: none; }
+.post-page-content table {
+  width: 100%;
+  margin: 24px 0;
+  border-collapse: collapse;
+  font-size: 16px;
+  font-weight: lighter;
+  line-height: 1.5em;
+}
+.post-page-content thead th {
+  text-align: left;
+  padding: 10px 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  border-bottom: 2px solid #e5e5e5;
+  background: #fafafa;
+}
+.post-page-content tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+.post-page-content tbody tr:last-child td {
+  border-bottom: 0;
+}
+.post-page-content tbody tr:hover td {
+  background: #fafafa;
+}
+.post-page-content ol li,
+.post-page-content ul li {
+  display: inline-block;
+  padding-left: 20px;
+  border-left: 3px solid rgb(12, 80, 255);
+  line-height: 130%;
 }
 #infscr-loading {
   text-align: center;
@@ -246,20 +353,156 @@ a {
 }
 
 /* Code */
-code {
-  display: block;
-  padding: 5px;
+code, pre, kbd, samp {
+  font-family: "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", monospace;
+  font-feature-settings: "liga" 0, "calt" 0;
 }
-.code {
-  margin: 20px 0;
-  padding: 12px;
-  border: 1px solid #dddddd;
+
+/* Inline code: `foo` inside paragraphs */
+p code,
+li code,
+h1 code, h2 code, h3 code, h4 code {
+  display: inline;
+  padding: 1px 6px;
+  font-size: 0.88em;
+  background: #f4f4f4;
+  border: 1px solid #eaeaea;
   border-radius: 3px;
-  font-size: 17px;
-  color: #666666;
+  color: #2a33d4;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+/* Fenced code blocks. Kramdown + Rouge wrap in:
+   <div class="language-xxx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...</code></pre></div></div>
+   Scope to div.highlighter-rouge so we do not also style inline
+   <code class="language-plaintext highlighter-rouge"> as a block. */
+pre,
+div.highlight,
+div.highlighter-rouge {
+  margin: 22px 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  background: #f8f8f8;
+  overflow: auto;
+}
+
+div.highlighter-rouge div.highlight {
+  margin: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+pre,
+pre.highlight,
+.highlight pre {
+  margin: 0;
+  padding: 16px 18px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #24292e;
+  background: transparent;
+  border: 0;
+  overflow: auto;
+  white-space: pre;
+  -webkit-font-smoothing: inherit;
+  text-shadow: none;
+}
+
+pre code,
+.highlight code {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre;
+}
+
+/* Legacy .code class kept for older posts that wrap examples manually */
+.code {
+  margin: 22px 0;
+  padding: 16px 18px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #24292e;
   -webkit-font-smoothing: inherit;
   overflow: auto;
   background: #f8f8f8;
+}
+
+/* Rouge syntax highlighting — muted palette that matches the site */
+.highlight .c,   /* Comment */
+.highlight .cm,  /* Comment.Multiline */
+.highlight .c1,  /* Comment.Single */
+.highlight .cp,  /* Comment.Preproc */
+.highlight .cs { color: #8a8a8a; font-style: italic; }
+
+.highlight .k,   /* Keyword */
+.highlight .kc,  /* Keyword.Constant */
+.highlight .kd,  /* Keyword.Declaration */
+.highlight .kn,  /* Keyword.Namespace */
+.highlight .kp,  /* Keyword.Pseudo */
+.highlight .kr,  /* Keyword.Reserved */
+.highlight .kt { color: #2a33d4; font-weight: 600; }
+
+.highlight .s,   /* String */
+.highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2,
+.highlight .se, .highlight .sh, .highlight .si, .highlight .sx,
+.highlight .sr, .highlight .s1, .highlight .ss { color: #0b6623; }
+
+.highlight .m,   /* Number */
+.highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo,
+.highlight .il { color: #b25000; }
+
+.highlight .nf,  /* Name.Function */
+.highlight .nc,  /* Name.Class */
+.highlight .nn { color: #6a1b9a; }
+
+.highlight .nb,  /* Name.Builtin */
+.highlight .bp { color: #2a33d4; }
+
+.highlight .nt { color: #22863a; } /* Name.Tag */
+.highlight .na { color: #6a1b9a; } /* Name.Attribute */
+
+.highlight .o,   /* Operator */
+.highlight .ow { color: #444; }
+
+.highlight .err { color: #b00020; background: transparent; }
+
+.highlight .gi { color: #22863a; background: #e6ffed; } /* Generic.Inserted */
+.highlight .gd { color: #b31d28; background: #ffeef0; } /* Generic.Deleted */
+.highlight .gh { color: #2a33d4; font-weight: 600; }    /* Generic.Heading */
+.highlight .gu { color: #8a8a8a; }                       /* Generic.Subheading */
+
+/* Line numbers, if enabled */
+.highlight .lineno,
+.highlight .gl {
+  color: #bbb;
+  padding-right: 12px;
+  border-right: 1px solid #e5e5e5;
+  margin-right: 10px;
+  user-select: none;
+}
+
+@media only screen and (max-width: 600px) {
+  pre,
+  pre.highlight,
+  .highlight pre,
+  .code {
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+  p code,
+  li code {
+    font-size: 0.9em;
+  }
 }
 
 /* Btn */
