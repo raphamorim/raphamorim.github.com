@@ -229,7 +229,7 @@ Two smaller properties round this out:
 
 ### Landing in Rio
 
-Glyph Protocol is already available on [Rio terminal](https://raphamorim.io/rio)'s main branch and will ship in v0.3.12 — the first implementation. The full spec is published alongside the release, along with example code for registering glyphs and querying the terminal from your own applications.
+Glyph Protocol is already available on [Rio terminal](https://github.com/raphamorim/rio)'s main branch and will ship in v0.3.12 — the first implementation. The full spec is published alongside the release, along with example code for registering glyphs and querying the terminal from your own applications.
 
 For working examples, see [raphamorim/glyph-protocol-examples](https://github.com/raphamorim/glyph-protocol-examples) — it contains sample integrations for [Bubble Tea](https://github.com/charmbracelet/bubbletea), [Ratatui](https://github.com/ratatui/ratatui), and [Ink](https://github.com/vadimdemedes/ink).
 
