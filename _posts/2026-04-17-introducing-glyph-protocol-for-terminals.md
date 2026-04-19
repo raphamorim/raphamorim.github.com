@@ -77,8 +77,9 @@ ESC _ 25a1 ; s ; fmt=1 ESC \
 | Value | Format | Meaning |
 |-------|--------|---------|
 | `1`   | `glyf` | TrueType simple glyphs. Required in v1. |
-| `2`   | `colr` | Reserved for layered colored outlines. Future. |
-| ...   | ...    | Further bits reserved for future formats. |
+| `2`   | `colrv0` | Layered flat-colour glyphs (OpenType COLR v0). Added in v1.2 — see the [colour follow-up post](/adding-color-glyphs-to-glyph-protocol/). |
+| `4`   | `colrv1` | Full paint graph with gradients and transforms (OpenType COLR v1). Added in v1.2. |
+| ...   | ...      | Further bits reserved for future formats. |
 
 Any reply at all confirms the terminal implements Glyph Protocol; if nothing arrives within a short timeout, it does not. A reply of `fmt=0` means the terminal speaks the protocol but advertises no formats — defined for completeness, not expected in practice. Clients that need `glyf` (v1's only defined payload) check that bit 0 is set before sending any `r` requests.
 
@@ -159,7 +160,7 @@ That is the entire format. The authoritative references are the [OpenType `glyf`
 
 Simple glyphs are the subset of `glyf` that any `ttf-parser`-style library already reads in about three hundred lines. Composite glyphs and hinting are where TrueType gets thorny; both are excluded.
 
-**Color behavior.** `glyf` outlines have no color. The terminal renders them in the current foreground color — which *is* the Nerd Font inheritance case, the primary use case for this protocol. Colored glyphs (status badges, multi-color logos) are deferred to v2, likely via a `fmt=colr` extension that layers multiple `glyf` outlines with per-layer colors, following the [COLRv0](https://learn.microsoft.com/en-us/typography/opentype/spec/colr) precedent.
+**Color behavior.** `glyf` outlines have no color. The terminal renders them in the current foreground color — which *is* the Nerd Font inheritance case, the primary use case for this protocol. Coloured glyphs (status badges, multi-color logos) ship as a separate payload format, `fmt=colrv0` / `fmt=colrv1`, covered in a [follow-up post](/adding-color-glyphs-to-glyph-protocol/).
 
 **Scaling and cell metrics.** The `upm` value defines the glyph's coordinate space; the terminal maps that space onto its cell at render time. An icon authored at `upm=1000` will scale cleanly to an 8×16 cell and to a 32×64 cell. The application does not need to know the terminal's cell size, and never has to re-register on font size change.
 
@@ -246,7 +247,7 @@ The terminal acks with `status=0` whether the slot was occupied or not — clear
 - **No ligatures.** Registration applies to a single codepoint. Sequence-keyed substitution is out of scope for v1; programming ligatures like `->` → `⟶` are already handled by OpenType fonts and don't need to become an attack surface here.
 - **No persistence across sessions.** Glyphs are shipped fresh on each run. This avoids turning the terminal into a font cache with eviction policies and upgrade paths.
 - **No cross-application sharing.** Each terminal session owns its glossary. No IPC, no daemon.
-- **No colored glyphs.** `glyf` outlines render in the current foreground color. Colored and multi-layer glyphs are deferred to a future `fmt=colr` extension.
+- **No colored glyphs in v1's `glyf` payload.** `glyf` outlines render in the current foreground color. Multi-layer and paint-graph colour landed in v1.2 as the separate `fmt=colrv0` / `fmt=colrv1` payloads — see the [colour follow-up post](/adding-color-glyphs-to-glyph-protocol/).
 
 Each of these can be added later if it turns out to be needed. None of them can be easily removed once added.
 
