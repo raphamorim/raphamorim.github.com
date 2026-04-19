@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Adding color glyphs to Glyph Protocol"
+title: "Adding color glyphs to Glyph Terminal Protocol"
 language: 'en'
 description: "Glyph Protocol shipped with a single payload format: monochrome OpenType `glyf` outlines rendered in the current foreground colour. This post covers adding two more: `colrv0` for layered flat-colour icons, and `colrv1` for full paint graphs with gradients, both by reusing OpenType COLR directly as the wire format."
 image: assets/images/posts/glyph-protocol-color-banner.png
