@@ -348,7 +348,7 @@ a {
   font-weight: bold;
 }
 ::selection {
-  background-color: black;
+  background-color: #2a33d4;
   color: #FFF;
 }
 
@@ -575,4 +575,65 @@ svg.trail path {
   stroke-width: 8px;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* Footnotes: inline reference + bottom-of-post list, kramdown output */
+.post-page-content sup {
+  font-size: 0.72em;
+  line-height: 0;
+  vertical-align: super;
+  margin-left: 1px;
+}
+.post-page-content sup a,
+.post-page-content sup a:visited {
+  color: rgb(12, 80, 255);
+  border-bottom: 0;
+  padding: 0 2px;
+}
+.post-page-content sup a:hover {
+  color: #000;
+  background: rgba(12, 80, 255, 0.12);
+  border-radius: 3px;
+}
+.post-page-content .footnotes {
+  margin-top: 60px;
+  padding-top: 22px;
+  border-top: 1px solid #e5e5e5;
+  color: rgba(0, 0, 0, 0.75);
+}
+.post-page-content .footnotes ol {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  counter-reset: footnote;
+  font-size: 15px;
+}
+.post-page-content .footnotes ol li,
+.post-page-content .footnotes ul li {
+  display: block;
+  position: relative;
+  padding-left: 2em;
+  border-left: 0;
+  margin: 12px 0;
+  font-weight: lighter;
+  line-height: 1.55;
+  letter-spacing: -0.004em;
+  counter-increment: footnote;
+}
+.post-page-content .footnotes ol li::before {
+  content: counter(footnote) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(0, 0, 0, 0.4);
+  font-variant-numeric: tabular-nums;
+}
+.post-page-content .footnotes a.reversefootnote {
+  margin-left: 6px;
+  border-bottom: 0;
+  color: rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+}
+.post-page-content .footnotes a.reversefootnote:hover {
+  color: rgb(12, 80, 255);
 }

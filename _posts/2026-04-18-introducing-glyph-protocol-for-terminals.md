@@ -7,7 +7,7 @@ description: "A protocol for terminals that allows applications to register cust
 
 There's one thing about terminals that has always bothered me: to get your favorite editor, prompt, or TUI to render nicely, you are almost always forced to install a patched font.
 
-You know the drill. You open a fresh terminal, pull up your editor, and half of the UI is replaced by little rectangles — the infamous [tofu](https://fonts.google.com/knowledge/glossary/tofu). The fix is to go download a Nerd Font, or Powerline, or some other patched set, and switch your terminal font to it. A font that is often well above 10MB in size. All of that — just so you can render one icon, or maybe a handful of them.
+You know the drill. You open a fresh terminal, pull up your editor, and half of the UI is replaced by little rectangles — the infamous [tofu](https://fonts.google.com/knowledge/glossary/tofu). The fix is to go download a Nerd Font, or Powerline, or some other patched set, and switch your terminal font to it. A font that is often well above 10MB in size[^nerdfont-size]. All of that — just so you can render one icon, or maybe a handful of them.
 
 <figure class="post-figure">
   <img src="/assets/images/posts/glyph-protocol-tofu.png" alt="A terminal prompt with several codepoints rendered as empty rectangles" />
@@ -44,7 +44,7 @@ It also means TUIs can be honest about what they need. Right now, an editor that
 
 ### The shape of the protocol
 
-**Transport.** The protocol uses [APC](https://en.wikipedia.org/wiki/C0_and_C1_control_codes#C1_controls) (Application Program Command) rather than OSC. APC is designed for exactly this case: application-defined commands that terminals which don't implement the protocol can safely ignore, without fighting over OSC's shared numeric namespace.
+**Transport.** The protocol uses [APC](https://en.wikipedia.org/wiki/C0_and_C1_control_codes#C1_controls) (Application Program Command) rather than OSC. APC is designed for exactly this case: application-defined commands that terminals which don't implement the protocol can safely ignore, without fighting over OSC's shared numeric namespace[^apc-vs-osc].
 
 **Identifier.** Every Glyph Protocol message is prefixed with the codepoint `1cc6D` (U+1CC6D, [BLACK LARGE CIRCLE MINUS RIGHT QUARTER SECTION](https://www.unicode.org/charts/PDF/U1CC00.pdf)). Terminals that don't recognize this prefix drop the message.
 
@@ -54,7 +54,33 @@ The framing looks like:
 ESC _ 1cc6D ; <verb> [ ; key=value ]* [ ; <payload> ] ESC \
 ```
 
-Three verbs to start: `q` for query, `r` for register, and `c` for clear.
+Four verbs to start: `s` for support, `q` for query, `r` for register, and `c` for clear.
+
+#### Support: what does the terminal implement?
+
+Before registering anything, an application needs to know what the terminal supports — which payload formats it can rasterize, which protocol version it speaks. This is also the canonical way to detect Glyph Protocol at all: the verb takes no parameters and costs one round-trip.
+
+Client sends:
+
+```
+ESC _ 1cc6D ; s ESC \
+```
+
+Terminal replies:
+
+```
+ESC _ 1cc6D ; s ; fmt=1 ESC \
+```
+
+`fmt` is a bitfield where each bit marks one supported payload format. The set grows over time; clients treat unknown bits as reserved and ignore them.
+
+| Value | Format | Meaning |
+|-------|--------|---------|
+| `1`   | `glyf` | TrueType simple glyphs. Required in v1. |
+| `2`   | `colr` | Reserved for layered colored outlines. Future. |
+| ...   | ...    | Further bits reserved for future formats. |
+
+Any reply at all confirms the terminal implements Glyph Protocol; if nothing arrives within a short timeout, it does not. A reply of `fmt=0` means the terminal speaks the protocol but advertises no formats — defined for completeness, not expected in practice. Clients that need `glyf` (v1's only defined payload) check that bit 0 is set before sending any `r` requests.
 
 #### Query: who can render this codepoint?
 
@@ -81,9 +107,7 @@ ESC _ 1cc6D ; q ; cp=E0A0 ; status=1 ESC \
 | `2`   | `glossary` | A glossary registration in this session covers it. |
 | `3`   | `both`     | Both cover it; the registration shadows the system font at render time. |
 
-Detection of "does this terminal implement Glyph Protocol at all?" falls out of the same query: pick a codepoint that's guaranteed to exist — `U+0061` (`a`) or `U+0020` (space) are safe choices — and send a query for it. If a reply arrives, the terminal supports the protocol; if nothing arrives within a short timeout, it does not.
-
-With this, a TUI can ask first and fall back gracefully — skip registering its own branch icon when the system already has one, register and emit a custom codepoint when it doesn't.
+With this, a TUI can ask first and fall back gracefully — skip registering its own branch icon when the system already has one, register and emit a custom codepoint when it doesn't. Protocol detection itself is handled by the `s` verb above.
 
 #### Register: ship your own glyph
 
@@ -244,3 +268,7 @@ More soon.
 We spend enormous effort making terminal applications feel good to use, and then gate the entire experience behind a font installation step that is effectively invisible documentation. A beautiful TUI with broken glyphs is not a beautiful TUI.
 
 A terminal is supposed to be a canvas. If the canvas cannot render what the application asks it to, the canvas is incomplete.
+
+[^nerdfont-size]: The Nerd Fonts v3.2.1 release ships most families at 6–12 MB per weight — JetBrainsMono Nerd Font Regular is around 7.8 MB, FiraCode Nerd Font Regular around 10.4 MB, and the "complete" symbol-only archive is roughly 60 MB across all variants.
+
+[^apc-vs-osc]: OSC carries a single decimal integer as its command identifier, shared across every terminal on the planet. OSC 52 is xterm's clipboard extension; OSC 133 is shell-integration marks; OSC 1337 is iTerm2's extension surface; OSC 8 is hyperlinks. Adding a new protocol over OSC means reserving a free number in that global space and hoping no other terminal picks it for something else. APC has no such namespace — each application-defined command is self-identifying, and terminals that don't recognise the prefix drop the sequence cleanly.
