@@ -46,12 +46,12 @@ It also means TUIs can be honest about what they need. Right now, an editor that
 
 **Transport.** The protocol uses [APC](https://en.wikipedia.org/wiki/C0_and_C1_control_codes#C1_controls) (Application Program Command) rather than OSC. APC is designed for exactly this case: application-defined commands that terminals which don't implement the protocol can safely ignore, without fighting over OSC's shared numeric namespace[^apc-vs-osc].
 
-**Identifier.** Every Glyph Protocol message is prefixed with the codepoint `1cc6D` (U+1CC6D, [BLACK LARGE CIRCLE MINUS RIGHT QUARTER SECTION](https://www.unicode.org/charts/PDF/U1CC00.pdf)). Terminals that don't recognize this prefix drop the message.
+**Identifier.** Every Glyph Protocol message is prefixed with the codepoint `25a1` (U+25A1, [WHITE SQUARE](https://www.unicode.org/charts/PDF/U25A0.pdf)) — the character a terminal draws when it has no glyph for something, the canonical symbol of tofu. Terminals that don't recognize this prefix drop the message.
 
 The framing looks like:
 
 ```
-ESC _ 1cc6D ; <verb> [ ; key=value ]* [ ; <payload> ] ESC \
+ESC _ 25a1 ; <verb> [ ; key=value ]* [ ; <payload> ] ESC \
 ```
 
 Four verbs to start: `s` for support, `q` for query, `r` for register, and `c` for clear.
@@ -63,13 +63,13 @@ Before registering anything, an application needs to know what the terminal supp
 Client sends:
 
 ```
-ESC _ 1cc6D ; s ESC \
+ESC _ 25a1 ; s ESC \
 ```
 
 Terminal replies:
 
 ```
-ESC _ 1cc6D ; s ; fmt=1 ESC \
+ESC _ 25a1 ; s ; fmt=1 ESC \
 ```
 
 `fmt` is a bitfield where each bit marks one supported payload format. The set grows over time; clients treat unknown bits as reserved and ignore them.
@@ -89,13 +89,13 @@ An application wants to know if the current font — whether a system-installed 
 Client sends:
 
 ```
-ESC _ 1cc6D ; q ; cp=E0A0 ESC \
+ESC _ 25a1 ; q ; cp=E0A0 ESC \
 ```
 
 Terminal replies:
 
 ```
-ESC _ 1cc6D ; q ; cp=E0A0 ; status=1 ESC \
+ESC _ 25a1 ; q ; cp=E0A0 ; status=1 ESC \
 ```
 
 `status` is a decimal `u8` encoding a two-bit field — bit 0 means "a system font covers it," bit 1 means "a glossary registration covers it":
@@ -114,7 +114,7 @@ With this, a TUI can ask first and fall back gracefully — skip registering its
 An application wants to ship its own branch icon. It picks a PUA codepoint — here `U+E0A0`, the Powerline convention — and sends the `glyf` outline [(the same TrueType vector format fonts have used for forty years)](https://learn.microsoft.com/en-us/typography/opentype/spec/glyf) base64-encoded:
 
 ```
-ESC _ 1cc6D ; r ; cp=E0A0 ; upm=1000 ; <base64-glyf> ESC \
+ESC _ 25a1 ; r ; cp=E0A0 ; upm=1000 ; <base64-glyf> ESC \
 ```
 
 Parameters:
@@ -127,7 +127,7 @@ Parameters:
 The terminal acks:
 
 ```
-ESC _ 1cc6D ; r ; cp=E0A0 ; status=0 ESC \
+ESC _ 25a1 ; r ; cp=E0A0 ; status=0 ESC \
 ```
 
 From this point on, whenever the application emits `U+E0A0` its registered glyph renders at that cell. A second `r` on the same `cp` overwrites the first. On error (non-PUA codepoint, malformed payload, composite glyph, etc.) the reply carries `status=<nonzero>; reason=<code>`.
@@ -186,7 +186,7 @@ pen.closePath()
 payload = base64.b64encode(pen.glyph().compile(None)).decode("ascii")
 
 # Register at U+100000 — empty PUA, no system font claims it.
-sys.stdout.write(f"\x1b_1cc6D;r;cp=100000;upm=1000;{payload}\x1b\\")
+sys.stdout.write(f"\x1b_25a1;r;cp=100000;upm=1000;{payload}\x1b\\")
 sys.stdout.flush()
 
 # Emit the codepoint. The word "icon: " passes through unchanged;
@@ -211,13 +211,13 @@ Sometimes you want to undo a registration — when an editor exits and wants to 
 Clear a single slot:
 
 ```
-ESC _ 1cc6D ; c ; cp=E0A0 ESC \
+ESC _ 25a1 ; c ; cp=E0A0 ESC \
 ```
 
 Clear the entire glossary:
 
 ```
-ESC _ 1cc6D ; c ESC \
+ESC _ 25a1 ; c ESC \
 ```
 
 The terminal acks with `status=0` whether the slot was occupied or not — clearing an empty slot is not an error, it is a no-op. The `cp` parameter must be in one of the three PUA ranges; anything else returns `reason=out_of_namespace`.
