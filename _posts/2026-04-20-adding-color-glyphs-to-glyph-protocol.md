@@ -6,7 +6,7 @@ description: "Glyph Protocol shipped with a single payload format: monochrome Op
 image: assets/images/posts/glyph-protocol-color-banner.png
 ---
 
-A few days after [introducing Glyph Protocol](/introducing-glyph-protocol-for-terminals/), the first serious feature request landed: colour.
+A few days after [introducing Glyph Protocol](/introducing-glyph-protocol-for-terminals/), the first serious feature landed: colour.
 
 The initial protocol only had one payload format, `fmt=glyf`: a single OpenType simple-glyph outline, rendered in the current foreground colour. Good enough for Nerd-Font-style monochrome icons (e.g: `U+E0A0` git branch, `U+F015` home) or even symbols. But the whole class of modern iconography (a red heart, a green status dot, a multi-color brand logo) was out of reach.
 
