@@ -165,7 +165,7 @@ Simple glyphs are the subset of `glyf` that any `ttf-parser`-style library alrea
 
 **Authoring.** Most application authors will not hand-write `glyf` bytes. They will start from SVG (what their designer hands them, what every icon library ships) and convert it at build time. [`fonttools`](https://fonttools.readthedocs.io/) already does this via its `ttx`/`pens` interface, and I will ship a small `svg2glyf` helper alongside Rio's reference implementation so the conversion is a one-liner. Runtime registration is then as simple as loading the bytes and sending them.
 
-**Lifetime and capacity.** Each terminal session carries a *glossary* of at most 256 simultaneous registrations, keyed by codepoint anywhere in the three PUA ranges. Registrations live for the duration of the session. If an application registers a 257th glyph, the terminal evicts the oldest registration in FIFO order — there is no "glossary full" error to handle. Applications that cannot tolerate silent eviction should query their codepoint before emitting.
+**Lifetime and capacity.** Each terminal session carries a *glossary* of at most 1024 simultaneous registrations, keyed by codepoint anywhere in the three PUA ranges. Registrations live for the duration of the session. If an application registers a 1025th glyph, the terminal evicts the oldest registration in FIFO order — there is no "glossary full" error to handle. Applications that cannot tolerate silent eviction should query their codepoint before emitting.
 
 #### A worked example: an icon in empty PUA
 
