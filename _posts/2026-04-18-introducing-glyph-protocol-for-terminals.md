@@ -204,6 +204,24 @@ register_from_svg(cp=0x100000, svg_path="icon.svg")
 print(f"icon: {chr(0x100000)}")
 ```
 
+#### A knob for bulk registration: `reply=`
+
+By default the terminal ACKs every `r` with `status=0`, and error replies carry a `reason=` code. Great for an interactive one-off registration. Bad for a startup hook that registers 100 glyphs and then exits — the 100 queued ACKs drain out of the PTY into whatever shell inherits it, as visible junk on the user's next prompt.
+
+Three levels:
+
+| `reply=` | Meaning |
+|----------|---------|
+| `1`      | Default. Emit both success (`status=0`) and failure replies. Use for interactive one-off registrations. |
+| `2`      | Emit failure replies only; success is silent. Use for bulk registration where you still want to learn about the broken ones. |
+| `0`      | Emit nothing. Fire-and-forget. Use for startup hooks that won't be around to read a reply. |
+
+```
+ESC _ 25a1 ; r ; cp=E0A0 ; reply=0 ; upm=1000 ; <base64-glyf> ESC \
+```
+
+Unknown values silently fall back to `reply=1`, so a future level extension (say, `reply=3` for "success only") can ship without breaking old clients.
+
 #### Clear: free a slot
 
 Sometimes you want to undo a registration — when an editor exits and wants to return the terminal to its defaults, when a TUI swaps themes, or when you are debugging. The `c` verb handles this.
