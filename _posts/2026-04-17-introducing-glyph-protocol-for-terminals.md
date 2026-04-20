@@ -247,7 +247,7 @@ The terminal acks with `status=0` whether the slot was occupied or not — clear
 - **No ligatures.** Registration applies to a single codepoint. Sequence-keyed substitution is out of scope for v1; programming ligatures like `->` → `⟶` are already handled by OpenType fonts and don't need to become an attack surface here.
 - **No persistence across sessions.** Glyphs are shipped fresh on each run. This avoids turning the terminal into a font cache with eviction policies and upgrade paths.
 - **No cross-application sharing.** Each terminal session owns its glossary. No IPC, no daemon.
-- **No colored glyphs in v1's `glyf` payload.** `glyf` outlines render in the current foreground color. Multi-layer and paint-graph colour landed in v1.2 as the separate `fmt=colrv0` / `fmt=colrv1` payloads — see the [colour follow-up post](/adding-color-glyphs-to-glyph-protocol/).
+- **No colored glyphs in v1's `glyf` payload.** `glyf` outlines render in the current foreground color. Multi-layer and paint-graph colour landed in v1.2 as the separate `fmt=colrv0` / `fmt=colrv1` payloads — see the [colour follow-up post](/adding-color-glyphs-to-glyph-terminal-protocol/).
 
 Each of these can be added later if it turns out to be needed. None of them can be easily removed once added.
 
