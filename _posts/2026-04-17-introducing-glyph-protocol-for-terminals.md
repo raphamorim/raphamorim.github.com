@@ -16,7 +16,7 @@ You know the drill. You open a fresh terminal, pull up your editor, and half of 
 
 This is messed up. The bundle is huge, the workflow is clunky, and the application author has no way to ship the glyph they actually want. They can only hope the user has installed the right font, with the right version, mapping the right codepoints.
 
-So I decided to do something about it.
+So I decided to do something about it.[^update]
 
 ### Glyph Protocol
 
@@ -270,6 +270,27 @@ Two smaller properties round this out:
 - **The cell buffer is authoritative.** Selection, copy, search, hyperlink detection, shell history, and anything else that extracts text MUST return the codepoint the application emitted, never the rendered glyph. An application cannot use this protocol to create a "what you see is not what you copy" trap.
 - **Sessions are isolated.** Two tabs can independently register `U+E0A0` for different branch icons. One tab's registrations cannot affect another's rendering.
 
+### Compared to what's already there
+
+Two things come up the moment you describe the protocol to anyone who has spent time in terminal internals: can't you already do this with the Kitty Image Protocol? And isn't there a forty-year-old answer to this from DEC? Both are worth addressing directly.
+
+**Kitty Image Protocol with Unicode placeholders.** KIP with Unicode placeholders can approximate Glyph Protocol: you upload an image, then place it at a cell by emitting a reserved placeholder codepoint that the image ID hangs off. It works, sort of. In practice the integration is fiddly, and only Kitty, Ghostty, and Rio implement placeholders at all, so a TUI that targets it still ships a code path that runs on a handful of terminals.
+
+The deeper reason KIP is the wrong hammer is that KIP is an image protocol. A glyph is not an image.
+
+- **Cost per use.** A custom glyph reused two hundred times on a screen (table borders, bullet markers, status ticks, a logo in every window header) has to be placed as two hundred image references, each one carrying layout and compositing cost. Once Glyph Protocol has registered a codepoint, the terminal draws it through the same glyph cache it uses for `a`: you emit the codepoint and it renders at font speed. If a glyph is used like a character, it needs to render like a character.
+- **No native resolution.** A `glyf` outline has no pixel size. The terminal rasterises it at whatever size the current cell is, so font size change (Ctrl+= on a whim, an external monitor plugged in, a zoom toggle) just works. With KIP you shipped a bitmap at a specific size, and on font size change you are stuck: either re-upload the image or watch it blur. And there is no clean way for a TUI to even *notice* that the font size changed short of polling. KIP itself has no signal for that.
+- **Foreground colour inheritance.** A monochrome `glyf` outline renders in the cell's current foreground, so the same git-branch icon picks up your theme without any protocol-level colour negotiation. An image is its own pixels and does not participate in text colouring at all.
+
+Glyph Protocol is intentionally not an image protocol. It ships a font glyph at runtime, and that narrower promise is what lets it be cheap.
+
+**DEC [DECDLD / DRCS](https://vt100.net/docs/vt510-rm/DECDLD.html).** The other obvious prior art is four decades old: the VT220 shipped *Dynamically Redefinable Character Sets* in 1983, and the VT320/VT510 kept refining the story under the *DECDLD* (Dynamically Redefinable Character Sets, Downline Load) sequence. An application uploads a glyph, the terminal renders it when it sees the associated character. A handful of terminals still support it: xterm takes DECDLD sequences, and mlterm has a more complete implementation.
+
+Shape-wise, DECDLD looks a lot like Glyph Protocol on the surface. It has two problems that Glyph Protocol was designed specifically not to inherit.
+
+- **It is bitmap.** You upload a grid of pixels sized to the terminal's *current* cell. The moment the user changes font size, bumps HiDPI, drags the window to a 4K monitor, or switches zoom level, the glyph is wrong: scaled-up blocky pixels on one display, shrunk-down mush on another. Bitmap made sense when terminal cells were a fixed 10×20 pixels on a CRT and nothing ever changed size. It does not survive today's range of cell sizes. Vector is the missing piece, and that's most of what Glyph Protocol is.
+- **There is no namespace restriction.** [DECDLD](https://vt100.net/docs/vt510-rm/DECDLD.html) lets an application overwrite a loaded character set and, depending on charset designation, that set can be mapped into GL (the range where `a`, `b`, `c` live). An untrusted program writing to the terminal can redefine what `a` renders as. The cell buffer still contains `a`, so copy-paste is honest, but what the user *reads* is a lie: `bad.com` can be made to look like `bod.com`. Glyph Protocol pins registration to the three Unicode Private Use Areas for exactly this reason (see "Why the terminal restricts to PUA" above), which is what makes it safe to leave on by default. DECDLD never got that restriction, and it is the single biggest reason modern terminals are reluctant to enable it.
+
 ### Landing in Rio
 
 Glyph Protocol is already available on [Rio terminal](https://github.com/raphamorim/rio)'s main branch and will ship in v0.3.12 — the first implementation. The full spec is published alongside the release, along with example code for registering glyphs and querying the terminal from your own applications.
@@ -282,6 +303,16 @@ My hope is that other terminal emulators will adopt it. The win for the ecosyste
 
 More soon.
 
+### Open questions
+
+A few threads came out of the initial conversation about this post that are worth putting to the community. I'd be curious to hear what folks think:
+
+1. **Should font-size change be something the protocol notices?** Glyph Protocol itself dodges this because outlines are resolution-independent, but everything *around* it still cares. A TUI that composes images next to glyphs wants to know when the cell metrics changed, and today has no way to learn that short of polling terminal size. Is a `resize` or `metrics-changed` notification in scope, or scope creep?
+
+2. **Is there a responsible way to allow non-PUA registration?** The PUA-only rule makes the whole protocol safe by default. It also rules out uses like a CJK input method shipping a glyph for an uncovered ideograph, or a language-specific tool overriding a glyph it knows the user wants. Is there a shape (an explicit user-level opt-in, a signed capability, a trusted-origin flag) that would unlock those use cases without re-opening phishing?
+
+If you have thoughts, I'd love to hear them. Open an issue on [the Rio repo](https://github.com/raphamorim/rio) or drop me a line wherever is easiest.
+
 --
 
 We spend enormous effort making terminal applications feel good to use, and then gate the entire experience behind a font installation step that is effectively invisible documentation. A beautiful TUI with broken glyphs is not a beautiful TUI.
@@ -291,3 +322,5 @@ A terminal is supposed to be a canvas. If the canvas cannot render what the appl
 [^nerdfont-size]: The Nerd Fonts v3.2.1 release ships most families at 6–12 MB per weight — JetBrainsMono Nerd Font Regular is around 7.8 MB, FiraCode Nerd Font Regular around 10.4 MB, and the "complete" symbol-only archive is roughly 60 MB across all variants.
 
 [^apc-vs-osc]: OSC carries a single decimal integer as its command identifier, shared across every terminal on the planet. OSC 52 is xterm's clipboard extension; OSC 133 is shell-integration marks; OSC 1337 is iTerm2's extension surface; OSC 8 is hyperlinks. Adding a new protocol over OSC means reserving a free number in that global space and hoping no other terminal picks it for something else. APC has no such namespace — each application-defined command is self-identifying, and terminals that don't recognise the prefix drop the sequence cleanly.
+
+[^update]: Updated on April 24, 2026, to add a comparison against the Kitty Image Protocol and DEC [DECDLD / DRCS](https://vt100.net/docs/vt510-rm/DECDLD.html), and a set of open questions prompted by community discussion.
