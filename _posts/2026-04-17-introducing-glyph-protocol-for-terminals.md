@@ -81,6 +81,11 @@ ESC _ 25a1 ; s ; fmt=1 ESC \
 | `4`   | `colrv1` | Full paint graph with gradients and transforms (OpenType COLR v1). Added in v1.2. |
 | ...   | ...      | Further bits reserved for future formats. |
 
+<figure class="post-figure">
+  <img src="/assets/images/posts/glyph-protocol-color-formats.png" alt="Rio terminal running the same Glyph Protocol example three times: first via a Rust ratatui binary, then a Go bubbletea program, then a Node ink CLI. Each prints identical colrv1 titles, fruit emoji, colrv0 titles, face/animal emoji, and monochrome glyf icons, demonstrating consistent rendering across the three TUI frameworks." />
+  <figcaption>All three payloads side by side: <code>colrv1</code> titles and fruit emoji, <code>colrv0</code> titles with face and animal emoji, and monochrome <code>glyf</code> icons at the bottom. Same registration, rendered from <a href="https://ratatui.rs/">ratatui</a> (Rust), <a href="https://github.com/charmbracelet/bubbletea">bubbletea</a> (Go), and <a href="https://github.com/vadimdemedes/ink">ink</a> (Node). Colour is covered in depth in the <a href="/adding-color-glyphs-to-glyph-terminal-protocol/">follow-up post</a>.</figcaption>
+</figure>
+
 Any reply at all confirms the terminal implements Glyph Protocol; if nothing arrives within a short timeout, it does not. A reply of `fmt=0` means the terminal speaks the protocol but advertises no formats — defined for completeness, not expected in practice. Clients that need `glyf` (v1's only defined payload) check that bit 0 is set before sending any `r` requests.
 
 #### Query: who can render this codepoint?
@@ -323,4 +328,4 @@ A terminal is supposed to be a canvas. If the canvas cannot render what the appl
 
 [^apc-vs-osc]: OSC carries a single decimal integer as its command identifier, shared across every terminal on the planet. OSC 52 is xterm's clipboard extension; OSC 133 is shell-integration marks; OSC 1337 is iTerm2's extension surface; OSC 8 is hyperlinks. Adding a new protocol over OSC means reserving a free number in that global space and hoping no other terminal picks it for something else. APC has no such namespace — each application-defined command is self-identifying, and terminals that don't recognise the prefix drop the sequence cleanly.
 
-[^update]: Updated on April 24, 2026, to add a comparison against the Kitty Image Protocol and DEC [DECDLD / DRCS](https://vt100.net/docs/vt510-rm/DECDLD.html), and a set of open questions prompted by community discussion.
+[^update]: Updated on April 24, 2026: added the three-framework demo figure, a comparison against the Kitty Image Protocol and DEC [DECDLD / DRCS](https://vt100.net/docs/vt510-rm/DECDLD.html), and a set of open questions prompted by community discussion.
