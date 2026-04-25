@@ -80,7 +80,7 @@ Other pipelines work too. Anything that can emit a COLR + CPAL pair and the unde
 
 ### Status
 
-The wire format, parser, registry storage, and support-bitfield advertisement will ship in v0.3.12.
+The wire format, parser, registry storage, and support-bitfield advertisement will land somewhere in May.
 
 And if you're implementing Glyph Protocol in a different terminal, adding colour support now is mostly linker work: pull `ttf-parser`, `skrifa`, or any COLR parser. Feel free to reach out if you are.
 
