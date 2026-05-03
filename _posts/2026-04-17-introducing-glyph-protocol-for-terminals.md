@@ -72,7 +72,7 @@ Terminal replies:
 ESC _ 25a1 ; s ; fmt=glyf ESC \
 ```
 
-`fmt` is a comma-separated list of format names. Order is not significant, and clients ignore names they don't recognise — so the set can grow over time without breaking older clients.
+`fmt` is a comma-separated list of format names. Order is not significant, and clients ignore names they don't recognise, so the set can grow over time without breaking older clients.
 
 | Name | Meaning |
 |------|---------|
@@ -105,7 +105,7 @@ Terminal replies:
 ESC _ 25a1 ; q ; cp=E0A0 ; status=system ESC \
 ```
 
-`status` is a comma-separated list of the sources covering this codepoint — `system`, `glossary`, or both:
+`status` is a comma-separated list of the sources covering this codepoint:
 
 | `status=` value     | Meaning |
 |---------------------|---------|
