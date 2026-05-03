@@ -69,24 +69,25 @@ ESC _ 25a1 ; s ESC \
 Terminal replies:
 
 ```
-ESC _ 25a1 ; s ; fmt=1 ESC \
+ESC _ 25a1 ; s ; fmt=glyf ESC \
 ```
 
-`fmt` is a bitfield where each bit marks one supported payload format. The set grows over time; clients treat unknown bits as reserved and ignore them.
+`fmt` is a comma-separated list of format names. Order is not significant, and clients ignore names they don't recognise — so the set can grow over time without breaking older clients.
 
-| Value | Format | Meaning |
-|-------|--------|---------|
-| `1`   | `glyf` | TrueType simple glyphs. Required in v1. |
-| `2`   | `colrv0` | Layered flat-colour glyphs (OpenType COLR v0). Added in v1.2 — see the [colour follow-up post](/adding-color-glyphs-to-glyph-protocol/). |
-| `4`   | `colrv1` | Full paint graph with gradients and transforms (OpenType COLR v1). Added in v1.2. |
-| ...   | ...      | Further bits reserved for future formats. |
+| Name | Meaning |
+|------|---------|
+| `glyf` | TrueType simple glyphs. Required in v1. |
+| `colrv0` | Layered flat-colour glyphs (OpenType COLR v0). Added in v1.2 — see the [colour follow-up post](/adding-color-glyphs-to-glyph-protocol/). |
+| `colrv1` | Full paint graph with gradients and transforms (OpenType COLR v1). Added in v1.2. |
+
+Future formats extend the list with new names. The list was a `u8` bitfield until v1.8 (2026-05-03); names are easier to read in transcripts and don't worry about bit collisions.
 
 <figure class="post-figure">
   <img src="/assets/images/posts/glyph-protocol-color-formats.png" alt="Rio terminal running the same Glyph Protocol example three times: first via a Rust ratatui binary, then a Go bubbletea program, then a Node ink CLI. Each prints identical colrv1 titles, fruit emoji, colrv0 titles, face/animal emoji, and monochrome glyf icons, demonstrating consistent rendering across the three TUI frameworks." />
   <figcaption>All three payloads side by side: <code>colrv1</code> titles and fruit emoji, <code>colrv0</code> titles with face and animal emoji, and monochrome <code>glyf</code> icons at the bottom. Same registration, rendered from <a href="https://ratatui.rs/">ratatui</a> (Rust), <a href="https://github.com/charmbracelet/bubbletea">bubbletea</a> (Go), and <a href="https://github.com/vadimdemedes/ink">ink</a> (Node). Colour is covered in depth in the <a href="/adding-color-glyphs-to-glyph-terminal-protocol/">follow-up post</a>.</figcaption>
 </figure>
 
-Any reply at all confirms the terminal implements Glyph Protocol; if nothing arrives within a short timeout, it does not. A reply of `fmt=0` means the terminal speaks the protocol but advertises no formats — defined for completeness, not expected in practice. Clients that need `glyf` (v1's only defined payload) check that bit 0 is set before sending any `r` requests.
+Any reply at all confirms the terminal implements Glyph Protocol; if nothing arrives within a short timeout, it does not. An empty `fmt=` value means the terminal speaks the protocol but advertises no formats — defined for completeness, not expected in practice. Clients that need `glyf` (v1's only defined payload) check that `glyf` is in the list before sending any `r` requests.
 
 #### Query: who can render this codepoint?
 
@@ -101,17 +102,19 @@ ESC _ 25a1 ; q ; cp=E0A0 ESC \
 Terminal replies:
 
 ```
-ESC _ 25a1 ; q ; cp=E0A0 ; status=1 ESC \
+ESC _ 25a1 ; q ; cp=E0A0 ; status=system ESC \
 ```
 
-`status` is a decimal `u8` encoding a two-bit field — bit 0 means "a system font covers it," bit 1 means "a glossary registration covers it":
+`status` is a comma-separated list of the sources covering this codepoint — `system`, `glossary`, or both:
 
-| Value | State | Meaning |
-|-------|-------|---------|
-| `0`   | `free`     | Nothing renders this codepoint. The cell will show tofu. |
-| `1`   | `system`   | A system font covers it. |
-| `2`   | `glossary` | A glossary registration in this session covers it. |
-| `3`   | `both`     | Both cover it; the registration shadows the system font at render time. |
+| `status=` value     | Meaning |
+|---------------------|---------|
+| (empty)             | Nothing renders this codepoint. The cell will show tofu. |
+| `system`            | A system font covers it. |
+| `glossary`          | A glossary registration in this session covers it. |
+| `system,glossary`   | Both cover it; the registration shadows the system font at render time. |
+
+Like `fmt`, this was a `u8` bitfield until v1.9 (2026-05-03); names read more naturally in transcripts and don't pin the protocol to a closed two-source model.
 
 With this, a TUI can ask first and fall back gracefully — skip registering its own branch icon when the system already has one, register and emit a custom codepoint when it doesn't. Protocol detection itself is handled by the `s` verb above.
 
