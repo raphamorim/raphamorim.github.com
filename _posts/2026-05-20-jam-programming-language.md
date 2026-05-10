@@ -163,7 +163,7 @@ const f: File = slot.unsafeAssumeInit();
 
 `Maybe(T)` is a regular generic struct with three operations: `empty()` constructs a slot whose contents are not yet meaningful, `write()` fills it, and `unsafeAssumeInit()` extracts the value. The naming carries the safety story. Every consume site contains the word `unsafe`, so reviewers (human and AI) can grep for it and find every place a runtime invariant is being asserted.
 
-A lint pass tracks which slots have been written and rejects any `unsafeAssumeInit` call on a slot the analyzer can't prove was initialized. Misuse the API and the compiler errors, it doesn't compile. The `unsafe` prefix stays as the grep anchor for reviewers (human and AI) to find every place a runtime invariant is being asserted, but the obvious mistakes never make it past the analyzer. A reader scrolling through Jam code who sees no `unsafe` knows the analyzer has signed off on every read; sees `unsafe` and slows down.
+A lint pass tracks which slots have been written and rejects any `unsafeAssumeInit` call on a slot the analyzer can't prove was initialized. Misuse the API and the compiler errors, it doesn't compile. The `unsafe` prefix stays as the grep anchor for reviewers (human and AI) to find every place a runtime invariant is being asserted, but the obvious mistakes never make it past the analyzer.
 
 ### Block scopes, early returns, break, continue
 
@@ -200,7 +200,7 @@ fn nestedBreak() {
 }
 ```
 
-Running this prints three lines in this order: `outer` (iter 0's outer drops at the end of the loop body), then `inner` and `outer` (iter 1's break path drops innermost first). Verified by the test suite, every time.
+Running this prints three lines in this order: `outer` (iter 0's outer drops at the end of the loop body), then `inner` and `outer` (iter 1's break path drops innermost first).
 
 ### Passing values without dropping them
 
