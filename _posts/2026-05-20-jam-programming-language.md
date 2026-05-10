@@ -228,15 +228,15 @@ The default mode is a read-only borrow. The callee gets to read the value throug
 Only `move` consumes:
 
 ```rust
-fn intoSink(buf: move []u8) {
-    // buf is owned here. It drops at the end of intoSink.
+fn consume(buf: move []u8) {
+    // buf is owned here. It drops at the end of consume.
 }
 
 fn caller() {
     var data: []u8 = makeBuffer();
-    intoSink(data);
+    consume(data);
     // data is Uninit now. Reading it is a compile error.
-    // The drop ran inside intoSink, not here.
+    // The drop ran inside consume, not here.
 }
 ```
 
