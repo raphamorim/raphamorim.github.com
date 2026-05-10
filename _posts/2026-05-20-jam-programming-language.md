@@ -134,9 +134,11 @@ define i32 @useFile() #0 {
 
 The destructor `_ZN4FileD1Ev` runs unconditionally before the `ret`. So far, Jam and C++ are in the same camp on this axis.
 
-The difference is everything else C++ ships *with* its destructors: copy constructors, move constructors, virtual destructors, exception unwinding, the rule of 0/3/5, slicing, partial destruction during throw. Each of those rules has a paragraph in the standard and a chapter in *Effective Modern C++*. None of them exist in Jam.
+The difference is everything else C++ piles around its destructors. The rule of 0/3/5 forces you to reason about copy and move whenever you write a destructor. Virtual destructors are needed for polymorphic deletion, easy to forget, and a leak when you do. A constructor that throws partially constructs an object whose own destructor never runs. Throwing from a destructor calls `std::terminate` (destructors are implicitly `noexcept(true)` since C++11, so any throw triggers it; mark one `noexcept(false)` and a throw during an in-progress unwind still terminates).
 
-A Jam type has one drop function. It runs at scope exit. That is the whole feature.
+And C++ destructors aren't even a guarantee. `std::exit` doesn't run destructors of stack-resident objects (only static-storage ones). `std::abort` runs none at all. `longjmp` over a scope with non-trivial destructors skips them. An uncaught signal skips them. A constructor that throws skips the object's own destructor.
+
+Rust threw most of this out: one `Drop::drop(&mut self)` per type, no copy or move constructors (moves are byte copies, no user code runs), no virtual marker to manage (trait objects handle polymorphic drop through the vtable's `drop_in_place` automatically), no slicing because there is no inheritance. Jam adopts that same model directly. A type has one drop function. It runs at every scope exit. No rule of five to learn, no virtual marker to forget, no exception-safety dance.
 
 ### Reading uninitialized memory
 
