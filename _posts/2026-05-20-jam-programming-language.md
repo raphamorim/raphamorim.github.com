@@ -36,7 +36,7 @@ The question I've been working on: how do you keep the joyful, immediate feel of
 - **Mutable value semantics** as described in Racordon, Abrahams et al. 2022.[^mvs] Bindings own their values, references exist only for the duration of a single function call, and no `&'a` syntax appears anywhere in user code. This is what replaces the borrow checker.
 - **Rust's drop story.** Types declare a `drop` function, the compiler synthesizes the call at every scope exit, and a small dataflow analysis catches use-of-uninitialized at compile time.
 
-The result is a language where: Bindings own their values and resources clean themselves up: every binding of a drop-bearing type fires its drop function automatically when the binding goes out of scope.
+The result is a language where: Bindings own their values and resources clean themselves up, so every binding of a drop-bearing type fires its drop function automatically when the binding goes out of scope.
 
 ### Jam drop system
 
