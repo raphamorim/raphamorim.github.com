@@ -346,6 +346,12 @@ Here is a very simple demo: a Tetris game for the terminal, built entirely in Ja
 
 One of Jam's design rules is that the grammar must be unambiguous and parseable without backtracking, the same goal Go has. The parser commits on every choice with bounded lookahead and never rolls the token stream back.
 
+A small example of the kind of corner this rules out: Rust's `f<T>(x)`. Read left to right, it is ambiguous between a generic call (function `f`, type argument `T`, value argument `x`) and the expression `(f < T) > (x)` (two comparisons). Rust resolves the ambiguity with the *turbofish* operator `f::<T>(x)`, which is unambiguous but visibly awkward. That awkwardness is a deliberate Rust choice over backtracking, type-context resolution, or unbounded lookahead: keep the parser simple, pay the price in syntax.
+
+JavaScript hits a related trap with automatic semicolon insertion. Write `return` followed by a newline and `{ value: 1 };` on the next line and the parser inserts a `;` after `return`, so the function returns `undefined` instead of the object. ASI exists because the grammar would otherwise be ambiguous about where statements end; it papers over the issue with a heuristic that occasionally fires when nobody wanted it to. The language can't remove it without breaking every JS program on the web.
+
+Jam's bet is that picking unambiguous syntax up front is cheaper than picking an escape hatch later.
+
 Go is the closest existing language on this axis. The grammar is small, unambiguous, LALR(1) per the spec, and the modern reference parser is hand-written recursive descent. The spec is designed so the parser never consults a symbol table to decide what something is: types and values can be parsed without knowing which is which. Go isn't pure LL(1) though. Function signatures are the canonical case: pure top-down parsing of `f(a, b, c, d)` versus `f(a, b, c, d int)` would need to scan to the closing `)` before deciding whether the identifiers are arguments or parameter names. The LALR(1) spec handles it via the parser stack; the hand-written parser sidesteps it by parsing the parameter list as a permissive shape (each item is "name or type or name and type") and resolving the distinction once the structure is in hand.
 
 Jam pushes the same idea one rung further. The grammar is LL(1) end to end. The recursive-descent parser decides every choice with a single token of lookahead, with disjoint `FIRST` sets between every set of alternatives. The pattern grammar in `match`, the parameter-mode grammar in MVS, and the type grammar all fit this shape.
@@ -364,7 +370,7 @@ This post is more of a first conversation than a tour. There's plenty I didn't g
 
 Jam isn't public yet. The compiler exists and runs, but I'm holding the language back from a wider release while I work on the things that make it usable day to day: a stable surface, a package manager, an LSP, a formatter, the rest of the tooling you only notice when it isn't there. Shipping a language without that is shipping a sharp edge, and I'd rather take the time.
 
-Realistically, this beta phase is one to two years. I don't want to open-source a language at the scale Jam already is and then become the bottleneck for everyone who hits a sharp edge. Right now it's gone out to a small group of users, and I'll keep widening the circle as the tooling catches up. Jam will be open source. There's no question about that. I just don't want to open it before it has been through real production use and can stand on its own.
+The plan for when to open source: once Jam has been used to build 108 distinct projects. Suikoden 2 is my favorite game, and the number 108 comes from there (the 108 Stars of Destiny you recruit through the story). It's an arbitrary milestone, but I like it. Right now it has gone out to a small group of users, and I'll keep widening the circle as the tooling catches up. Jam will be open source. There's no question about that. I just don't want to open it before it has been through enough real use to stand on its own.
 
 If you want to kick the tires early, there's a beta list at [jamlang.org](https://jamlang.org/). More updates as the next pieces land.
 
