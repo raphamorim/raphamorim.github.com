@@ -33,7 +33,7 @@ In the age of AI, safety has become a must, or at least highly desirable. A lot 
 
 That's why I started Jam programming language.
 
-The question I've been working on: how do you keep the joyful, immediate feel of a C-like language (Go, Zig, modern C) while making the language safe without a garbage collector? How do you give people the C ergonomic without the C bug class? The compromise that fell out is a language that draws from two places:
+The question I've been working on: how do you keep the joyful, immediate feel of a C-like language (Go, Zig, modern C) while making the language safe without a garbage collector? How do you give people the C ergonomic without the C bug class? The compromise that fell out is a language that draws from four places. Today I'm focusing on two; the other two will get their own posts.
 
 - **Mutable value semantics** as described in Racordon, Abrahams et al. 2022.[^mvs] Bindings own their values, references exist only for the duration of a single function call, and no `&'a` syntax appears anywhere in user code. This is what replaces the borrow checker.
 - **Rust's drop system.** Types declare a `drop` function, the compiler synthesizes the call at every scope exit, and a small dataflow analysis catches use-of-uninitialized at compile time.
@@ -332,6 +332,8 @@ Each arm's block produces a value (the value of its trailing expression), all ar
 Under the hood, every match compiles through a single decision-tree pipeline based on Maranget 2008.[^maranget] For integer-literal cascades, LLVM's `simplifycfg` pass folds the chain into a `switch` and a jump table when profitable. The opcode dispatcher above lands as a jump table without the front-end having to emit `switch` itself.
 
 ### Where this is going
+
+This post is more of a first conversation than a tour. There's plenty I didn't get to: the parameter mode system in real depth, the exclusivity rule, generics, Jam's own comptime, the standard library, allocator systems, the panic model, MLIR exploration for the GPU codegen pipeline (Chris Lattner, if you're by any chance reading this post, I am a big fan), the Rust ABI work for FFI, the path to a self-hosted compiler, and a handful of other things. Each will get its own post as the language settles.
 
 Jam isn't public yet. The compiler exists and runs, but I'm holding the language back from a wider release while I work on the things that make it usable day to day: a stable surface, a package manager, an LSP, a formatter, the rest of the tooling you only notice when it isn't there. Shipping a language without that is shipping a sharp edge, and I'd rather take the time.
 
