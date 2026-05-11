@@ -155,7 +155,9 @@ return f.fd;            // UB at runtime; reads stack garbage
 
 `undefined` is a Zig value of any type. The compiler accepts the read of `f.fd` because, statically, `f` has type `File`. At runtime, the storage holds whatever bytes were on the stack: `0xaa` in Debug mode (Zig's debug fill makes the misuse visible in a debugger), and arbitrary bytes in Release mode. Production code that wandered through an `undefined` read is just wrong. This is the deliberate Zig tradeoff: maximum power, programmer responsibility.
 
-Jam doesn't admit it. There is no `undefined` value, no way to declare a binding without giving it one, no way to read storage that hasn't been written. Every `var` and `const` requires an initializer. If you need to build something incrementally, you use a struct literal: compute the field values first, construct the struct second, bind it third. Nothing in between holds an unspecified value.
+Go sits at the opposite end. Every `var` zero-initializes by default: `var x int` writes 0, `var p *T` writes nil, `var s SomeStruct` zeroes every field. Safety is great (no garbage reads), but `nil` and the zero pattern are still real bytes in memory, written on every declaration even when the next line is about to overwrite every field. Zig trades safety for cycles; Go trades cycles for safety; both pay something the program didn't actually need to pay.
+
+Jam refuses the choice. There is no `undefined` value, no implicit zero, no way to declare a binding without giving it a real initializer. Every `var` and `const` requires one. If you need to build something incrementally, you use a struct literal: compute the field values first, construct the struct second, bind it third. Nothing in between holds an unspecified or placeholder value, and nothing is memset to zero just to be overwritten.
 
 The two patterns where this would otherwise be awkward, *deferred initialization* (slot exists now, value comes later) and *out-parameters* (callee fills caller-owned storage), get a different mechanism: a wrapper type called `Maybe(T)`.
 
