@@ -331,9 +331,36 @@ Each arm's block produces a value (the value of its trailing expression), all ar
 
 Under the hood, every match compiles through a single decision-tree pipeline based on Maranget 2008.[^maranget] For integer-literal cascades, LLVM's `simplifycfg` pass folds the chain into a `switch` and a jump table when profitable. The opcode dispatcher above lands as a jump table without the front-end having to emit `switch` itself.
 
+### Speed
+
+Jam is fast. There is no garbage collector, no managed-memory runtime, no per-allocation header to chase. The performance budget lives in the same neighborhood as Zig and Rust, which is something I have been verifying by writing real applications in Jam over the last few months. Numbers vary by workload, but on the ones I have measured so far Jam matches both within margin.
+
+Here is a very simple demo: a Tetris game for the terminal, built entirely in Jam.
+
+<figure class="post-figure">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/A41iq7Hh8jw?si=Cx1oRrcTNzxkokHs" title="Tetris game built in Jam, running in a terminal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <figcaption>A small Tetris implementation written in Jam, running in the terminal. <a href="https://tangled.org/rapha.land/tetris-jam">Source on Tangled</a>.</figcaption>
+</figure>
+
+### Grammar and parsing
+
+One of Jam's design rules is that the grammar must be unambiguous and parseable without backtracking, the same goal Go has. The parser commits on every choice with bounded lookahead and never rolls the token stream back.
+
+Go is the closest existing language on this axis. The grammar is small, unambiguous, LALR(1) per the spec, and the modern reference parser is hand-written recursive descent. The spec is designed so the parser never consults a symbol table to decide what something is: types and values can be parsed without knowing which is which. Go isn't pure LL(1) though. Function signatures are the canonical case: pure top-down parsing of `f(a, b, c, d)` versus `f(a, b, c, d int)` would need to scan to the closing `)` before deciding whether the identifiers are arguments or parameter names. The LALR(1) spec handles it via the parser stack; the hand-written parser sidesteps it by parsing the parameter list as a permissive shape (each item is "name or type or name and type") and resolving the distinction once the structure is in hand.
+
+Jam pushes the same idea one rung further. The grammar is LL(1) end to end. The recursive-descent parser decides every choice with a single token of lookahead, with disjoint `FIRST` sets between every set of alternatives. The pattern grammar in `match`, the parameter-mode grammar in MVS, and the type grammar all fit this shape.
+
+Three practical consequences:
+
+- **No infinite-lookahead trap.** Languages that need unbounded lookahead (C++ template parsing, certain Rust expression cases) can't get out of that hole once they're in. Jam stays out by construction.
+- **Tooling is cheap.** A small recursive-descent parser handles the whole language. Syntax highlighters, language servers, and editor integrations don't have to reimplement the compiler's full lookahead logic.
+- **The parser is available in the std.** Like Go ([`go/parser`](https://pkg.go.dev/go/parser), [`go/ast`](https://pkg.go.dev/go/ast), [`go/token`](https://pkg.go.dev/go/token)), Jam exposes its own parser as part of `std`. User code can read Jam source as ASTs, which unlocks linters, formatters, refactoring tools, code generation, and static analysis on top of the language without anyone reimplementing the parser from scratch. And because Jam strips out unused code at compile time, the parser only lands in your binary if your code actually imports it.
+
+The cost is surface flexibility. Some things you might want, like Rust-style `let pat = expr` patterns or C++ angle-bracket disambiguation, don't fit. The payoff is a compiler that stays small and easy to reason about, and a tooling ecosystem that's possible to build by hand.
+
 ### Where this is going
 
-This post is more of a first conversation than a tour. There's plenty I didn't get to: the parameter mode system in real depth, the exclusivity rule, generics, Jam's own comptime, the standard library, allocator systems, the panic model, MLIR exploration for the GPU codegen pipeline (Chris Lattner, if you're by any chance reading this post, I am a big fan), the Rust ABI work for FFI, the path to a self-hosted compiler, and a handful of other things. Each will get its own post as the language settles.
+This post is more of a first conversation than a tour. There's plenty I didn't get to: the parameter mode system in real depth, the exclusivity rule, generics, Jam's own comptime, the standard library, allocator systems, the panic model, MLIR exploration for the GPU codegen pipeline (Chris Lattner, if you're by any chance reading this post, I am a big fan), the Rust ABI work for FFI, Cranelift, the path to a self-hosted compiler, and a handful of other things. Each will get its own post as the language settles.
 
 Jam isn't public yet. The compiler exists and runs, but I'm holding the language back from a wider release while I work on the things that make it usable day to day: a stable surface, a package manager, an LSP, a formatter, the rest of the tooling you only notice when it isn't there. Shipping a language without that is shipping a sharp edge, and I'd rather take the time.
 
