@@ -356,11 +356,19 @@ Go is the closest existing language on this axis. The grammar is small, unambigu
 
 Jam pushes the same idea one rung further. The grammar is LL(1) end to end. The recursive-descent parser decides every choice with a single token of lookahead, with disjoint `FIRST` sets between every set of alternatives. The pattern grammar in `match`, the parameter-mode grammar in MVS, and the type grammar all fit this shape.
 
+How is LL(1) achievable here when so few modern languages get there? Two syntax traps usually kill it. The first is angle-bracket generics: `f<T>(x)` collides with the comparison expression `(f < T) > (x)` in any language where `<` is also less-than. Rust, C++, Java, C#, and TypeScript all pay this cost in some form. The second is declaration-vs-expression collisions: C's `T * x` could be a pointer declaration or a multiplication depending on whether `T` is a type, and the parser needs context to know which.
+
+Jam dodges both by construction. Generics are regular function calls that return types at comptime, Zig-style: `Maybe(File)` rather than `Maybe<File>`, so there are no angle brackets to be ambiguous with comparison. Bindings require `var` or `const`, so declaration vs. expression is decided on the first token. Mode keywords (`mut`, `move`, `undefined`) only appear after a colon in a parameter, so the colon does the disambiguating work. The Wirth family of languages (Pascal, Modula-2, Oberon) proved decades ago that LL(1) is achievable for real systems languages; Jam just follows that lineage with modern features.
+
+Another reason for the LL(1) target is error recovery. LL(1) parsers have a well-understood, language-independent recovery story: when the parser hits an unexpected token, it discards some input symbols and pops some symbols from the parsing stack to reach a known good configuration, effectively simulating insertions and deletions. Possible corrections are weighed against a *reliability value* on each token, with some tokens (`;`, `}`) acting as far better resync anchors than others. The classic reference is Spenke et al. 1984.[^ll1-recovery] Good diagnostic messages fall out of the same machinery, which is part of why Wirth-family compilers have historically been small, fast, and helpful.
+
 Three practical consequences:
 
 - **No infinite-lookahead trap.** Languages that need unbounded lookahead (C++ template parsing, certain Rust expression cases) can't get out of that hole once they're in. Jam stays out by construction.
 - **Tooling is cheap.** A small recursive-descent parser handles the whole language. Syntax highlighters, language servers, and editor integrations don't have to reimplement the compiler's full lookahead logic.
 - **The parser is available in the std.** Like Go ([`go/parser`](https://pkg.go.dev/go/parser), [`go/ast`](https://pkg.go.dev/go/ast), [`go/token`](https://pkg.go.dev/go/token)), Jam exposes its own parser as part of `std`. User code can read Jam source as ASTs, which unlocks linters, formatters, refactoring tools, code generation, and static analysis on top of the language without anyone reimplementing the parser from scratch. And because Jam strips out unused code at compile time, the parser only lands in your binary if your code actually imports it.
+
+LL(1) isn't a hill to die on, though. Jam is LL(1) today, and that's the design target, but the headline rule is grammar simplicity, not the specific parsing class. If a real future feature ever demands relaxing to a Go-shaped LALR(1) with a small amount of bounded lookahead, that's an acceptable trade as long as the grammar stays small and the no-backtracking rule holds.
 
 The cost is surface flexibility. Some things you might want, like Rust-style `let pat = expr` patterns or C++ angle-bracket disambiguation, don't fit. The payoff is a compiler that stays small and easy to reason about, and a tooling ecosystem that's possible to build by hand.
 
@@ -377,3 +385,5 @@ If you want to kick the tires early, there's a beta list at [jamlang.org](https:
 [^mvs]: Dimi Racordon, Dave Abrahams, et al., "Implementation Strategies for Mutable Value Semantics", Journal of Object Technology, 2022. [Paper](https://research.google/pubs/mutable-value-semantics/).
 
 [^maranget]: Luc Maranget, "Compiling Pattern Matching to Good Decision Trees", ACM SIGPLAN Workshop on ML, 2008. [PDF](http://moscova.inria.fr/~maranget/papers/ml05e-maranget.pdf).
+
+[^ll1-recovery]: Spenke, Mühlenbein, Mevenkamp, Beilken, and Schubert, "A language independent error recovery method for LL(1) parsers", *Software: Practice and Experience*, 1984. [PDF](https://vs.inf.ethz.ch/publ/papers/Error-Recovery-LL1.pdf).
