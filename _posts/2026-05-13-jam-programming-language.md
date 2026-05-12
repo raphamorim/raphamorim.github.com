@@ -10,6 +10,8 @@ Before anything: A lot of programmers treat their programming language like thei
 
 One more thing: Jam is still on its way to v1.0. The mechanics below are real and running in the compiler today, but specifics may change before the language stabilizes, so treat what's here as the current state and not the final form.
 
+One more thing though: if you think learning a programming language in the age of LLMs is a waste of time, then this post isn't for you. Saying it up front so you can save some of yours.
+
 Ok, all being said. Lemme start.
 
 --
