@@ -6,7 +6,9 @@ description: "A systems language with mutable value semantics, compile-time memo
 draft: true
 ---
 
-Before I get into any of this: I'm not bashing any language. I have real respect for all of them. Every language has good things the others don't, and there's no such thing as a perfect language. As the creator of [Rio](https://github.com/raphamorim/rio) terminal, I've never said a negative word about another terminal, and I won't say one here about another language either. Anyone spending their time trying to build something they believe in has my admiration. What follows is a take on tradeoffs, not on the people behind the work.
+Building a programming language is a long journey. Zig's first public introduction was [Andrew Kelley's 2016 post](https://andrewkelley.me/post/intro-to-zig.html), and a decade later the language is still working toward v1.0, with the toolchain, the community, and the design refining each other as real code gets written. Rust took similar time. I expect Jam to be the same kind of project: years, not months. This post is the first conversation, not a launch announcement.
+
+That said, before I get into any of it: I'm not bashing any language. I have real respect for all of them. Every language has good things the others don't, and there's no such thing as a perfect language. As the creator of [Rio](https://github.com/raphamorim/rio) terminal, I've never said a negative word about another terminal, and I won't say one here about another language either. Anyone spending their time trying to build something they believe in has my admiration. What follows is a take on tradeoffs, not on the people behind the work.
 
 A lot of programmers treat their programming language like their football club (I'm Brazilian; that's where the analogy comes from). You can't really say what's wrong with someone else's team without it getting personal. I get that, and I respect it too. If your language shows up in here and the framing stings, that isn't the intent.
 
@@ -333,7 +335,9 @@ Under the hood, every match compiles through a single decision-tree pipeline bas
 
 ### Speed
 
-Jam is fast. There is no garbage collector, no managed-memory runtime, no per-allocation header to chase. The performance budget lives in the same neighborhood as Zig and Rust, which is something I have been verifying by writing real applications in Jam over the last few months. Numbers vary by workload, but on the ones I have measured so far Jam matches both within margin.
+The goal is for Jam to match Rust and Zig on performance. There is no garbage collector, no managed-memory runtime, no per-allocation header to chase, and the codegen is straightforward LLVM IR, so the ceiling is in the right neighborhood by construction.
+
+Jam is not there yet, though. Rust and Zig have both spent years on the things that move the last 10 to 30 percent: target-specific intrinsics in the standard library, careful auto-vectorization hints, allocator-aware container types, hand-tuned hot paths in core data structures, LLVM pass tuning, and a long tail of small wins that only show up once a language has a real userbase pushing on it. Jam will need that same work to fully close the gap, and it has barely started. On the workloads I have measured so far, Jam is close enough that the gap is "within a small constant factor" rather than "in a different class," which is the right starting place, but I do not want to oversell it as already matching.
 
 Here is a very simple demo: a Tetris game for the terminal, built entirely in Jam.
 
