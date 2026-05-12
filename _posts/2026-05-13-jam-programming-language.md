@@ -339,7 +339,7 @@ Jam is not there yet, though. Rust and Zig have both spent years on the things t
 Here is a very simple demo: a Tetris game for the terminal, built entirely in Jam.
 
 <figure class="post-figure">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/A41iq7Hh8jw?si=Cx1oRrcTNzxkokHs" title="Tetris game built in Jam, running in a terminal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="85%" height="315" src="https://www.youtube.com/embed/A41iq7Hh8jw?si=Cx1oRrcTNzxkokHs" title="Tetris game built in Jam, running in a terminal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   <figcaption>A small Tetris implementation written in Jam, running in the terminal. <a href="https://tangled.org/rapha.land/tetris-jam">Source on Tangled</a>.</figcaption>
 </figure>
 
