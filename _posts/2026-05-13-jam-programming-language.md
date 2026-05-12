@@ -3,7 +3,6 @@ layout: post
 title: "Jam Programming Language"
 language: 'en'
 description: "A systems language with mutable value semantics, compile-time memory safety, and simplicity in mind."
-draft: true
 ---
 
 Before anything: A lot of programmers treat their programming language like their football club (I'm Brazilian; that's where the analogy comes from). You can't really say what's wrong with someone else's team without it getting personal. I get that, and I respect it too. If your language shows up in here and the framing stings, that isn't the intent.
