@@ -5,7 +5,7 @@ language: 'en'
 description: "A systems language with mutable value semantics, compile-time memory safety, and simplicity in mind."
 ---
 
-Before anything: A lot of programmers treat their programming language like their football club (I'm Brazilian; that's where the analogy comes from). You can't really say what's wrong with someone else's team without it getting personal. I get that, and I respect it too. If your language shows up in here and the framing stings, that isn't the intent.
+Before I get into any of this: I’m not bashing any language. I have real respect for all of them. Every language has good things the others don’t, and there’s no such thing as a perfect language. As the creator of Rio Terminal, I’ve never said a negative word about another terminal, and I won’t say one here about another language either. Anyone spending their time trying to build something they believe in has my admiration. What follows is a take on tradeoffs, not on the people behind the work.
 
 One more thing: Jam is still on its way to v1.0. The mechanics below are real and running in the compiler today, but specifics may change before the language stabilizes, so treat what's here as the current state and not the final form.
 
