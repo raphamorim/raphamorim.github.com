@@ -22,6 +22,9 @@
 
   <link rel="canonical" href="{{site.url}}{% if page.url != '/index.html' %}{{ page.url }}{% endif %}" />
 
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml" />
+
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}">
