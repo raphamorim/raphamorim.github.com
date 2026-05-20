@@ -34,7 +34,7 @@ That's why I started Jam programming language.
 
 The question I've been working on: how do you keep the joyful, immediate feel of a C-like language (Go, Zig, modern C) while making the language safe without a garbage collector? How do you give people the C ergonomic without the C bug class? The compromise that fell out is a language that draws from four places. Today I'm focusing on two; the other two will get their own posts.
 
-- **Mutable value semantics** as described in Racordon, Abrahams et al. 2022.[^mvs] Bindings own their values, references exist only for the duration of a single function call, and no `&'a` syntax appears anywhere in user code. This is what replaces the borrow checker.
+- **Mutable value semantics** as described in Racordon, Abrahams et al. 2022.[^mvs] Bindings own their values, parameter borrows live only for the duration of a single function call, and no reference or lifetime syntax appears anywhere in user code. This is what replaces the borrow checker.
 - **Rust's drop system.** Types declare a `drop` function, the compiler synthesizes the call at every scope exit, and a small dataflow analysis catches use-of-uninitialized at compile time.
 
 The result is a language where: Bindings own their values and resources clean themselves up, so every binding of a drop-bearing type fires its drop function automatically when the binding goes out of scope.
@@ -245,15 +245,17 @@ fn caller() {
 }
 ```
 
-A single `&` marker at the call site flags non-default access. The signature decides the exact effect:
+The parameter mode in the signature decides what each call site does. There is no call-site marker. The call shape is identical for every mode:
 
 | Mode | Callsite | Caller's binding after the call |
 | --- | --- | --- |
 | (default) read-only borrow | `f(x)` | unchanged, still init |
-| `mut` exclusive borrow | `f(&x)` | unchanged, still init |
+| `mut` exclusive borrow | `f(x)` | unchanged, still init |
 | `move` consume | `f(x)` | becomes Uninit |
 
-None of this exposes a first-class reference. `&` is not an expression: it cannot be stored in a variable, returned, or held in a struct field. The borrow's lifetime is exactly the call frame, which is why Jam doesn't need `'a` annotations to make any of it safe.
+None of this exposes a first-class reference. There is no reference type in Jam: no value the borrow could attach to, nothing to store in a variable or return from a function or hold in a struct field. Parameter borrows are call-frame ephemera. The callee gets read or read-write access through the parameter, the access expires when the call returns, and that's it. Jam doesn't need lifetime annotations to make any of it safe, because there are no lifetimes to attach.
+
+The same rule forces collection APIs to be value-shaped all the way down. There is no place expression a caller can hold, no way to grab the address of an element. Indexed assignment `v[i] = x` desugars to a setter call (`v.setAt(i, x)`) where the new value flows in by value and the collection writes through its own private storage. Indexed read `let y = v[i]` mirrors it through a getter (`v.at(i)`) that returns the element by value. Same constraint every layer down.
 
 The same insight that powers Rust's borrow checker (shared XOR mutable) applies, but to *paths* at call sites instead of to first-class reference values:
 
@@ -263,12 +265,12 @@ fn swap(a: mut f64, b: mut f64)  { /* ... */ }
 
 fn ok() {
     var p: Point = origin();
-    swap(&p.x, &p.y);   // OK: disjoint sub-paths
+    swap(p.x, p.y);   // OK: disjoint sub-paths
 }
 
 fn err() {
     var p: Point = origin();
-    moveX(&p, &p.x);    // ERROR: `p` overlaps `p.x`
+    moveX(p, p.x);    // ERROR: `p` overlaps `p.x`
 }
 ```
 
