@@ -6,6 +6,8 @@ description: "AI is just a tool. The problem is much deeper, and it started long
 draft: true
 ---
 
+A quick note before anything else: this article isn't linked on my home page. AI is such a dramatic and sensitive topic right now that I'd rather avoid the noise around it. I just wanted to put my thoughts into words, so I can share them with friends if they ever ask how I feel about it.
+
 Every other day I see the same headline in a slightly different costume: "AI is making software worse." And every time, I think the same thing. No, it isn't. People are. AI is just the latest tool we've handed to people who were already comfortable shipping bad software.
 
 Let me be clear from the start: I'm not an AI enthusiast. Well, I do like the technology behind it. I've already built my own models, done fine-tuning, and I often spend time reading papers. However, I'm not a fan of giving AI the pilot seat. This is not an article against AI, neither in favor of it.
