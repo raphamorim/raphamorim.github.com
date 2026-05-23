@@ -37,8 +37,6 @@ That would be hypocrisy, plain and simple.
 
 The honest position is harder. The honest position is to admit that quality has been optional for years, that we traded craftsmanship for convenience long ago, and that AI is simply the mirror showing us what we already valued. If you give a tool to a culture that doesn't care about quality, you get more of what that culture already produces, just faster.
 
-The good news is that the reverse is also true. Put the same tool in the hands of someone who actually cares, someone who counts the bytes, who refuses to accept defeat, who treats constraints as a discipline even when no one is forcing them, and AI becomes exactly what it should be. A tool that amplifies craft instead of replacing it.
-
 So no, AI is not making software worse.
 
 We are. We always have been. And the day we admit that is the day we can actually start building better.
