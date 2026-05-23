@@ -2,7 +2,7 @@
 layout: post
 title: "No, AI is not making software worse, people are"
 language: 'en'
-description: "AI is just a tool. The problem is much deeper, and it started long before AI ever entered the picture. We have been accepting bad quality software for years. Let's not be hypocrites about it."
+description: "AI is just a tool. The problem is much deeper, and it started long before AI ever entered the picture. We have been accepting bad quality software for years."
 ---
 
 Every other day I see the same headline in a slightly different costume: "AI is making software worse." And every time, I think the same thing. No, it isn't. People are. AI is just the latest tool we've handed to people who were already comfortable shipping bad software.
