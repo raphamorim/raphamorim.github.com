@@ -7,7 +7,7 @@ description: "AI is just a tool. The problem is much deeper, and it started long
 
 Every other day I see the same headline in a slightly different costume: "AI is making software worse." And every time, I think the same thing. No, it isn't. People are. AI is just the latest tool we've handed to people who were already comfortable shipping bad software.
 
-Let me be clear from the start: I'm not an AI enthusiast. I genuinely like the technology and the architecture behind it. There's beautiful engineering there, and I respect it. But I'm not the person waving the flag at every release. So this is not an article against AI either. AI is a tool. A powerful one. But blaming the tool is the easiest way to avoid looking at the much deeper problem, and the deeper problem has been with us for a long time.
+Let me be clear from the start: I'm not an AI enthusiast. Well, I do like the technology behind it. I've already built my own models, done fine-tuning, and I often spend time reading papers. However, I'm not a fan of giving AI the pilot seat. This is not an article against AI, neither in favor of it.
 
 We were building bad software long before any model could autocomplete a function for us.
 
