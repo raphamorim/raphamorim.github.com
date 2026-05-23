@@ -9,7 +9,7 @@ Every other day I see the same headline in a slightly different costume: "AI is 
 
 Let me be clear from the start: I'm not an AI enthusiast. Well, I do like the technology behind it. I've already built my own models, done fine-tuning, and I often spend time reading papers. However, I'm not a fan of giving AI the pilot seat. This is not an article against AI, neither in favor of it.
 
-We were building bad software long before any model could autocomplete a function for us.
+That being said, blaming AI is the easiest way to avoid looking at the much deeper problem, and the deeper problem has been with us for a long time. We were building bad software long before any model could autocomplete a function for us.
 
 Think about it honestly. How did we get here? We got here because, year after year, we kept lowering the bar and calling it progress. We normalized software that wastes resources like it costs nothing, because for the person shipping it, it doesn't. The cost is paid by the user's machine, the user's battery, the user's RAM, never by the person who decided "good enough" was good enough.
 
