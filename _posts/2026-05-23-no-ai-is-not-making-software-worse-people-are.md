@@ -6,7 +6,7 @@ description: "AI is just a tool. The problem is much deeper, and it started long
 draft: true
 ---
 
-A quick note before anything else: this article isn't linked on my home page. AI is such a dramatic and sensitive topic right now that I'd rather avoid the noise around it. I just wanted to put my thoughts into words, so I can share them with friends if they ever ask how I feel about it.
+A quick note before anything else: this article isn't linked on my home page. AI is such a dramatic and sensitive topic right now that I'd rather avoid the noise around it. I just wanted to put my thoughts into words, so I can share them with friends if they ever ask how I feel about it. And, I am also concerned that people think I like AI slop code, since in this world it's either good or bad, there's no mid term.
 
 Every other day I see the same headline in a slightly different costume: "AI is making software worse." And every time, I think the same thing. No, it isn't. People are. AI is just the latest tool we've handed to people who were already comfortable shipping bad software.
 
