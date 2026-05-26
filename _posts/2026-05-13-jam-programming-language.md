@@ -276,6 +276,76 @@ fn err() {
 
 The exclusivity check runs at every call site over the borrow set produced by that site's arguments. There's no first-class reference for a lifetime to attach to, so there are no lifetimes to infer.
 
+### Safe, and C-ABI compatible
+
+Everything above is about the inside of a Jam program. The other half of real systems work is the boundary: shipping a library other people link against, loading a plugin at runtime, exposing an API that Python or Go or a C codebase calls. This is where Rust's safety story gets expensive.
+
+Rust's native ABI is deliberately unstable. The layout of a `struct`, the order of enum discriminants, how a `Vec` or a `&str` is passed: all of it can change between compiler versions, and none of it is something another language, or even another independently built Rust binary, can rely on. So the moment you cross a distribution boundary you leave safe Rust behind and re-encode everything in C terms by hand:
+
+```rust
+pub struct Counter { value: i64 }
+
+#[no_mangle]
+pub extern "C" fn counter_new() -> *mut Counter {
+    Box::into_raw(Box::new(Counter { value: 0 }))
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn counter_add(c: *mut Counter, n: i64) -> i64 {
+    let c = &mut *c;          // unsafe: a raw pointer the compiler can't vouch for
+    c.value += n;
+    c.value
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn counter_free(c: *mut Counter) {
+    drop(Box::from_raw(c));   // manual ownership hand-back, also unsafe
+}
+```
+
+Look at what the safety model bought you and then handed back. The borrow checker, lifetimes, `Drop`: all of it stops at the `extern "C"` line. The pointer is raw, dereferencing it is `unsafe`, ownership crosses the boundary by hand through `Box::into_raw` / `Box::from_raw`, and `#[repr(C)]` (omitted here, but mandatory the moment a struct crosses by value) is a separate annotation you have to remember on every type. Tools like `cbindgen` and the `abi_stable` crate exist precisely because this boundary is so much manual work. The friction is real, and it scales with every type and every function you export.
+
+Jam doesn't have this seam, because the thing that makes Rust's ABI unstable doesn't exist in Jam. There are no first-class references, no lifetimes, no niche-packed layouts to erase. A Jam value is value-shaped all the way down, the same property that made the collection APIs by-value earlier, so a Jam struct already *has* a C-compatible layout. There is nothing to translate.
+
+The same `Counter`, exported from Jam:
+
+```rust
+const Counter = struct {
+    value: i64,
+    fn add(self: mut Counter, n: i64) i64 {
+        self.value = self.value + n;
+        return self.value;
+    }
+};
+
+export fn counterAdd(c: mut Counter, n: i64) i64 {
+    return c.add(n);
+}
+```
+
+`export` puts `counterAdd` on the C calling convention under a plain, unmangled name, callable from C as:
+
+```c
+int64_t counterAdd(Counter *c, int64_t n);
+```
+
+The `mut Counter` parameter lowers to exactly that `Counter *`: the mode-aware ABI passes `mut` as a pointer to caller-owned storage, which is what a C caller already holds. No `repr` annotation, no raw-pointer cast, and crucially **no `unsafe`**. The body of `counterAdd` is ordinary Jam, so drop still fires, init analysis still runs, and the call-site exclusivity rule still holds. The safety doesn't stop at the boundary; the boundary is just another Jam function that happens to be reachable from C.
+
+Calling *into* C is the mirror image. `extern` declares the C signature and you call it like any other function:
+
+```rust
+extern fn snprintf(buf: *mut[] u8, size: u64, fmt: *const[] u8, ...) i32;
+
+fn render(value: i32) i32 {
+    var buf: [16]u8 = [0; 16];
+    return snprintf(&buf[0], 16, "n=%d", value);
+}
+```
+
+One honest caveat: at the `extern` line you are talking to C, and C's rules win. `extern` functions follow the C ABI literally, so the parameter-mode machinery from the last section doesn't apply across that boundary, raw pointers (`*const[] u8`, `*mut[] u8`) are how you hand C a buffer, and what C does with that pointer is C's problem. Jam doesn't pretend to verify the far side of an FFI call. What it does give you is that *your* side stays safe by default, and exposing a Jam library across the C ABI costs nothing extra: no shim layer, no second unsafe API mirroring the safe one, no annotation tax on every type. You write the function once, safely, and `export` it.
+
+That matters most exactly where Rust hurts most: distribution. A Jam library can ship as a C-ABI `.so` / `.dylib` / `.a` that any language can link, and the code you wrote to build it is the same safe code you'd have written for internal use.
+
 ### Pattern matching
 
 A match in Jam looks like this:
@@ -331,6 +401,33 @@ const name: []u8 = match (color) {
 Each arm's block produces a value (the value of its trailing expression), all arms must produce the same type, and the match must be exhaustive.
 
 Under the hood, every match compiles through a single decision-tree pipeline based on Maranget 2008.[^maranget] For integer-literal cascades, LLVM's `simplifycfg` pass folds the chain into a `switch` and a jump table when profitable. The opcode dispatcher above lands as a jump table without the front-end having to emit `switch` itself.
+
+### Compile time
+
+There are two kinds of speed, and the section below is only about one of them. The other is how long you wait for the compiler. For the way people actually work, edit, build, run, edit again, dozens of times an hour, build latency is the number you feel most, and it's a number Rust has fought for its entire life.
+
+It's worth being precise about *why* Rust compiles slowly, because it isn't an accident or a missing optimization. It's the pipeline. A function on its way to machine code passes through a [whole sequence of intermediate representations](https://rustc-dev-guide.rust-lang.org/overview.html):
+
+```
+tokens → AST → HIR → (type inference + trait solving)
+       → THIR → MIR → (borrow check) → monomorphization → LLVM IR → machine code
+```
+
+Each arrow is a real lowering pass that allocates a fresh representation and walks the whole program. HIR is the desugared form type inference and trait solving run on (name resolution already ran earlier, on the AST); THIR is a fully typed, further-desugared form built specifically to construct MIR; MIR is where borrow checking, the uninitialized-value check, and mid-level optimization happen; then every generic is monomorphized (a fresh copy stamped out per concrete type) and handed to LLVM, which optimizes all of it again. Trait solving is a search problem. Borrow checking is a whole-function region analysis. Monomorphization multiplies the code volume before LLVM, the slowest stage, even sees it. None of this is waste from Rust's point of view; each pass buys a guarantee. But you pay for all of them on every build.
+
+Jam's pipeline is shorter by construction:
+
+```
+tokens → AST → AstGen → JIR → codegen → LLVM IR → machine code
+```
+
+One typed intermediate representation (JIR) instead of three (HIR, THIR, MIR). JIR is typed from the moment AstGen produces it, because Jam has no comptime-as-values that would force an untyped lowering first, so there's no "resolve, then re-type" round trip. The analyses Rust spreads across HIR and MIR, the drop placement, the init-before-use check, and the call-site exclusivity rule from the earlier sections, all run as local dataflow passes over JIR rather than as a whole-program lifetime-and-region inference. And because Jam annotates a type at every binding, the front end does far less of the global type inference and open-ended trait search that dominate rustc's middle.
+
+The implementation leans the same direction. The AST and JIR are *flat*: small fixed-size nodes packed in one contiguous array, indices instead of pointers, oversized payloads spilled into a side pool, so the compiler walks cache-friendly arrays with switch-on-tag dispatch instead of chasing a tree of heap-allocated nodes across memory. It's the data-oriented design Zig and Carbon adopted for the same reason, the compiler is itself a performance-sensitive program, and laying its data out well is most of the battle.
+
+The one stage nobody escapes for free is the backend. LLVM produces excellent code and takes its time doing it, and in release builds that optimization work dominates the clock. The plan is the split the rest of the industry is converging on: Cranelift for debug builds, where the only goal is to reach a runnable binary as fast as possible, and LLVM for release builds, where you want every last optimization. (Cranelift is on the roadmap, not done yet.)
+
+To be straight about where this stands: the compiler today is the C++ implementation that bootstraps the language, and I don't have build-time benchmarks worth quoting yet. The claim here is about design, not a finished number. But the design is the part you can't retrofit. A pipeline with one IR, local safety passes, and no trait solver has a structurally lower floor than one with three IRs, monomorphization, and a region-inferring borrow checker, and that floor is what fast builds are eventually built on.
 
 ### Speed
 
