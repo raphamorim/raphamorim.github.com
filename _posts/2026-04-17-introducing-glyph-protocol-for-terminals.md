@@ -3,6 +3,7 @@ layout: post
 title: "Introducing Glyph Protocol for Terminals"
 language: 'en'
 description: "A protocol for terminals that allows applications to register custom vector glyphs and query whether a codepoint is renderable on the system — so you no longer need to install a 10MB font just to render a single icon."
+image: assets/images/posts/glyph-protocol-color-banner.png
 ---
 
 There's one thing about terminals that has always bothered me: to get your favorite editor, prompt, or TUI to render nicely, you are almost always forced to install a patched font.
@@ -77,14 +78,14 @@ ESC _ 25a1 ; s ; fmt=glyf ESC \
 | Name | Meaning |
 |------|---------|
 | `glyf` | TrueType simple glyphs. Required in v1. |
-| `colrv0` | Layered flat-colour glyphs (OpenType COLR v0). Added in v1.2 — see the [colour follow-up post](/adding-color-glyphs-to-glyph-protocol/). |
+| `colrv0` | Layered flat-colour glyphs (OpenType COLR v0). Added in v1.2 — see [Colour glyphs](#colour-glyphs) below. |
 | `colrv1` | Full paint graph with gradients and transforms (OpenType COLR v1). Added in v1.2. |
 
 Future formats extend the list with new names. The list was a `u8` bitfield until v1.8 (2026-05-03); names are easier to read in transcripts and don't worry about bit collisions.
 
 <figure class="post-figure">
   <img src="/assets/images/posts/glyph-protocol-color-formats.png" alt="Rio terminal running the same Glyph Protocol example three times: first via a Rust ratatui binary, then a Go bubbletea program, then a Node ink CLI. Each prints identical colrv1 titles, fruit emoji, colrv0 titles, face/animal emoji, and monochrome glyf icons, demonstrating consistent rendering across the three TUI frameworks." />
-  <figcaption>All three payloads side by side: <code>colrv1</code> titles and fruit emoji, <code>colrv0</code> titles with face and animal emoji, and monochrome <code>glyf</code> icons at the bottom. Same registration, rendered from <a href="https://ratatui.rs/">ratatui</a> (Rust), <a href="https://github.com/charmbracelet/bubbletea">bubbletea</a> (Go), and <a href="https://github.com/vadimdemedes/ink">ink</a> (Node). Colour is covered in depth in the <a href="/adding-color-glyphs-to-glyph-terminal-protocol/">follow-up post</a>.</figcaption>
+  <figcaption>All three payloads side by side: <code>colrv1</code> titles and fruit emoji, <code>colrv0</code> titles with face and animal emoji, and monochrome <code>glyf</code> icons at the bottom. Same registration, rendered from <a href="https://ratatui.rs/">ratatui</a> (Rust), <a href="https://github.com/charmbracelet/bubbletea">bubbletea</a> (Go), and <a href="https://github.com/vadimdemedes/ink">ink</a> (Node). Colour is covered in depth <a href="#colour-glyphs">below</a>.</figcaption>
 </figure>
 
 Any reply at all confirms the terminal implements Glyph Protocol; if nothing arrives within a short timeout, it does not. An empty `fmt=` value means the terminal speaks the protocol but advertises no formats — defined for completeness, not expected in practice. Clients that need `glyf` (v1's only defined payload) check that `glyf` is in the list before sending any `r` requests.
@@ -168,7 +169,7 @@ That is the entire format. The authoritative references are the [OpenType `glyf`
 
 Simple glyphs are the subset of `glyf` that any `ttf-parser`-style library already reads in about three hundred lines. Composite glyphs and hinting are where TrueType gets thorny; both are excluded.
 
-**Color behavior.** `glyf` outlines have no color. The terminal renders them in the current foreground color — which *is* the Nerd Font inheritance case, the primary use case for this protocol. Coloured glyphs (status badges, multi-color logos) ship as a separate payload format, `fmt=colrv0` / `fmt=colrv1`, covered in a [follow-up post](/adding-color-glyphs-to-glyph-protocol/).
+**Color behavior.** `glyf` outlines have no color. The terminal renders them in the current foreground color — which *is* the Nerd Font inheritance case, the primary use case for this protocol. Coloured glyphs (status badges, multi-color logos) ship as a separate payload format, `fmt=colrv0` / `fmt=colrv1` — see [Colour glyphs](#colour-glyphs) below.
 
 **Scaling and cell metrics.** The `upm` value defines the glyph's coordinate space; the terminal maps that space onto its cell at render time. An icon authored at `upm=1000` will scale cleanly to an 8×16 cell and to a 32×64 cell. The application does not need to know the terminal's cell size, and never has to re-register on font size change.
 
@@ -255,9 +256,64 @@ The terminal acks with `status=0` whether the slot was occupied or not — clear
 - **No ligatures.** Registration applies to a single codepoint. Sequence-keyed substitution is out of scope for v1; programming ligatures like `->` → `⟶` are already handled by OpenType fonts and don't need to become an attack surface here.
 - **No persistence across sessions.** Glyphs are shipped fresh on each run. This avoids turning the terminal into a font cache with eviction policies and upgrade paths.
 - **No cross-application sharing.** Each terminal session owns its glossary. No IPC, no daemon.
-- **No colored glyphs in v1's `glyf` payload.** `glyf` outlines render in the current foreground color. Multi-layer and paint-graph colour landed in v1.2 as the separate `fmt=colrv0` / `fmt=colrv1` payloads — see the [colour follow-up post](/adding-color-glyphs-to-glyph-terminal-protocol/).
+- **No colored glyphs in v1's `glyf` payload.** `glyf` outlines render in the current foreground color. Multi-layer and paint-graph colour landed in v1.2 as the separate `fmt=colrv0` / `fmt=colrv1` payloads — see [Colour glyphs](#colour-glyphs) below.
 
 Each of these can be added later if it turns out to be needed. None of them can be easily removed once added.
+
+### Colour glyphs
+
+A `glyf` outline renders in a single colour, and for the Nerd-Font case that is exactly right. But a whole class of modern iconography — a red heart, a green status dot, a multi-colour brand logo — needs more than one colour per glyph. That landed in v1.2 as two additional payload formats, advertised through `fmt` exactly like `glyf`.
+
+#### Two formats, not one
+
+Colour glyphs are a well-travelled design space. OpenType already solved it, in two ways:
+
+- **`colrv0`** is the simple one: a base glyph references a list of layer glyphs and per-layer palette indices. Each layer is a flat colour. Layers composite front-to-back. No transforms, no gradients, no blend modes. Powers most Windows 10 emoji and is about ten years old at this point.
+- **`colrv1`** is the ambitious one: a full paint graph. Nodes are linear, radial, and sweep gradients; affine transforms; composite modes; layer groups; references to other glyphs. Powers the [Google Noto emoji](https://fonts.google.com/noto/specimen/Noto+Color+Emoji+SVG) and Chrome's [`colrv1` implementation](https://developer.chrome.com/blog/colrv1-fonts).
+
+Glyph Protocol takes both. They don't compete; they're tiered. A terminal that only implements the simple case gets a useful subset of colour; a terminal that goes all-in gets Apple-quality emoji. Applications advertise the format they're shipping (via `fmt` on the `r` verb) and the terminal advertises what it supports (in the `s` reply); the two negotiate without a round-trip per glyph.
+
+#### Reuse, don't reinvent
+
+The observation is the same one that motivated using `glyf` for monochrome in the first place: every terminal that renders OpenType already has a parser for this.
+
+[`ttf-parser`](https://github.com/RazrFalcon/ttf-parser)'s `colr::Table::parse(cpal, colr)` accepts a standalone COLR + CPAL blob with no surrounding font context required. [`skrifa`](https://github.com/googlefonts/fontations) (the parser behind Chrome's `colrv1` renderer) does the same. Both walk `colrv0` and `colrv1` through a shared `Painter`/`ColorPainter` callback trait. Outside Rust the same job is one library call away: [HarfBuzz](https://harfbuzz.github.io/) walks both through `hb_paint_funcs_t` and is already linked into every Pango/GTK-based terminal; [FreeType](https://freetype.org/) handles both in C and is the default text-shaping dependency on basically every Linux distribution; [Skia](https://skia.org/) ships the `colrv1` renderer Chrome itself uses; [fontTools](https://fonttools.readthedocs.io/) covers Python; and Apple's [CoreText](https://developer.apple.com/documentation/coretext) and Microsoft's [DirectWrite](https://learn.microsoft.com/en-us/windows/win32/directwrite/direct-write-portal) handle it natively at the OS level. Adopting OpenType binary means the protocol gets a paint-graph parser and walker for free, in every mainstream language.
+
+The catch: a COLR table is useless on its own. It only contains layer and colour references — the actual glyph outlines live in the font's `glyf` table, addressed by `GlyphId`. Glyph Protocol ships one glyph at a time, not a full font, so it wraps the COLR + CPAL tables in a tiny container that also carries the outlines each layer references:
+
+```
+u16     n_glyphs
+repeat n_glyphs:
+  u16   glyf_len
+  glyf_len bytes              # simple-glyph, same subset as fmt=glyf
+u16     colr_len              # OpenType COLR table (colrv0 or colrv1)
+colr_len bytes
+u16     cpal_len              # OpenType CPAL table (may be 0 for colrv1)
+cpal_len bytes
+```
+
+`GlyphId` values in the COLR table index into the outline array. `paletteIndex` values in layer records index into the CPAL colour records. `paletteIndex = 0xFFFF` means "use the current foreground colour," per the OpenType spec — so a colour glyph can still inherit the theme where it wants to. That's the whole contract; the rest is COLR's job. The container adds 16 bytes of length-field overhead for a five-layer icon, plus ~70 bytes of fixed COLR + CPAL headers — negligible next to the outline data itself.
+
+#### Registering a colour glyph
+
+Same `r` verb as monochrome, but `fmt` selects the payload format:
+
+```
+ESC _ 25a1 ; r ; cp=E0A0 ; fmt=colrv0 ; upm=1000 ; <base64-container> ESC \
+```
+
+Everything else is unchanged. One codepoint consumes one slot regardless of payload: a `fmt=colrv1` registration carrying 500 inner outlines still eats exactly one of the glossary's 1024 slots. And as with `glyf`, every accepted format is vector — there is deliberately no `sbix`/`CBDT` bitmap path, because a bitmap optimised for a 12px tmux cell is wrong on a 32px HiDPI desktop.
+
+#### Authoring colour payloads
+
+Most applications will not hand-craft COLR tables. Two tools make the pipeline straightforward:
+
+- **[`nanoemoji`](https://github.com/googlefonts/nanoemoji)** — Google's SVG → `colrv1` compiler, originally built for Noto emoji. Feed it a directory of SVGs, get a `.ttf` back. Slice the `COLR`, `CPAL`, and referenced `glyf` outlines out of that TTF with `fontTools`, pack them into Glyph Protocol's container, and register.
+- **[`fontTools`](https://fonttools.readthedocs.io/)** — for pulling COLR data out of existing colour fonts (Noto Color Emoji, Fluent Emoji, Twemoji-via-COLR).
+
+Anything that can emit a COLR + CPAL pair and the underlying outlines can produce a valid payload.
+
+Two colour-specific threads are still open rather than in v1.2: a way to upload a CPAL palette once and reference it by ID across registrations (emoji families like Twemoji or Noto reuse the same ~50-entry palette on every glyph, and shipping it inline each time wastes thousands of bytes), and [Lottie](https://lottiefiles.com/) as a future payload format for motion.
 
 ### Why the terminal restricts to PUA
 
@@ -318,6 +374,8 @@ A few threads came out of the initial conversation about this post that are wort
 1. **Should font-size change be something the protocol notices?** Glyph Protocol itself dodges this because outlines are resolution-independent, but everything *around* it still cares. A TUI that composes images next to glyphs wants to know when the cell metrics changed, and today has no way to learn that short of polling terminal size. Is a `resize` or `metrics-changed` notification in scope, or scope creep?
 
 2. **Is there a responsible way to allow non-PUA registration?** The PUA-only rule makes the whole protocol safe by default. It also rules out uses like a CJK input method shipping a glyph for an uncovered ideograph, or a language-specific tool overriding a glyph it knows the user wants. Is there a shape (an explicit user-level opt-in, a signed capability, a trusted-origin flag) that would unlock those use cases without re-opening phishing?
+
+3. **Should registration scope be configurable?** The current model is per-session with FIFO eviction. Some uses want more: a glyph shared across all PTYs at once (so a system-wide registry survives tmux splits and reattaches), or one pinned un-evictable for the life of the session. Both go beyond the safe defaults — worth the extra surface, or scope creep?
 
 If you have thoughts, I'd love to hear them. Open an issue on [the Rio repo](https://github.com/raphamorim/rio) or drop me a line wherever is easiest.
 
