@@ -28,9 +28,9 @@ You can argue that's fine. A single experienced programmer working solo can hold
   <figcaption><a href="https://x.com/jarredsumner/status/2053048478486708562">Jarred Sumner</a>, creator of <a href="https://bun.sh/">Bun</a>, on rewriting Bun from Zig to Rust. Exactly the tax described above.</figcaption>
 </figure>
 
-In the age of AI, safety has become a must, or at least highly desirable. A lot of code in production today is written, or at least drafted, by something that isn't a human. I am not making a value judgement; it is just where we are. The shape of the bottleneck has shifted: ten years ago you wrote code, now you review code. Ten years ago the compiler caught half the bugs and the human caught the other half; now the compiler has to catch all of them, because the human going line by line with full intent is gone or distracted. With code volume rising and review surface flat, the language has to be the one keeping things honest.
+In the age of AI, safety has become a must, or at least highly desirable. A lot of code in production today is written, or at least drafted, by something that isn't a human. I am not making a value judgement; it is just where we are. The shape of the bottleneck has shifted: ten years ago most folks would wrote code, now most of them review code. Ten years ago the compiler caught half the bugs and the human caught the other half; now the compiler has to catch all of them, because the human going line by line with full intent is gone or distracted. With code volume rising and review surface flat, the language has to be the one keeping things honest.
 
-That's why I started Jam programming language.
+Safety, lower learning curve and high performance were the biggest reasons I started Jam programming language.
 
 The question I've been working on: how do you keep the joyful, immediate feel of a C-like language (Go, Zig, modern C) while making the language safe without a garbage collector? How do you give people the C ergonomic without the C bug class? The compromise that fell out is a language that draws from four places. Today I'm focusing on two; the other two will get their own posts.
 
