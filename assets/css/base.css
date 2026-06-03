@@ -202,7 +202,7 @@ a {
   margin: 32px 0;
   text-align: center;
 }
-.post-page-content .post-figure img {
+.post-page-content .post-figure img, .post-page-content .post-figure video {
   display: block;
   max-width: 100%;
   height: auto;
