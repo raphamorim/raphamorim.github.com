@@ -3,6 +3,7 @@ layout: post
 title: "Is open source even worth it lately?"
 language: 'en'
 description: "Some honest thoughts about open source state of mind in 2026."
+draft: true
 ---
 
 Fear not, I will keep maintaining Rio and Jam. This article is more about other stuff I am developing that never saw the sunrise.
