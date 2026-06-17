@@ -17,7 +17,7 @@ I wanted to make both open source, as I always saw the value of it and believe i
 
 I have seen a shift in really good engineers I know, who are 1. fed up with AI pull request spam, and 2. tired of writing something only for everyone to implement basically the same solution the next minute in another language, without even mentioning the author.
 
-Perhaps the question is: Will big companies keep treating open source as the same? Something that I was grateful over past years of software development was seeing big companies (even Apple), opening more and more their stuff. I think from now and on will be less common considering how easy is to replicate this license. Maybe I am being pessimistic idk.
+Perhaps the question is: Will big companies keep treating open source as the same? Something that I was grateful over past years of software development was seeing big companies (even Apple), opening more and more their stuff. I think from now and on will be less common considering how easy is to replicate without respect the license. Maybe I am being pessimistic idk.
 
 Often we end up in the discussion: do LLMs take developers' jobs? Well, LLMs are fed with real code, often publicly available. So the more open the code is, the more it empowers the models. That's how it works.
 
