@@ -15,10 +15,10 @@ Over the past two years I worked on two projects that never went public, unlike 
 
 I wanted to make both open source, as I always saw the value of it and believe in free software. Problem is, recently I see a trend: "Let's just vibe code an existing project and ignore its license". Reimplement people's ideas is cool man, that's what open source is about. Just respect the license and credit the authors, or try at least to do it.
 
+I have seen a shift in really good engineers I know, who are 1. fed up with AI pull request spam, and 2. tired of writing something only for everyone to implement basically the same solution the next minute in another language, without even mentioning the author.
+
 Often we end up in the discussion: do LLMs take developers' jobs? Well, LLMs are fed with real code, often publicly available. So the more open the code is, the more it empowers the models. That's how it works.
 
 That makes it hard for me to believe developers will simply vanish, but they will indeed become fewer and fewer over time.
-
-I have seen a shift in really good engineers I know, who are 1. fed up with AI pull request spam, and 2. tired of writing something only for everyone to implement basically the same solution the next minute in another language, without even mentioning the author.
 
 This is a short article because I haven't found the answer either (and it was written without AI).
