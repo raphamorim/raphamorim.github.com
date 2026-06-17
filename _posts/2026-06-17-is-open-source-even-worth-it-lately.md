@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Is it even worth do open source lately?"
+title: "Is open source even worth it lately?"
 language: 'en'
 description: "Some honest thoughts about open source state of mind in 2026."
 ---
