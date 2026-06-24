@@ -15,13 +15,13 @@ Boo is a code editor I created solely for myself; I never had the intention of m
 
 First, let’s go step by step.
 
-My mind isn’t really moved by the idea that it would be a success or a failure — the end user of Boo is me. I don’t feel it’s there yet; in fact, I think software should inspire us. Working on Rio Terminal and Boo in my free time — both written in Rust and sharing many similarities — affects my joy, because it starts to become something automatic. Both have similar architecture, language, release process, and etcetera.
+My mind isn’t really moved by the idea that it would be a success or a failure. The end user of Boo is me. I don’t feel it’s there yet; in fact, I think software should inspire us. Working on Rio Terminal and Boo in my free time, both written in Rust and sharing many similarities, affects my joy, because it starts to become something automatic. Both have similar architecture, language, release process, and etcetera.
 
-Since I was a kid, I liked to build Lego blocks. That’s probably what I did the most besides playing football or video games. The fun thing about Lego is that one day you can build a castle, and the next day you can build a ship. Not necessarily using the same pieces and colors — you can actually add a lot of stuff that’s external to what you have, like a wood stick.
+Since I was a kid, I liked to build Lego blocks. That’s probably what I did the most besides playing football or video games. The fun thing about Lego is that one day you can build a castle, and the next day you can build a ship. Not necessarily using the same pieces and colors, since you can actually add a lot of stuff that’s external to what you have, like a wood stick.
 
 When programming becomes repetitive, the odds of you creating something that makes people go “wow” are reduced quite a bit. It isn’t a rule, of course. You need to be inspired to make inspiring software.
 
-I always use the example of [The Legend of Zelda: Breath of the Wild](https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild). This game is so well crafted that I know people who don’t even like video games but bought a console just to play it — and once they finished, they sold everything. This is what I’m talking about: taking time to build something so that once people try it, they remember it for as long as they live.
+I always use the example of [The Legend of Zelda: Breath of the Wild](https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild). This game is so well crafted that I know people who don’t even like video games but bought a console just to play it, and once they finished, they sold everything. This is what I’m talking about: taking time to build something so that once people try it, they remember it for as long as they live.
 
 Boo isn’t a business. I don’t need or want to make money out of it. I don’t have a deadline, nor do I want to create another VS Code. I don’t feel like forcing it to happen.
 
