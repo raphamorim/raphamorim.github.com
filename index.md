@@ -9,7 +9,7 @@ description: "I am Raphael Amorim. Software Developer Engineer. I love Japanese 
 
 Hey there, my name is Raphael.
 
-I created [Rio](https://github.com/raphamorim/rio) terminal emulator and the [Jam](https://jamlang.org/) programming language.
+I work at [Lovable](https://lovable.dev/). I created [Rio](https://github.com/raphamorim/rio) terminal emulator and the [Jam](https://jamlang.org/) programming language.
 
 Previously, I worked at companies like Spotify, Charm, Viaplay, GoDaddy, and Globo.com. I have been a speaker at a few conferences.
 
