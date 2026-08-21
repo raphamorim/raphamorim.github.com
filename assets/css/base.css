@@ -222,9 +222,10 @@ a {
   letter-spacing: -0.004em;
 }
 .post-page-content h2 {
-  margin: 40px 0;
-  color: rgba(0, 0, 0, 0.5);
-  text-transform: uppercase;
+  margin: 56px 0 16px 0;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #1a1a1a;
 }
 .post-page-content h3 {
   margin: 44px 0 14px 0;
