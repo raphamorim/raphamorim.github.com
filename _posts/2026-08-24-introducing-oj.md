@@ -7,11 +7,11 @@ draft: true
 description: "oj is a from-scratch, npm-free dev server and bundler written in Rust. It reads your existing vite.config, runs your existing Vite plugins, and reimplements React and TanStack Start natively, so you point it at a real app and it just runs, faster."
 ---
 
-> Draft: v0.1.0 announcement. Numbers below come from oj's own benchmark suite; the "real apps" section still has a couple of TODOs to confirm before publishing.
+> Draft. Numbers below come from oj's own benchmark suite.
 
 Most of the time you don't think about your dev server. You run `npm run dev`, you wait, you get a URL. The waiting is the part I kept thinking about.
 
-For the last few months I've been building **oj**: a dev server and bundler written in Rust that you can point at an existing Vite + React project and it just runs: the same `vite.config.ts`, the same plugins, no rewrite. Today it hits **0.1.0**, and I want to explain what it is, why it exists, and show you the numbers.
+For the last few months I've been building **oj**: a dev server and bundler written in Rust that you can point at an existing Vite + React project and it just runs: the same `vite.config.ts`, the same plugins, no rewrite. It's now good enough that I point it at real production apps, and I want to explain what it is, why it exists, and show you the numbers.
 
 ## The two things I wanted
 
@@ -127,7 +127,7 @@ The number that doesn't narrow is memory. On that same app oj holds around 115MB
 
 ## Running a real app
 
-A benchmark on a toy app proves nothing. The bar I set for 0.1.0 was: take a real, popular open-source Vite app that I did not write, don't touch its config, and run it.
+A benchmark on a toy app proves nothing. The bar I set for myself was: take a real, popular open-source Vite app that I did not write, don't touch its config, and run it.
 
 That is a genuinely hard bar, because real apps lean on the whole surface of Vite: regex `resolve.alias` for monorepo packages, source files outside the app root, TypeScript enums, `import.meta.env`, plugin virtual modules. Every one of those is a place a "Vite-compatible" tool can quietly fall short, and getting there is most of what the last stretch of work has been.
 
@@ -154,7 +154,7 @@ So who knows what lies ahead.
 
 ## Try it
 
-oj is [open source](https://github.com/raphamorim/oj) and MIT licensed. 0.1.0 is out now.
+oj is [open source](https://github.com/raphamorim/oj) and MIT licensed, on crates.io now.
 
 ```
 cargo install oj --locked
