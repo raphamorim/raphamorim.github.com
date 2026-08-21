@@ -7,8 +7,6 @@ draft: true
 description: "oj is a from-scratch, npm-free dev server and bundler written in Rust. It reads your existing vite.config, runs your existing Vite plugins, and reimplements React and TanStack Start natively, so you point it at a real app and it just runs, faster."
 ---
 
-> Draft. Numbers below come from oj's own benchmark suite.
-
 Most of the time you don't think about your dev server. You run `npm run dev`, you wait, you get a URL. The waiting is the part I kept thinking about.
 
 For the last few months I've been building **oj**: a dev server and bundler written in Rust that you can point at an existing Vite + React project and it just runs: the same `vite.config.ts`, the same plugins, no rewrite. It's now good enough that I point it at real production apps, and I want to explain what it is, why it exists, and show you the numbers.
