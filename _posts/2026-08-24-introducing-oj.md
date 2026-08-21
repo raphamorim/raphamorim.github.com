@@ -144,7 +144,11 @@ oj started as a project to fix my own problems. I was working on another reposit
 
 At some point it started showing up in my day job at [Lovable](https://lovable.dev), quietly, behind a flag. People got excited. They started using it, filing issues, and sending patches. It's still an experimental research project (the README still says *use at your own risk*, and it means it), but it's no longer just mine.
 
+The app it runs there is not a toy: a production TanStack Start build with a client graph around 18,000 modules and a `vite.config` that loads more than fifty plugins. That turned out to be the best stress test oj ever had. Getting it to boot that app in a couple of seconds instead of tens, on a fraction of the memory, didn't come from one clever trick; it came from a stack of small, individually-measured changes: persistent caches for the codegen, the client bundle, and the SSR loader; a single plugin host instead of two; loader hooks moved in-thread. Each is a modest win on its own, and they compound. All of it lives in the public repo.
+
 ![The oj repository on GitHub](/assets/images/posts/oj-github-repo.png)
+
+*(That screenshot is already out of date. The repo has picked up real contributors since, like [William Rudenmalm](https://github.com/williamhogman) and [André Eriksson](https://github.com/aeriksson-lovable), whose recent work is a good chunk of the numbers above.)*
 
 So who knows what lies ahead.
 
