@@ -2,7 +2,8 @@
 layout: post
 title: "Introducing oj: a Rust build tool that speaks Vite"
 language: 'en'
-date: 2026-08-26
+date: 2026-08-24
+draft: true
 description: "oj is a from-scratch, npm-free dev server and bundler written in Rust. It reads your existing vite.config, runs your existing Vite plugins, and reimplements React and TanStack Start natively, so you point it at a real app and it just runs, faster."
 ---
 
@@ -118,9 +119,11 @@ Here is `oj dev --bundle` against Vite's default dev on the same 10,000-componen
 })();
 </script>
 
-Two things worth saying about those numbers. The start figures are the headline, but the one I care about day to day is the **hot edit**: the time from saving a file to seeing it on screen. That's the number you pay dozens of times an hour, and it's where an unbundled, on-demand dev server earns its keep.
+A few things worth saying about those numbers. The start figures are the headline, and they hold as the app grows: on the 10,000-component tree oj cold-starts in about a quarter of Vite's time, and the reload loop you pay dozens of times an hour is where that lead compounds. oj's default `oj dev` is an on-demand, unbundled server; the chart shows `oj dev --bundle`, which pre-bundles the client for the fastest loop.
 
-The other thing: a *well-tuned* Vite is faster than a default one, and the gap narrows. I'm not interested in beating a strawman. These runs are Vite configured sensibly, on the same machine, same app. <!-- TODO(rapha): link the benchmark methodology / repo so people can reproduce. -->
+Two honest caveats. A single hot edit (HMR) is now a wash: both oj and a well-tuned Vite land around 60ms, and I'm not going to pretend otherwise. And a *well-tuned* Vite is faster than a default one; I'm not interested in beating a strawman, so these runs are Vite configured sensibly, on the same machine, same app. The suite is `bench/run.mjs` in the repo, so you can reproduce it: `node bench/run.mjs 10000`.
+
+The number that doesn't narrow is memory. On that same app oj holds around 115MB where Vite sits above 1.5GB, a 13x gap that widens with app size. That is the difference that matters where I run oj most: thousands of ephemeral preview sandboxes, where every megabyte and every second of cold start is multiplied.
 
 ## Running a real app
 
