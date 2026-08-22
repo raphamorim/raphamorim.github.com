@@ -427,13 +427,171 @@ The app it runs there is not a toy: a production TanStack Start build with a cli
 
 So who knows what lies ahead.
 
-## The cache, and the one place it fought back
+## Experimental cache
 
-The biggest of those wins is the persistent cache. oj compiles every module to its final served form, keys that output by a hash of the source, and writes it to a small on-disk store. A warm restart then re-serves compiled modules straight from disk instead of recompiling them, which is most of the difference between a cold boot and a warm one. Vite, for comparison, keeps no cross-restart cache for your app's own source: it re-transforms every module, lazily, on each start. Persisting that work is where a lot of oj's warm-start speed comes from. It is on by default and you can turn it off with `oj dev --no-cache` (or `OJ_NO_CACHE=1`) when you want every start to recompile from scratch.
+The most promising of those, and still experimental, is the persistent cache. oj compiles every module to its final served form, keys that output by a hash of the source, and writes it to a small on-disk store. A warm restart then re-serves compiled modules straight from disk instead of recompiling them, which is most of the difference between a cold boot and a warm one. Vite, for comparison, keeps no cross-restart cache for your app's own source: it re-transforms every module, lazily, on each start. Persisting that work is where a lot of oj's warm-start speed comes from. For now it is off by default while I harden it; opt in with `oj dev --enable-cache` (or `OJ_ENABLE_CACHE=1`) when you want warm starts to skip recompilation. The reason it is not on yet is the next paragraph.
 
 Persisting it also turned out to be where correctness gets subtle, and a real app taught me the lesson. Some Vite plugins do not just transform a file, they also stash state in memory as a side effect. The clearest case is zero-runtime CSS-in-JS: [wyw-in-js](https://wyw-in-js.dev/) (the engine behind Linaria) reads each component's `styled` blocks, extracts the CSS, keeps it in an in-memory map, and appends an `import` of a virtual `.wyw-in-js.css` file that its own `load` hook serves back out of that map. Cache the transformed code and nothing else, and a warm restart is a trap: the code still imports the virtual stylesheet, but the plugin's map is empty because the transform never re-ran, so every one of those imports 404s and the app quietly fails to mount.
 
 The fix is to notice exactly those modules and no others. On a warm hit, oj checks whether the cached module imports a path that no longer exists on disk, which is the signature of a plugin-served virtual, and if so it re-runs that module's transform to repopulate the plugin's state before serving. Everything else, the vast majority, still comes straight from the cache. It is the smallest correct thing: keep the fast path wherever the cached output is self-contained, and pay for a re-transform only where a plugin's memory is part of the answer.
+
+<!-- ==================== BLOCK: warm-cache-surgical — copy from here ==================== -->
+<div class="ojcache" aria-label="A grid of app modules on a warm restart. Naive caching lets plugin-stateful modules 404; oj re-transforms only those and serves the rest from cache.">
+  <div class="ojcache__meta">
+    <span class="ojcache__title">A warm restart: what actually re-runs</span>
+    <span class="ojcache__sub">336 modules · 9 backed by plugin state</span>
+  </div>
+  <canvas class="ojcache__canvas" height="204" aria-hidden="true"></canvas>
+  <div class="ojcache__legend">
+    <span><i class="ojcache__kc"></i>served from cache</span>
+    <span><i class="ojcache__kr"></i>re-transformed</span>
+    <span><i class="ojcache__kb"></i>404 · broke the app</span>
+  </div>
+  <div class="ojcache__ctl">
+    <span class="ojcache__lbl">restart</span>
+    <button class="ojcache__seg" data-m="cold" type="button">cold boot</button>
+    <button class="ojcache__seg" data-m="naive" type="button">warm · cache everything</button>
+    <button class="ojcache__seg ojcache__on" data-m="oj" type="button">warm · oj surgical</button>
+  </div>
+  <div class="ojcache__read">
+    <span><b class="ojcache__c ojcache__vacc">—</b><em>from cache</em></span>
+    <span><b class="ojcache__r ojcache__vwarn">—</b><em>re-transformed</em></span>
+    <span><b class="ojcache__b ojcache__vbad">—</b><em>404s</em></span>
+    <span><b class="ojcache__mount ojcache__vmount">—</b><em>result</em></span>
+  </div>
+  <noscript><p class="ojcache__fallback">On a warm restart, caching every module but re-running none leaves plugin-served virtual files (e.g. wyw-in-js CSS) 404ing, so the app fails to mount. oj re-transforms only those few modules and serves the rest from cache.</p></noscript>
+</div>
+<style>
+  .ojcache {
+    --acc: #2a33d4; --warn: #c26a1b; --bad: #c0392b; --ink: #1c1c1c; --mut: #6b6a66;
+    --line: #e6e5e2; --bg: #ffffff; --cell: #dfe0f4; --win: #17876b;
+    border: 1px solid var(--line); border-radius: 10px; background: var(--bg);
+    padding: 16px 16px 12px; margin: 28px 0;
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .ojcache__meta { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 10px; }
+  .ojcache__title { font-weight: 600; font-size: 13.5px; color: var(--ink); }
+  .ojcache__sub { font-size: 11px; color: var(--mut); }
+  .ojcache__canvas { display: block; width: 100%; height: 204px; }
+  .ojcache__legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 11px; color: var(--mut); margin-top: 8px; }
+  .ojcache__legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; vertical-align: baseline; }
+  .ojcache__kc { background: var(--acc); } .ojcache__kr { background: var(--warn); } .ojcache__kb { background: var(--bad); }
+  .ojcache__ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--line); font-size: 12px; }
+  .ojcache__lbl { color: var(--mut); margin-right: 2px; }
+  .ojcache__seg { font: inherit; font-size: 11.5px; cursor: pointer; border: 1px solid var(--line); background: transparent; color: var(--mut); padding: 4px 9px; border-radius: 7px; }
+  .ojcache__seg:hover { border-color: var(--acc); color: var(--ink); }
+  .ojcache__seg:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+  .ojcache__on { background: var(--acc); border-color: var(--acc); color: #fff; }
+  .ojcache__on:hover { color: #fff; }
+  .ojcache__read { display: flex; flex-wrap: wrap; gap: 14px 26px; margin-top: 12px; }
+  .ojcache__read span { display: flex; flex-direction: column-reverse; }
+  .ojcache__read b { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+  .ojcache__read em { font-style: normal; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mut); }
+  .ojcache__vacc { color: var(--acc); } .ojcache__vwarn { color: var(--warn); } .ojcache__vbad { color: var(--bad); }
+  .ojcache__vmount { color: var(--win); } .ojcache__vmount.is-fail { color: var(--bad); }
+  .ojcache__fallback { font-size: 12px; color: var(--mut); }
+</style>
+<script>
+  (function () {
+    var root = document.currentScript.previousElementSibling;
+    while (root && !(root.classList && root.classList.contains("ojcache"))) root = root.previousElementSibling;
+    if (!root) return;
+    var cv = root.querySelector(".ojcache__canvas");
+    var ctx = cv.getContext("2d");
+    if (!ctx) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var cV = root.querySelector(".ojcache__c"), rV = root.querySelector(".ojcache__r"),
+        bV = root.querySelector(".ojcache__b"), mV = root.querySelector(".ojcache__mount");
+
+    var COLS = 24, ROWS = 14, N = COLS * ROWS;
+    // modules whose transform stashes state a warm cache can't restore (e.g. a
+    // plugin's in-memory map that serves a virtual stylesheet)
+    var STATEFUL = new Set([37, 66, 91, 130, 155, 199, 241, 288, 300]);
+    var mode = "oj", sweep = 0, raf = 0, start = 0;
+
+    function tone(v) { return getComputedStyle(root).getPropertyValue(v).trim(); }
+    // state of cell i under a mode: 0 cache, 1 retransform, 2 broken
+    function stateOf(i, m) {
+      if (m === "cold") return 0;
+      if (STATEFUL.has(i)) return m === "naive" ? 2 : 1;
+      return 0;
+    }
+    function color(s) { return s === 2 ? tone("--bad") : s === 1 ? tone("--warn") : (mode === "cold" ? tone("--acc") : tone("--cell")); }
+
+    var w = 0, h = 0, dpr = 1;
+    function size() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = cv.getBoundingClientRect(); w = r.width || 600; h = 204;
+      cv.width = Math.floor(w * dpr); cv.height = Math.floor(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.font = "500 11px 'JetBrains Mono', monospace"; ctx.textBaseline = "alphabetic";
+      ctx.fillStyle = tone("--mut");
+      var head = mode === "cold" ? "cold boot — every module compiled, cache written"
+        : mode === "naive" ? "warm — cache the output, re-run nothing"
+        : "warm — cache the output, re-run only what carries plugin state";
+      ctx.fillText(head, 0, 12);
+      var top = 22, pad = 2;
+      var cell = Math.min((w - (COLS - 1) * pad) / COLS, (h - top - (ROWS - 1) * pad) / ROWS);
+      var gx = (w - (COLS * cell + (COLS - 1) * pad)) / 2;
+      for (var i = 0; i < N; i++) {
+        var c = i % COLS, r = Math.floor(i / COLS);
+        var revealed = sweep >= c; // left-to-right sweep on mode change
+        var s = revealed ? stateOf(i, mode) : 0;
+        var col = revealed ? color(s) : tone("--cell");
+        if (!revealed) col = tone("--line");
+        var x = gx + c * (cell + pad), y = top + r * (cell + pad);
+        ctx.fillStyle = col;
+        ctx.globalAlpha = (s === 0 && mode !== "cold") ? 0.85 : 1;
+        roundRect(x, y, cell, cell, Math.min(2.5, cell / 4));
+      }
+      ctx.globalAlpha = 1;
+    }
+    function roundRect(x, y, wd, ht, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + wd, y, x + wd, y + ht, r);
+      ctx.arcTo(x + wd, y + ht, x, y + ht, r);
+      ctx.arcTo(x, y + ht, x, y, r);
+      ctx.arcTo(x, y, x + wd, y, r);
+      ctx.fill();
+    }
+    function readout() {
+      var broken = mode === "naive" ? STATEFUL.size : 0;
+      var retr = mode === "oj" ? STATEFUL.size : 0;
+      var cache = mode === "cold" ? 0 : N - STATEFUL.size;
+      cV.textContent = mode === "cold" ? "0" : cache;
+      rV.textContent = mode === "cold" ? N : retr; // cold: all compiled
+      rV.nextElementSibling.textContent = mode === "cold" ? "compiled" : "re-transformed";
+      bV.textContent = broken;
+      var ok = broken === 0;
+      mV.textContent = ok ? "✓ mounts" : "✗ blank";
+      mV.classList.toggle("is-fail", !ok);
+    }
+    function anim(now) {
+      var t = now - start;
+      sweep = reduce ? COLS : Math.min(COLS, (t / 460) * COLS);
+      draw();
+      if (sweep < COLS) raf = requestAnimationFrame(anim); else raf = 0;
+    }
+    function setMode(m) {
+      mode = m;
+      root.querySelectorAll(".ojcache__seg").forEach(function (b) { b.classList.toggle("ojcache__on", b.getAttribute("data-m") === m); });
+      readout();
+      if (raf) cancelAnimationFrame(raf);
+      start = performance.now(); sweep = 0; raf = requestAnimationFrame(anim);
+    }
+    root.querySelectorAll(".ojcache__seg").forEach(function (b) {
+      b.addEventListener("click", function () { setMode(b.getAttribute("data-m")); });
+    });
+    window.addEventListener("resize", function () { size(); draw(); });
+    size(); readout(); sweep = COLS; draw();
+  })();
+</script>
+<!-- ==================== END BLOCK: warm-cache-surgical ==================== -->
+
 
 ## Try it
 
@@ -446,3 +604,5 @@ oj dev
 ```
 
 If it doesn't run your app unchanged, that's a bug I want to hear about: open an issue with your `vite.config.ts` and I'll chase it. That's the whole promise.
+
+<br/>
