@@ -151,22 +151,16 @@ Then I pointed it at something much bigger: [Twenty](https://github.com/twentyhq
 | **oj** | ~16.6s | ~16.0s | **1.4 GB** |
 | Vite | **~11.5s** | **~10.3s** | 4.9 GB |
 
-oj is about 1.4x slower to first paint here, on roughly a third of the memory, and the reason is worth being precise about because my first guess was wrong. Twenty's first screen imports close to its entire graph, so it fires around 15,000 module requests, and about 9,800 of those are individual files from CommonJS dependencies. Vite runs esbuild to pre-bundle those dependencies into a handful of optimized files up front; oj serves each dependency module on its own. That request-count gap, not compilation speed, is the 1.4x.
+oj is about 1.4x slower to first paint here, on roughly a third of the memory. The cause isn't compilation speed: Twenty's first screen pulls close to its entire graph, around 15,000 module requests, and about 9,800 of those are individual files from dependencies that Vite pre-bundles into a handful of files and oj currently serves one by one. It's a request-count gap.
 
-The interesting part is *why* oj serves them individually. Pre-bundling CommonJS and UMD packages by statically converting them to ES modules has a long tail of interop bugs (a UMD wrapper's `this` becomes `undefined`, a dependency's exports can't be seen without running it), which is why Vite ships `optimizeDeps.exclude` and `needsInterop` escape hatches for when it misfires. The more robust tools, webpack, Rspack, Bun, Farm, sidestep that by running each module through a real CommonJS runtime (`module`/`exports`/`require`) instead of guessing a static conversion. oj already does exactly that, so it serves complex dependencies correctly where a naive pre-bundle would break them, it just pays for it in request count.
+Closing it is what oj's (experimental, flag-gated) partial bundling does: it collapses a dependency's files into a single request. On a clean React app (router, `date-fns`, `lodash-es`) that turns **962 dependency requests into 18**, with the app rendering identically. That's nearly free on localhost but decisive over a network, where every request pays a round-trip, exactly the shape of a remote or sandboxed dev server. Same app, time-to-first-render through a latency proxy:
 
-So I built the fix the right way round: oj-native partial bundling that concatenates a package's module graph into a single file *while keeping the real CommonJS runtime and oj's ESM interop*, rather than inheriting the static-conversion tail. It's still experimental and behind a flag, but on a clean React app (router, `date-fns`, `lodash-es`) it collapses **962 dependency requests into 18** and the app renders identically.
-
-That request-count reduction is nearly free on localhost, but it is the whole game over a network, where every request pays a round-trip and the browser only opens a handful of connections at once, exactly the shape of a remote or sandboxed dev server. Driving the same app through a latency proxy, time-to-first-render tells the story:
-
-| round-trip latency | unbundled deps | partial bundling | speedup |
+| round-trip latency | before | after | speedup |
 |---|---|---|---|
 | 0ms (local) | 448ms | 65ms | 6.9× |
 | 10ms | 2.2s | 106ms | 21× |
 | 25ms | 4.7s | 195ms | 24× |
 | 50ms (remote) | 8.8s | 0.33s | **27×** |
-
-The 962 unbundled requests serialize into ~160 connection-limited waves of round-trips; the 18 bundled ones need about three. Twenty itself isn't fully collapsed yet, its heaviest dependencies (`@apollo/client` and friends) still hit edges that only a full bundler handles cleanly, and the honest next step there is to reuse the rolldown bundler oj already embeds for exactly those packages. But the architecture is settled: keep the runtime that makes complex packages correct, and bundle to cut the requests.
 
 The point of oj was never "another bundler." It was: keep the ecosystem you already have (your config, your plugins, your framework) and make the loop underneath it disappear.
 
@@ -174,7 +168,7 @@ The point of oj was never "another bundler." It was: keep the ecosystem you alre
 
 oj started as a project to fix my own problems. I was working on another repository and watching agents run `vite build` over and over, each build process carrying gigabytes of memory, and I got tired enough to try building the thing I wished I had. That's the whole origin: frustration, and free time.
 
-At some point it started showing up in my day job at [Lovable](https://lovable.dev), quietly, behind a flag. People got excited. They started using it, filing issues, and sending patches. It's still an experimental research project (the README still says *use at your own risk*, and it means it), but it's no longer just mine.
+At some point it started showing up in my day job at [Lovable](https://lovable.dev), quietly, behind a flag. People got excited. They started using it, filing issues, and sending patches. It's still an experimental research project (the README still says *use at your own risk*, and it means it).
 
 The app it runs there is not a toy: a production TanStack Start build with a client graph around 18,000 modules and a `vite.config` that loads more than fifty plugins. That turned out to be the best stress test oj ever had. Getting it to boot that app in a couple of seconds instead of tens, on a fraction of the memory, didn't come from one clever trick; it came from a stack of small, individually-measured changes: persistent caches for the codegen, the client bundle, and the SSR loader; a single plugin host instead of two; loader hooks moved in-thread. Each is a modest win on its own, and they compound. All of it lives in the public repo.
 
