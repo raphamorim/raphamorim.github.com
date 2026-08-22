@@ -11,6 +11,8 @@ Most of the time you don't think about your dev server. You run `npm run dev`, y
 
 For the last few months I've been building **oj**: a dev server and bundler written in Rust that you can point at an existing Vite + React project and it just runs: the same `vite.config.ts`, the same plugins, no rewrite. It's now good enough that I point it at real production apps, and I want to explain what it is, why it exists, and show you the numbers.
 
+> **oj is experimental.** It already runs real production apps unchanged (I test it against large ones), but it is not finished. There are gaps: Svelte support, for one, is something I am actively working on, and you will hit rough edges on apps that lean on parts of the ecosystem I haven't covered yet. Treat it as a fast-moving project you can try today, not a drop-in replacement you should ship on tomorrow.
+
 ## The two things I wanted
 
 There are already fast bundlers. What I wanted was a specific combination that didn't exist yet:
@@ -142,6 +144,30 @@ oj boots it in under a second whether the cache is cold or warm, on about an eig
 
 One honest caveat, and oj prints it on boot: it **skips `vite-plugin-checker`**, the plugin that runs `tsc` in a background worker and overlays type errors in the browser. oj cannot host that one (it wants a full Vite dev server that oj does not provide), so it logs `skipping unsupported plugin "vite-plugin-checker"` and carries on. The app it serves is the same either way; you just do not get the in-browser type overlay, and Vite's numbers above include the worker that oj never starts.
 
+Then I pointed it at something much bigger: [Twenty](https://github.com/twentyhq/twenty), an open-source CRM whose front-end is around 15,000 modules and leans on the *whole* hard surface at once, zero-runtime CSS-in-JS via `@wyw-in-js`, a Linaria/SWC macro pipeline, `vite-plugin-svgr`, and a pile of CommonJS and UMD dependencies. Getting it to boot and render took another stack of compatibility fixes (CommonJS named-export interop, `browser`-field stubs, the wyw resolver), and it does run now. But here the numbers flip, and it is worth being honest about why:
+
+| | cold start | warm start | memory |
+|---|---|---|---|
+| **oj** | ~16.6s | ~16.0s | **1.4 GB** |
+| Vite | **~11.5s** | **~10.3s** | 4.9 GB |
+
+oj is about 1.4x slower to first paint here, on roughly a third of the memory, and the reason is worth being precise about because my first guess was wrong. Twenty's first screen imports close to its entire graph, so it fires around 15,000 module requests, and about 9,800 of those are individual files from CommonJS dependencies. Vite runs esbuild to pre-bundle those dependencies into a handful of optimized files up front; oj serves each dependency module on its own. That request-count gap, not compilation speed, is the 1.4x.
+
+The interesting part is *why* oj serves them individually. Pre-bundling CommonJS and UMD packages by statically converting them to ES modules has a long tail of interop bugs (a UMD wrapper's `this` becomes `undefined`, a dependency's exports can't be seen without running it), which is why Vite ships `optimizeDeps.exclude` and `needsInterop` escape hatches for when it misfires. The more robust tools, webpack, Rspack, Bun, Farm, sidestep that by running each module through a real CommonJS runtime (`module`/`exports`/`require`) instead of guessing a static conversion. oj already does exactly that, so it serves complex dependencies correctly where a naive pre-bundle would break them, it just pays for it in request count.
+
+So I built the fix the right way round: oj-native partial bundling that concatenates a package's module graph into a single file *while keeping the real CommonJS runtime and oj's ESM interop*, rather than inheriting the static-conversion tail. It's still experimental and behind a flag, but on a clean React app (router, `date-fns`, `lodash-es`) it collapses **962 dependency requests into 18** and the app renders identically.
+
+That request-count reduction is nearly free on localhost, but it is the whole game over a network, where every request pays a round-trip and the browser only opens a handful of connections at once, exactly the shape of a remote or sandboxed dev server. Driving the same app through a latency proxy, time-to-first-render tells the story:
+
+| round-trip latency | unbundled deps | partial bundling | speedup |
+|---|---|---|---|
+| 0ms (local) | 448ms | 65ms | 6.9× |
+| 10ms | 2.2s | 106ms | 21× |
+| 25ms | 4.7s | 195ms | 24× |
+| 50ms (remote) | 8.8s | 0.33s | **27×** |
+
+The 962 unbundled requests serialize into ~160 connection-limited waves of round-trips; the 18 bundled ones need about three. Twenty itself isn't fully collapsed yet, its heaviest dependencies (`@apollo/client` and friends) still hit edges that only a full bundler handles cleanly, and the honest next step there is to reuse the rolldown bundler oj already embeds for exactly those packages. But the architecture is settled: keep the runtime that makes complex packages correct, and bundle to cut the requests.
+
 The point of oj was never "another bundler." It was: keep the ecosystem you already have (your config, your plugins, your framework) and make the loop underneath it disappear.
 
 ## How it got here
@@ -154,9 +180,17 @@ The app it runs there is not a toy: a production TanStack Start build with a cli
 
 ![The oj repository on GitHub](/assets/images/posts/oj-github-repo.png)
 
-*(That screenshot is already out of date. The repo has picked up real contributors since, like [William Rudenmalm](https://github.com/williamhogman) and [André Eriksson](https://github.com/aeriksson-lovable), whose recent work is a good chunk of the numbers above.)*
+*(That screenshot is already out of date. The repo has picked up real contributors since)*
 
 So who knows what lies ahead.
+
+## The cache, and the one place it fought back
+
+The biggest of those wins is the persistent cache. oj compiles every module to its final served form, keys that output by a hash of the source, and writes it to a small on-disk store. A warm restart then re-serves compiled modules straight from disk instead of recompiling them, which is most of the difference between a cold boot and a warm one. Vite, for comparison, keeps no cross-restart cache for your app's own source: it re-transforms every module, lazily, on each start. Persisting that work is where a lot of oj's warm-start speed comes from. It is on by default and you can turn it off with `oj dev --no-cache` (or `OJ_NO_CACHE=1`) when you want every start to recompile from scratch.
+
+Persisting it also turned out to be where correctness gets subtle, and a real app taught me the lesson. Some Vite plugins do not just transform a file, they also stash state in memory as a side effect. The clearest case is zero-runtime CSS-in-JS: [wyw-in-js](https://wyw-in-js.dev/) (the engine behind Linaria) reads each component's `styled` blocks, extracts the CSS, keeps it in an in-memory map, and appends an `import` of a virtual `.wyw-in-js.css` file that its own `load` hook serves back out of that map. Cache the transformed code and nothing else, and a warm restart is a trap: the code still imports the virtual stylesheet, but the plugin's map is empty because the transform never re-ran, so every one of those imports 404s and the app quietly fails to mount.
+
+The fix is to notice exactly those modules and no others. On a warm hit, oj checks whether the cached module imports a path that no longer exists on disk, which is the signature of a plugin-served virtual, and if so it re-runs that module's transform to repopulate the plugin's state before serving. Everything else, the vast majority, still comes straight from the cache. It is the smallest correct thing: keep the fast path wherever the cached output is self-contained, and pay for a re-transform only where a plugin's memory is part of the answer.
 
 ## Try it
 
