@@ -2,8 +2,7 @@
 layout: post
 title: "Introducing oj: a Rust build tool that speaks Vite"
 language: 'en'
-date: 2026-08-21
-draft: true
+date: 2026-08-24
 description: "oj is a from-scratch, npm-free dev server and bundler written in Rust. It reads your existing vite.config, runs your existing Vite plugins, and reimplements React and TanStack Start natively, so you point it at a real app and it just runs, faster."
 ---
 
