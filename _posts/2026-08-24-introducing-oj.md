@@ -140,14 +140,14 @@ Under the hood it's built on [rolldown](https://rolldown.rs) and [oxc](https://o
 
 Here is `oj dev --bundle` against Vite's default dev on the same 10,000-component project: cold start, warm start, and a full page reload. Watch it fill:
 
-<div class="ojbench" aria-label="Benchmark comparing oj and Vite on a 10,000-component app: cold start, warm start, and a full page reload. oj is roughly four times faster on start and nearly eight times faster on reload.">
+<div class="ojbench" aria-label="Benchmark comparing oj and Vite on a 10,000-component app: cold start, warm start, and a full page reload. oj is roughly four times faster on start and nearly seven times faster on reload.">
   <div class="ojbench__meta">
     <span class="ojbench__metric">Cold start</span>
-    <span class="ojbench__ratio">4.3× faster</span>
-    <span class="ojbench__ms">oj <b>1315ms</b> · Vite <b>5693ms</b></span>
+    <span class="ojbench__ratio">4.1× faster</span>
+    <span class="ojbench__ms">oj <b>1211ms</b> · Vite <b>4917ms</b></span>
   </div>
   <canvas class="ojbench__canvas" height="150" aria-hidden="true"></canvas>
-  <noscript><p class="ojbench__fallback">oj vs Vite on 10,000 components. Cold start: 1315ms vs 5693ms · warm start: 1129ms vs 5304ms · reload: 232ms vs 1781ms.</p></noscript>
+  <noscript><p class="ojbench__fallback">oj vs Vite on 10,000 components. Cold start: 1211ms vs 4917ms · warm start: 1067ms vs 4516ms · reload: 223ms vs 1474ms.</p></noscript>
 </div>
 
 <style>
@@ -171,9 +171,9 @@ Here is `oj dev --bundle` against Vite's default dev on the same 10,000-componen
   if (!ctx) return;
 
   var METRICS = [
-    { label: "Cold start", oj: 1315, vite: 5693 },
-    { label: "Warm start", oj: 1129, vite: 5304 },
-    { label: "Reload",     oj: 232,  vite: 1781 }
+    { label: "Cold start", oj: 1211, vite: 4917 },
+    { label: "Warm start", oj: 1067, vite: 4516 },
+    { label: "Reload",     oj: 223,  vite: 1474 }
   ];
   var OJ_MS = 900, HOLD = 1100, CELL = 12;
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -234,7 +234,7 @@ Here is `oj dev --bundle` against Vite's default dev on the same 10,000-componen
 
 A few things worth saying about those numbers. The start figures are the headline, and they hold as the app grows: on the 10,000-component tree oj cold-starts in about a quarter of Vite's time, and the reload loop you pay dozens of times an hour is where that lead compounds. oj's default `oj dev` is an on-demand, unbundled server; the chart shows `oj dev --bundle`, which pre-bundles the client for the fastest loop.
 
-Two honest caveats. A single hot edit (HMR) is now a wash: both oj and a well-tuned Vite land around 60ms, and I'm not going to pretend otherwise. And a *well-tuned* Vite is faster than a default one; I'm not interested in beating a strawman, so these runs are Vite configured sensibly, on the same machine, same app. The suite is `bench/run.mjs` in the repo, so you can reproduce it: `node bench/run.mjs 10000`.
+One honest caveat: a *well-tuned* Vite is faster than a default one, and I'm not interested in beating a strawman, so these runs are Vite configured sensibly, on the same machine, same app. The suite is `bench/run.mjs` in the repo, so you can reproduce it: `node bench/run.mjs 10000`.
 
 The number that doesn't narrow is memory. On that same app oj holds around 115MB where Vite sits above 1.5GB, a 13x gap that widens with app size. That is the difference that matters where I run oj most: thousands of ephemeral preview sandboxes, where every megabyte and every second of cold start is multiplied.
 
