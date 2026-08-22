@@ -421,7 +421,7 @@ At some point it started showing up in my day job at [Lovable](https://lovable.d
 
 The app it runs there is not a toy: a production TanStack Start build with a client graph around 18,000 modules and a `vite.config` that loads more than fifty plugins. That turned out to be the best stress test oj ever had. Getting it to boot that app in a couple of seconds instead of tens, on a fraction of the memory, didn't come from one clever trick; it came from a stack of small, individually-measured changes: persistent caches for the codegen, the client bundle, and the SSR loader; a single plugin host instead of two; loader hooks moved in-thread. Each is a modest win on its own, and they compound. All of it lives in the public repo.
 
-![The oj repository on GitHub](/assets/images/posts/oj-github-repo.png)
+<img src="/assets/images/posts/oj-github-repo.png" alt="The oj repository on GitHub" style="width: 100%; max-width: 100%; height: auto; border: 1px solid #e6e5e2; border-radius: 10px;" />
 
 *(That screenshot is already out of date. The repo has picked up real contributors since)*
 
