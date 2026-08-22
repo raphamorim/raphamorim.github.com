@@ -144,16 +144,16 @@ oj boots it in under a second whether the cache is cold or warm, on about an eig
 
 One honest caveat, and oj prints it on boot: it **skips `vite-plugin-checker`**, the plugin that runs `tsc` in a background worker and overlays type errors in the browser. oj cannot host that one (it wants a full Vite dev server that oj does not provide), so it logs `skipping unsupported plugin "vite-plugin-checker"` and carries on. The app it serves is the same either way; you just do not get the in-browser type overlay, and Vite's numbers above include the worker that oj never starts.
 
-Then I pointed it at something much bigger: [Twenty](https://github.com/twentyhq/twenty), an open-source CRM whose front-end is around 15,000 modules and leans on the *whole* hard surface at once, zero-runtime CSS-in-JS via `@wyw-in-js`, a Linaria/SWC macro pipeline, `vite-plugin-svgr`, and a pile of CommonJS and UMD dependencies. Getting it to boot and render took another stack of compatibility fixes (CommonJS named-export interop, `browser`-field stubs, the wyw resolver), and it does run now. But here the numbers flip, and it is worth being honest about why:
+Then I pointed it at something much bigger: [Twenty](https://github.com/twentyhq/twenty), an open-source CRM whose front-end is around 15,000 modules and leans on the *whole* hard surface at once, zero-runtime CSS-in-JS via `@wyw-in-js`, a Linaria/SWC macro pipeline, `vite-plugin-svgr`, and a pile of CommonJS and UMD dependencies. Getting it to boot and render took another stack of compatibility fixes (CommonJS named-export interop, `browser`-field stubs, the wyw resolver), and it runs, and it stays ahead:
 
 | | cold start | warm start | memory |
 |---|---|---|---|
-| **oj** | ~16.6s | ~16.0s | **1.4 GB** |
-| Vite | **~11.5s** | **~10.3s** | 4.9 GB |
+| **oj** | **~10.2s** | **~9.2s** | **1.5 GB** |
+| Vite | ~11.3s | ~10.2s | 4.9 GB |
 
-oj is about 1.4x slower to first paint here, on roughly a third of the memory. The cause isn't compilation speed: Twenty's first screen pulls close to its entire graph, around 15,000 module requests, and about 9,800 of those are individual files from dependencies that Vite pre-bundles into a handful of files and oj currently serves one by one. It's a request-count gap.
+oj is faster to first paint on cold and warm, on roughly a third of the memory, and it does that the hard way. Twenty's first screen pulls close to its entire graph, around 15,000 module requests, and about 9,800 of those are individual dependency files that Vite pre-bundles into a handful up front while oj still serves one by one. oj wins here anyway because on localhost those requests are cheap.
 
-Closing it is what oj's (experimental, flag-gated) partial bundling does: it collapses a dependency's files into a single request. On a clean React app (router, `date-fns`, `lodash-es`) that turns **962 dependency requests into 18**, with the app rendering identically. That's nearly free on localhost but decisive over a network, where every request pays a round-trip, exactly the shape of a remote or sandboxed dev server. Same app, time-to-first-render through a latency proxy:
+Over a network they aren't, and that is what oj's (experimental, flag-gated) partial bundling is for: it collapses a dependency's files into a single request. On a clean React app (router, `date-fns`, `lodash-es`) that turns **962 dependency requests into 18**, with the app rendering identically, nearly free on localhost but decisive where every request pays a round-trip, exactly the shape of a remote or sandboxed dev server. Same app, time-to-first-render through a latency proxy:
 
 | round-trip latency | before | after | speedup |
 |---|---|---|---|
