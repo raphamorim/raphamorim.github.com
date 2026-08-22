@@ -151,7 +151,7 @@ Then I pointed it at something much bigger: [Twenty](https://github.com/twentyhq
 | **oj** | **~10.2s** | **~9.2s** | **1.5 GB** |
 | Vite | ~11.3s | ~10.2s | 4.9 GB |
 
-oj is faster to first paint on cold and warm, on roughly a third of the memory, and it does that the hard way. Twenty's first screen pulls close to its entire graph, around 15,000 module requests, and about 9,800 of those are individual dependency files that Vite pre-bundles into a handful up front while oj still serves one by one. oj wins here anyway because on localhost those requests are cheap.
+oj is faster to first paint on cold and warm, on roughly a third of the memory, and it does that on the harder side of the comparison. This is `oj dev` with dependencies served unbundled against Vite with its dependency pre-bundling on, which it always is in dev: Twenty's first screen pulls close to its entire graph, around 15,000 module requests, and about 9,800 of those are individual dependency files that Vite collapses into a handful up front while oj serves one by one. So oj is doing roughly twenty times the requests and still comes out ahead, because on localhost those requests are cheap.
 
 Over a network they aren't, and that is what oj's (experimental, flag-gated) partial bundling is for: it collapses a dependency's files into a single request. On a clean React app (router, `date-fns`, `lodash-es`) that turns **962 dependency requests into 18**, with the app rendering identically, nearly free on localhost but decisive where every request pays a round-trip, exactly the shape of a remote or sandboxed dev server. Same app, time-to-first-render through a latency proxy:
 
