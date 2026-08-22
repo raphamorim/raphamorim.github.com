@@ -21,6 +21,120 @@ There are already fast bundlers. What I wanted was a specific combination that d
 
 2. **No Node, no `node_modules`, one binary.** oj is a single Rust binary. It does not need a JavaScript runtime to drive it and it does not install a toolchain into your project. That matters most where I run it: ephemeral sandboxes, where a slimmer image and a faster cold start compound across thousands of previews.
 
+<div class="ojbin" aria-label="Install footprint and cold start of a Node dev server versus a single oj binary, multiplied across a fleet of ephemeral sandboxes.">
+  <div class="ojbin__meta">
+    <span class="ojbin__title">What every sandbox has to carry</span>
+    <span class="ojbin__sub">approx · per preview environment</span>
+  </div>
+  <canvas class="ojbin__canvas" height="150" aria-hidden="true"></canvas>
+  <div class="ojbin__ctl">
+    <label for="ojbin-n">sandboxes</label>
+    <input id="ojbin-n" class="ojbin__n" type="range" min="1" max="2000" value="500" step="1" />
+    <output class="ojbin__no">500</output>
+  </div>
+  <div class="ojbin__read">
+    <span><b class="ojbin__nd ojbin__vcmp">—</b><em>Node: disk</em></span>
+    <span><b class="ojbin__od ojbin__vacc">—</b><em>oj: disk</em></span>
+    <span><b class="ojbin__cold ojbin__vwin">—</b><em>cold start</em></span>
+  </div>
+  <noscript><p class="ojbin__fallback">Per sandbox: a Node dev server carries ~295 MB (runtime + node_modules) and boots cold in ~18s; oj is one ~28 MB binary that boots in under a second. Across 500 sandboxes that is ~144 GB vs ~14 GB.</p></noscript>
+</div>
+<style>
+  .ojbin {
+    --acc: #2a33d4; --cmp: #b6b4ae; --ink: #1c1c1c; --mut: #6b6a66;
+    --line: #e6e5e2; --bg: #ffffff; --win: #17876b;
+    border: 1px solid var(--line); border-radius: 10px; background: var(--bg);
+    padding: 16px 16px 12px; margin: 28px 0;
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .ojbin__meta { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 10px; }
+  .ojbin__title { font-weight: 600; font-size: 13.5px; color: var(--ink); }
+  .ojbin__sub { font-size: 11px; color: var(--mut); }
+  .ojbin__canvas { display: block; width: 100%; height: 150px; }
+  .ojbin__ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--line); font-size: 12.5px; }
+  .ojbin__ctl label { color: var(--mut); }
+  .ojbin__ctl input[type="range"] { flex: 1 1 45%; min-width: 0; accent-color: var(--acc); }
+  .ojbin__no { color: var(--ink); font-weight: 500; min-width: 3.4em; }
+  .ojbin__read { display: flex; gap: 26px; margin-top: 12px; flex-wrap: wrap; }
+  .ojbin__read span { display: flex; flex-direction: column-reverse; }
+  .ojbin__read b { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+  .ojbin__read em { font-style: normal; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mut); }
+  .ojbin__vacc { color: var(--acc); } .ojbin__vcmp { color: var(--cmp); } .ojbin__vwin { color: var(--win); }
+  .ojbin__fallback { font-size: 12px; color: var(--mut); }
+</style>
+<script>
+  (function () {
+    var root = document.currentScript.previousElementSibling;
+    while (root && !(root.classList && root.classList.contains("ojbin"))) root = root.previousElementSibling;
+    if (!root) return;
+    var cv = root.querySelector(".ojbin__canvas");
+    var nEl = root.querySelector(".ojbin__n"), nO = root.querySelector(".ojbin__no");
+    var ndV = root.querySelector(".ojbin__nd"), odV = root.querySelector(".ojbin__od"), coldV = root.querySelector(".ojbin__cold");
+    var ctx = cv.getContext("2d");
+    if (!ctx) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // --- approximate per-sandbox constants — edit to taste ---
+    var NODE_MB = 295;   // node runtime (~45MB) + a real app's node_modules (~250MB)
+    var OJ_MB = 28;      // one static oj binary, nothing else to install
+    var NODE_COLD = 18;  // seconds: install + first dev boot
+    var OJ_COLD = 0.4;   // seconds: launch the binary
+    // ---------------------------------------------------------
+
+    function tone(v) { return getComputedStyle(root).getPropertyValue(v).trim(); }
+    function gb(mb) { return mb >= 1024 ? (mb / 1024).toFixed(mb >= 10240 ? 0 : 1) + " GB" : Math.round(mb) + " MB"; }
+    function dur(s) { if (s >= 3600) return (s / 3600).toFixed(1) + " h"; if (s >= 60) return (s / 60).toFixed(s >= 600 ? 0 : 1) + " min"; return s.toFixed(1) + "s"; }
+
+    var w = 0, h = 0, dpr = 1, shownN = 0, raf = 0;
+    function size() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = cv.getBoundingClientRect(); w = r.width || 600; h = 150;
+      cv.width = Math.floor(w * dpr); cv.height = Math.floor(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function bar(y, label, mb, color, refMb) {
+      var labelW = 44, x0 = labelW, maxW = w - labelW - 4;
+      var frac = Math.min(1, mb / refMb);
+      ctx.font = "500 11px 'JetBrains Mono', monospace"; ctx.textBaseline = "middle";
+      ctx.fillStyle = tone("--mut"); ctx.textAlign = "left"; ctx.fillText(label, 0, y + 11);
+      ctx.fillStyle = tone("--line"); ctx.globalAlpha = 0.5; ctx.fillRect(x0, y, maxW, 22); ctx.globalAlpha = 1;
+      ctx.fillStyle = color; ctx.fillRect(x0, y, Math.max(2, maxW * frac), 22);
+      ctx.fillStyle = tone("--ink"); ctx.font = "700 12px 'JetBrains Mono', monospace";
+      var t = gb(mb), tw = ctx.measureText(t).width;
+      var inside = maxW * frac > tw + 16;
+      ctx.fillStyle = inside ? "#fff" : tone("--ink");
+      ctx.fillText(t, inside ? x0 + maxW * frac - tw - 8 : x0 + maxW * frac + 8, y + 12);
+    }
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      var refMb = 2000 * NODE_MB; // full-scale = max sandboxes of Node
+      var nodeMb = shownN * NODE_MB, ojMb = shownN * OJ_MB;
+      ctx.font = "500 11px 'JetBrains Mono', monospace"; ctx.textBaseline = "alphabetic";
+      ctx.fillStyle = tone("--mut"); ctx.textAlign = "left";
+      ctx.fillText("total install footprint across the fleet", 0, 12);
+      bar(34, "Node", nodeMb, tone("--cmp"), refMb);
+      bar(70, "oj", ojMb, tone("--acc"), refMb);
+    }
+    function tick() {
+      var target = +nEl.value;
+      if (reduce) { shownN = target; draw(); raf = 0; return; }
+      shownN += (target - shownN) * 0.2;
+      if (Math.abs(target - shownN) < 0.5) { shownN = target; draw(); raf = 0; return; }
+      draw(); raf = requestAnimationFrame(tick);
+    }
+    function refresh() {
+      var n = +nEl.value; nO.textContent = n;
+      ndV.textContent = gb(n * NODE_MB); odV.textContent = gb(n * OJ_MB);
+      coldV.textContent = dur(NODE_COLD) + " → " + dur(OJ_COLD);
+      if (!raf) raf = requestAnimationFrame(tick);
+    }
+    nEl.addEventListener("input", refresh);
+    window.addEventListener("resize", function () { size(); draw(); });
+    size(); shownN = +nEl.value; refresh(); draw();
+  })();
+</script>
+
+
 Under the hood it's built on [rolldown](https://rolldown.rs) and [oxc](https://oxc.rs) (the same Rust foundations the Vite team is moving toward), with an on-demand, unbundled dev server in front, and lazy compilation so opening one route doesn't pay for the whole app.
 
 ## The numbers
@@ -154,6 +268,141 @@ Then I pointed it at something much bigger: [Twenty](https://github.com/twentyhq
 oj is faster to first paint on cold and warm, on roughly a third of the memory, and it does that on the harder side of the comparison. This is `oj dev` with dependencies served unbundled against Vite with its dependency pre-bundling on, which it always is in dev: Twenty's first screen pulls close to its entire graph, around 15,000 module requests, and about 9,800 of those are individual dependency files that Vite collapses into a handful up front while oj serves one by one. So oj is doing roughly twenty times the requests and still comes out ahead, because on localhost those requests are cheap.
 
 Over a network they aren't, and that is what oj's (experimental, flag-gated) partial bundling is for: it collapses a dependency's files into a single request. On a clean React app (router, `date-fns`, `lodash-es`) that turns **962 dependency requests into 18**, with the app rendering identically, nearly free on localhost but decisive where every request pays a round-trip, exactly the shape of a remote or sandboxed dev server. Same app, time-to-first-render through a latency proxy:
+
+<div class="ojlat" aria-label="Dependency requests filling under network latency: 962 unbundled versus 18 with partial bundling. Measured on a React app.">
+  <div class="ojlat__meta">
+    <span class="ojlat__title">Dependency requests, filling under network latency</span>
+    <span class="ojlat__sub">pbench-app · HTTP/1.1, ~6 connections</span>
+  </div>
+  <canvas class="ojlat__canvas" height="196" aria-hidden="true"></canvas>
+  <div class="ojlat__legend">
+    <span><i class="ojlat__k1"></i>unbundled · 962 requests</span>
+    <span><i class="ojlat__k2"></i>partial bundling · 18</span>
+  </div>
+  <div class="ojlat__ctl">
+    <label for="ojlat-lat">network round-trip</label>
+    <input id="ojlat-lat" class="ojlat__lat" type="range" min="0" max="50" value="25" step="1" />
+    <output class="ojlat__lato">25 ms</output>
+    <button class="ojlat__run" type="button">↻ replay</button>
+  </div>
+  <div class="ojlat__read">
+    <span><b class="ojlat__un ojlat__vcmp">—</b><em>unbundled</em></span>
+    <span><b class="ojlat__bu ojlat__vacc">—</b><em>partial bundling</em></span>
+    <span><b class="ojlat__sp ojlat__vwin">—</b><em>time-to-render</em></span>
+  </div>
+  <noscript><p class="ojlat__fallback">Time-to-first-render on pbench-app: at 0ms RTT, 448ms unbundled vs 65ms bundled (6.9×); at 50ms, 8.8s vs 0.33s (27×).</p></noscript>
+</div>
+<style>
+  .ojlat {
+    --acc: #2a33d4; --cmp: #b6b4ae; --ink: #1c1c1c; --mut: #6b6a66;
+    --line: #e6e5e2; --bg: #ffffff; --win: #17876b;
+    border: 1px solid var(--line); border-radius: 10px; background: var(--bg);
+    padding: 16px 16px 12px; margin: 28px 0;
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .ojlat__meta { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 10px; }
+  .ojlat__title { font-weight: 600; font-size: 13.5px; color: var(--ink); }
+  .ojlat__sub { font-size: 11px; color: var(--mut); }
+  .ojlat__canvas { display: block; width: 100%; height: 196px; }
+  .ojlat__legend { display: flex; gap: 18px; font-size: 11px; color: var(--mut); margin-top: 6px; }
+  .ojlat__legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; }
+  .ojlat__k1 { background: var(--cmp); } .ojlat__k2 { background: var(--acc); }
+  .ojlat__ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--line); font-size: 12.5px; }
+  .ojlat__ctl label { color: var(--mut); }
+  .ojlat__ctl input[type="range"] { flex: 1 1 45%; min-width: 0; accent-color: var(--acc); }
+  .ojlat__lato { color: var(--ink); font-weight: 500; min-width: 4.4em; }
+  .ojlat__run { font: inherit; font-size: 12px; cursor: pointer; border: 1px solid var(--line); background: transparent; color: var(--mut); padding: 4px 9px; border-radius: 6px; }
+  .ojlat__run:hover { border-color: var(--acc); color: var(--ink); }
+  .ojlat__run:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+  .ojlat__read { display: flex; flex-wrap: wrap; gap: 14px 26px; margin-top: 12px; }
+  .ojlat__read span { display: flex; flex-direction: column-reverse; }
+  .ojlat__read b { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+  .ojlat__read em { font-style: normal; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mut); }
+  .ojlat__vacc { color: var(--acc); } .ojlat__vcmp { color: var(--cmp); } .ojlat__vwin { color: var(--win); }
+  .ojlat__fallback { font-size: 12px; color: var(--mut); }
+</style>
+<script>
+  (function () {
+    var root = document.currentScript.previousElementSibling;
+    while (root && !(root.classList && root.classList.contains("ojlat"))) root = root.previousElementSibling;
+    if (!root) return;
+    var cv = root.querySelector(".ojlat__canvas");
+    var latEl = root.querySelector(".ojlat__lat"), latO = root.querySelector(".ojlat__lato");
+    var unV = root.querySelector(".ojlat__un"), buV = root.querySelector(".ojlat__bu"), spV = root.querySelector(".ojlat__sp");
+    var runBtn = root.querySelector(".ojlat__run");
+    var ctx = cv.getContext("2d");
+    if (!ctx) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Measured on pbench-app (React + router + date-fns + lodash-es), time-to-first-render:
+    // [ round-trip ms, unbundled ms, partial-bundling ms ]
+    var DATA = [[0, 448, 65], [10, 2222, 106], [25, 4692, 195], [50, 8836, 328]];
+    var N_UN = 962, N_BU = 18, CONN = 6, UN_MAX = DATA[DATA.length - 1][1];
+
+    function tone(v) { return getComputedStyle(root).getPropertyValue(v).trim(); }
+    function interp(lat) {
+      for (var i = 1; i < DATA.length; i++) {
+        if (lat <= DATA[i][0]) {
+          var a = DATA[i - 1], b = DATA[i], t = (lat - a[0]) / (b[0] - a[0]);
+          return [a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
+        }
+      }
+      return [DATA[DATA.length - 1][1], DATA[DATA.length - 1][2]];
+    }
+    function fmt(ms) { return ms >= 1000 ? (ms / 1000).toFixed(ms >= 10000 ? 0 : 1) + "s" : Math.round(ms) + "ms"; }
+
+    var w = 0, h = 0, dpr = 1, raf = 0, start = 0, cur = interp(25);
+    function size() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = cv.getBoundingClientRect(); w = r.width || 600; h = 196;
+      cv.width = Math.floor(w * dpr); cv.height = Math.floor(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function lane(x, cw, N, cols, filled, color, title) {
+      ctx.font = "500 11px 'JetBrains Mono', monospace"; ctx.textBaseline = "alphabetic";
+      ctx.fillStyle = tone("--mut"); ctx.fillText(title, x, 11);
+      var pad = 1, rows = Math.ceil(N / cols);
+      var cell = Math.max(2, Math.min((cw) / cols - pad, (h - 22) / rows - pad));
+      for (var i = 0; i < N; i++) {
+        var r = Math.floor(i / cols), c = i % cols;
+        var cx = x + c * (cell + pad), cy = 18 + r * (cell + pad);
+        var lit = i < filled;
+        ctx.fillStyle = lit ? color : tone("--line");
+        ctx.globalAlpha = lit ? 1 : 0.5;
+        ctx.fillRect(cx, cy, cell, cell);
+      }
+      ctx.globalAlpha = 1;
+    }
+    function draw(now) {
+      ctx.clearRect(0, 0, w, h);
+      var scale = 2200 / UN_MAX; // compress so slowest run ~2.2s on screen
+      var elapsed = reduce ? 1e9 : (now - start);
+      function filled(loadMs, N) {
+        if (loadMs <= 0) return N;
+        var prog = Math.min(1, elapsed / (loadMs * scale));
+        var waves = Math.ceil(N / CONN);
+        return Math.min(N, Math.floor(prog * waves) * CONN + (prog >= 1 ? CONN : 0));
+      }
+      var gap = 22, colW = (w - gap) / 2;
+      lane(0, colW, N_UN, 46, filled(cur[0], N_UN), tone("--cmp"), "unbundled · 962");
+      lane(colW + gap, colW, N_BU, 6, filled(cur[1], N_BU), tone("--acc"), "bundled · 18");
+      var done = filled(cur[0], N_UN) >= N_UN && filled(cur[1], N_BU) >= N_BU;
+      if (!reduce && !done) raf = requestAnimationFrame(draw); else raf = 0;
+    }
+    function refresh() {
+      var lat = +latEl.value; cur = interp(lat);
+      latO.textContent = lat + " ms";
+      unV.textContent = fmt(cur[0]); buV.textContent = fmt(cur[1]);
+      spV.textContent = (cur[0] / cur[1]).toFixed(1) + "×";
+    }
+    function run() { refresh(); if (raf) cancelAnimationFrame(raf); start = performance.now(); raf = requestAnimationFrame(draw); }
+    latEl.addEventListener("input", run);
+    runBtn.addEventListener("click", run);
+    window.addEventListener("resize", function () { size(); if (!raf) draw(performance.now()); });
+    size(); run();
+  })();
+</script>
+
 
 | round-trip latency | before | after | speedup |
 |---|---|---|---|
