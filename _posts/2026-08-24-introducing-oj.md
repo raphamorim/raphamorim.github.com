@@ -134,11 +134,11 @@ There are already fast bundlers. What I wanted was a specific combination that d
 </script>
 
 
-Under the hood it's built on [rolldown](https://rolldown.rs) and [oxc](https://oxc.rs) (the same Rust foundations the Vite team is moving toward), with an on-demand, unbundled dev server in front, and lazy compilation so opening one route doesn't pay for the whole app.
+Under the hood it's built on [rolldown](https://rolldown.rs) and [oxc](https://oxc.rs) (the same Rust foundations the Vite team is moving toward)[^vite-rolldown], with an on-demand, unbundled dev server in front[^vite-esm], and lazy compilation so opening one route doesn't pay for the whole app.
 
 ## The numbers
 
-Here is `oj dev --bundle` against Vite's default dev on the same 10,000-component project: cold start, warm start, and a full page reload. Watch it fill:
+Here is `oj dev --bundle` against Vite 8.2.1's default dev on the same 10,000-component project: cold start, warm start, and a full page reload. Watch it fill:
 
 <div class="ojbench" aria-label="Benchmark comparing oj and Vite on a 10,000-component app: cold start, warm start, and a full page reload. oj is roughly four times faster on start and nearly seven times faster on reload.">
   <div class="ojbench__meta">
@@ -246,7 +246,7 @@ That is a genuinely hard bar, because real apps lean on the whole surface of Vit
 
 I picked [Excalidraw](https://github.com/excalidraw/excalidraw), one of the most-starred open-source React apps on GitHub, and pointed oj at its `excalidraw-app` without changing a line of config. It runs. Getting there was exactly the list above: its monorepo packages wire through regex `resolve.alias`, its stylesheets use the `.module.scss` convention (which oj's Sass engine now resolves the way dart-sass does), it imports TypeScript source from outside the app root, and it uses `import.meta.env` inside JSX. Every one of those was a place oj used to fall short, and each is now a fixed bug with a test.
 
-The loop on that app, same machine, from `oj dev` (or `vite`) to the first canvas painting:
+The loop on that app, same machine, from `oj dev` (or `vite`, here at 5.0.12) to the first canvas painting:
 
 | | cold start | warm start | memory |
 |---|---|---|---|
@@ -264,7 +264,7 @@ Then I pointed it at something much bigger: [Twenty](https://github.com/twentyhq
 | **oj** | **~10.2s** | **~9.2s** | **1.5 GB** |
 | Vite | ~11.3s | ~10.2s | 4.9 GB |
 
-oj is faster to first paint on cold and warm, on roughly a third of the memory, and it does that on the harder side of the comparison. This is `oj dev` with dependencies served unbundled against Vite with its dependency pre-bundling on, which it always is in dev: Twenty's first screen pulls close to its entire graph, around 15,000 module requests, and about 9,800 of those are individual dependency files that Vite collapses into a handful up front[^vite-prebundle] while oj serves one by one. So oj is doing roughly twenty times the requests and still comes out ahead, because on localhost those requests are cheap.
+oj is faster to first paint on cold and warm, on roughly a third of the memory, and it does that on the harder side of the comparison. This is `oj dev` with dependencies served unbundled against Vite 8.0.16 with its dependency pre-bundling on, which it always is in dev: Twenty's first screen pulls close to its entire graph, around 15,000 module requests, and about 9,800 of those are individual dependency files that Vite collapses into a handful up front[^vite-prebundle] while oj serves one by one. So oj is doing roughly twenty times the requests and still comes out ahead, because on localhost those requests are cheap.
 
 Over a network they aren't, and that is what oj's (experimental, flag-gated) partial bundling is for: it collapses a dependency's files into a single request. On a clean React app (router, `date-fns`, `lodash-es`) that turns **962 dependency requests into 18**, with the app rendering identically, nearly free on localhost but decisive where every request pays a round-trip, exactly the shape of a remote or sandboxed dev server. Same app, time-to-first-render through a latency proxy:
 
@@ -604,6 +604,10 @@ oj dev
 
 If it doesn't run your app unchanged, that's a bug I want to hear about: open an issue with your `vite.config.ts` and I'll chase it. That's the whole promise.
 
-[^vite-prebundle]: In dev, [Vite](https://vite.dev) pre-bundles dependencies up front with esbuild (Rolldown as of Vite 8), collapsing the many files inside a package into a few requests. See [Dependency Pre-Bundling](https://vite.dev/guide/dep-pre-bundling). oj's equivalent is its experimental, flag-gated partial bundling.
+[^vite-rolldown]: Vite 8 (stable March 2026) replaced esbuild and Rollup with the Rust-based [Rolldown](https://rolldown.rs) bundler and [Oxc](https://oxc.rs) parser/transformer/minifier. See [Vite 8 is out](https://vite.dev/blog/announcing-vite8), the [Vite 8 beta post](https://vite.dev/blog/announcing-vite8-beta), and the [Rolldown integration guide](https://v7.vite.dev/guide/rolldown). oj builds on the same two crates directly.
 
-[^vite-cache]: Vite transforms each app module lazily on request and does not persist that work across restarts, so a warm start re-transforms your source. Vite 8 / rolldown-vite is adding module-level persistent caching, so this gap is narrowing.
+[^vite-esm]: In dev, Vite serves your source over native ES modules and transforms each module on demand as the browser requests it, rather than bundling the app up front. See [Why Vite](https://vite.dev/guide/why) and [Features](https://vite.dev/guide/features). oj's default `oj dev` follows the same unbundled model.
+
+[^vite-prebundle]: Dependencies are the exception to that on-demand model: in dev [Vite](https://vite.dev) pre-bundles them up front (esbuild through Vite 7, [Rolldown as of Vite 8](https://vite.dev/blog/announcing-vite8)), collapsing the many files inside a package into a few requests. It is on by default and discovers deps by crawling your source. See [Dependency Pre-Bundling](https://vite.dev/guide/dep-pre-bundling) and [Dep Optimization Options](https://vite.dev/config/dep-optimization-options). oj's equivalent is its experimental, flag-gated partial bundling.
+
+[^vite-cache]: Vite transforms each app module lazily on request and does not persist that work across restarts, so a warm start re-transforms your source. This is the long-standing [Persistent Cache request (vitejs/vite#1309)](https://github.com/vitejs/vite/issues/1309); Rolldown in [Vite 8](https://vite.dev/blog/announcing-vite8-beta) is adding module-level persistent caching, so the gap is narrowing.
