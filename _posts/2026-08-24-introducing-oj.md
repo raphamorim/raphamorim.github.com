@@ -1,24 +1,26 @@
 ---
 layout: post
-title: "Introducing oj: a Rust build tool that speaks Vite"
+title: "Introducing oj: your Rust native replacement for Vite"
 language: 'en'
 date: 2026-08-24
-description: "oj is a from-scratch, npm-free dev server and bundler written in Rust. It reads your existing vite.config, runs your existing Vite plugins, and reimplements React and TanStack Start natively, so you point it at a real app and it just runs, faster."
+description: "oj is a from-scratch, npm-free dev server and bundler written in Rust. It reads your existing vite.config, runs your existing Vite plugins, and reimplements React and TanStack Start natively, so you point it at a real app and it just runs."
 ---
+
+tl;dr: If you love Vite keep using it, and skip this article. It's a wonderful tool, maintained by a wonderful community. This article is basically me trying to fix my own problems (and apparently some coworkers also).
 
 Most of the time you don't think about your dev server. You run `npm run dev`, you wait, you get a URL. The waiting is the part I kept thinking about.
 
 For the last few months I've been building **oj**: a dev server and bundler written in Rust that you can point at an existing [Vite](https://vite.dev) + React project and it just runs: the same `vite.config.ts`, the same plugins, no rewrite. It's now good enough that I point it at real production apps, and I want to explain what it is, why it exists, and show you the numbers.
 
-> **oj is experimental.** It already runs real production apps unchanged (I test it against large ones), but it is not finished. There are gaps: Svelte support, for one, is something I am actively working on, and you will hit rough edges on apps that lean on parts of the ecosystem I haven't covered yet. Treat it as a fast-moving project you can try today, not a drop-in replacement you should ship on tomorrow.
+> **oj is experimental.** It already runs real production apps unchanged (I tested it against large ones), but it is not finished. There are gaps: like the ones I know as Svelte support (which I'm actively working on) and the ones I don't know ha!
 
 ## The two things I wanted
 
 There are already fast bundlers. What I wanted was a specific combination that didn't exist yet:
 
-1. **Speak Vite, not webpack.** The apps I care about are Vite apps. They have a `vite.config.ts`, they use [`@vitejs/plugin-react`](https://github.com/vitejs/vite-plugin-react), [`vite-plugin-svgr`](https://github.com/pd4d10/vite-plugin-svgr), [MDX](https://mdxjs.com), and a pile of project-specific plugins. A tool is only a drop-in if it runs *those*, unchanged. So oj reads your real Vite config and runs your real Vite plugins through a compatibility bridge. It also reimplements [React Fast Refresh](https://github.com/facebook/react/tree/main/packages/react-refresh) and [TanStack Start](https://tanstack.com/start) natively, because those are the frameworks I build on.
+1. **Speak Vite, not webpack.** The apps I care about are Vite apps (basically due to my work reality). They have a `vite.config.ts`, they use [`@vitejs/plugin-react`](https://github.com/vitejs/vite-plugin-react), [`vite-plugin-svgr`](https://github.com/pd4d10/vite-plugin-svgr), [MDX](https://mdxjs.com), and a pile of project-specific plugins. A tool is only a drop-in if it runs *those*, unchanged. So oj reads your real Vite config and runs your real Vite plugins through a compatibility bridge. It also reimplements [React Fast Refresh](https://github.com/facebook/react/tree/main/packages/react-refresh) and [TanStack Start](https://tanstack.com/start) natively, because those are the frameworks I build on.
 
-2. **No Node, no `node_modules`, one binary.** oj is a single Rust binary. It does not need a JavaScript runtime to drive it and it does not install a toolchain into your project. That matters most where I run it: ephemeral sandboxes, where a slimmer image and a faster cold start compound across thousands of previews.
+2. **No Node, no `node_modules`, one binary.** oj is a single Rust binary. It doesn't need a JavaScript runtime to drive it and doesn't install a toolchain into your project. That matters most where I run it: ephemeral sandboxes, where a slimmer image and a faster cold start compound across thousands of previews.
 
 <div class="ojbin" aria-label="Install footprint and cold start of a Node dev server versus a single oj binary, multiplied across a fleet of ephemeral sandboxes.">
   <div class="ojbin__meta">
@@ -138,6 +140,8 @@ Under the hood it's built on [rolldown](https://rolldown.rs) and [oxc](https://o
 
 ## The numbers
 
+Note that vite has it's own bundle mode too ([that's a work in progress](https://github.com/vitejs/vite/discussions/22746)), but this was the comparison I ran for some production projects that were migrated. And yes, oj also wins in bundle vs bundle.
+
 Here is `oj dev --bundle` against Vite 8.2.1's default dev on the same 10,000-component project: cold start, warm start, and a full page reload. Watch it fill:
 
 <div class="ojbench" aria-label="Benchmark comparing oj and Vite on a 10,000-component app: cold start, warm start, and a full page reload. oj is roughly four times faster on start and nearly seven times faster on reload.">
@@ -232,21 +236,23 @@ Here is `oj dev --bundle` against Vite 8.2.1's default dev on the same 10,000-co
 })();
 </script>
 
-A few things worth saying about those numbers. The start figures are the headline, and they hold as the app grows: on the 10,000-component tree oj cold-starts in about a quarter of Vite's time, and the reload loop you pay dozens of times an hour is where that lead compounds. oj's default `oj dev` is an on-demand, unbundled server; the chart shows `oj dev --bundle`, which pre-bundles the client for the fastest loop.
+Some context on those numbers. The start figures hold as the app grows: on the 10,000-component tree oj cold-starts in about a quarter of Vite's time, and reload is the one you hit dozens of times an hour. Note that oj's default `oj dev` is an on-demand, unbundled server. The chart shows `oj dev --bundle`, which pre-bundles the client for the fastest loop.
 
-One honest caveat: a *well-tuned* Vite is faster than a default one, and I'm not interested in beating a strawman, so these runs are Vite configured sensibly, on the same machine, same app. The suite is `bench/run.mjs` in the repo, so you can reproduce it: `node bench/run.mjs 10000`.
+To be fair to Vite: a *well-tuned* Vite is faster than a default one, and I'm not interested in beating a strawman, so these runs are Vite configured sensibly, on the same machine, same app. The suite is `bench/run.mjs` in the repo if you want to reproduce it: `node bench/run.mjs 10000`.
 
-The number that doesn't narrow is memory. On that same app oj holds around 115MB where Vite sits above 1.5GB, a 13x gap that widens with app size. That is the difference that matters where I run oj most: thousands of ephemeral preview sandboxes, where every megabyte and every second of cold start is multiplied.
+Memory is a different story. On that same app oj holds around 115MB while Vite sits above 1.5GB, and unlike the startup gap, this one widens as the app grows. That's what matters most where I actually run oj: thousands of ephemeral preview sandboxes, where every megabyte and every second of cold start gets multiplied.
+
+FWIW: I have seen 12gb vite apps got into 1.8gb with oj usage.
 
 ## Running a real app
 
-A benchmark on a toy app proves nothing. The bar I set for myself was: take a real, popular open-source Vite app that I did not write, don't touch its config, and run it.
+A benchmark on a small app proves nothing. The test I set for myself: take a real, popular open-source Vite app I didn't write, don't touch its config, and run it.
 
-That is a genuinely hard bar, because real apps lean on the whole surface of Vite: regex `resolve.alias` for monorepo packages, source files outside the app root, TypeScript enums, `import.meta.env`, plugin virtual modules. Every one of those is a place a "Vite-compatible" tool can quietly fall short, and getting there is most of what the last stretch of work has been.
+That's harder than it sounds, because real apps use everything Vite offers: regex `resolve.alias` for monorepo packages, source files outside the app root, TypeScript enums, `import.meta.env`, plugin virtual modules. Any of those can break a "Vite-compatible" tool, and covering them is most of what the last stretch of work has been.
 
-I picked [Excalidraw](https://github.com/excalidraw/excalidraw), one of the most-starred open-source React apps on GitHub, and pointed oj at its `excalidraw-app` without changing a line of config. It runs. Getting there was exactly the list above: its monorepo packages wire through regex `resolve.alias`, its stylesheets use the `.module.scss` convention (which oj's Sass engine now resolves the way dart-sass does), it imports TypeScript source from outside the app root, and it uses `import.meta.env` inside JSX. Every one of those was a place oj used to fall short, and each is now a fixed bug with a test.
+I picked [Excalidraw](https://github.com/excalidraw/excalidraw), one of the most-starred open-source React apps on GitHub, and pointed oj at its `excalidraw-app` without changing a line of config. It runs. Getting there meant hitting exactly the list above: its monorepo packages resolve through regex `resolve.alias`, its stylesheets use the `.module.scss` convention (which oj's Sass engine now resolves the way dart-sass does), it imports TypeScript source from outside the app root, and it uses `import.meta.env` inside JSX.
 
-The loop on that app, same machine, from `oj dev` (or `vite`, here at 5.0.12) to the first canvas painting:
+The loop on that app, same machine, from `oj dev` (or `vite`, here at 5.0.12, and I assume with latest vite results might have been better on speed, not memory though) to the first canvas painting:
 
 | | cold start | warm start | memory |
 |---|---|---|---|
@@ -255,9 +261,11 @@ The loop on that app, same machine, from `oj dev` (or `vite`, here at 5.0.12) to
 
 oj boots it in under a second cold or warm, on about an eighth of the memory.
 
-One honest caveat, and oj prints it on boot: it **skips [`vite-plugin-checker`](https://github.com/fi3ework/vite-plugin-checker)**, the plugin that runs `tsc` in a background worker and overlays type errors in the browser. oj cannot host that one (it wants a full Vite dev server that oj does not provide), so it logs <code style="overflow-wrap: anywhere; white-space: normal;">skipping unsupported plugin "vite-plugin-checker"</code> and carries on. The app it serves is the same either way; you just do not get the in-browser type overlay, and Vite's numbers above include the worker that oj never starts.
+One thing doesn't carry over: oj **skips [`vite-plugin-checker`](https://github.com/fi3ework/vite-plugin-checker)**, the plugin that runs `tsc` in a background worker and overlays type errors in the browser. oj can't host it (it wants a full Vite dev server that oj doesn't provide), so it logs <code style="overflow-wrap: anywhere; white-space: normal;">skipping unsupported plugin "vite-plugin-checker"</code> on boot and carries on. The app it serves is the same either way, you just don't get the in-browser type overlay.
 
-Then I pointed it at something much bigger: [Twenty](https://github.com/twentyhq/twenty), an open-source CRM whose front-end is around 15,000 modules and leans on the *whole* hard surface at once, zero-runtime CSS-in-JS via `@wyw-in-js`, a Linaria/SWC macro pipeline, `vite-plugin-svgr`, and a pile of CommonJS and UMD dependencies. Getting it to boot and render took another stack of compatibility fixes (CommonJS named-export interop, `browser`-field stubs, the wyw resolver), and it runs, and it stays ahead:
+^ Keep in mind that Vite's numbers above include that `tsc` worker, which oj never starts. I plan to add support for that eventually, but more info about that in the future.
+
+Then I pointed it at something much bigger: [Twenty](https://github.com/twentyhq/twenty), an open-source CRM whose front-end is around 15,000 modules and uses every hard thing at once: zero-runtime CSS-in-JS via `@wyw-in-js`, a Linaria/SWC macro pipeline, `vite-plugin-svgr`, and a pile of CommonJS and UMD dependencies. Getting it to boot and render took another stack of compatibility fixes (CommonJS named-export interop, `browser`-field stubs, the wyw resolver), and it runs, and it stays ahead:
 
 | | cold start | warm start | memory |
 |---|---|---|---|
@@ -266,7 +274,7 @@ Then I pointed it at something much bigger: [Twenty](https://github.com/twentyhq
 
 oj is faster to first paint on cold and warm, on roughly a third of the memory, and it does that on the harder side of the comparison. This is `oj dev` with dependencies served unbundled against Vite 8.0.16 with its dependency pre-bundling on, which it always is in dev: Twenty's first screen pulls close to its entire graph, around 15,000 module requests, and about 9,800 of those are individual dependency files that Vite collapses into a handful up front[^vite-prebundle] while oj serves one by one. So oj is doing roughly twenty times the requests and still comes out ahead, because on localhost those requests are cheap.
 
-Over a network they aren't, and that is what oj's (experimental, flag-gated) partial bundling is for: it collapses a dependency's files into a single request. On a clean React app (router, `date-fns`, `lodash-es`) that turns **962 dependency requests into 18**, with the app rendering identically, nearly free on localhost but decisive where every request pays a round-trip, exactly the shape of a remote or sandboxed dev server. Same app, time-to-first-render through a latency proxy:
+Over a network they aren't. That's why oj has partial bundling (experimental, behind a flag): it collapses a dependency's files into a single request. On a clean React app (router, `date-fns`, `lodash-es`) that turns **962 dependency requests into 18**, and the app renders identically. On localhost the difference barely matters, but when every request pays a round-trip, which is exactly what a remote or sandboxed dev server looks like, it's decisive. Same app, time-to-first-render through a latency proxy:
 
 <div class="ojlat" aria-label="Dependency requests filling under network latency: 962 unbundled versus 18 with partial bundling. Measured on a React app.">
   <div class="ojlat__meta">
@@ -410,15 +418,21 @@ Over a network they aren't, and that is what oj's (experimental, flag-gated) par
 | 25ms | 4.7s | 195ms | 24× |
 | 50ms (remote) | 8.8s | 0.33s | **27×** |
 
-The point of oj was never "another bundler." It was: keep the ecosystem you already have (your config, your plugins, your framework) and make the loop underneath it disappear.
+Note: the part I am more interest is memory and here's why.
 
 ## How it got here
 
-oj started as a project to fix my own problems. I was working on another repository and watching agents run `vite build` over and over, each build process carrying gigabytes of memory, and I got tired enough to try building the thing I wished I had. That's the whole origin: frustration, and free time.
+oj started as a project to fix my own problems. I was working on another repository and watching agents run `vite build` over and over, each build process carrying gigabytes of memory, and I got tired enough to try building the thing I wished I had. The origin story is just frustration.
 
-At some point it started showing up in my day job at [Lovable](https://lovable.dev), quietly, behind a flag. People got excited. They started using it, filing issues, and sending patches. It's still an experimental research project (the README still says *use at your own risk*, and it means it).
+Eventually in my work using vite was almost making my machine fly because of high memory and swap usage! It only happens if you use many agents trying to work in different worktrees though.
 
-The app it runs there is not a toy: a production TanStack Start build with a client graph around 18,000 modules and a `vite.config` that loads more than fifty plugins. That turned out to be the best stress test oj ever had. Getting it to boot that app in a couple of seconds instead of tens, on a fraction of the memory, didn't come from one clever trick; it came from a stack of small, individually-measured changes: persistent caches for the codegen, the client bundle, and the SSR loader; a single plugin host instead of two; loader hooks moved in-thread. Each is a modest win on its own, and they compound. All of it lives in the public repo.
+At some point it started showing up in my day job at [Lovable](https://lovable.dev). People got excited, ofc who would want free memory space. They started using it, filing issues, and sending patches. It's still an experimental research project (the README still says *use at your own risk*, and it means it).
+
+The app it runs there is not a toy: a production TanStack Start build with a client graph around 18,000 modules and a `vite.config` that loads more than fifty plugins. That turned out to be the best stress test oj ever had.
+
+To be honest getting it to boot that app in a couple of seconds instead of tens, on a fraction of the memory, didn't come from one clever trick. It came from a stack of small changes I measured one by one: persistent caches (codegen, client bundle, SSR loader), a single plugin host instead of two, loader hooks moved in-thread. Each is a modest win on its own, and they add up. All of it lives in the public repo.
+
+Had to study vite and rolldown source code past months, but now it builds ok.
 
 <img src="/assets/images/posts/oj-github-repo.png" alt="The oj repository on GitHub" style="width: 100%; max-width: 100%; height: auto; border: 1px solid #e6e5e2; border-radius: 10px;" />
 
@@ -428,11 +442,15 @@ So who knows what lies ahead.
 
 ## Future work: experimental cache
 
-The most promising of those, and still experimental, is the persistent cache. oj compiles every module to its final served form, keys that output by a hash of the source, and writes it to a small on-disk store. A warm restart then re-serves compiled modules straight from disk instead of recompiling them, which is most of the difference between a cold boot and a warm one. Vite, for comparison, keeps no cross-restart cache for your app's own source[^vite-cache]: it re-transforms every module, lazily, on each start. Persisting that work is where warm-start speed could come from, but it is off by default for now while I harden it; opt in with `oj dev --enable-cache` (or `OJ_ENABLE_CACHE=1`) when you want warm starts to skip recompilation. The reason it is not on yet is the next paragraph.
+The most promising of those, and still experimental, is the persistent cache.
 
-Persisting it also turned out to be where correctness gets subtle, and a real app taught me the lesson. Some Vite plugins do not just transform a file, they also stash state in memory as a side effect. The clearest case is zero-runtime CSS-in-JS: [wyw-in-js](https://wyw-in-js.dev/) (the engine behind [Linaria](https://github.com/callstack/linaria)) reads each component's `styled` blocks, extracts the CSS, keeps it in an in-memory map, and appends an `import` of a virtual `.wyw-in-js.css` file that its own `load` hook serves back out of that map. Cache the transformed code and nothing else, and a warm restart is a trap: the code still imports the virtual stylesheet, but the plugin's map is empty because the transform never re-ran, so every one of those imports 404s and the app quietly fails to mount.
+It compiles every module to its final served form, keys that output by a hash of the source, and writes it to a small on-disk store. A warm restart then re-serves compiled modules straight from disk instead of recompiling them, which is most of the difference between a cold boot and a warm one. Vite, for comparison, keeps no cross-restart cache for your app's own source[^vite-cache]: it re-transforms every module, lazily, on each start. Persisting that work is where warm-start speed could come from, but it's off by default for now while I harden it. Opt in with `oj dev --enable-cache` (or `OJ_ENABLE_CACHE=1`) if you want warm starts to skip recompilation. The next paragraph is the reason it's not on yet.
 
-The fix is to notice exactly those modules and no others. On a warm hit, oj checks whether the cached module imports a path that no longer exists on disk, which is the signature of a plugin-served virtual, and if so it re-runs that module's transform to repopulate the plugin's state before serving. Everything else, the vast majority, still comes straight from the cache. It is the smallest correct thing: keep the fast path wherever the cached output is self-contained, and pay for a re-transform only where a plugin's memory is part of the answer.
+Persisting it is also where correctness gets tricky, and a real app taught me how. Some Vite plugins don't just transform a file, they also stash state in memory as a side effect. The clearest case is zero-runtime CSS-in-JS: [wyw-in-js](https://wyw-in-js.dev/) (the engine behind [Linaria](https://github.com/callstack/linaria)) reads each component's `styled` blocks, extracts the CSS, keeps it in an in-memory map, and appends an `import` of a virtual `.wyw-in-js.css` file that its own `load` hook serves back out of that map. Cache the transformed code and nothing else, and a warm restart is a trap: the code still imports the virtual stylesheet, but the plugin's map is empty because the transform never re-ran, so every one of those imports 404s and the app never mounts.
+
+The fix is to notice exactly those modules and no others. On a warm hit, oj checks whether the cached module imports a path that no longer exists on disk, which is the signature of a plugin-served virtual, and if so it re-runs that module's transform to repopulate the plugin's state before serving. Everything else, which is the vast majority, still comes straight from the cache.
+
+However, I am sure I am not covering all cases yet. So, I think needs more testing.
 
 <!-- ==================== BLOCK: warm-cache-surgical — copy from here ==================== -->
 <div class="ojcache" aria-label="A grid of app modules on a warm restart. Naive caching lets plugin-stateful modules 404; oj re-transforms only those and serves the rest from cache.">
@@ -591,7 +609,6 @@ The fix is to notice exactly those modules and no others. On a warm hit, oj chec
 </script>
 <!-- ==================== END BLOCK: warm-cache-surgical ==================== -->
 
-
 ## Try it
 
 oj is [open source](https://github.com/raphamorim/oj) and MIT licensed, on [crates.io](https://crates.io/crates/oj) now.
@@ -608,6 +625,6 @@ If it doesn't run your app unchanged, that's a bug I want to hear about: open an
 
 [^vite-esm]: In dev, Vite serves your source over native ES modules and transforms each module on demand as the browser requests it, rather than bundling the app up front. See [Why Vite](https://vite.dev/guide/why) and [Features](https://vite.dev/guide/features). oj's default `oj dev` follows the same unbundled model.
 
-[^vite-prebundle]: Dependencies are the exception to that on-demand model: in dev [Vite](https://vite.dev) pre-bundles them up front (esbuild through Vite 7, [Rolldown as of Vite 8](https://vite.dev/blog/announcing-vite8)), collapsing the many files inside a package into a few requests. It is on by default and discovers deps by crawling your source. See [Dependency Pre-Bundling](https://vite.dev/guide/dep-pre-bundling) and [Dep Optimization Options](https://vite.dev/config/dep-optimization-options). oj's equivalent is its experimental, flag-gated partial bundling.
+[^vite-prebundle]: Dependencies are the exception to that on-demand model: in dev [Vite](https://vite.dev) pre-bundles them up front (esbuild through Vite 7, [Rolldown as of Vite 8](https://vite.dev/blog/announcing-vite8)), collapsing the many files inside a package into a few requests. It is on by default and discovers deps by crawling your source. See [Dependency Pre-Bundling](https://vite.dev/guide/dep-pre-bundling) and [Dep Optimization Options](https://vite.dev/config/dep-optimization-options). oj's equivalent is the experimental partial bundling described above, behind a flag.
 
-[^vite-cache]: Vite transforms each app module lazily on request and does not persist that work across restarts, so a warm start re-transforms your source. This is the long-standing [Persistent Cache request (vitejs/vite#1309)](https://github.com/vitejs/vite/issues/1309); Rolldown in [Vite 8](https://vite.dev/blog/announcing-vite8-beta) is adding module-level persistent caching, so the gap is narrowing.
+[^vite-cache]: Vite transforms each app module lazily on request and doesn't persist that work across restarts, so a warm start re-transforms your source. This is the long-standing [Persistent Cache request (vitejs/vite#1309)](https://github.com/vitejs/vite/issues/1309). Rolldown in [Vite 8](https://vite.dev/blog/announcing-vite8-beta) is adding module-level persistent caching, so the gap is narrowing.
