@@ -22,7 +22,7 @@ That being said, when LLMs came to the picture for coding work. I was very reluc
 
 Truth is that models are getting better in writing/analysing code and they will get better, it's time to accept this fact and move on. I made peace with it.
 
-However being faster in write code not necessary means the output is a good and scalable code. Since people are starting to become 100% dependant on models to do any kind of work in the software field, it's actually becoming a problem.
+However being faster in write code doesn't necessary means that the output is good and scalable. Since people are starting to become 100% dependant on models to do any kind of work in the software field, it's actually becoming a problem.
 
 Probably you have heard about the term "meat proxy", if not, it means "a person who copies and pastes AI-generated text, code, or messages and sends them to others without reading, checking, or understanding the content". I think this term isn't used as should be used enough for software engineering, and it should be more broadly used IMHO.
 
