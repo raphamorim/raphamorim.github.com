@@ -8,7 +8,7 @@ description: "Friends, coworkers and folks from the tech community keep asking m
 
 No AI was used to write this article, therefore might have some English mistakes. Also, as many articles I wrote, this one will be for a quick copy-and-paste link when someone ask me about it ha!
 
-This post doesn't reflect the opinion of the company I work for (it's kinda of an obvious statement but sometimes you need to say it, because people don't understand that folks have different opinions), in fact this subject has been a fun discussion subject that occasionally happens in the lunch time.
+This post doesn't reflect the opinion of the company I work for (it's kinda of an obvious statement but sometimes you need to say it, because people don't understand that folks have different opinions), in fact this subject has been giving fun occasional discussions in the lunch time.
 
 Friends, coworkers and folks from the tech community keep asking me about if I still write code, [yes I do](https://www.youtube.com/watch?v=_CL6n0FJZpk).
 
