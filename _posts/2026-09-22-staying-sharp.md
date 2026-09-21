@@ -24,7 +24,7 @@ Truth is that models are getting better in writing/analysing code and they will 
 
 However being faster in write code doesn't necessary means that the output is good and scalable. Since people are starting to become 100% dependant on models to do any kind of work in the software field, it's actually becoming a problem.
 
-Probably you have heard about the term "meat proxy", if not, it means "a person who copies and pastes AI-generated text, code, or messages and sends them to others without reading, checking, or understanding the content". I think this term isn't used as should be used enough for software engineering, and it should be more used for engineering IMHO.
+Probably you have heard about the term "meat proxy", if not, it means "a person who copies and pastes AI-generated text, code, or messages and sends them to others without reading, checking, or understanding the content". I think this term isn't used enough, and it should be even more used for engineering IMHO.
 
 More often I see people building software that's completely unrealiable and the same people, are losing the skills to decide what is good or bad. Most of the developers lately aren't deciding anything but in fact relying on models to make decisions for them. I decided I don't want to be part of this cycle, I want to keep studying, to keep being a "sharp knife". So, this is what I have been doing: Agentic work by day, and in my free time coding by hand (I have not idea what's the right term for it nowadays).
 
