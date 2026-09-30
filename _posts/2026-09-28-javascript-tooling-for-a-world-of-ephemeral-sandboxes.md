@@ -247,6 +247,10 @@ The sweep speed in that graphic is the point: worktree B doesn't *build*, it *ch
 
 On one machine, that's the whole worktree problem dissolved by a global store directory: no server, no network, nothing to deploy.
 
+I wanted to feel that, not just design it, so I tried the silly version: fifty worktrees, fifty dev servers, one laptop. The arithmetic below uses numbers I've already published, so you can check me. Under Vite, an Excalidraw-class app holds about 2.4 GB of memory per dev server; fifty of those wants ~120 GB, which is not a fleet, it's the machine-flying swap storm from the top of this post multiplied by fifty. The same app under oj holds ~288 MB, so fifty servers is ~14 GB: silly, but it runs.
+
+Memory is the part oj already fixed per-process, though. What the store changes is everything that used to be *per worktree*. Fifty worktrees used to mean fifty compiles of the same graph and fifty copies of the cache; with the store, worktree one compiles and the other forty-nine verify and materialize, zero transforms (that is literally the receipt oj's cross-worktree test prints, not a projection). And the cache is one directory instead of fifty: oj's own docs site carries a 22 MB build cache per checkout, so fifty worktrees share 22 MB instead of copying 1.1 GB. The shape of it: memory scales with the servers you actually run, compute scales with the edits you actually make, and the cache doesn't scale at all.
+
 ## Who decides the granularity?
 
 A colleague asked me the right hard question about this: in Bazel, granularity is a choice you make. You can be lazy and have one top-level BUILD file, and every edit rebuilds everything; or you write BUILD files per package and Bazel can be precise. Nothing here is declarative, so who picks the units?
