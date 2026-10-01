@@ -247,9 +247,198 @@ The sweep speed in that graphic is the point: worktree B doesn't *build*, it *ch
 
 On one machine, that's the whole worktree problem dissolved by a global store directory: no server, no network, nothing to deploy.
 
-I wanted to feel that, not just design it, so I tried the silly version: fifty worktrees, fifty dev servers, one laptop. The arithmetic below uses numbers I've already published, so you can check me. Under Vite, an Excalidraw-class app holds about 2.4 GB of memory per dev server; fifty of those wants ~120 GB, which is not a fleet, it's the machine-flying swap storm from the top of this post multiplied by fifty. The same app under oj holds ~288 MB, so fifty servers is ~14 GB: silly, but it runs.
+I wanted to feel that, not just design it, so I ran the silly version for real: twenty checkouts of [Excalidraw](https://github.com/excalidraw/excalidraw), one store, a release build of oj, one laptop. Worktree one compiled the app and populated the store: 1,994 modules crawled in 507ms, 1,761 entries written. The other nineteen booted from it. Every one of them wrote **zero** new entries to the store, nineteen boots in a row, and their crawls averaged **109ms**, 4.6x faster, worst case 309ms. Then I started all twenty dev servers at once: 20/20 serving, **3.9 GB of memory total** (197 MB each, and remarkably flat: min 193, max 203), on **134 MB of shared disk** for the whole fleet's cache. Per-app caching would have copied that twenty times.
 
-Memory is the part oj already fixed per-process, though. What the store changes is everything that used to be *per worktree*. Fifty worktrees used to mean fifty compiles of the same graph and fifty copies of the cache; with the store, worktree one compiles and the other forty-nine verify and materialize, zero transforms (that is literally the receipt oj's cross-worktree test prints, not a projection). And the cache is one directory instead of fifty: oj's own docs site carries a 22 MB build cache per checkout, so fifty worktrees share 22 MB instead of copying 1.1 GB. The shape of it: memory scales with the servers you actually run, compute scales with the edits you actually make, and the cache doesn't scale at all.
+<div class="ojstore20" aria-label="Twenty worktrees booting from one shared store: worktree one compiles and fills the store, nineteen more restore from it in a fraction of the time. Measured numbers from a real Excalidraw run.">
+  <div class="ojstore20__meta">
+    <span class="ojstore20__title">Twenty worktrees, one store</span>
+    <span class="ojstore20__sub">measured · Excalidraw, 1,994 modules, release build</span>
+  </div>
+  <canvas class="ojstore20__canvas" height="210" aria-hidden="true"></canvas>
+  <div class="ojstore20__legend">
+    <span><i class="ojstore20__kc"></i>compiling (507ms)</span>
+    <span><i class="ojstore20__ks"></i>restoring from the store (~109ms)</span>
+  </div>
+  <div class="ojstore20__ctl">
+    <button class="ojstore20__run" type="button">&#8635; replay</button>
+    <span class="ojstore20__state"></span>
+  </div>
+  <div class="ojstore20__read">
+    <span><b class="ojstore20__vcmp">507ms</b><em>cold crawl</em></span>
+    <span><b class="ojstore20__vacc">109ms</b><em>warm avg &times;19</em></span>
+    <span><b class="ojstore20__vwin">0</b><em>recompiles after wt01</em></span>
+    <span><b class="ojstore20__vacc">3.9&#8202;GB</b><em>RAM, 20 servers</em></span>
+    <span><b class="ojstore20__vwin">134&#8202;MB</b><em>store, total</em></span>
+  </div>
+  <noscript><p class="ojstore20__fallback">Worktree 1 compiles 1,994 modules in 507ms and writes 1,761 entries; worktrees 2 through 20 each restore from the store in ~109ms with zero new writes. All twenty servers together: 3.9 GB RAM, 134 MB of shared cache.</p></noscript>
+</div>
+<style>
+  .ojstore20 {
+    --acc: #2a33d4; --cmp: #b6b4ae; --ink: #1c1c1c; --mut: #6b6a66;
+    --line: #e6e5e2; --bg: #ffffff; --win: #17876b;
+    border: 1px solid var(--line); border-radius: 10px; background: var(--bg);
+    padding: 16px 16px 12px; margin: 28px 0;
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .ojstore20__meta { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 10px; }
+  .ojstore20__title { font-weight: 600; font-size: 13.5px; color: var(--ink); }
+  .ojstore20__sub { font-size: 11px; color: var(--mut); }
+  .ojstore20__canvas { display: block; width: 100%; height: 210px; }
+  .ojstore20__legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 11px; color: var(--mut); margin-top: 8px; }
+  .ojstore20__legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; }
+  .ojstore20__kc { background: var(--cmp); } .ojstore20__ks { background: var(--acc); }
+  .ojstore20__ctl { display: flex; align-items: center; gap: 12px; margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--line); font-size: 12px; }
+  .ojstore20__run { font: inherit; font-size: 12px; cursor: pointer; border: 1px solid var(--line); background: transparent; color: var(--mut); padding: 4px 9px; border-radius: 6px; }
+  .ojstore20__run:hover { border-color: var(--acc); color: var(--ink); }
+  .ojstore20__run:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+  .ojstore20__state { color: var(--mut); }
+  .ojstore20__read { display: flex; flex-wrap: wrap; gap: 14px 24px; margin-top: 12px; }
+  .ojstore20__read span { display: flex; flex-direction: column-reverse; }
+  .ojstore20__read b { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+  .ojstore20__read em { font-style: normal; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mut); }
+  .ojstore20__vacc { color: var(--acc); } .ojstore20__vcmp { color: var(--cmp); } .ojstore20__vwin { color: var(--win); }
+  .ojstore20__fallback { font-size: 12px; color: var(--mut); }
+</style>
+<script>
+  (function () {
+    var root = document.currentScript.previousElementSibling;
+    while (root && !(root.classList && root.classList.contains("ojstore20"))) root = root.previousElementSibling;
+    if (!root) return;
+    var cv = root.querySelector(".ojstore20__canvas");
+    var ctx = cv.getContext("2d");
+    if (!ctx) return;
+    var runBtn = root.querySelector(".ojstore20__run");
+    var stateEl = root.querySelector(".ojstore20__state");
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Measured: wt01 crawls 507ms and writes 1761 entries; wt02..20 restore in
+    // ~109ms each. Timeline shown at 1/3 speed so the eye can follow.
+    var COLD_MS = 507, WARM_MS = 109, SLOW = 3, STAGGER = 60;
+    var N = 20, COLS = 10, ROWS = 2;
+
+    function tone(v) { return getComputedStyle(root).getPropertyValue(v).trim(); }
+
+    var w = 0, h = 0, dpr = 1, raf = 0, start = 0, finished = false;
+    function size() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = cv.getBoundingClientRect(); w = r.width || 640; h = 210;
+      cv.width = Math.floor(w * dpr); cv.height = Math.floor(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function rr(x, y, wd, ht, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + wd, y, x + wd, y + ht, r);
+      ctx.arcTo(x + wd, y + ht, x, y + ht, r);
+      ctx.arcTo(x, y + ht, x, y, r);
+      ctx.arcTo(x, y, x + wd, y, r);
+    }
+    // Layout: the store is a bar across the middle; worktrees sit above (row
+    // of 10) and below (row of 10). Lines flash between a booting worktree
+    // and the store: up-row writes down into it, everyone else reads out.
+    function layout() {
+      var pad = 10, tile = Math.min((w - pad * 2 - (COLS - 1) * 8) / COLS, 34);
+      var gridW = COLS * tile + (COLS - 1) * 8;
+      var x0 = (w - gridW) / 2;
+      var storeH = 30, storeY = (h - storeH) / 2;
+      var topY = storeY - 24 - tile, botY = storeY + storeH + 24;
+      var tiles = [];
+      for (var i = 0; i < N; i++) {
+        var c = i % COLS, up = i < COLS;
+        tiles.push({ x: x0 + c * (tile + 8), y: up ? topY : botY, s: tile, up: up });
+      }
+      return { tiles: tiles, store: { x: x0, y: storeY, w: gridW, h: storeH } };
+    }
+    // Boot schedule (scaled): wt i starts at cumulative time of its
+    // predecessors plus a small stagger, runs COLD or WARM scaled.
+    var sched = [];
+    (function () {
+      var t = 0;
+      for (var i = 0; i < N; i++) {
+        var dur = (i === 0 ? COLD_MS : WARM_MS) * SLOW;
+        sched.push({ t0: t, t1: t + dur });
+        t = sched[i].t1 + STAGGER;
+      }
+    })();
+    var TOTAL = sched[N - 1].t1 + 400;
+
+    function draw(now) {
+      var t = reduce ? TOTAL : Math.min(TOTAL, now - start);
+      ctx.clearRect(0, 0, w, h);
+      var L = layout();
+      // store bar: fills while wt01 compiles, then stays full
+      var fillFrac = Math.max(0, Math.min(1, (t - sched[0].t0) / (sched[0].t1 - sched[0].t0)));
+      ctx.fillStyle = tone("--line"); ctx.globalAlpha = 0.5;
+      rr(L.store.x, L.store.y, L.store.w, L.store.h, 6); ctx.fill();
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = tone("--win");
+      rr(L.store.x, L.store.y, Math.max(4, L.store.w * fillFrac), L.store.h, 6); ctx.fill();
+      ctx.font = "600 11px 'JetBrains Mono', monospace";
+      ctx.textBaseline = "middle"; ctx.textAlign = "center";
+      ctx.fillStyle = "#fff";
+      var entries = Math.round(1761 * fillFrac);
+      ctx.fillText("store \u00b7 " + entries + " entries \u00b7 134\u202fMB", w / 2, L.store.y + L.store.h / 2);
+
+      var active = -1;
+      for (var i = 0; i < N; i++) {
+        var st = sched[i], tile = L.tiles[i];
+        var p = t <= st.t0 ? 0 : t >= st.t1 ? 1 : (t - st.t0) / (st.t1 - st.t0);
+        var booting = p > 0 && p < 1;
+        if (booting) active = i;
+        // tile: outline until done; fills bottom-up while booting
+        ctx.globalAlpha = 1;
+        ctx.strokeStyle = tone("--line"); ctx.lineWidth = 1;
+        rr(tile.x, tile.y, tile.s, tile.s, 4); ctx.stroke();
+        if (p > 0) {
+          var color = i === 0 ? tone("--cmp") : tone("--acc");
+          var fh = tile.s * p;
+          ctx.save();
+          rr(tile.x, tile.y, tile.s, tile.s, 4); ctx.clip();
+          ctx.fillStyle = color;
+          ctx.fillRect(tile.x, tile.y + tile.s - fh, tile.s, fh);
+          ctx.restore();
+        }
+        // flash a connection line while booting: wt01 writes INTO the store,
+        // everyone else reads OUT of it
+        if (booting) {
+          var cx = tile.x + tile.s / 2;
+          var y1 = tile.up ? tile.y + tile.s : tile.y;
+          var y2 = tile.up ? L.store.y : L.store.y + L.store.h;
+          ctx.strokeStyle = i === 0 ? tone("--cmp") : tone("--acc");
+          ctx.lineWidth = 2;
+          ctx.setLineDash([4, 4]);
+          ctx.lineDashOffset = (i === 0 ? 1 : -1) * (t / 40);
+          ctx.beginPath(); ctx.moveTo(cx, y1); ctx.lineTo(cx, y2); ctx.stroke();
+          ctx.setLineDash([]);
+        }
+      }
+      if (stateEl) {
+        stateEl.textContent =
+          t >= TOTAL
+            ? "done: 1 compile, 19 restores, 0 recompiles"
+            : active === 0
+              ? "wt01 compiling 1,994 modules\u2026"
+              : active > 0
+                ? "wt" + String(active + 1).padStart(2, "0") + " restoring (" + WARM_MS + "ms)"
+                : "";
+      }
+      if (!reduce && t < TOTAL) raf = requestAnimationFrame(draw);
+      else { finished = true; raf = 0; }
+    }
+    function run() {
+      if (raf) cancelAnimationFrame(raf);
+      finished = false;
+      start = performance.now();
+      raf = requestAnimationFrame(draw);
+    }
+    runBtn.addEventListener("click", run);
+    window.addEventListener("resize", function () { size(); if (finished) draw(performance.now()); });
+    size();
+    if (reduce) draw(performance.now()); else run();
+  })();
+</script>
+
+Memory is the part oj already fixed per-process, though it turns out the store helps there too: a boot that restores never runs the compiler, and it settles about 28% lighter than the boot that compiled (198 MB against 274 MB on this app, measured on both). What the store changes structurally is everything that used to be *per worktree*: twenty worktrees used to mean twenty compiles of the same graph and twenty copies of the cache; now it is one compile, nineteen restores, one 134 MB directory. And the comparison that started this post: under Vite this app measures about 2.4 GB per dev server, so twenty of them would want ~48 GB against the 3.9 GB I measured, and the fifty-worktree version of that arithmetic is ~120 GB against ~10. The shape of it: memory scales with the servers you actually run, compute scales with the edits you actually make, and the cache doesn't scale at all.
 
 ## Who decides the granularity?
 
