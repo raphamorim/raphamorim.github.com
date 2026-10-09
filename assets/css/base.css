@@ -309,12 +309,41 @@ a {
 .post-page-content tbody tr:hover td {
   background: #fafafa;
 }
-.post-page-content ol li,
 .post-page-content ul li {
   display: inline-block;
   padding-left: 20px;
   border-left: 3px solid rgb(12, 80, 255);
   line-height: 130%;
+}
+.post-page-content ol {
+  counter-reset: post-ol;
+  list-style: none;
+  padding-left: 0;
+}
+.post-page-content ol > li {
+  counter-increment: post-ol;
+  position: relative;
+  padding-left: 44px;
+  line-height: 150%;
+}
+.post-page-content ol > li::before {
+  content: counter(post-ol);
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(12, 80, 255, 0.08);
+  color: rgb(12, 80, 255);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 26px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.post-page-content li > ol {
+  padding-left: 6px;
 }
 #infscr-loading {
   text-align: center;
