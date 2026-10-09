@@ -124,7 +124,7 @@ That last one is the clearest tell that something is off. The panes are a pictur
 
 ## The idea: tell the terminal about the panes
 
-So here is the flip. What if the app could just *say*, in-band, in the same byte stream it already has: **"open a second buffer, and put this text in it"** — and the terminal created a real native pane for it?
+So here is the flip. What if the app could just *say*, in-band, in the same byte stream it already has: **"open a second buffer, and put this text in it"**, and the terminal created a real native pane for it?
 
 Then there is no second grid. No double parsing. The terminal draws that pane with the same code it uses for everything else, which means images work, the keyboard protocol works, native scrollback works, mouse selection works, because the pane *is* a real terminal, not a drawing of one.
 
@@ -187,7 +187,7 @@ Here is the whole protocol as one moving picture. Watch the bytes:
   <text x="548" y="80" font-size="9.5" fill="currentColor" opacity="0.55">full terminal</text>
 
   <rect x="388" y="142" width="308" height="58" rx="5" fill="none" stroke="currentColor" stroke-opacity="0.35"/>
-  <text x="396" y="160" font-size="10.5" fill="currentColor" opacity="0.6">main — the primary stream</text>
+  <text x="396" y="160" font-size="10.5" fill="currentColor" opacity="0.6">main: the primary stream</text>
   <text x="396" y="176" font-size="9.5" fill="currentColor" opacity="0.4">$ ▂</text>
 
   <circle class="dot" r="4" fill="#2a33d4" style="animation-name: rmx-to-logs; animation-duration: 3.4s;"/>
@@ -329,7 +329,7 @@ The primary stream, meaning every byte outside an rmx frame, is itself a buffer.
 
 This sounds like bookkeeping and is actually the keystone. Because `main` is a buffer, an app that never speaks rmx is not a special case, it is the trivial case of the protocol: one buffer, `main`, behaving exactly like a pty always has. Degradation is not a fallback path I have to maintain; it is what happens when nothing else opens. It is also what makes nesting describable at all: an rmx-speaking app running *inside* a buffer sees a normal terminal, because a buffer *is* a normal terminal, and its `main` is that buffer. (Nesting is designed, behind a `nest` capability, and not shipped yet.)
 
-(`main` is not writable, and that is now settled rather than pending: only your own stdout puts bytes there, so `w`, `t` and `c` reject `k=main`. The other half of that rule is that opening buffers **may shrink** `main` — the terminal has to tell you through the ordinary window-size mechanism, because programs draw their own status bars there and need to reflow.)
+(`main` is not writable, and that is now settled rather than pending: only your own stdout puts bytes there, so `w`, `t` and `c` reject `k=main`. The other half of that rule is that opening buffers **may shrink** `main`: the terminal has to tell you through the ordinary window-size mechanism, because programs draw their own status bars there and need to reflow.)
 
 ### `s`: ask before you speak
 
@@ -357,7 +357,7 @@ The important word is **idempotent**. Opening a key that already exists does not
 
 That is not politeness, it is the reconnect story. If your ssh connection drops and you come back, your app needs to get from "I have no idea what exists" to "I own these four buffers again" without duplicating anything. With idempotent open, recovery is just replaying the opens you would have done anyway. Duplicate-on-reopen would mean the app must ask what exists first and branch, which is exactly the round-trip storm I read about in a decade of iTerm2 issues.
 
-The rest of `o` is small and mostly about who is in charge. `cols`/`rows` are a **proposal**; the terminal decides the real size and tells you. `title` is base64, and never echoed back. `at`/`dir`/`weight` are placement hints, honored only if the terminal advertised `cap=layout`. `weight` is the new buffer's percentage of the anchor's extent along the split axis, and a terminal that cannot solve a hint (an axis too small for two panes) places the buffer anyway rather than failing your open — a hint can never wedge the layout. `u` is one integer of urgency, 0 to 7, because I read what happened to HTTP/2's priority trees and decided one number was plenty. `focus=1` requests focus **at creation only** and the terminal may ignore it. The reply to `o` is always sent, whatever reply mode you asked for, because it carries your starting credit and the next rule makes writing without knowing it unsafe.
+The rest of `o` is small and mostly about who is in charge. `cols`/`rows` are a **proposal**; the terminal decides the real size and tells you. `title` is base64, and never echoed back. `at`/`dir`/`weight` are placement hints, honored only if the terminal advertised `cap=layout`. `weight` is the new buffer's percentage of the anchor's extent along the split axis, and a terminal that cannot solve a hint (an axis too small for two panes) places the buffer anyway rather than failing your open: a hint can never wedge the layout. `u` is one integer of urgency, 0 to 7, because I read what happened to HTTP/2's priority trees and decided one number was plenty. `focus=1` requests focus **at creation only** and the terminal may ignore it. The reply to `o` is always sent, whatever reply mode you asked for, because it carries your starting credit and the next rule makes writing without knowing it unsafe.
 
 The reply reflects the key, a status, and integers:
 
@@ -377,7 +377,7 @@ ESC _ rmx ; w ; k=<key> [; m=1] ; <base64 payload> ESC \
 
 Whatever you write is handed to that buffer's terminal instance exactly as if it had arrived on a pty of its own, escape sequences included. That is the whole promise of the design: colors, cursor moves, images, all of it works, because there is a real terminal on the other side and I am not reinterpreting anything. `m=1` marks "more chunks coming" for one logical write, which is how you get past the 4096-byte frame limit.
 
-Two `w` rules worth naming. Writing to a key that does not exist is dropped and reported with `reason=no_such_buffer`; it must **not** auto-open a buffer, because auto-open means a typo in a key name silently creates panes. And a write bigger than your remaining credit gets truncated at the credit boundary and reported with `reason=no_credit` — you were supposed to be counting. Credit is charged per frame, not per logical chunked write, and because truncation can slice an escape sequence in half the terminal has to reset that buffer's parser afterwards. Otherwise a half-parsed sequence sits there swallowing whatever arrives next, and the pane quietly goes wrong ten seconds later.
+Two `w` rules worth naming. Writing to a key that does not exist is dropped and reported with `reason=no_such_buffer`; it must **not** auto-open a buffer, because auto-open means a typo in a key name silently creates panes. And a write bigger than your remaining credit gets truncated at the credit boundary and reported with `reason=no_credit`: you were supposed to be counting. Credit is charged per frame, not per logical chunked write, and because truncation can slice an escape sequence in half the terminal has to reset that buffer's parser afterwards. Otherwise a half-parsed sequence sits there swallowing whatever arrives next, and the pane quietly goes wrong ten seconds later.
 
 `t` is the bulk path, and it is the one I find prettiest:
 
@@ -439,7 +439,7 @@ ESC _ rmx ; i ; k=<key> ; ev=<name> [; key=value]* [; <base64>] ESC \
 
 There are five events in v1, and each of them is answering a question that only exists because the buffer is virtual.
 
-**`ev=in`** carries input: exactly the bytes the terminal would have written to a dedicated pty for those keypresses, honoring *that buffer's* modes. Keyboard protocol state, bracketed paste and mouse encoding are per-buffer, so if one pane negotiated the kitty keyboard protocol and another did not, each gets the encoding it asked for. Input is delivered only when a buffer is subscribed, focused, and visible. "Subscribed" just means open: an `o` succeeded and nothing has closed it. There is no separate subscribe verb, which is deliberate — one fewer state to get out of sync.
+**`ev=in`** carries input: exactly the bytes the terminal would have written to a dedicated pty for those keypresses, honoring *that buffer's* modes. Keyboard protocol state, bracketed paste and mouse encoding are per-buffer, so if one pane negotiated the kitty keyboard protocol and another did not, each gets the encoding it asked for. Input is delivered only when a buffer is subscribed, focused, and visible. "Subscribed" just means open: an `o` succeeded and nothing has closed it. There is no separate subscribe verb, which is deliberate: one fewer state to get out of sync.
 
 **`ev=reply`** is the one that surprised me, and it is the answer to "what happens when a program inside a buffer asks the terminal a question?" Programs do this constantly: DA1 to ask what the terminal is, DSR to ask where the cursor is, DECRQM to ask whether a mode is on. Normally the answer travels back up the pty and lands in the program's stdin. But here there is one pty shared by every buffer, so three programs can be waiting on three answers at once, and unlabelled answers arriving on one channel are indistinguishable. Whoever guesses wrong gets the other one's answer, or gets nothing and **hangs**, because a program that queried the terminal is usually sitting in a blocking read. So replies are tagged with the buffer that produced them, and the app routes each one home. Without this frame, half of curses-style programs would simply freeze in a pane.
 
@@ -453,7 +453,7 @@ There are five events in v1, and each of them is answering a question that only 
 
 The spec has a table of endings, because "what happens when this dies" is where protocols usually rot. The short version:
 
-When the pty hits EOF or the owning process exits, every buffer is reaped with `reason=teardown` and discarded. I originally wrote that teardown should honor "the buffer's last disposition hint", which turned out to be unimplementable: `disp` only exists as a parameter on `c`, so a buffer nobody ever closed has no hint to honor. Two people implementing the spec found that paragraph independently, which is a good sign it deserved deleting rather than defending. **The terminal must never be left wedged** — no orphan panes you cannot close, no state that outlives its owner. `RIS` (a full terminal reset) on `main` discards all buffers; `RIS` *inside* a buffer resets only that buffer. Clearing the screen on `main` does nothing to buffers, because they are not grid content of `main`. And buffer state is session-scoped: it does not survive a terminal restart and does not leak between tabs, windows or panes.
+When the pty hits EOF or the owning process exits, every buffer is reaped with `reason=teardown` and discarded. I originally wrote that teardown should honor "the buffer's last disposition hint", which turned out to be unimplementable: `disp` only exists as a parameter on `c`, so a buffer nobody ever closed has no hint to honor. Two people implementing the spec found that paragraph independently, which is a good sign it deserved deleting rather than defending. **The terminal must never be left wedged**: no orphan panes you cannot close, no state that outlives its owner. `RIS` (a full terminal reset) on `main` discards all buffers; `RIS` *inside* a buffer resets only that buffer. Clearing the screen on `main` does nothing to buffers, because they are not grid content of `main`. And buffer state is session-scoped: it does not survive a terminal restart and does not leak between tabs, windows or panes.
 
 Then the rule I care most about:
 
@@ -506,7 +506,7 @@ Rio advertises `cap=core,raw,layout,nest,scrollback` today: negotiate, open buff
 
 Two other clients exist now, and they are what made the protocol real. My multiplexer (oj) speaks it, and so does a fork of tmux itself, which was the more interesting test: it renders its panes as native terminal panes when it can, and composes them the old way when it cannot, with no change in behavior for anyone on a terminal that has never heard of rmx.
 
-Writing those two clients is also what fixed the spec. A protocol you have only implemented once is a protocol you have only guessed at. Between them they found a dozen places where I had been ambiguous or simply wrong — a credit rule that made bulk writes stall, a framing rule where two parsers could legitimately disagree, a teardown clause that could not be implemented at all — and every one of those is now decided in the text rather than left to whoever writes the third client.
+Writing those two clients is also what fixed the spec. A protocol you have only implemented once is a protocol you have only guessed at. Between them they found a dozen places where I had been ambiguous or simply wrong (a credit rule that made bulk writes stall, a framing rule where two parsers could legitimately disagree, a teardown clause that could not be implemented at all), and every one of those is now decided in the text rather than left to whoever writes the third client.
 
 Plenty is still unfinished. Session persistence (detach, walk away, reattach later) lives in a separate layer, because that needs a process that outlives your terminal window. Predictive echo for slow links is designed and unbuilt, and there is no way yet to ask a terminal for scrollback history rather than just the visible screen.
 
