@@ -3,6 +3,7 @@ layout: post
 title: "Introducing rmx: Terminal Multiplexing at the Protocol Level"
 language: 'en'
 description: "A protocol that lets an application open real terminal buffers over one connection, so the terminal renders panes natively instead of a multiplexer parsing every byte twice and dropping whatever it cannot model."
+draft: true
 ---
 
 If you have ever watched someone's screen fill with little terminal panes and thought "I should learn tmux one day," this post is for you. I want to explain what a multiplexer really does under the hood, because once you see it, you also see why some things in your terminal are mysteriously broken. Then I will show you the protocol I am building to fix it.
