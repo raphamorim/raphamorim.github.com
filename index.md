@@ -13,7 +13,7 @@ I work at [Lovable](https://lovable.dev/). I created [Rio](https://github.com/ra
 
 Previously, I worked at companies like Spotify, Charm, Viaplay, GoDaddy, and Globo.com. I have been a speaker at a few conferences.
 
-At Lovable, I brought [OJ](https://oj-slides.rapha850.workers.dev/#1) (a Rust-based dev server I originally built in my spare time) into the organization and its preview infrastructure. In a controlled experiment, OJ cut median preview load time from 17.4 to 8 seconds and used up to 6.5× less dev-server memory. I also helped establish the performance working group and improve preview stability, alongside broader engineering contributions.
+At Lovable, I brought [OJ](https://oj-slides.rapha850.workers.dev/#1) (a Rust-based dev server I originally built in my spare time) into the organization and its preview infrastructure, making previews 2.2x faster while reducing dev-server memory drastically. I also helped establish the performance working group and improve preview stability, alongside broader engineering contributions.
 
 I was responsible for Viaplay's adoption of the Rust language. I built the starter infrastructure, released the first service for production, and actively worked on developing a Rust culture, which led to the language's adoption in the upcoming years, along with many other feats. [See when it all started](https://www.linkedin.com/posts/hugoraphael_i-dont-post-very-often-in-the-linkedin-but-activity-6975346956734738432-Csqi).
 
