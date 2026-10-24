@@ -2,7 +2,7 @@
 layout: default
 title: 'Raphael Amorim'
 language: 'en'
-description: "I am Raphael Amorim. Software Developer Engineer. I love Japanese culture (親日), 70s/80s songs and a lot of 8bit art."
+description: "I am Raphael Amorim. Software Developer Engineer."
 ---
 
 ## Welcome to my tiny place on the internet
@@ -12,6 +12,8 @@ Hey there, my name is Raphael.
 I work at [Lovable](https://lovable.dev/). I created [Rio](https://github.com/raphamorim/rio) terminal emulator and the [Jam](https://jamlang.org/) programming language.
 
 Previously, I worked at companies like Spotify, Charm, Viaplay, GoDaddy, and Globo.com. I have been a speaker at a few conferences.
+
+At Lovable, I brought [OJ](https://oj-slides.rapha850.workers.dev/#1) (a Rust-based dev server I originally built in my spare time) into the organization and its preview infrastructure. In a controlled experiment, OJ cut median preview load time from 17.4 to 8 seconds and used up to 6.5× less dev-server memory. I also helped establish the performance working group and improve preview stability, alongside broader engineering contributions.
 
 I was responsible for Viaplay's adoption of the Rust language. I built the starter infrastructure, released the first service for production, and actively worked on developing a Rust culture, which led to the language's adoption in the upcoming years, along with many other feats. [See when it all started](https://www.linkedin.com/posts/hugoraphael_i-dont-post-very-often-in-the-linkedin-but-activity-6975346956734738432-Csqi).
 
