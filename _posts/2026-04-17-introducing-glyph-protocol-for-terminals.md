@@ -173,7 +173,7 @@ Simple glyphs are the subset of `glyf` that any `ttf-parser`-style library alrea
 
 **Scaling and cell metrics.** The `upm` value defines the glyph's coordinate space; the terminal maps that space onto its cell at render time. An icon authored at `upm=1000` will scale cleanly to an 8×16 cell and to a 32×64 cell. The application does not need to know the terminal's cell size, and never has to re-register on font size change.
 
-**Authoring.** Most application authors will not hand-write `glyf` bytes. They will start from SVG (what their designer hands them, what every icon library ships) and convert it at build time. [`fonttools`](https://fonttools.readthedocs.io/) already does this via its `ttx`/`pens` interface, and I will ship a small `svg2glyf` helper alongside Rio's reference implementation so the conversion is a one-liner. Runtime registration is then as simple as loading the bytes and sending them.
+**Authoring.** Most application authors will not hand-write `glyf` bytes. They will pull outlines out of an existing icon font, or draw them with [`fonttools`](https://fonttools.readthedocs.io/) pens, at build time. The [examples repository](https://github.com/raphamorim/glyph-protocol-examples) has the scripts I use to extract `glyf` payloads from a Nerd Font. Runtime registration is then as simple as loading the bytes and sending them.
 
 **Lifetime and capacity.** Each terminal session carries a *glossary* of at most 1024 simultaneous registrations, keyed by codepoint anywhere in the three PUA ranges. Registrations live for the duration of the session. If an application registers a 1025th glyph, the terminal evicts the oldest registration in FIFO order; there is no "glossary full" error to handle. Applications that cannot tolerate silent eviction should query their codepoint before emitting.
 
@@ -181,7 +181,7 @@ Simple glyphs are the subset of `glyf` that any `ttf-parser`-style library alrea
 
 To make this concrete, here is the full pipeline for registering a stylised outline and rendering it. The codepoint in the example is `U+100000`, the first codepoint of Supplementary PUA-B, which no known font covers. That makes the demo unambiguous: what you see is the outline you shipped, nothing else.
 
-We'll use [`fontTools`](https://fonttools.readthedocs.io/) as the SVG-to-`glyf` converter, the *de facto* Python toolkit for OpenType work.
+We'll use [`fontTools`](https://fonttools.readthedocs.io/) to build the `glyf` record, the *de facto* Python toolkit for OpenType work.
 
 ```python
 # register_icon.py
@@ -205,14 +205,6 @@ sys.stdout.write(f"icon: {chr(0x100000)}\n")
 ```
 
 The application doesn't need to read the reply before printing; it chose the codepoint, so it already knows what to emit. The `glyf` payload for a typical 20-point icon lands around 150 bytes; base64-encoded and wrapped in an APC, under 250 bytes on the wire.
-
-For application authors who already have SVG assets, a helper like `svg2glyf` (shipping alongside Rio's reference implementation) collapses the whole thing to two lines:
-
-```python
-from glyph_protocol import register_from_svg
-register_from_svg(cp=0x100000, svg_path="icon.svg")
-print(f"icon: {chr(0x100000)}")
-```
 
 #### A knob for bulk registration: `reply=`
 
